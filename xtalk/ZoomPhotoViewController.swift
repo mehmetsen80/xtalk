@@ -32,7 +32,6 @@ class ZoomPhotoViewController: UIViewController, UIScrollViewDelegate  {
                         let largeImage:UIImage = UIImage(data: noerror)!
                         
                         // 1
-                        //let image = UIImage(named: "oyvent")!
                         self.mImageView = UIImageView(image: largeImage)
                         self.mImageView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: largeImage.size)
                         self.mScrollView.addSubview(self.mImageView)
@@ -71,48 +70,6 @@ class ZoomPhotoViewController: UIViewController, UIScrollViewDelegate  {
             }
             dataTask.resume()
             
-//            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse?,data: NSData?,error: NSError?) -> Void in
-//                if let noerror = data {
-//                    dispatch_async(dispatch_get_main_queue()) {
-//                        
-//                        let largeImage:UIImage = UIImage(data: noerror)!
-//                        
-//                        // 1
-//                        //let image = UIImage(named: "oyvent")!
-//                        self.mImageView = UIImageView(image: largeImage)
-//                        self.mImageView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: largeImage.size)
-//                        self.mScrollView.addSubview(self.mImageView)
-//                        
-//                        // 2
-//                        self.mScrollView.contentSize = largeImage.size
-//                        
-//                        // 3
-//                        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "scrollViewDoubleTapped:")
-//                        doubleTapRecognizer.numberOfTapsRequired = 2
-//                        doubleTapRecognizer.numberOfTouchesRequired = 1
-//                        self.mScrollView.addGestureRecognizer(doubleTapRecognizer)
-//                        
-//                        // 4
-//                        let scrollViewFrame = self.mScrollView.frame
-//                        let scaleWidth = scrollViewFrame.size.width / self.mScrollView.contentSize.width
-//                        let scaleHeight = scrollViewFrame.size.height / self.mScrollView.contentSize.height
-//                        let minScale = min(scaleWidth, scaleHeight);
-//                        print("minScale: \(minScale)")
-//                        self.mScrollView.minimumZoomScale = minScale;
-//                        
-//                        // 5
-//                        self.mScrollView.maximumZoomScale = 1.0
-//                        self.mScrollView.zoomScale = minScale;
-//                        
-//                        // 6
-//                        self.centerScrollViewContents()
-//                        
-//                    }
-//                }
-//                else {
-//                    print("Error: \(error!.localizedDescription)", terminator: "")
-//                }
-//            })
         }
     }
     
