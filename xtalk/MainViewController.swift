@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,15 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func jump2Login(sender: AnyObject) {
+        
+        let loginView: LoginViewController  = self.storyboard?.instantiateViewControllerWithIdentifier("loginView") as! LoginViewController
+        
+        //1st way
+        self.presentViewController(loginView, animated:true, completion:nil)
     }
 
 

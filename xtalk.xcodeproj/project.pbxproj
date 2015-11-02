@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		D8685CBD1BE7BF880041817E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CBC1BE7BF880041817E /* AppDelegate.swift */; };
-		D8685CBF1BE7BF880041817E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CBE1BE7BF880041817E /* ViewController.swift */; };
+		D8685CBF1BE7BF880041817E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CBE1BE7BF880041817E /* MainViewController.swift */; };
 		D8685CC21BE7BF880041817E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8685CC01BE7BF880041817E /* Main.storyboard */; };
 		D8685CC41BE7BF880041817E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8685CC31BE7BF880041817E /* Assets.xcassets */; };
 		D8685CC71BE7BF880041817E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8685CC51BE7BF880041817E /* LaunchScreen.storyboard */; };
 		D8685CD21BE7BF890041817E /* xtalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CD11BE7BF890041817E /* xtalkTests.swift */; };
 		D8685CDD1BE7BF890041817E /* xtalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CDC1BE7BF890041817E /* xtalkUITests.swift */; };
+		D8685CEC1BE7D5BF0041817E /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CEB1BE7D5BF0041817E /* UIImageExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		D8685CEF1BE7D6200041817E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
+		D8685CF21BE7D6910041817E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF11BE7D6910041817E /* RoundedButton.swift */; settings = {ASSET_TAGS = (); }; };
+		D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF31BE7DA320041817E /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		D8685CB91BE7BF880041817E /* xtalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xtalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8685CBC1BE7BF880041817E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8685CBE1BE7BF880041817E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8685CBE1BE7BF880041817E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D8685CC11BE7BF880041817E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8685CC31BE7BF880041817E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8685CC61BE7BF880041817E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		D8685CD81BE7BF890041817E /* xtalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xtalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8685CDC1BE7BF890041817E /* xtalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xtalkUITests.swift; sourceTree = "<group>"; };
 		D8685CDE1BE7BF890041817E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8685CEB1BE7D5BF0041817E /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		D8685CF11BE7D6910041817E /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		D8685CF31BE7DA320041817E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +105,12 @@
 		D8685CBB1BE7BF880041817E /* xtalk */ = {
 			isa = PBXGroup;
 			children = (
+				D8685CF01BE7D66A0041817E /* button */,
+				D8685CED1BE7D5DB0041817E /* custom */,
+				D8685CEA1BE7D5850041817E /* extension */,
 				D8685CBC1BE7BF880041817E /* AppDelegate.swift */,
-				D8685CBE1BE7BF880041817E /* ViewController.swift */,
+				D8685CBE1BE7BF880041817E /* MainViewController.swift */,
+				D8685CF31BE7DA320041817E /* LoginViewController.swift */,
 				D8685CC01BE7BF880041817E /* Main.storyboard */,
 				D8685CC31BE7BF880041817E /* Assets.xcassets */,
 				D8685CC51BE7BF880041817E /* LaunchScreen.storyboard */,
@@ -123,6 +135,30 @@
 				D8685CDE1BE7BF890041817E /* Info.plist */,
 			);
 			path = xtalkUITests;
+			sourceTree = "<group>";
+		};
+		D8685CEA1BE7D5850041817E /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				D8685CEB1BE7D5BF0041817E /* UIImageExtension.swift */,
+			);
+			name = extension;
+			sourceTree = "<group>";
+		};
+		D8685CED1BE7D5DB0041817E /* custom */ = {
+			isa = PBXGroup;
+			children = (
+				D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */,
+			);
+			name = custom;
+			sourceTree = "<group>";
+		};
+		D8685CF01BE7D66A0041817E /* button */ = {
+			isa = PBXGroup;
+			children = (
+				D8685CF11BE7D6910041817E /* RoundedButton.swift */,
+			);
+			name = button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +291,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8685CBF1BE7BF880041817E /* ViewController.swift in Sources */,
+				D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */,
+				D8685CBF1BE7BF880041817E /* MainViewController.swift in Sources */,
+				D8685CF21BE7D6910041817E /* RoundedButton.swift in Sources */,
 				D8685CBD1BE7BF880041817E /* AppDelegate.swift in Sources */,
+				D8685CEF1BE7D6200041817E /* CustomTabBarController.swift in Sources */,
+				D8685CEC1BE7D5BF0041817E /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
