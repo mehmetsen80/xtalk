@@ -15,14 +15,14 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
 
         // enable this if you need later to customize the tabBar backgroundimage
-        //        var bg: UIImage = UIImage(named: "tabbg")!
+        //        var bg: UIImage = UIImage(named: "background-image")!
         //        bg = UIImage().resizeImage(bg,targetSize: CGSize(width: bg.size.width, height: 50))
         //        UITabBar.appearance().backgroundImage = bg
         
         
         //if above not used, then use this
         UITabBar.appearance().backgroundImage = UIImage() // clears the tabbar background image
-        UITabBar.appearance().shadowImage = UIImage() // cears the tabbar shadow image
+        //UITabBar.appearance().shadowImage = UIImage() // cears the tabbar shadow image
     }
 
     override func didReceiveMemoryWarning() {
