@@ -244,6 +244,15 @@
                                     <action selector="jump2Login:" destination="dyS-4E-J4M" eventType="touchUpInside" id="LvV-DE-Gip"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbK-6X-cpI">
+                                <rect key="frame" x="59" y="365" width="203" height="27"/>
+                                <state key="normal" title="jump to profile photo (test)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="i1p-Ta-Tj7" kind="presentation" id="vFO-Ts-JHR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -364,7 +373,7 @@
         <!--Profile Photo View Controller-->
         <scene sceneID="ZeM-r0-Z0i">
             <objects>
-                <viewController storyboardIdentifier="addProfilePhotoView" id="i1p-Ta-Tj7" customClass="ProfilePhotoViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profilePhotoView" id="i1p-Ta-Tj7" customClass="ProfilePhotoViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yGn-wk-hIJ"/>
                         <viewControllerLayoutGuide type="bottom" id="tfQ-f9-VPR"/>
@@ -383,6 +392,9 @@
                                     <constraint firstAttribute="height" constant="70" id="2ao-eJ-9qn"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="camera-icon-black"/>
+                                <connections>
+                                    <segue destination="fK4-OS-unM" kind="presentation" identifier="showFromCamera" id="egA-7z-0a2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAg-vH-x7X">
                                 <rect key="frame" x="40" y="327" width="70" height="70"/>
@@ -391,6 +403,9 @@
                                     <constraint firstAttribute="height" constant="70" id="akQ-sN-LX6"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="gallery-icon-black"/>
+                                <connections>
+                                    <segue destination="fK4-OS-unM" kind="presentation" identifier="showFromGallery" id="cD8-Hz-s1b"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OI6-y0-ECo" customClass="CircleButton" customModule="xtalk" customModuleProvider="target">
                                 <rect key="frame" x="40" y="61" width="240" height="240"/>
@@ -400,7 +415,8 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="no-profile-photo-yet"/>
                                 <connections>
-                                    <action selector="doPhotoZoom:" destination="i1p-Ta-Tj7" eventType="touchUpInside" id="TME-0A-muW"/>
+                                    <action selector="doZoomPhoto:" destination="i1p-Ta-Tj7" eventType="touchUpInside" id="ymx-aW-wke"/>
+                                    <segue destination="3EL-cp-TrY" kind="showDetail" identifier="zoomProfilePhoto" id="Hwz-Pm-sbV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paY-6n-yI6" customClass="CustomButton" customModule="xtalk" customModuleProvider="target">
@@ -413,9 +429,6 @@
                                 <state key="normal" title="upload profile photo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="goNext:" destination="i1p-Ta-Tj7" eventType="touchUpInside" id="JoD-Bv-ecz"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -437,7 +450,7 @@
                     <navigationItem key="navigationItem" id="Wxy-kQ-ZKF"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="btnPhoto" destination="OI6-y0-ECo" id="ire-mP-hXV"/>
+                        <outlet property="btnPhoto" destination="OI6-y0-ECo" id="zkh-fx-ypL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJN-o3-Ccx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -514,7 +527,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="KBD-mw-upR" kind="unwind" unwindAction="unwindToThisViewController2:" id="Y18-ob-2Od"/>
+                                    <segue destination="KBD-mw-upR" kind="unwind" unwindAction="unwindToThisViewController2:" id="bwz-F1-w19"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="OHR-nN-s25">
@@ -573,17 +586,17 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="OHR-nN-s25" id="ZyC-56-AjD"/>
-                        <outlet property="btnCancel" destination="iqD-f7-XCa" id="lpW-3C-Dv0"/>
-                        <outlet property="btnGallery" destination="cqi-l3-YQy" id="nXp-Te-2b1"/>
-                        <outlet property="btnUpload" destination="I3U-c8-kBY" id="vjg-3J-oTB"/>
-                        <outlet property="imageView" destination="YqN-WY-wzc" id="Ucc-V8-tZN"/>
+                        <outlet property="activityIndicator" destination="OHR-nN-s25" id="79b-mo-PKT"/>
+                        <outlet property="btnCancel" destination="iqD-f7-XCa" id="jdU-Z0-1BL"/>
+                        <outlet property="btnGallery" destination="cqi-l3-YQy" id="bhS-xL-brP"/>
+                        <outlet property="btnUpload" destination="I3U-c8-kBY" id="MAk-Ap-sr8"/>
+                        <outlet property="imageView" destination="YqN-WY-wzc" id="XuC-Pr-bOk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCD-Oe-zpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KBD-mw-upR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2046" y="265"/>
+            <point key="canvasLocation" x="2119" y="265"/>
         </scene>
         <!--Profile Photo Zoom Controller-->
         <scene sceneID="abL-wO-tuG">
@@ -617,7 +630,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="L5c-tC-yH0" kind="unwind" unwindAction="unwindToThisViewController:" id="PHJ-Zc-rC1"/>
+                                    <segue destination="L5c-tC-yH0" kind="unwind" unwindAction="unwindToThisViewController:" id="jr8-UA-VOp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -639,7 +652,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="mScrollView" destination="xk3-q1-w9W" id="b6L-da-k0S"/>
+                        <outlet property="mScrollView" destination="xk3-q1-w9W" id="Mgp-gS-zaI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgf-7m-t1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -660,4 +673,7 @@
         <image name="profile-icon-black-small" width="24" height="24"/>
         <image name="rotate-camera-icon-black" width="48" height="49"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="egA-7z-0a2"/>
+    </inferredMetricsTieBreakers>
 </document>

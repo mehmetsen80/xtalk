@@ -15,7 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let is_user_logged_in:Bool = NSUserDefaults.standardUserDefaults().boolForKey("xtalk_isloggedin")
+        if(!is_user_logged_in){
+            //use not logged in, so go to the login screen
+            let loginViewController = mainStoryboard.instantiateViewControllerWithIdentifier("loginView") as! LoginViewController
+            window!.rootViewController = loginViewController
+            window!.makeKeyAndVisible()
+        }else{
+            //user is already logged in, let's jump to main tabbar controller
+            let mainTabBar : CustomTabBarController = mainStoryboard.instantiateViewControllerWithIdentifier("mainTabBar") as! CustomTabBarController
+            window!.rootViewController = mainTabBar
+            window!.makeKeyAndVisible()
+        }
+        
         return true
     }
 

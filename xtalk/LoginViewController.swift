@@ -67,6 +67,7 @@ class LoginViewController: UIViewController {
                     }else{
                         
                         //store data
+                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "xtalk_isloggedin")
                         NSUserDefaults.standardUserDefaults().setObject(userid, forKey:"xtalk_userid")
                         NSUserDefaults.standardUserDefaults().setObject(fullname, forKey:"xtalk_fullname")
                         NSUserDefaults.standardUserDefaults().setObject(email, forKey:"xtalk_email")
