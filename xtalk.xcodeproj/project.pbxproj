@@ -18,6 +18,7 @@
 		D8685CEF1BE7D6200041817E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
 		D8685CF21BE7D6910041817E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF11BE7D6910041817E /* RoundedButton.swift */; settings = {ASSET_TAGS = (); }; };
 		D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF31BE7DA320041817E /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D87D91C41BE800C400CABE91 /* ProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		D8685CF11BE7D6910041817E /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D8685CF31BE7DA320041817E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				D8685CBC1BE7BF880041817E /* AppDelegate.swift */,
 				D8685CBE1BE7BF880041817E /* MainViewController.swift */,
 				D8685CF31BE7DA320041817E /* LoginViewController.swift */,
+				D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */,
 				D8685CC01BE7BF880041817E /* Main.storyboard */,
 				D8685CC31BE7BF880041817E /* Assets.xcassets */,
 				D8685CC51BE7BF880041817E /* LaunchScreen.storyboard */,
@@ -293,6 +296,7 @@
 			files = (
 				D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */,
 				D8685CBF1BE7BF880041817E /* MainViewController.swift in Sources */,
+				D87D91C41BE800C400CABE91 /* ProfilePhotoViewController.swift in Sources */,
 				D8685CF21BE7D6910041817E /* RoundedButton.swift in Sources */,
 				D8685CBD1BE7BF880041817E /* AppDelegate.swift in Sources */,
 				D8685CEF1BE7D6200041817E /* CustomTabBarController.swift in Sources */,
@@ -523,6 +527,7 @@
 				D8685CE31BE7BF890041817E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8685CE41BE7BF890041817E /* Build configuration list for PBXNativeTarget "xtalkTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +536,7 @@
 				D8685CE61BE7BF890041817E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8685CE71BE7BF890041817E /* Build configuration list for PBXNativeTarget "xtalkUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +545,7 @@
 				D8685CE91BE7BF890041817E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

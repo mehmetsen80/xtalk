@@ -361,12 +361,303 @@
             </objects>
             <point key="canvasLocation" x="1184" y="2957"/>
         </scene>
+        <!--Profile Photo View Controller-->
+        <scene sceneID="ZeM-r0-Z0i">
+            <objects>
+                <viewController storyboardIdentifier="addProfilePhotoView" id="i1p-Ta-Tj7" customClass="ProfilePhotoViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yGn-wk-hIJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="tfQ-f9-VPR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5TG-3d-Ryy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-image" translatesAutoresizingMaskIntoConstraints="NO" id="Vgv-8x-ShM">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RB-N4-Ibw">
+                                <rect key="frame" x="210" y="325" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="2I1-Ok-eXX"/>
+                                    <constraint firstAttribute="height" constant="70" id="2ao-eJ-9qn"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="camera-icon-black"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAg-vH-x7X">
+                                <rect key="frame" x="40" y="327" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="CFh-4c-8Q8"/>
+                                    <constraint firstAttribute="height" constant="70" id="akQ-sN-LX6"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="gallery-icon-black"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OI6-y0-ECo" customClass="CircleButton" customModule="xtalk" customModuleProvider="target">
+                                <rect key="frame" x="40" y="61" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="10U-Ld-yd5"/>
+                                    <constraint firstAttribute="width" constant="240" id="TnD-dc-ydF"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="no-profile-photo-yet"/>
+                                <connections>
+                                    <action selector="doPhotoZoom:" destination="i1p-Ta-Tj7" eventType="touchUpInside" id="TME-0A-muW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paY-6n-yI6" customClass="CustomButton" customModule="xtalk" customModuleProvider="target">
+                                <rect key="frame" x="60" y="450" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="XMY-3E-G8a"/>
+                                    <constraint firstAttribute="height" constant="50" id="wip-er-2SP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="21"/>
+                                <state key="normal" title="upload profile photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goNext:" destination="i1p-Ta-Tj7" eventType="touchUpInside" id="JoD-Bv-ecz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="paY-6n-yI6" firstAttribute="top" secondItem="YAg-vH-x7X" secondAttribute="bottom" constant="53" id="1nz-ZL-bOY"/>
+                            <constraint firstItem="Vgv-8x-ShM" firstAttribute="top" secondItem="OI6-y0-ECo" secondAttribute="bottom" constant="-301" id="7fu-nl-uHZ"/>
+                            <constraint firstItem="Vgv-8x-ShM" firstAttribute="top" secondItem="5TG-3d-Ryy" secondAttribute="topMargin" id="ILG-m6-vRb"/>
+                            <constraint firstItem="YAg-vH-x7X" firstAttribute="leading" secondItem="OI6-y0-ECo" secondAttribute="leading" id="PEA-A9-s1I"/>
+                            <constraint firstItem="Vgv-8x-ShM" firstAttribute="leading" secondItem="5TG-3d-Ryy" secondAttribute="leadingMargin" constant="-20" id="TET-iK-ILE"/>
+                            <constraint firstItem="paY-6n-yI6" firstAttribute="centerX" secondItem="OI6-y0-ECo" secondAttribute="centerX" id="Zw3-4S-Y4R"/>
+                            <constraint firstItem="tfQ-f9-VPR" firstAttribute="top" secondItem="Vgv-8x-ShM" secondAttribute="bottom" id="adv-uH-Rdi"/>
+                            <constraint firstItem="OI6-y0-ECo" firstAttribute="centerX" secondItem="5TG-3d-Ryy" secondAttribute="centerX" id="eca-nK-DRG"/>
+                            <constraint firstItem="8RB-N4-Ibw" firstAttribute="top" secondItem="OI6-y0-ECo" secondAttribute="bottom" constant="24" id="jUW-b7-lX1"/>
+                            <constraint firstItem="YAg-vH-x7X" firstAttribute="top" secondItem="OI6-y0-ECo" secondAttribute="bottom" constant="26" id="pPJ-nk-KYs"/>
+                            <constraint firstItem="8RB-N4-Ibw" firstAttribute="trailing" secondItem="OI6-y0-ECo" secondAttribute="trailing" id="vP9-yD-aRu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vgv-8x-ShM" secondAttribute="trailing" constant="-20" id="wTX-hj-vQK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wxy-kQ-ZKF"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnPhoto" destination="OI6-y0-ECo" id="ire-mP-hXV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eJN-o3-Ccx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1681" y="265"/>
+        </scene>
+        <!--Capture Profile Photo View Controller-->
+        <scene sceneID="zoc-QL-bL6">
+            <objects>
+                <viewController id="fK4-OS-unM" customClass="CaptureProfilePhotoViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dED-NW-tu9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Afg-1x-MU0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bGW-g1-HWY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-image" translatesAutoresizingMaskIntoConstraints="NO" id="Wir-MF-jeT">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YqN-WY-wzc">
+                                <rect key="frame" x="-4" y="65" width="328" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Nsr-bw-AFq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-l3-YQy">
+                                <rect key="frame" x="8" y="425" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="fnk-bd-iqV"/>
+                                    <constraint firstAttribute="height" constant="70" id="xnU-Rr-kUH"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="gallery-icon-black"/>
+                                <connections>
+                                    <action selector="fromGallery:" destination="fK4-OS-unM" eventType="touchUpInside" id="ica-9A-UJ5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KP-FS-wiT">
+                                <rect key="frame" x="100" y="400" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="DeD-3g-RMv"/>
+                                    <constraint firstAttribute="width" constant="120" id="yfe-CU-LQK"/>
+                                </constraints>
+                                <state key="normal" title="Capture" backgroundImage="capture-icon-black">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="fK4-OS-unM" eventType="touchUpInside" id="M5X-eH-V4s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3U-c8-kBY">
+                                <rect key="frame" x="238" y="28" width="79" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="RsO-xb-1VX"/>
+                                    <constraint firstAttribute="height" constant="25" id="deU-V6-MtM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadPhoto:" destination="fK4-OS-unM" eventType="touchUpInside" id="90w-y1-oeL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqD-f7-XCa">
+                                <rect key="frame" x="20" y="25" width="69" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E31-sA-sfj"/>
+                                    <constraint firstAttribute="width" constant="69" id="hFN-0g-V4l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="KBD-mw-upR" kind="unwind" unwindAction="unwindToThisViewController2:" id="Y18-ob-2Od"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="OHR-nN-s25">
+                                <rect key="frame" x="150" y="30" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuH-bD-0SG">
+                                <rect key="frame" x="242" y="425" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="h6q-fo-f4y"/>
+                                    <constraint firstAttribute="height" constant="70" id="qqo-rp-5hn"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="rotate-camera-icon-black"/>
+                                <connections>
+                                    <action selector="switchCamera:" destination="fK4-OS-unM" eventType="touchUpInside" id="TTl-OU-hQd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9KP-FS-wiT" firstAttribute="top" secondItem="YqN-WY-wzc" secondAttribute="bottom" constant="16" id="19E-VS-9RK"/>
+                            <constraint firstItem="YqN-WY-wzc" firstAttribute="top" secondItem="iqD-f7-XCa" secondAttribute="bottom" constant="10" id="2tm-C0-Ete"/>
+                            <constraint firstItem="I3U-c8-kBY" firstAttribute="leading" secondItem="Wir-MF-jeT" secondAttribute="trailing" constant="-86" id="3Ko-nn-Vbl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wir-MF-jeT" secondAttribute="trailing" constant="-20" id="6LM-ER-yRz"/>
+                            <constraint firstItem="YqN-WY-wzc" firstAttribute="centerX" secondItem="bGW-g1-HWY" secondAttribute="centerX" id="6x8-3K-04g"/>
+                            <constraint firstItem="PuH-bD-0SG" firstAttribute="top" secondItem="YqN-WY-wzc" secondAttribute="bottom" constant="33" id="7DS-XG-gVM"/>
+                            <constraint firstItem="YqN-WY-wzc" firstAttribute="centerX" secondItem="bGW-g1-HWY" secondAttribute="centerX" id="9xG-bc-QLY"/>
+                            <constraint firstItem="Wir-MF-jeT" firstAttribute="top" secondItem="iqD-f7-XCa" secondAttribute="bottom" constant="-55" id="D3q-fr-vcX"/>
+                            <constraint firstItem="9KP-FS-wiT" firstAttribute="top" secondItem="YqN-WY-wzc" secondAttribute="bottom" constant="35" id="GqF-eA-X59"/>
+                            <constraint firstItem="PuH-bD-0SG" firstAttribute="leading" secondItem="9KP-FS-wiT" secondAttribute="trailing" constant="22" id="NCh-l1-TsO"/>
+                            <constraint firstItem="Wir-MF-jeT" firstAttribute="top" secondItem="OHR-nN-s25" secondAttribute="bottom" constant="-50" id="PvY-BD-8rl"/>
+                            <constraint firstItem="YqN-WY-wzc" firstAttribute="leading" secondItem="Wir-MF-jeT" secondAttribute="trailing" constant="-304" id="Qtt-s7-TCi"/>
+                            <constraint firstItem="9KP-FS-wiT" firstAttribute="centerX" secondItem="bGW-g1-HWY" secondAttribute="centerX" id="Yki-Bb-SoT"/>
+                            <constraint firstItem="Afg-1x-MU0" firstAttribute="top" secondItem="Wir-MF-jeT" secondAttribute="bottom" id="cFn-9b-WB3"/>
+                            <constraint firstItem="cqi-l3-YQy" firstAttribute="top" secondItem="YqN-WY-wzc" secondAttribute="bottom" constant="33" id="flz-R6-xOZ"/>
+                            <constraint firstItem="Wir-MF-jeT" firstAttribute="centerY" secondItem="bGW-g1-HWY" secondAttribute="centerY" id="gVr-Pz-Nux"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YqN-WY-wzc" secondAttribute="trailing" constant="-20" id="hgp-Ss-h2b"/>
+                            <constraint firstItem="Wir-MF-jeT" firstAttribute="top" secondItem="bGW-g1-HWY" secondAttribute="topMargin" id="ibo-5M-MRI"/>
+                            <constraint firstItem="YqN-WY-wzc" firstAttribute="leading" secondItem="bGW-g1-HWY" secondAttribute="leadingMargin" constant="-20" id="mgp-Ae-ewi"/>
+                            <constraint firstItem="Wir-MF-jeT" firstAttribute="top" secondItem="I3U-c8-kBY" secondAttribute="bottom" constant="-53" id="mtr-1f-x0m"/>
+                            <constraint firstItem="cqi-l3-YQy" firstAttribute="centerY" secondItem="9KP-FS-wiT" secondAttribute="centerY" id="nP5-Uq-Erl"/>
+                            <constraint firstItem="Wir-MF-jeT" firstAttribute="centerX" secondItem="bGW-g1-HWY" secondAttribute="centerX" id="pU7-nt-gXy"/>
+                            <constraint firstItem="Wir-MF-jeT" firstAttribute="leading" secondItem="iqD-f7-XCa" secondAttribute="trailing" constant="-93" id="pwr-QZ-05S"/>
+                            <constraint firstItem="9KP-FS-wiT" firstAttribute="leading" secondItem="cqi-l3-YQy" secondAttribute="trailing" constant="22" id="waI-E3-oAH"/>
+                            <constraint firstItem="OHR-nN-s25" firstAttribute="centerX" secondItem="bGW-g1-HWY" secondAttribute="centerX" id="xnm-GE-Fgj"/>
+                            <constraint firstItem="PuH-bD-0SG" firstAttribute="centerY" secondItem="9KP-FS-wiT" secondAttribute="centerY" id="z5o-VV-TFL"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6x8-3K-04g"/>
+                                <exclude reference="Qtt-s7-TCi"/>
+                                <exclude reference="19E-VS-9RK"/>
+                                <exclude reference="flz-R6-xOZ"/>
+                                <exclude reference="7DS-XG-gVM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="OHR-nN-s25" id="ZyC-56-AjD"/>
+                        <outlet property="btnCancel" destination="iqD-f7-XCa" id="lpW-3C-Dv0"/>
+                        <outlet property="btnGallery" destination="cqi-l3-YQy" id="nXp-Te-2b1"/>
+                        <outlet property="btnUpload" destination="I3U-c8-kBY" id="vjg-3J-oTB"/>
+                        <outlet property="imageView" destination="YqN-WY-wzc" id="Ucc-V8-tZN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hCD-Oe-zpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KBD-mw-upR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2046" y="265"/>
+        </scene>
+        <!--Profile Photo Zoom Controller-->
+        <scene sceneID="abL-wO-tuG">
+            <objects>
+                <viewController title="Profile Photo Zoom Controller" id="3EL-cp-TrY" customClass="ZoomPhotoViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T7k-zd-hTs"/>
+                        <viewControllerLayoutGuide type="bottom" id="MXv-pT-Nb4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z7b-wT-lEc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-image" translatesAutoresizingMaskIntoConstraints="NO" id="jt2-Vu-Ouy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xk3-q1-w9W">
+                                <rect key="frame" x="-4" y="58" width="328" height="510"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3EL-cp-TrY" id="tKP-h8-72B"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOB-56-SsJ">
+                                <rect key="frame" x="7" y="20" width="80" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="ptV-ij-RlK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="L5c-tC-yH0" kind="unwind" unwindAction="unwindToThisViewController:" id="PHJ-Zc-rC1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xk3-q1-w9W" firstAttribute="top" secondItem="YOB-56-SsJ" secondAttribute="bottom" constant="15" id="22L-09-mDi"/>
+                            <constraint firstItem="jt2-Vu-Ouy" firstAttribute="leading" secondItem="z7b-wT-lEc" secondAttribute="leading" id="BAK-NP-x2u"/>
+                            <constraint firstItem="YOB-56-SsJ" firstAttribute="top" secondItem="T7k-zd-hTs" secondAttribute="bottom" id="BTl-Jw-Cv9"/>
+                            <constraint firstItem="MXv-pT-Nb4" firstAttribute="top" secondItem="xk3-q1-w9W" secondAttribute="bottom" id="Brt-IK-cea"/>
+                            <constraint firstItem="jt2-Vu-Ouy" firstAttribute="centerX" secondItem="xk3-q1-w9W" secondAttribute="centerX" id="Lzz-ns-VXc"/>
+                            <constraint firstItem="xk3-q1-w9W" firstAttribute="leading" secondItem="z7b-wT-lEc" secondAttribute="leadingMargin" constant="-20" id="Nzh-d3-1OY"/>
+                            <constraint firstItem="YOB-56-SsJ" firstAttribute="leading" secondItem="z7b-wT-lEc" secondAttribute="leadingMargin" constant="-9" id="dig-qm-fET"/>
+                            <constraint firstItem="xk3-q1-w9W" firstAttribute="centerX" secondItem="z7b-wT-lEc" secondAttribute="centerX" id="hNw-dU-sDv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xk3-q1-w9W" secondAttribute="trailing" constant="-20" id="oC8-ES-oDS"/>
+                            <constraint firstItem="jt2-Vu-Ouy" firstAttribute="top" secondItem="z7b-wT-lEc" secondAttribute="top" id="rYo-ll-flf"/>
+                            <constraint firstItem="jt2-Vu-Ouy" firstAttribute="bottom" secondItem="MXv-pT-Nb4" secondAttribute="top" id="tvd-8R-zUL"/>
+                            <constraint firstItem="xk3-q1-w9W" firstAttribute="top" secondItem="z7b-wT-lEc" secondAttribute="top" constant="58" id="y3J-z0-IuO"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="mScrollView" destination="xk3-q1-w9W" id="b6L-da-k0S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fgf-7m-t1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="L5c-tC-yH0" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1681" y="949"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background-image" width="60" height="60"/>
+        <image name="camera-icon-black" width="48" height="48"/>
+        <image name="capture-icon-black" width="48" height="48"/>
+        <image name="gallery-icon-black" width="48" height="48"/>
         <image name="home-icon-black-small" width="24" height="24"/>
         <image name="location-icon-black-small" width="24" height="24"/>
+        <image name="no-profile-photo-yet" width="170" height="170"/>
         <image name="peers-icon-black-small" width="24" height="24"/>
         <image name="profile-icon-black-small" width="24" height="24"/>
+        <image name="rotate-camera-icon-black" width="48" height="49"/>
     </resources>
 </document>
