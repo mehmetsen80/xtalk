@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D8685CBD1BE7BF880041817E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CBC1BE7BF880041817E /* AppDelegate.swift */; };
+		D8685CBF1BE7BF880041817E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CBE1BE7BF880041817E /* ViewController.swift */; };
+		D8685CC21BE7BF880041817E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8685CC01BE7BF880041817E /* Main.storyboard */; };
+		D8685CC41BE7BF880041817E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8685CC31BE7BF880041817E /* Assets.xcassets */; };
+		D8685CC71BE7BF880041817E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8685CC51BE7BF880041817E /* LaunchScreen.storyboard */; };
+		D8685CD21BE7BF890041817E /* xtalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CD11BE7BF890041817E /* xtalkTests.swift */; };
+		D8685CDD1BE7BF890041817E /* xtalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CDC1BE7BF890041817E /* xtalkUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8685CCE1BE7BF890041817E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8685CB11BE7BF880041817E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8685CB81BE7BF880041817E;
+			remoteInfo = xtalk;
+		};
+		D8685CD91BE7BF890041817E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8685CB11BE7BF880041817E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8685CB81BE7BF880041817E;
+			remoteInfo = xtalk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D8685CB91BE7BF880041817E /* xtalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xtalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8685CBC1BE7BF880041817E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8685CBE1BE7BF880041817E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8685CC11BE7BF880041817E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D8685CC31BE7BF880041817E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8685CC61BE7BF880041817E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D8685CC81BE7BF880041817E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8685CCD1BE7BF890041817E /* xtalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xtalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8685CD11BE7BF890041817E /* xtalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xtalkTests.swift; sourceTree = "<group>"; };
+		D8685CD31BE7BF890041817E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8685CD81BE7BF890041817E /* xtalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xtalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8685CDC1BE7BF890041817E /* xtalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xtalkUITests.swift; sourceTree = "<group>"; };
+		D8685CDE1BE7BF890041817E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8685CB61BE7BF880041817E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8685CCA1BE7BF890041817E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8685CD51BE7BF890041817E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8685CB01BE7BF880041817E = {
+			isa = PBXGroup;
+			children = (
+				D8685CBB1BE7BF880041817E /* xtalk */,
+				D8685CD01BE7BF890041817E /* xtalkTests */,
+				D8685CDB1BE7BF890041817E /* xtalkUITests */,
+				D8685CBA1BE7BF880041817E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8685CBA1BE7BF880041817E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8685CB91BE7BF880041817E /* xtalk.app */,
+				D8685CCD1BE7BF890041817E /* xtalkTests.xctest */,
+				D8685CD81BE7BF890041817E /* xtalkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8685CBB1BE7BF880041817E /* xtalk */ = {
+			isa = PBXGroup;
+			children = (
+				D8685CBC1BE7BF880041817E /* AppDelegate.swift */,
+				D8685CBE1BE7BF880041817E /* ViewController.swift */,
+				D8685CC01BE7BF880041817E /* Main.storyboard */,
+				D8685CC31BE7BF880041817E /* Assets.xcassets */,
+				D8685CC51BE7BF880041817E /* LaunchScreen.storyboard */,
+				D8685CC81BE7BF880041817E /* Info.plist */,
+			);
+			path = xtalk;
+			sourceTree = "<group>";
+		};
+		D8685CD01BE7BF890041817E /* xtalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8685CD11BE7BF890041817E /* xtalkTests.swift */,
+				D8685CD31BE7BF890041817E /* Info.plist */,
+			);
+			path = xtalkTests;
+			sourceTree = "<group>";
+		};
+		D8685CDB1BE7BF890041817E /* xtalkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D8685CDC1BE7BF890041817E /* xtalkUITests.swift */,
+				D8685CDE1BE7BF890041817E /* Info.plist */,
+			);
+			path = xtalkUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8685CB81BE7BF880041817E /* xtalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8685CE11BE7BF890041817E /* Build configuration list for PBXNativeTarget "xtalk" */;
+			buildPhases = (
+				D8685CB51BE7BF880041817E /* Sources */,
+				D8685CB61BE7BF880041817E /* Frameworks */,
+				D8685CB71BE7BF880041817E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = xtalk;
+			productName = xtalk;
+			productReference = D8685CB91BE7BF880041817E /* xtalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8685CCC1BE7BF890041817E /* xtalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8685CE41BE7BF890041817E /* Build configuration list for PBXNativeTarget "xtalkTests" */;
+			buildPhases = (
+				D8685CC91BE7BF890041817E /* Sources */,
+				D8685CCA1BE7BF890041817E /* Frameworks */,
+				D8685CCB1BE7BF890041817E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8685CCF1BE7BF890041817E /* PBXTargetDependency */,
+			);
+			name = xtalkTests;
+			productName = xtalkTests;
+			productReference = D8685CCD1BE7BF890041817E /* xtalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D8685CD71BE7BF890041817E /* xtalkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8685CE71BE7BF890041817E /* Build configuration list for PBXNativeTarget "xtalkUITests" */;
+			buildPhases = (
+				D8685CD41BE7BF890041817E /* Sources */,
+				D8685CD51BE7BF890041817E /* Frameworks */,
+				D8685CD61BE7BF890041817E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8685CDA1BE7BF890041817E /* PBXTargetDependency */,
+			);
+			name = xtalkUITests;
+			productName = xtalkUITests;
+			productReference = D8685CD81BE7BF890041817E /* xtalkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8685CB11BE7BF880041817E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Mehmet Sen";
+				TargetAttributes = {
+					D8685CB81BE7BF880041817E = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					D8685CCC1BE7BF890041817E = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = D8685CB81BE7BF880041817E;
+					};
+					D8685CD71BE7BF890041817E = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = D8685CB81BE7BF880041817E;
+					};
+				};
+			};
+			buildConfigurationList = D8685CB41BE7BF880041817E /* Build configuration list for PBXProject "xtalk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8685CB01BE7BF880041817E;
+			productRefGroup = D8685CBA1BE7BF880041817E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8685CB81BE7BF880041817E /* xtalk */,
+				D8685CCC1BE7BF890041817E /* xtalkTests */,
+				D8685CD71BE7BF890041817E /* xtalkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8685CB71BE7BF880041817E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8685CC71BE7BF880041817E /* LaunchScreen.storyboard in Resources */,
+				D8685CC41BE7BF880041817E /* Assets.xcassets in Resources */,
+				D8685CC21BE7BF880041817E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8685CCB1BE7BF890041817E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8685CD61BE7BF890041817E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8685CB51BE7BF880041817E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8685CBF1BE7BF880041817E /* ViewController.swift in Sources */,
+				D8685CBD1BE7BF880041817E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8685CC91BE7BF890041817E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8685CD21BE7BF890041817E /* xtalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8685CD41BE7BF890041817E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8685CDD1BE7BF890041817E /* xtalkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8685CCF1BE7BF890041817E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8685CB81BE7BF880041817E /* xtalk */;
+			targetProxy = D8685CCE1BE7BF890041817E /* PBXContainerItemProxy */;
+		};
+		D8685CDA1BE7BF890041817E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8685CB81BE7BF880041817E /* xtalk */;
+			targetProxy = D8685CD91BE7BF890041817E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8685CC01BE7BF880041817E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8685CC11BE7BF880041817E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D8685CC51BE7BF880041817E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8685CC61BE7BF880041817E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8685CDF1BE7BF890041817E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D8685CE01BE7BF890041817E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8685CE21BE7BF890041817E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = xtalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = oyvent.xtalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D8685CE31BE7BF890041817E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = xtalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = oyvent.xtalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D8685CE51BE7BF890041817E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = xtalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = oyvent.xtalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/xtalk.app/xtalk";
+			};
+			name = Debug;
+		};
+		D8685CE61BE7BF890041817E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = xtalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = oyvent.xtalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/xtalk.app/xtalk";
+			};
+			name = Release;
+		};
+		D8685CE81BE7BF890041817E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = xtalkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = oyvent.xtalkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = xtalk;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D8685CE91BE7BF890041817E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = xtalkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = oyvent.xtalkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = xtalk;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8685CB41BE7BF880041817E /* Build configuration list for PBXProject "xtalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8685CDF1BE7BF890041817E /* Debug */,
+				D8685CE01BE7BF890041817E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8685CE11BE7BF890041817E /* Build configuration list for PBXNativeTarget "xtalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8685CE21BE7BF890041817E /* Debug */,
+				D8685CE31BE7BF890041817E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D8685CE41BE7BF890041817E /* Build configuration list for PBXNativeTarget "xtalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8685CE51BE7BF890041817E /* Debug */,
+				D8685CE61BE7BF890041817E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D8685CE71BE7BF890041817E /* Build configuration list for PBXNativeTarget "xtalkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8685CE81BE7BF890041817E /* Debug */,
+				D8685CE91BE7BF890041817E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8685CB11BE7BF880041817E /* Project object */;
+}
