@@ -54,7 +54,6 @@ class ProfileAPIController{
                 
             } catch {
                 //if nil
-                //let resultString = NSString(data: data, encoding: NSUTF8StringEncoding)
                 print("Fetch failed: \((error as NSError).localizedDescription)")
             }
         }
