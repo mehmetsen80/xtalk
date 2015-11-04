@@ -21,13 +21,7 @@ class MainViewController: UIViewController {
     }
     
     
-    @IBAction func jump2Login(sender: AnyObject) {
-        
-        let loginView: LoginViewController  = self.storyboard?.instantiateViewControllerWithIdentifier("loginView") as! LoginViewController
-        
-        //1st way
-        self.presentViewController(loginView, animated:true, completion:nil)
-    }
+    
 
 
 }
