@@ -14,18 +14,20 @@
 		D8685CC71BE7BF880041817E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8685CC51BE7BF880041817E /* LaunchScreen.storyboard */; };
 		D8685CD21BE7BF890041817E /* xtalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CD11BE7BF890041817E /* xtalkTests.swift */; };
 		D8685CDD1BE7BF890041817E /* xtalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CDC1BE7BF890041817E /* xtalkUITests.swift */; };
-		D8685CEC1BE7D5BF0041817E /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CEB1BE7D5BF0041817E /* UIImageExtension.swift */; settings = {ASSET_TAGS = (); }; };
-		D8685CEF1BE7D6200041817E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
-		D8685CF21BE7D6910041817E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF11BE7D6910041817E /* RoundedButton.swift */; settings = {ASSET_TAGS = (); }; };
-		D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF31BE7DA320041817E /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D87D91C41BE800C400CABE91 /* ProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D87EF8CE1BE90B660067DEC4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D8A16D321BE8113300EDEB0B /* ZoomPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D311BE8113300EDEB0B /* ZoomPhotoViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D8A16D341BE8131F00EDEB0B /* MutableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */; settings = {ASSET_TAGS = (); }; };
-		D8A16D361BE8159900EDEB0B /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D351BE8159900EDEB0B /* CircleButton.swift */; settings = {ASSET_TAGS = (); }; };
-		D8A16D391BE816BD00EDEB0B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D381BE816BD00EDEB0B /* Profile.swift */; settings = {ASSET_TAGS = (); }; };
-		D8A16D3C1BE8174300EDEB0B /* ProfileAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D3B1BE8174300EDEB0B /* ProfileAPIController.swift */; settings = {ASSET_TAGS = (); }; };
+		D8685CEC1BE7D5BF0041817E /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CEB1BE7D5BF0041817E /* UIImageExtension.swift */; };
+		D8685CEF1BE7D6200041817E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */; };
+		D8685CF21BE7D6910041817E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF11BE7D6910041817E /* RoundedButton.swift */; };
+		D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF31BE7DA320041817E /* LoginViewController.swift */; };
+		D87D91C41BE800C400CABE91 /* ProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */; };
+		D87EF8CE1BE90B660067DEC4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */; };
+		D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */; };
+		D8A16D321BE8113300EDEB0B /* ZoomPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D311BE8113300EDEB0B /* ZoomPhotoViewController.swift */; };
+		D8A16D341BE8131F00EDEB0B /* MutableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */; };
+		D8A16D361BE8159900EDEB0B /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D351BE8159900EDEB0B /* CircleButton.swift */; };
+		D8A16D391BE816BD00EDEB0B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D381BE816BD00EDEB0B /* Profile.swift */; };
+		D8A16D3C1BE8174300EDEB0B /* ProfileAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D3B1BE8174300EDEB0B /* ProfileAPIController.swift */; };
+		D8DF09E81BFA49E900619D2E /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF09E71BFA49E900619D2E /* UIImageViewExtension.swift */; };
+		D8DF09EC1BFA517700619D2E /* PhotoSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF09EB1BFA517700619D2E /* PhotoSourceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		D8A16D351BE8159900EDEB0B /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		D8A16D381BE816BD00EDEB0B /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		D8A16D3B1BE8174300EDEB0B /* ProfileAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAPIController.swift; sourceTree = "<group>"; };
+		D8DF09E71BFA49E900619D2E /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		D8DF09EB1BFA517700619D2E /* PhotoSourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSourceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +127,6 @@
 			children = (
 				D8A16D3A1BE8172800EDEB0B /* api */,
 				D8A16D371BE816A900EDEB0B /* model */,
-				D8685CF01BE7D66A0041817E /* button */,
 				D8685CED1BE7D5DB0041817E /* custom */,
 				D8685CEA1BE7D5850041817E /* extension */,
 				D8685CBC1BE7BF880041817E /* AppDelegate.swift */,
@@ -131,6 +134,7 @@
 				D8685CF31BE7DA320041817E /* LoginViewController.swift */,
 				D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */,
 				D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */,
+				D8DF09EB1BFA517700619D2E /* PhotoSourceViewController.swift */,
 				D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */,
 				D8A16D311BE8113300EDEB0B /* ZoomPhotoViewController.swift */,
 				D8685CC01BE7BF880041817E /* Main.storyboard */,
@@ -164,6 +168,7 @@
 			children = (
 				D8685CEB1BE7D5BF0041817E /* UIImageExtension.swift */,
 				D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */,
+				D8DF09E71BFA49E900619D2E /* UIImageViewExtension.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -171,18 +176,10 @@
 		D8685CED1BE7D5DB0041817E /* custom */ = {
 			isa = PBXGroup;
 			children = (
-				D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */,
+				D8DF09E41BFA35C900619D2E /* tabbar */,
+				D8DF09E31BFA35BF00619D2E /* button */,
 			);
 			name = custom;
-			sourceTree = "<group>";
-		};
-		D8685CF01BE7D66A0041817E /* button */ = {
-			isa = PBXGroup;
-			children = (
-				D8685CF11BE7D6910041817E /* RoundedButton.swift */,
-				D8A16D351BE8159900EDEB0B /* CircleButton.swift */,
-			);
-			name = button;
 			sourceTree = "<group>";
 		};
 		D8A16D371BE816A900EDEB0B /* model */ = {
@@ -199,6 +196,23 @@
 				D8A16D3B1BE8174300EDEB0B /* ProfileAPIController.swift */,
 			);
 			name = api;
+			sourceTree = "<group>";
+		};
+		D8DF09E31BFA35BF00619D2E /* button */ = {
+			isa = PBXGroup;
+			children = (
+				D8685CF11BE7D6910041817E /* RoundedButton.swift */,
+				D8A16D351BE8159900EDEB0B /* CircleButton.swift */,
+			);
+			name = button;
+			sourceTree = "<group>";
+		};
+		D8DF09E41BFA35C900619D2E /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */,
+			);
+			name = tabbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +349,7 @@
 				D8A16D391BE816BD00EDEB0B /* Profile.swift in Sources */,
 				D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */,
 				D8685CBF1BE7BF880041817E /* MainViewController.swift in Sources */,
+				D8DF09EC1BFA517700619D2E /* PhotoSourceViewController.swift in Sources */,
 				D8A16D321BE8113300EDEB0B /* ZoomPhotoViewController.swift in Sources */,
 				D87D91C41BE800C400CABE91 /* ProfilePhotoViewController.swift in Sources */,
 				D8685CF21BE7D6910041817E /* RoundedButton.swift in Sources */,
@@ -345,6 +360,7 @@
 				D87EF8CE1BE90B660067DEC4 /* ProfileViewController.swift in Sources */,
 				D8A16D341BE8131F00EDEB0B /* MutableExtension.swift in Sources */,
 				D8685CEC1BE7D5BF0041817E /* UIImageExtension.swift in Sources */,
+				D8DF09E81BFA49E900619D2E /* UIImageViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

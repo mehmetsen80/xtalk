@@ -260,7 +260,7 @@ class CaptureProfilePhotoViewController: UIViewController, UINavigationControlle
             }
         }
         
-        let filename = "oyvent-photo.jpg"
+        let filename = "xtlak-profile-photo.jpg"
         
         let mimetype = "image/jpg"
         
@@ -473,13 +473,13 @@ class CaptureProfilePhotoViewController: UIViewController, UINavigationControlle
     @IBAction func uploadPhoto(sender: AnyObject) {
         
         let userID: Double = NSUserDefaults.standardUserDefaults().doubleForKey("userID")
-        let url = NSURL(string:"http://oyvent.com/ajax/PhotoHandlerWeb.php")
+        let url = NSURL(string:"http://oyvent.com/ajax/PhotoHandlerMobile.php")
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
         
         
         let param = [
-            "processType" : "UPLOADIOSPHOTO",
+            "processType" : "UPLOADPROFILEPHOTO",
             "userID" : "\(userID)"
         ]
         
@@ -515,7 +515,6 @@ class CaptureProfilePhotoViewController: UIViewController, UINavigationControlle
             
             
             
-            //var err: NSError?
             do{
                 let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers  ) as? NSDictionary
                 
@@ -535,9 +534,6 @@ class CaptureProfilePhotoViewController: UIViewController, UINavigationControlle
                         self.btnUpload.enabled = true
                     }else{
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        //                        self.txtAddCaption.text = ""
-                        //                        self.imageView.image = nil;
-                        
                         //display alert message with confirmation
                         let myAlert = UIAlertController(title: "Confirmation", message: "Post added successfully!", preferredStyle: UIAlertControllerStyle.Alert)
                         myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction) in

@@ -36,6 +36,8 @@ class ProfilePhotoViewController: UIViewController, ProfileAPIControllerProtocol
             userApi = ProfileAPIController(delegate: self)
             userApi?.searchPhoto(pkUserID!)
         }
+        
+    
     }
 
     override func didReceiveMemoryWarning() {
