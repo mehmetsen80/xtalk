@@ -28,8 +28,6 @@ class ProfileViewController: UIViewController, ProfileAPIControllerProtocol, UIP
 
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         pkUserID =  NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
-        //to do: remove this later
-        pkUserID = 12
         fullname = NSUserDefaults.standardUserDefaults().stringForKey("xtalk_fullname")!
         
         //get the profile photo
@@ -97,6 +95,7 @@ class ProfileViewController: UIViewController, ProfileAPIControllerProtocol, UIP
     
     //returned from the photo source type screen
     @IBAction func unwindFromSelectPhotoSource(segue: UIStoryboardSegue) {
+        print("returned from select photo source screen")
         //update profile photo again
         self.userApi?.searchPhoto(self.pkUserID)
     }

@@ -472,7 +472,10 @@ class CaptureProfilePhotoViewController: UIViewController, UINavigationControlle
     
     @IBAction func uploadPhoto(sender: AnyObject) {
         
-        let userID: Double = NSUserDefaults.standardUserDefaults().doubleForKey("userID")
+        //get stored user id
+        let userID: Double! = NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
+
+        
         let url = NSURL(string:"http://oyvent.com/ajax/PhotoHandlerMobile.php")
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"

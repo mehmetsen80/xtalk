@@ -41,7 +41,6 @@ class LoginViewController: UIViewController {
                 return
             }
             
-            
             do {
                 let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as? NSDictionary
                 
@@ -56,7 +55,7 @@ class LoginViewController: UIViewController {
                 
                 dispatch_async(dispatch_get_main_queue(),{
                     
-                    
+                    //if invalid useer
                     if(!resultValue){
                         //display alert message with confirmation
                         let myAlert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -65,8 +64,7 @@ class LoginViewController: UIViewController {
                         self.presentViewController(myAlert, animated: true, completion: nil)
                         
                     }else{
-                        
-                        //store data
+                        //store data on device
                         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "xtalk_isloggedin")
                         NSUserDefaults.standardUserDefaults().setObject(userid, forKey:"xtalk_userid")
                         NSUserDefaults.standardUserDefaults().setObject(fullname, forKey:"xtalk_fullname")

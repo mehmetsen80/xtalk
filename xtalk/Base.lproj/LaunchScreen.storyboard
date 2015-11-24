@@ -29,8 +29,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="talk insanely local" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GU-i8-txQ">
-                                <rect key="frame" x="62" y="273" width="196" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="talk extremely local" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GU-i8-txQ">
+                                <rect key="frame" x="56" y="273" width="208" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gnx-n7-KjZ"/>
                                 </constraints>
@@ -42,12 +42,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2GU-i8-txQ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="46" id="3vc-Ky-ayj"/>
+                            <constraint firstItem="2GU-i8-txQ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="40" id="3vc-Ky-ayj"/>
                             <constraint firstItem="3sZ-XD-E7s" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="132" id="71z-cl-OjL"/>
                             <constraint firstItem="Azy-vB-StI" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="814-Kx-Bhp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3sZ-XD-E7s" secondAttribute="trailing" constant="41" id="QOC-pz-gGf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Azy-vB-StI" secondAttribute="trailing" constant="-20" id="QzG-yy-0zp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2GU-i8-txQ" secondAttribute="trailing" constant="46" id="dcu-75-Guz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2GU-i8-txQ" secondAttribute="trailing" constant="40" id="dcu-75-Guz"/>
                             <constraint firstItem="2GU-i8-txQ" firstAttribute="top" secondItem="3sZ-XD-E7s" secondAttribute="bottom" constant="80" id="eMN-5j-FaK"/>
                             <constraint firstItem="Azy-vB-StI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="g6E-LU-ppk"/>
                             <constraint firstItem="Azy-vB-StI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="spc-4w-0ls"/>
