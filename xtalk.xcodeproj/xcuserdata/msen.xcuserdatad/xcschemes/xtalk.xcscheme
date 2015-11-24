@@ -17,7 +17,7 @@
                BlueprintIdentifier = "D8685CB81BE7BF880041817E"
                BuildableName = "xtalk.app"
                BlueprintName = "xtalk"
-               ReferencedContainer = "container:xtalk.xcodeproj">
+               ReferencedContainer = "container:+.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "D8685CCC1BE7BF890041817E"
                BuildableName = "xtalkTests.xctest"
                BlueprintName = "xtalkTests"
-               ReferencedContainer = "container:xtalk.xcodeproj">
+               ReferencedContainer = "container:+.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "D8685CD71BE7BF890041817E"
                BuildableName = "xtalkUITests.xctest"
                BlueprintName = "xtalkUITests"
-               ReferencedContainer = "container:xtalk.xcodeproj">
+               ReferencedContainer = "container:+.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "D8685CB81BE7BF880041817E"
             BuildableName = "xtalk.app"
             BlueprintName = "xtalk"
-            ReferencedContainer = "container:xtalk.xcodeproj">
+            ReferencedContainer = "container:+.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "D8685CB81BE7BF880041817E"
             BuildableName = "xtalk.app"
             BlueprintName = "xtalk"
-            ReferencedContainer = "container:xtalk.xcodeproj">
+            ReferencedContainer = "container:+.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "D8685CB81BE7BF880041817E"
             BuildableName = "xtalk.app"
             BlueprintName = "xtalk"
-            ReferencedContainer = "container:xtalk.xcodeproj">
+            ReferencedContainer = "container:+.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

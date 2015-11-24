@@ -47,10 +47,20 @@ class PhotoSourceViewController: UIViewController {
     
     
     @IBAction func capturePhoto(sender: AnyObject) {
+        
+        //take photo
+        let capturePhotoView: CaptureProfilePhotoViewController = self.storyboard!.instantiateViewControllerWithIdentifier("capturePhotoView") as! CaptureProfilePhotoViewController
+        capturePhotoView.launchType = PhotoSource.Camera.description
+        self.presentViewController(capturePhotoView, animated:true, completion:nil)
     }
     
    
     @IBAction func fromGallery(sender: AnyObject) {
+        
+        //the same capture screen but opens gallery directly at first launch
+        let galleryPhotoView: CaptureProfilePhotoViewController = self.storyboard!.instantiateViewControllerWithIdentifier("capturePhotoView") as! CaptureProfilePhotoViewController
+        galleryPhotoView.launchType = PhotoSource.Gallery.description
+        self.presentViewController(galleryPhotoView, animated:true, completion:nil)
     }
     
 }

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:xtalk.xcodeproj">
+      location = "self:/Users/msen/Documents/xtalk/xtalk.xcodeproj">
    </FileRef>
 </Workspace>

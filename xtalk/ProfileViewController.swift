@@ -97,8 +97,7 @@ class ProfileViewController: UIViewController, ProfileAPIControllerProtocol, UIP
     
     //returned from the photo source type screen
     @IBAction func unwindFromSelectPhotoSource(segue: UIStoryboardSegue) {
-        print("returned from select photo screen")
-        //keep only this
+        //update profile photo again
         self.userApi?.searchPhoto(self.pkUserID)
     }
     
