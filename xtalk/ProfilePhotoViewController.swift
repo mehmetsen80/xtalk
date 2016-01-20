@@ -23,21 +23,21 @@ class ProfilePhotoViewController: UIViewController, ProfileAPIControllerProtocol
         super.viewDidLoad()
 
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
         //get user id from saved disk
-        pkUserID =  NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
+        self.pkUserID =  NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
+        loadProfilePhoto()
         
-        //just for test purposes
-        pkUserID = 12 //to do: remove this test id in prod
-        
-        //if user id is ok then get profile photo
-        if(pkUserID != nil){
-            print("pkUserID: \(pkUserID)")
-            userApi = ProfileAPIController(delegate: self)
-            userApi?.searchPhoto(pkUserID!)
-        }
-        
+    }
     
+    func loadProfilePhoto(){
+        //just for test purposes
+        self.pkUserID = 12 //to do: remove this test id in prod
+        //if user id is ok then get profile photo
+        if(self.pkUserID != nil){
+            print("pkUserID: \(self.pkUserID)")
+            userApi = ProfileAPIController(delegate: self)
+            userApi?.searchPhoto(self.pkUserID!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,7 +97,9 @@ class ProfilePhotoViewController: UIViewController, ProfileAPIControllerProtocol
     /*********************** end of go to the zoom photo screen *******************/
     
     //returned from  CaptureProfilePhotoViewController
-    @IBAction func unwindToThisViewController2(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToThisViewController2(segue: UIStoryboardSegue) {
+        loadProfilePhoto() //load profile
+    }
 
     
 

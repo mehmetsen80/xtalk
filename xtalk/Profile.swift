@@ -22,12 +22,12 @@ class Profile{
         
         let profile : Profile = Profile()
         //let's assign the returned results to our profile object
-        profile.pkUserID = allResults["PKUSERID"] as? Double
-        profile.fullName = allResults["FULLNAME"] as? String
-        profile.urlLarge = allResults["URLLARGE"] as? String ?? ""
-        profile.urlMedium = allResults["URLMEDIUM"] as? String ?? ""
-        profile.urlSmall = allResults["URLSMALL"] as? String ?? ""
-        profile.urlThumb = allResults["URLTHUMB"] as? String ?? ""
+        profile.pkUserID = allResults["userid"] as? Double
+        profile.fullName = allResults["fullname"] as? String
+        profile.urlLarge = allResults["urllarge"] as? String ?? ""
+        profile.urlMedium = allResults["urlmedium"] as? String ?? ""
+        profile.urlSmall = allResults["urlsmall"] as? String ?? ""
+        profile.urlThumb = allResults["urlthumb"] as? String ?? ""
         
         return profile;
     }

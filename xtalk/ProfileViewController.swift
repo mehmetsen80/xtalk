@@ -27,7 +27,9 @@ class ProfileViewController: UIViewController, ProfileAPIControllerProtocol, UIP
         super.viewDidLoad()
 
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        pkUserID =  NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
+        self.pkUserID =  NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
+        print("pkUserID \(pkUserID)")
+        
         fullname = NSUserDefaults.standardUserDefaults().stringForKey("xtalk_fullname")!
         
         //get the profile photo
@@ -100,7 +102,7 @@ class ProfileViewController: UIViewController, ProfileAPIControllerProtocol, UIP
         self.userApi?.searchPhoto(self.pkUserID)
     }
     
-    
+    //let's set the received profile variables into objects and fields
     func didReceiveProfileAPIResults(results:NSDictionary){
         
         
@@ -113,11 +115,11 @@ class ProfileViewController: UIViewController, ProfileAPIControllerProtocol, UIP
                 self.ismyprofile = profile.pkUserID == self.pkUserID ? true : false
          
                 /***************** get main profile photo  **************/
-                //if we have large profile picture
-                if(profile.urlLarge != ""){
+                //if we have medium profile picture
+                if(profile.urlMedium != ""){
                     // let's download it
-                    let imgURL: NSURL! = NSURL(string: profile.urlLarge!)
-                    self.zoomURL = profile.urlLarge! // we use that later in zoom to show the biggest photo
+                    let imgURL: NSURL! = NSURL(string: profile.urlMedium!)
+                    self.zoomURL = profile.urlLarge! // we use that later in zoom to show the largest photo
                     //lets' download profile photo
                     let session = NSURLSession.sharedSession()//session
                     let request: NSURLRequest = NSURLRequest(URL: imgURL!)//request
