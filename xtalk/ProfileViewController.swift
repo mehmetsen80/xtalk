@@ -116,9 +116,9 @@ class ProfileViewController: UIViewController, ProfileAPIControllerProtocol, UIP
          
                 /***************** get main profile photo  **************/
                 //if we have medium profile picture
-                if(profile.urlMedium != ""){
+                if(profile.urlSmall != ""){
                     // let's download it
-                    let imgURL: NSURL! = NSURL(string: profile.urlMedium!)
+                    let imgURL: NSURL! = NSURL(string: profile.urlSmall!)
                     self.zoomURL = profile.urlLarge! // we use that later in zoom to show the largest photo
                     //lets' download profile photo
                     let session = NSURLSession.sharedSession()//session
