@@ -13,16 +13,20 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtCity: UILabel!
+    
     var appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("let's trigger location update in AppDelegate")
-        //let's trigger location update in AppDelegate
-        appDelegate.locationManager.startUpdatingLocation()
-        
-        // Do any additional setup after loading the view.
+        //update city every 2 seconds, retrieved from AppDelegate
+        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "updateCity", userInfo: nil, repeats: true)
+    }
+    
+    //update city
+    func updateCity(){
+        txtCity.text = appDelegate.city
     }
 
     @IBAction func doLogin(sender: AnyObject) {

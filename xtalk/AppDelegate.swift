@@ -17,9 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var geoCoder: CLGeocoder!
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
+    var city: String?
    
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool{
         
         //first require to authorize location from user
         initLocationManger()
@@ -53,23 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        //locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        //locationManager.distanceFilter = 5000 //must move at least 5km
-        //locationManager.requestWhenInUseAuthorization() // locationManager.requestAlwaysAuthorization() also works
-        //self.locationManager.startUpdatingLocation()
-        //locationManager.startMonitoringSignificantLocationChanges()
-        
-        
-        //        if( CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse ||
-//            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedAlways){
-//                
-//                if self.locationManager.location != nil {
-//                    currentLocation = self.locationManager.location
-//                }
-//                
-//        }else {
-//            print("Location services are not enabled", terminator: "");
-//        }
     }
     
     //called shortly after CLLocationManager is initialized, that is why we also request authorization from here
@@ -78,10 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         switch status {
         case .NotDetermined:
             locationManager.requestAlwaysAuthorization() // locationManager.requestWhenInUseAuthorization() also works
-            //locationManager.requestWhenInUseAuthorization()
             break
-            //case .AuthorizedAlways:
-            //break;
         case .AuthorizedAlways:
             locationManager.startUpdatingLocation()
             locationManager.startMonitoringSignificantLocationChanges()
@@ -97,36 +78,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                             let placeArray = placemarks as [CLPlacemark]?
                             // Place details
                             let placeMark: CLPlacemark! = placeArray?[0]
-                            
-                            
+                        
                             // City
                             if let city = placeMark.addressDictionary?["City"] as? NSString {
-                                print(city)
-                                //self.locationManager.stopUpdatingLocation()
+                                //self.locationManager.stopUpdatingLocation()  // disable this if you don't want to stop updating
+                                self.city = city as String
                             }
                             
                             
                         }
                 })
             
-            
             }
             break
-            case .AuthorizedWhenInUse, .Restricted, .Denied:
+            case .AuthorizedWhenInUse, .Restricted, .Denied: //in case user does not choose Always, then force him
                 
                 //let's force the user to open app's Settings to set the location to 'Always'
                 let alertController = UIAlertController(title: "Location Access Disabled", message: "In order to use and notified about people near you, please open this app's settings and set location access to 'Always'.", preferredStyle: .Alert)
+                
+                //cancel action
                 let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel){ (action) in
-                    print("user refused to allow location, let's exit application")
-                    exit(0) // exit application
+                    print("user refused to allow location")
+                    //user refused to allow location
+                    let exitController = UIAlertController(title: "You disabled your location", message: "App exits now, to use the app next time, please allow your location!", preferredStyle: .Alert)
+                    let okController = UIAlertAction(title: "Ok", style: .Default){(action) in
+                        print("exit application")
+                        exit(0) // exit application
+                    }
+                    exitController.addAction(okController)
+                    
+                    self.window?.rootViewController?.presentViewController(exitController, animated: true, completion: nil)
+                
                 }
                 alertController.addAction(cancelAction)//add cancel action to the alert controller
+                
+                // open action
                 let openAction = UIAlertAction(title: "Open Settings", style: .Default){ (action) in
                     if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
                         UIApplication.sharedApplication().openURL(url)
                     }
                 }
                 alertController.addAction(openAction)//add open action to the alert controller
+                
+                //finally show the alert controller
                 self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
                 
                 break
