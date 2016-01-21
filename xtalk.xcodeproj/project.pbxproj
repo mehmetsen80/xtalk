@@ -18,6 +18,7 @@
 		D8685CEF1BE7D6200041817E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */; };
 		D8685CF21BE7D6910041817E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF11BE7D6910041817E /* RoundedButton.swift */; };
 		D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF31BE7DA320041817E /* LoginViewController.swift */; };
+		D873295D1C501EA2003B8058 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D873295C1C501EA2003B8058 /* CoreLocation.framework */; };
 		D87D91C41BE800C400CABE91 /* ProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */; };
 		D87EF8CE1BE90B660067DEC4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */; };
 		D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */; };
@@ -65,6 +66,7 @@
 		D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		D8685CF11BE7D6910041817E /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D8685CF31BE7DA320041817E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D873295C1C501EA2003B8058 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhotoViewController.swift; sourceTree = "<group>"; };
 		D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureProfilePhotoViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D873295D1C501EA2003B8058 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +108,7 @@
 		D8685CB01BE7BF880041817E = {
 			isa = PBXGroup;
 			children = (
+				D873295C1C501EA2003B8058 /* CoreLocation.framework */,
 				D8685CBB1BE7BF880041817E /* xtalk */,
 				D8685CD01BE7BF890041817E /* xtalkTests */,
 				D8685CDB1BE7BF890041817E /* xtalkUITests */,

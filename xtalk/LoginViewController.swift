@@ -8,15 +8,20 @@
 
 import UIKit
 
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    
+    var appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("let's trigger location update in AppDelegate")
+        //let's trigger location update in AppDelegate
+        appDelegate.locationManager.startUpdatingLocation()
+        
         // Do any additional setup after loading the view.
     }
 
