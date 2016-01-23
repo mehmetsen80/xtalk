@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     //2) NSLocationAlwaysUsageDescription
     func initLocationManger(){
         
-        geoCoder = CLGeocoder() //first time initialization of geoCoder for later purposes
+        geoCoder = CLGeocoder() //first time initialization of geoCoder
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             locationManager.requestAlwaysAuthorization() // locationManager.requestWhenInUseAuthorization() also works
             break
         case .AuthorizedAlways:
-            locationManager.startUpdatingLocation()
+            locationManager.startUpdatingLocation() // start updating location
             locationManager.startMonitoringSignificantLocationChanges()
             currentLocation = self.locationManager.location != nil ? self.locationManager.location : nil
             if currentLocation != nil{
