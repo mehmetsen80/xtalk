@@ -1,73 +1,78 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  xtalk
 //
-//  Created by Mehmet Sen on 11/2/15.
-//  Copyright © 2015 Mehmet Sen. All rights reserved.
+//  Created by Mehmet Sen on 1/26/16.
+//  Copyright © 2016 Mehmet Sen. All rights reserved.
 //
 
 import UIKit
 
+class RegisterViewController: UIViewController {
 
-class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var txtFullName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    @IBOutlet weak var txtCity: UILabel!
     
-    var appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //update city every 2 seconds, retrieved from AppDelegate
-        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "updateCity", userInfo: nil, repeats: true)
+        // Do any additional setup after loading the view.
     }
     
-    //update city
-    func updateCity(){
-        txtCity.text = appDelegate.city
-    }
-
-    @IBAction func doLogin(sender: AnyObject) {
-        let email = txtEmail.text!
-        let password = txtPassword.text!
-        //if empty
-        if(email.isEmpty || password.isEmpty) { return }
+    
+    @IBAction func doSignup(sender: AnyObject) {
+        
+        let fullname = txtFullName.text
+        let email = txtEmail.text
+        let password = txtPassword.text
+        
+        //check for empty fields
+        if(fullname!.isEmpty || email!.isEmpty || password!.isEmpty){
+            //display alert message
+            displayAlertMessage("All fields are required!")
+            return
+        }
         
         //generate url, call json and display the result
         let myUrl = NSURL(string:"http://52.89.115.179/ajax/")
         let request = NSMutableURLRequest(URL: myUrl!)
         request.HTTPMethod = "POST";
-        let postString = "processType=LOGINUSER&email=\(email)&password=\(password)"
+        let postString = "email=\(email)&password=\(password)&fullname=\(fullname)&processType=SIGNUPUSER"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        //self.myActivityIndicator.startAnimating()
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-            data, response, error  in
+            data, response, error in
             
             if(error != nil){
-                print("error=\(error)")
+                print("error=\(error)", terminator: "")
                 return
             }
             
-            do {
+            do{
                 let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as? NSDictionary
                 
-                
+                print("resultValue=\(parseJSON)")
                 let resultValue: Bool = parseJSON?["success"] as! Bool!
-                //print("resultValue=\(parseJSON)")
                 let message:String? = parseJSON?["message"] as! String?
                 
-                
+
                 dispatch_async(dispatch_get_main_queue(),{
                     
-                    //if invalid useer
+                    //self.myActivityIndicator.stopAnimating()
+                    
                     if(!resultValue){
                         //display alert message with confirmation
                         let myAlert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+                        
                         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
                         myAlert.addAction(okAction)
                         self.presentViewController(myAlert, animated: true, completion: nil)
+                        
+                        //self.displayAlertMessage(message!)
                         
                     }else{
                         //let's continue to retrieve remaining user data
@@ -77,7 +82,7 @@ class LoginViewController: UIViewController {
                         let signupdate:String? = parseJSON?["signupdate"] as! String?
                         let isadmin:Bool = parseJSON?["isadmin"] as! Bool!
                         
-                        //store data on device
+                        //store data
                         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "xtalk_isloggedin")
                         NSUserDefaults.standardUserDefaults().setObject(userid, forKey:"xtalk_userid")
                         NSUserDefaults.standardUserDefaults().setObject(fullname, forKey:"xtalk_fullname")
@@ -86,25 +91,49 @@ class LoginViewController: UIViewController {
                         NSUserDefaults.standardUserDefaults().setBool(isadmin, forKey: "xtalk_isadmin")
                         NSUserDefaults.standardUserDefaults().synchronize()
                         
+                        
+                        //display alert message with confirmation
+                        let myAlert = UIAlertController(title: "Alert", message: "Welcome to Xtalk!", preferredStyle: UIAlertControllerStyle.Alert)
+                        let okAction = UIAlertAction(title: "Let's Start!", style: UIAlertActionStyle.Default){ action in
+                            self.dismissViewControllerAnimated(true, completion:nil)
+                        }
+                        
+                        myAlert.addAction(okAction)
+                        self.presentViewController(myAlert, animated: true, completion: nil)
+                        
                         //if successfull login, then jump to MainViewController
                         let mainTabBar: UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("mainTabBar") as! UITabBarController
                         self.presentViewController(mainTabBar, animated:true, completion:nil)
-                        
                     }
+                    
                 })
                 
-            } catch let error {
+                
+                
+                
+            }catch let error {
                 print("Something went wrong! \(error)")
             }
+            
         }
         
+        
         task.resume()
-
+        
+        
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func displayAlertMessage(alertMessage:String){
+        //shortcut alert message
+        let myAlert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        myAlert.addAction(okAction)
+        self.presentViewController(myAlert, animated:true, completion:nil)
     }
     
 

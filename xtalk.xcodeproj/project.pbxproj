@@ -21,6 +21,7 @@
 		D873295D1C501EA2003B8058 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D873295C1C501EA2003B8058 /* CoreLocation.framework */; };
 		D873295F1C5137F3003B8058 /* PeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D873295E1C5137F3003B8058 /* PeersViewController.swift */; };
 		D87329611C513A31003B8058 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87329601C513A31003B8058 /* PlacesViewController.swift */; };
+		D87329631C582BDA003B8058 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87329621C582BDA003B8058 /* RegisterViewController.swift */; };
 		D87D91C41BE800C400CABE91 /* ProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */; };
 		D87EF8CE1BE90B660067DEC4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */; };
 		D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */; };
@@ -71,6 +72,7 @@
 		D873295C1C501EA2003B8058 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D873295E1C5137F3003B8058 /* PeersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeersViewController.swift; sourceTree = "<group>"; };
 		D87329601C513A31003B8058 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		D87329621C582BDA003B8058 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhotoViewController.swift; sourceTree = "<group>"; };
 		D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureProfilePhotoViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				D8685CBC1BE7BF880041817E /* AppDelegate.swift */,
 				D8685CBE1BE7BF880041817E /* MainViewController.swift */,
 				D8685CF31BE7DA320041817E /* LoginViewController.swift */,
+				D87329621C582BDA003B8058 /* RegisterViewController.swift */,
 				D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */,
 				D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */,
 				D873295E1C5137F3003B8058 /* PeersViewController.swift */,
@@ -359,6 +362,7 @@
 				D873295F1C5137F3003B8058 /* PeersViewController.swift in Sources */,
 				D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */,
 				D8A16D391BE816BD00EDEB0B /* Profile.swift in Sources */,
+				D87329631C582BDA003B8058 /* RegisterViewController.swift in Sources */,
 				D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */,
 				D8685CBF1BE7BF880041817E /* MainViewController.swift in Sources */,
 				D8DF09EC1BFA517700619D2E /* PhotoSourceViewController.swift in Sources */,
