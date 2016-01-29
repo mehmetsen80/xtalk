@@ -25,12 +25,12 @@ class RegisterViewController: UIViewController {
     
     @IBAction func doSignup(sender: AnyObject) {
         
-        let fullname = txtFullName.text
-        let email = txtEmail.text
-        let password = txtPassword.text
+        let fullname = txtFullName.text!
+        let email = txtEmail.text!
+        let password = txtPassword.text!
         
         //check for empty fields
-        if(fullname!.isEmpty || email!.isEmpty || password!.isEmpty){
+        if(fullname.isEmpty || email.isEmpty || password.isEmpty){
             //display alert message
             displayAlertMessage("All fields are required!")
             return
@@ -55,7 +55,7 @@ class RegisterViewController: UIViewController {
             do{
                 let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as? NSDictionary
                 
-                print("resultValue=\(parseJSON)")
+                //print("resultValue=\(parseJSON)")
                 let resultValue: Bool = parseJSON?["success"] as! Bool!
                 let message:String? = parseJSON?["message"] as! String?
                 
@@ -66,13 +66,13 @@ class RegisterViewController: UIViewController {
                     
                     if(!resultValue){
                         //display alert message with confirmation
-                        let myAlert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+//                        let myAlert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+//                        
+//                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+//                        myAlert.addAction(okAction)
+//                        self.presentViewController(myAlert, animated: true, completion: nil)
                         
-                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-                        myAlert.addAction(okAction)
-                        self.presentViewController(myAlert, animated: true, completion: nil)
-                        
-                        //self.displayAlertMessage(message!)
+                        self.displayAlertMessage(message!)
                         
                     }else{
                         //let's continue to retrieve remaining user data
@@ -95,15 +95,18 @@ class RegisterViewController: UIViewController {
                         //display alert message with confirmation
                         let myAlert = UIAlertController(title: "Alert", message: "Welcome to Xtalk!", preferredStyle: UIAlertControllerStyle.Alert)
                         let okAction = UIAlertAction(title: "Let's Start!", style: UIAlertActionStyle.Default){ action in
-                            self.dismissViewControllerAnimated(true, completion:nil)
+                            
+                            //if successfull login, then jump to MainViewController
+                            let mainTabBar: UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("mainTabBar") as! UITabBarController
+                            self.presentViewController(mainTabBar, animated:true, completion:nil)
+                            
                         }
                         
                         myAlert.addAction(okAction)
                         self.presentViewController(myAlert, animated: true, completion: nil)
                         
-                        //if successfull login, then jump to MainViewController
-                        let mainTabBar: UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("mainTabBar") as! UITabBarController
-                        self.presentViewController(mainTabBar, animated:true, completion:nil)
+                        
+                        
                     }
                     
                 })
