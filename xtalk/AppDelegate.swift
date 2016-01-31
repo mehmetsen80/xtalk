@@ -37,9 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             window!.rootViewController = mainTabBar
             window!.makeKeyAndVisible()
         }else{
-            //use not logged in, so go to the login screen
-            let loginViewController = mainStoryboard.instantiateViewControllerWithIdentifier("loginView") as! LoginViewController
-            window!.rootViewController = loginViewController
+            //use not logged in, so go to the entry screen
+            let entryViewController = mainStoryboard.instantiateViewControllerWithIdentifier("entryView") as! EntryViewController
+            window!.rootViewController = entryViewController
             window!.makeKeyAndVisible()
         }
         

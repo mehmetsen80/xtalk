@@ -1,14 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lLx-XA-7ME">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vuE-dZ-zkB">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Welcome to Xtalk-->
+        <scene sceneID="7jP-ff-eyP">
+            <objects>
+                <viewController storyboardIdentifier="entryView" title="Welcome to Xtalk" id="vuE-dZ-zkB" customClass="EntryViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bgb-5Q-r1a"/>
+                        <viewControllerLayoutGuide type="bottom" id="DRr-hB-81X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rvI-pP-R1T">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-image" translatesAutoresizingMaskIntoConstraints="NO" id="gMn-cd-vao">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47K-7J-xGD" customClass="RoundedButton" customModule="xtalk" customModuleProvider="target">
+                                <rect key="frame" x="28" y="172" width="265" height="38"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.53439750519999996" blue="0.50818330460000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="4b5-rA-QZG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="New account with Xtalk">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Qzh-y7-xEu" kind="show" id="l2l-Zb-Ite"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtv-T4-2SR" customClass="RoundedButton" customModule="xtalk" customModuleProvider="target">
+                                <rect key="frame" x="28" y="120" width="265" height="38"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.53439750519999996" blue="0.50818330460000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Utf-1S-ft3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Log in with Xtalk">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Aax-MC-J6E" kind="presentation" id="GDW-bW-Grp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZn-0h-73P">
+                                <rect key="frame" x="21" y="20" width="280" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ZFB-Sc-oUf"/>
+                                    <constraint firstAttribute="width" constant="280" id="txG-O4-2n0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Xtalk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Peb-bn-awg">
+                                <rect key="frame" x="28" y="86" width="150" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="HL2-z9-udS"/>
+                                    <constraint firstAttribute="height" constant="21" id="uTE-Xj-dy8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qtv-T4-2SR" firstAttribute="top" secondItem="Bgb-5Q-r1a" secondAttribute="bottom" constant="100" id="11Y-C5-r8G"/>
+                            <constraint firstItem="47K-7J-xGD" firstAttribute="leading" secondItem="qtv-T4-2SR" secondAttribute="leading" id="EGf-c5-tzJ"/>
+                            <constraint firstItem="47K-7J-xGD" firstAttribute="top" secondItem="qtv-T4-2SR" secondAttribute="bottom" constant="14" id="JCQ-Dq-jLD"/>
+                            <constraint firstItem="47K-7J-xGD" firstAttribute="trailing" secondItem="qtv-T4-2SR" secondAttribute="trailing" id="NAA-qP-Rke"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gMn-cd-vao" secondAttribute="trailing" constant="-20" id="O8b-YD-sUI"/>
+                            <constraint firstItem="gMn-cd-vao" firstAttribute="top" secondItem="rvI-pP-R1T" secondAttribute="topMargin" id="UhR-hL-0jG"/>
+                            <constraint firstItem="qtv-T4-2SR" firstAttribute="trailing" secondItem="rvI-pP-R1T" secondAttribute="trailingMargin" constant="-11" id="YCQ-TO-Ax5"/>
+                            <constraint firstItem="CZn-0h-73P" firstAttribute="top" secondItem="Bgb-5Q-r1a" secondAttribute="bottom" id="cRp-al-S9w"/>
+                            <constraint firstItem="qtv-T4-2SR" firstAttribute="leading" secondItem="rvI-pP-R1T" secondAttribute="leadingMargin" constant="12" id="eZP-c1-PJF"/>
+                            <constraint firstItem="DRr-hB-81X" firstAttribute="top" secondItem="gMn-cd-vao" secondAttribute="bottom" id="g05-3q-JmM"/>
+                            <constraint firstItem="CZn-0h-73P" firstAttribute="centerX" secondItem="qtv-T4-2SR" secondAttribute="centerX" id="hNE-3W-cYe"/>
+                            <constraint firstItem="Peb-bn-awg" firstAttribute="leading" secondItem="qtv-T4-2SR" secondAttribute="leading" id="rbQ-Vi-rbB"/>
+                            <constraint firstItem="qtv-T4-2SR" firstAttribute="top" secondItem="Peb-bn-awg" secondAttribute="bottom" constant="13" id="wXv-kv-4uN"/>
+                            <constraint firstItem="gMn-cd-vao" firstAttribute="leading" secondItem="rvI-pP-R1T" secondAttribute="leadingMargin" constant="-20" id="z4i-Fg-h65"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnLogin" destination="qtv-T4-2SR" id="D31-qM-6xw"/>
+                        <outlet property="btnSignup" destination="47K-7J-xGD" id="jDc-yJ-E6z"/>
+                        <outlet property="txtCity" destination="CZn-0h-73P" id="yKK-eW-HyY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fmD-bd-rOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="291"/>
+        </scene>
+        <!--Login Xtalk-->
         <scene sceneID="QdY-4V-6N5">
             <objects>
-                <viewController storyboardIdentifier="loginView" id="Aax-MC-J6E" customClass="LoginViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginView" title="Login Xtalk" id="Aax-MC-J6E" customClass="LoginViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Hd-XZ-LtJ"/>
                         <viewControllerLayoutGuide type="bottom" id="1fQ-zL-Yax"/>
@@ -21,7 +114,7 @@
                                 <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NRV-bo-ez8">
-                                <rect key="frame" x="31" y="73" width="258" height="38"/>
+                                <rect key="frame" x="27" y="128" width="266" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="D3l-N6-5Tj"/>
                                 </constraints>
@@ -29,7 +122,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Km0-1d-paB">
-                                <rect key="frame" x="31" y="121" width="258" height="38"/>
+                                <rect key="frame" x="27" y="176" width="266" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="Zcd-TW-Edc"/>
                                 </constraints>
@@ -37,11 +130,12 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s66-n4-clG" customClass="RoundedButton" customModule="xtalk" customModuleProvider="target">
-                                <rect key="frame" x="31" y="174" width="258" height="38"/>
+                                <rect key="frame" x="27" y="229" width="266" height="38"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.53439750519999996" blue="0.50818330460000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="ENb-Se-bPI"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Login Now">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -49,63 +143,62 @@
                                     <action selector="doLogin:" destination="Aax-MC-J6E" eventType="touchUpInside" id="bhK-Zf-M9I"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fi-om-5vr">
-                                <rect key="frame" x="31" y="37" width="108" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Xtalk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fi-om-5vr">
+                                <rect key="frame" x="27" y="97" width="108" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="GZi-8E-EUp"/>
-                                    <constraint firstAttribute="width" constant="108" id="gMb-lc-llU"/>
+                                    <constraint firstAttribute="width" constant="108" id="5jT-cj-yQF"/>
+                                    <constraint firstAttribute="height" constant="21" id="JPX-Os-qas"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndD-BV-t9G">
-                                <rect key="frame" x="27" y="480" width="266" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="oZq-FI-YVP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thf-nv-XxB" customClass="RoundedButton" customModule="xtalk" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thf-nv-XxB" customClass="CircleButton" customModule="xtalk" customModuleProvider="target">
                                 <rect key="frame" x="31" y="510" width="258" height="38"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.53439750519999996" blue="0.50818330460000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="2Qg-Hp-ehl"/>
                                     <constraint firstAttribute="width" constant="258" id="xIm-0w-GC4"/>
                                 </constraints>
-                                <state key="normal" title="No Account? Register Now!">
+                                <state key="normal" title="Go back to main screen!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Qzh-y7-xEu" kind="presentation" id="9PF-yF-qyD"/>
+                                    <segue destination="vuE-dZ-zkB" kind="presentation" id="sJc-BM-Drz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndD-BV-t9G">
+                                <rect key="frame" x="23" y="39" width="274" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="l4Z-QN-9of"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Km0-1d-paB" firstAttribute="top" secondItem="NRV-bo-ez8" secondAttribute="bottom" constant="10" id="6j5-BN-K4Y"/>
-                            <constraint firstItem="NRV-bo-ez8" firstAttribute="leading" secondItem="8hy-lx-xKu" secondAttribute="leadingMargin" constant="15" id="7x8-n5-V6h"/>
+                            <constraint firstItem="NRV-bo-ez8" firstAttribute="leading" secondItem="8hy-lx-xKu" secondAttribute="leadingMargin" constant="11" id="7x8-n5-V6h"/>
+                            <constraint firstItem="ndD-BV-t9G" firstAttribute="leading" secondItem="8hy-lx-xKu" secondAttribute="leadingMargin" constant="7" id="85b-d6-upR"/>
+                            <constraint firstItem="8Fi-om-5vr" firstAttribute="leading" secondItem="8hy-lx-xKu" secondAttribute="leadingMargin" constant="11" id="8iy-pO-bPi"/>
                             <constraint firstItem="Km0-1d-paB" firstAttribute="trailing" secondItem="NRV-bo-ez8" secondAttribute="trailing" id="BVp-Oo-oya"/>
                             <constraint firstItem="s66-n4-clG" firstAttribute="top" secondItem="Km0-1d-paB" secondAttribute="bottom" constant="15" id="IxU-4h-SlY"/>
                             <constraint firstItem="Thf-nv-XxB" firstAttribute="centerX" secondItem="8hy-lx-xKu" secondAttribute="centerX" id="Klc-9x-EqW"/>
                             <constraint firstItem="s66-n4-clG" firstAttribute="centerX" secondItem="8hy-lx-xKu" secondAttribute="centerX" id="MEg-ZE-y5Z"/>
-                            <constraint firstItem="NRV-bo-ez8" firstAttribute="top" secondItem="2Hd-XZ-LtJ" secondAttribute="bottom" constant="53" id="TGl-i0-L5O"/>
+                            <constraint firstItem="NRV-bo-ez8" firstAttribute="top" secondItem="2Hd-XZ-LtJ" secondAttribute="bottom" constant="108" id="TGl-i0-L5O"/>
                             <constraint firstItem="1fQ-zL-Yax" firstAttribute="top" secondItem="yFl-Oi-Ecc" secondAttribute="bottom" id="VC9-VW-FkS"/>
                             <constraint firstItem="s66-n4-clG" firstAttribute="width" secondItem="Km0-1d-paB" secondAttribute="width" id="W58-x7-0P2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NRV-bo-ez8" secondAttribute="trailing" constant="15" id="WKh-tB-GBd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NRV-bo-ez8" secondAttribute="trailing" constant="11" id="WKh-tB-GBd"/>
                             <constraint firstItem="1fQ-zL-Yax" firstAttribute="top" secondItem="Thf-nv-XxB" secondAttribute="bottom" constant="20" id="YPJ-wT-Tek"/>
                             <constraint firstItem="yFl-Oi-Ecc" firstAttribute="top" secondItem="8hy-lx-xKu" secondAttribute="topMargin" id="aYY-WJ-NdM"/>
                             <constraint firstItem="yFl-Oi-Ecc" firstAttribute="leading" secondItem="8hy-lx-xKu" secondAttribute="leadingMargin" constant="-20" id="ajV-RS-ou3"/>
-                            <constraint firstItem="8Fi-om-5vr" firstAttribute="leading" secondItem="NRV-bo-ez8" secondAttribute="leading" id="awf-QR-tcI"/>
-                            <constraint firstItem="ndD-BV-t9G" firstAttribute="top" secondItem="yFl-Oi-Ecc" secondAttribute="bottom" constant="-88" id="bm2-0z-M94"/>
                             <constraint firstItem="Km0-1d-paB" firstAttribute="leading" secondItem="NRV-bo-ez8" secondAttribute="leading" id="dFd-h6-SXo"/>
+                            <constraint firstItem="NRV-bo-ez8" firstAttribute="top" secondItem="8Fi-om-5vr" secondAttribute="bottom" constant="10" id="jib-JE-ZCa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yFl-Oi-Ecc" secondAttribute="trailing" constant="-20" id="lWr-eN-nVo"/>
-                            <constraint firstItem="ndD-BV-t9G" firstAttribute="leading" secondItem="8hy-lx-xKu" secondAttribute="leadingMargin" constant="11" id="nch-Kq-aBb"/>
-                            <constraint firstItem="ndD-BV-t9G" firstAttribute="centerX" secondItem="8hy-lx-xKu" secondAttribute="centerX" id="qeM-gd-fx7"/>
-                            <constraint firstItem="NRV-bo-ez8" firstAttribute="top" secondItem="8Fi-om-5vr" secondAttribute="bottom" constant="15" id="sr2-nt-ktk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ndD-BV-t9G" secondAttribute="trailing" constant="11" id="tpF-RY-PZe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ndD-BV-t9G" secondAttribute="trailing" constant="7" id="vVN-8B-uSY"/>
+                            <constraint firstItem="yFl-Oi-Ecc" firstAttribute="top" secondItem="ndD-BV-t9G" secondAttribute="bottom" constant="-60" id="vrX-TT-bed"/>
                             <constraint firstItem="NRV-bo-ez8" firstAttribute="centerX" secondItem="8hy-lx-xKu" secondAttribute="centerX" id="wox-on-NrC"/>
                         </constraints>
                     </view>
@@ -118,12 +211,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzS-V2-Gzh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518" y="279"/>
+            <point key="canvasLocation" x="557" y="-50"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Sign up Xtalk-->
         <scene sceneID="niF-0R-Sy4">
             <objects>
-                <viewController id="Qzh-y7-xEu" customClass="RegisterViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signupView" title="Sign up Xtalk" id="Qzh-y7-xEu" customClass="RegisterViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b7A-6Y-mJT"/>
                         <viewControllerLayoutGuide type="bottom" id="lAU-z0-Pcy"/>
@@ -136,7 +229,7 @@
                                 <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qA5-kE-Jux">
-                                <rect key="frame" x="31" y="119" width="258" height="38"/>
+                                <rect key="frame" x="31" y="158" width="258" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="BsF-6U-INR"/>
                                 </constraints>
@@ -144,7 +237,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rYd-AM-tIe">
-                                <rect key="frame" x="31" y="167" width="258" height="38"/>
+                                <rect key="frame" x="31" y="206" width="258" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="7di-l1-4y1"/>
                                 </constraints>
@@ -152,11 +245,12 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcy-gd-Fuf" customClass="RoundedButton" customModule="xtalk" customModuleProvider="target">
-                                <rect key="frame" x="31" y="219" width="258" height="38"/>
+                                <rect key="frame" x="31" y="258" width="258" height="38"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.53439750519999996" blue="0.50818330460000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="b5b-36-nUV"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Register Now">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -164,60 +258,61 @@
                                     <action selector="doSignup:" destination="Qzh-y7-xEu" eventType="touchUpInside" id="O1e-kZ-Ab5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwi-2b-ssZ">
-                                <rect key="frame" x="31" y="40" width="108" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up Xtalk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwi-2b-ssZ">
+                                <rect key="frame" x="31" y="79" width="120" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="B4D-Dr-0Mi"/>
-                                    <constraint firstAttribute="width" constant="108" id="eBY-GT-iye"/>
+                                    <constraint firstAttribute="width" constant="120" id="eBY-GT-iye"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yzn-fE-aAN">
-                                <rect key="frame" x="31" y="70" width="258" height="38"/>
+                                <rect key="frame" x="31" y="109" width="258" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="7Qu-Jg-a0i"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdn-xH-MlN">
-                                <rect key="frame" x="55" y="269" width="211" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxo-yg-qJm" customClass="CircleButton" customModule="xtalk" customModuleProvider="target">
+                                <rect key="frame" x="31" y="510" width="258" height="38"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.53439750519999996" blue="0.50818330460000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="UZL-ql-Mw7"/>
-                                    <constraint firstAttribute="width" constant="211" id="WzK-tP-za6"/>
+                                    <constraint firstAttribute="width" constant="258" id="Gw1-4f-59q"/>
+                                    <constraint firstAttribute="height" constant="38" id="WOr-pf-51F"/>
                                 </constraints>
-                                <state key="normal" title="Have account? Login Now!">
+                                <state key="normal" title="Go back to main screen!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Aax-MC-J6E" kind="presentation" id="FCS-GE-wvg"/>
+                                    <segue destination="vuE-dZ-zkB" kind="presentation" id="CD7-xf-0F9"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yzn-fE-aAN" firstAttribute="top" secondItem="Rwi-2b-ssZ" secondAttribute="bottom" constant="9" id="16q-z9-1p6"/>
-                            <constraint firstItem="mdn-xH-MlN" firstAttribute="centerX" secondItem="sBd-zi-mWt" secondAttribute="centerX" id="6w5-cW-3Xd"/>
                             <constraint firstItem="yzn-fE-aAN" firstAttribute="centerX" secondItem="sBd-zi-mWt" secondAttribute="centerX" id="7na-cr-fGC"/>
-                            <constraint firstItem="Iay-sc-HXs" firstAttribute="leading" secondItem="Rwi-2b-ssZ" secondAttribute="trailing" constant="-143" id="E48-cZ-1up"/>
+                            <constraint firstItem="Iay-sc-HXs" firstAttribute="leading" secondItem="Rwi-2b-ssZ" secondAttribute="trailing" constant="-155" id="E48-cZ-1up"/>
                             <constraint firstItem="Zcy-gd-Fuf" firstAttribute="top" secondItem="rYd-AM-tIe" secondAttribute="bottom" constant="14" id="FT1-wy-GOn"/>
                             <constraint firstItem="Zcy-gd-Fuf" firstAttribute="width" secondItem="rYd-AM-tIe" secondAttribute="width" id="HGR-qF-2y7"/>
+                            <constraint firstItem="kxo-yg-qJm" firstAttribute="top" secondItem="Iay-sc-HXs" secondAttribute="bottom" constant="-58" id="MCp-Bo-3O5"/>
                             <constraint firstItem="rYd-AM-tIe" firstAttribute="leading" secondItem="qA5-kE-Jux" secondAttribute="leading" id="NNM-kd-MvP"/>
                             <constraint firstItem="Zcy-gd-Fuf" firstAttribute="leading" secondItem="rYd-AM-tIe" secondAttribute="leading" id="O8K-ge-aXf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Iay-sc-HXs" secondAttribute="trailing" constant="-20" id="STt-WN-hfC"/>
                             <constraint firstItem="lAU-z0-Pcy" firstAttribute="top" secondItem="Iay-sc-HXs" secondAttribute="bottom" id="TDg-1v-zM2"/>
                             <constraint firstItem="qA5-kE-Jux" firstAttribute="top" secondItem="yzn-fE-aAN" secondAttribute="bottom" constant="11" id="TRG-wF-jCT"/>
-                            <constraint firstItem="mdn-xH-MlN" firstAttribute="centerY" secondItem="sBd-zi-mWt" secondAttribute="centerY" id="VkD-ND-2XK"/>
                             <constraint firstItem="Iay-sc-HXs" firstAttribute="top" secondItem="sBd-zi-mWt" secondAttribute="topMargin" id="WQm-MX-xlh"/>
+                            <constraint firstItem="kxo-yg-qJm" firstAttribute="centerX" secondItem="sBd-zi-mWt" secondAttribute="centerX" id="X2G-yA-oZz"/>
                             <constraint firstItem="qA5-kE-Jux" firstAttribute="leading" secondItem="yzn-fE-aAN" secondAttribute="leading" id="gbT-CL-BnS"/>
                             <constraint firstItem="qA5-kE-Jux" firstAttribute="width" secondItem="yzn-fE-aAN" secondAttribute="width" id="hPG-el-xyY"/>
                             <constraint firstItem="rYd-AM-tIe" firstAttribute="top" secondItem="qA5-kE-Jux" secondAttribute="bottom" constant="10" id="heq-t7-bPb"/>
                             <constraint firstItem="rYd-AM-tIe" firstAttribute="width" secondItem="qA5-kE-Jux" secondAttribute="width" id="nUB-zj-E1N"/>
                             <constraint firstItem="yzn-fE-aAN" firstAttribute="leading" secondItem="Rwi-2b-ssZ" secondAttribute="leading" id="vd8-qM-3Kr"/>
                             <constraint firstItem="Iay-sc-HXs" firstAttribute="leading" secondItem="sBd-zi-mWt" secondAttribute="leadingMargin" constant="-20" id="xtw-gZ-WgF"/>
-                            <constraint firstItem="Iay-sc-HXs" firstAttribute="top" secondItem="Rwi-2b-ssZ" secondAttribute="bottom" constant="-61" id="ybs-IT-FcM"/>
+                            <constraint firstItem="Iay-sc-HXs" firstAttribute="top" secondItem="Rwi-2b-ssZ" secondAttribute="bottom" constant="-100" id="ybs-IT-FcM"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -229,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PY8-ve-TCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="963" y="279"/>
+            <point key="canvasLocation" x="557" y="631"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="r09-Yu-S6f">
@@ -823,4 +918,7 @@
         <image name="profile-icon-black-small" width="24" height="24"/>
         <image name="rotate-camera-icon-black" width="48" height="49"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="CD7-xf-0F9"/>
+    </inferredMetricsTieBreakers>
 </document>

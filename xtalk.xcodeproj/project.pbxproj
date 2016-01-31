@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		59A90C8C1C5DE0CF004F7F73 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A90C8B1C5DE0CF004F7F73 /* FBSDKCoreKit.framework */; };
 		59A90C8F1C5DE80C004F7F73 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A90C8E1C5DE80C004F7F73 /* FBSDKLoginKit.framework */; };
+		59A90C911C5E787A004F7F73 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A90C901C5E787A004F7F73 /* EntryViewController.swift */; };
 		D8685CBD1BE7BF880041817E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CBC1BE7BF880041817E /* AppDelegate.swift */; };
 		D8685CBF1BE7BF880041817E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CBE1BE7BF880041817E /* MainViewController.swift */; };
 		D8685CC21BE7BF880041817E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8685CC01BE7BF880041817E /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		59A90C8B1C5DE0CF004F7F73 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		59A90C8D1C5DE496004F7F73 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		59A90C8E1C5DE80C004F7F73 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		59A90C901C5E787A004F7F73 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		D8685CB91BE7BF880041817E /* xtalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xtalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8685CBC1BE7BF880041817E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8685CBE1BE7BF880041817E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				D8685CED1BE7D5DB0041817E /* custom */,
 				D8685CEA1BE7D5850041817E /* extension */,
 				D8685CBC1BE7BF880041817E /* AppDelegate.swift */,
+				59A90C901C5E787A004F7F73 /* EntryViewController.swift */,
 				D8685CBE1BE7BF880041817E /* MainViewController.swift */,
 				D8685CF31BE7DA320041817E /* LoginViewController.swift */,
 				D87329621C582BDA003B8058 /* RegisterViewController.swift */,
@@ -377,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D87329611C513A31003B8058 /* PlacesViewController.swift in Sources */,
+				59A90C911C5E787A004F7F73 /* EntryViewController.swift in Sources */,
 				D873295F1C5137F3003B8058 /* PeersViewController.swift in Sources */,
 				D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */,
 				D8A16D391BE816BD00EDEB0B /* Profile.swift in Sources */,

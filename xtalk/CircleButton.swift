@@ -21,7 +21,7 @@ class CircleButton: UIButton {
     
     func updateLayerProperties() {
         layer.masksToBounds = true
-        layer.cornerRadius = 120.0
+        layer.cornerRadius = 70.0
     }
 
 }
