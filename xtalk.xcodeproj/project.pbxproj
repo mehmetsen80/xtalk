@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59A90C8C1C5DE0CF004F7F73 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A90C8B1C5DE0CF004F7F73 /* FBSDKCoreKit.framework */; };
+		59A90C8F1C5DE80C004F7F73 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A90C8E1C5DE80C004F7F73 /* FBSDKLoginKit.framework */; };
 		D8685CBD1BE7BF880041817E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CBC1BE7BF880041817E /* AppDelegate.swift */; };
 		D8685CBF1BE7BF880041817E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CBE1BE7BF880041817E /* MainViewController.swift */; };
 		D8685CC21BE7BF880041817E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8685CC01BE7BF880041817E /* Main.storyboard */; };
@@ -52,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		59A90C8B1C5DE0CF004F7F73 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		59A90C8D1C5DE496004F7F73 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		59A90C8E1C5DE80C004F7F73 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D8685CB91BE7BF880041817E /* xtalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xtalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8685CBC1BE7BF880041817E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8685CBE1BE7BF880041817E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +96,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D873295D1C501EA2003B8058 /* CoreLocation.framework in Frameworks */,
+				59A90C8C1C5DE0CF004F7F73 /* FBSDKCoreKit.framework in Frameworks */,
+				59A90C8F1C5DE80C004F7F73 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59A90C8A1C5DE08D004F7F73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59A90C8E1C5DE80C004F7F73 /* FBSDKLoginKit.framework */,
+				59A90C8B1C5DE0CF004F7F73 /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8685CB01BE7BF880041817E = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +151,7 @@
 		D8685CBB1BE7BF880041817E /* xtalk */ = {
 			isa = PBXGroup;
 			children = (
+				59A90C8A1C5DE08D004F7F73 /* Frameworks */,
 				D8A16D3A1BE8172800EDEB0B /* api */,
 				D8A16D371BE816A900EDEB0B /* model */,
 				D8685CED1BE7D5DB0041817E /* custom */,
@@ -154,6 +171,7 @@
 				D8685CC31BE7BF880041817E /* Assets.xcassets */,
 				D8685CC51BE7BF880041817E /* LaunchScreen.storyboard */,
 				D8685CC81BE7BF880041817E /* Info.plist */,
+				59A90C8D1C5DE496004F7F73 /* Bridging-Header.h */,
 			);
 			path = xtalk;
 			sourceTree = "<group>";
@@ -518,10 +536,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/xtalk",
+				);
 				INFOPLIST_FILE = xtalk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = oyvent.xtalk;
+				PRODUCT_BUNDLE_IDENTIFIER = xtalk.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "xtalk/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -529,10 +552,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/xtalk",
+				);
 				INFOPLIST_FILE = xtalk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = oyvent.xtalk;
+				PRODUCT_BUNDLE_IDENTIFIER = xtalk.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "xtalk/Bridging-Header.h";
 			};
 			name = Release;
 		};

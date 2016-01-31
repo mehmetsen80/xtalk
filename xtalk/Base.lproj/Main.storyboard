@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lLx-XA-7ME">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lLx-XA-7ME">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -59,19 +59,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thf-nv-XxB">
-                                <rect key="frame" x="55" y="270" width="211" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="211" id="UhC-65-yUC"/>
-                                    <constraint firstAttribute="height" constant="27" id="taN-lM-vLP"/>
-                                </constraints>
-                                <state key="normal" title="No Account? Register Now!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Qzh-y7-xEu" kind="presentation" id="9PF-yF-qyD"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndD-BV-t9G">
                                 <rect key="frame" x="27" y="480" width="266" height="21"/>
                                 <constraints>
@@ -81,6 +68,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thf-nv-XxB" customClass="RoundedButton" customModule="xtalk" customModuleProvider="target">
+                                <rect key="frame" x="31" y="510" width="258" height="38"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.53439750519999996" blue="0.50818330460000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="2Qg-Hp-ehl"/>
+                                    <constraint firstAttribute="width" constant="258" id="xIm-0w-GC4"/>
+                                </constraints>
+                                <state key="normal" title="No Account? Register Now!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Qzh-y7-xEu" kind="presentation" id="9PF-yF-qyD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -88,12 +89,13 @@
                             <constraint firstItem="NRV-bo-ez8" firstAttribute="leading" secondItem="8hy-lx-xKu" secondAttribute="leadingMargin" constant="15" id="7x8-n5-V6h"/>
                             <constraint firstItem="Km0-1d-paB" firstAttribute="trailing" secondItem="NRV-bo-ez8" secondAttribute="trailing" id="BVp-Oo-oya"/>
                             <constraint firstItem="s66-n4-clG" firstAttribute="top" secondItem="Km0-1d-paB" secondAttribute="bottom" constant="15" id="IxU-4h-SlY"/>
+                            <constraint firstItem="Thf-nv-XxB" firstAttribute="centerX" secondItem="8hy-lx-xKu" secondAttribute="centerX" id="Klc-9x-EqW"/>
                             <constraint firstItem="s66-n4-clG" firstAttribute="centerX" secondItem="8hy-lx-xKu" secondAttribute="centerX" id="MEg-ZE-y5Z"/>
                             <constraint firstItem="NRV-bo-ez8" firstAttribute="top" secondItem="2Hd-XZ-LtJ" secondAttribute="bottom" constant="53" id="TGl-i0-L5O"/>
                             <constraint firstItem="1fQ-zL-Yax" firstAttribute="top" secondItem="yFl-Oi-Ecc" secondAttribute="bottom" id="VC9-VW-FkS"/>
-                            <constraint firstItem="Thf-nv-XxB" firstAttribute="centerX" secondItem="8hy-lx-xKu" secondAttribute="centerX" id="VxT-vh-KUg"/>
                             <constraint firstItem="s66-n4-clG" firstAttribute="width" secondItem="Km0-1d-paB" secondAttribute="width" id="W58-x7-0P2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NRV-bo-ez8" secondAttribute="trailing" constant="15" id="WKh-tB-GBd"/>
+                            <constraint firstItem="1fQ-zL-Yax" firstAttribute="top" secondItem="Thf-nv-XxB" secondAttribute="bottom" constant="20" id="YPJ-wT-Tek"/>
                             <constraint firstItem="yFl-Oi-Ecc" firstAttribute="top" secondItem="8hy-lx-xKu" secondAttribute="topMargin" id="aYY-WJ-NdM"/>
                             <constraint firstItem="yFl-Oi-Ecc" firstAttribute="leading" secondItem="8hy-lx-xKu" secondAttribute="leadingMargin" constant="-20" id="ajV-RS-ou3"/>
                             <constraint firstItem="8Fi-om-5vr" firstAttribute="leading" secondItem="NRV-bo-ez8" secondAttribute="leading" id="awf-QR-tcI"/>
@@ -102,7 +104,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="yFl-Oi-Ecc" secondAttribute="trailing" constant="-20" id="lWr-eN-nVo"/>
                             <constraint firstItem="ndD-BV-t9G" firstAttribute="leading" secondItem="8hy-lx-xKu" secondAttribute="leadingMargin" constant="11" id="nch-Kq-aBb"/>
                             <constraint firstItem="ndD-BV-t9G" firstAttribute="centerX" secondItem="8hy-lx-xKu" secondAttribute="centerX" id="qeM-gd-fx7"/>
-                            <constraint firstItem="Thf-nv-XxB" firstAttribute="centerY" secondItem="8hy-lx-xKu" secondAttribute="centerY" id="rSJ-YP-0Th"/>
                             <constraint firstItem="NRV-bo-ez8" firstAttribute="top" secondItem="8Fi-om-5vr" secondAttribute="bottom" constant="15" id="sr2-nt-ktk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ndD-BV-t9G" secondAttribute="trailing" constant="11" id="tpF-RY-PZe"/>
                             <constraint firstItem="NRV-bo-ez8" firstAttribute="centerX" secondItem="8hy-lx-xKu" secondAttribute="centerX" id="wox-on-NrC"/>
