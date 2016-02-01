@@ -154,7 +154,7 @@ class RegisterViewController: UIViewController, UserAPIControllerProtocol {
             
         }
 
-    
+    }
 
     /*
     // MARK: - Navigation
