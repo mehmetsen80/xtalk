@@ -29,7 +29,7 @@ class ProfileAPIController{
     }
     
     func postProfilePhoto(pkUserID: Double){
-        let url = NSURL(string:"http://52.89.115.179/ajax/Profile.php")
+        let url = NSURL(string:"http://xtalkapp.com/ajax/Profile.php")
         let request = NSMutableURLRequest(URL: url!)
         //var session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST";

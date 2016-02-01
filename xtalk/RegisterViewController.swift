@@ -8,13 +8,15 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UserAPIControllerProtocol {
 
+    
+    var userApi:ProfileAPIController?
+    private let concurrentProfileQueue = dispatch_queue_create("com.oy.vent.profilePhotoQueue", DISPATCH_QUEUE_CONCURRENT)
     
     @IBOutlet weak var txtFullName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +140,20 @@ class RegisterViewController: UIViewController {
         myAlert.addAction(okAction)
         self.presentViewController(myAlert, animated:true, completion:nil)
     }
+    
+    //let's set the received profile variables into objects and fields
+    func didReceiveUserAPIResults(results:NSDictionary){
+        
+        
+        dispatch_barrier_async(concurrentProfileQueue) {
+            let user: User = User.UserWithJSON(results);
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                print("User Fullname: \(user.fullname)")
+            })
+            
+        }
+
     
 
     /*

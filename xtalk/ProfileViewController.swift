@@ -62,8 +62,8 @@ class ProfileViewController: UIViewController, ProfileAPIControllerProtocol, UIP
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey:"xtalk_signupdate")
         NSUserDefaults.standardUserDefaults().synchronize()
         
-        let loginViewController:LoginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("loginView") as! LoginViewController
-        self.presentViewController(loginViewController, animated:true, completion:nil)
+        let entryViewController:EntryViewController = self.storyboard!.instantiateViewControllerWithIdentifier("entryView") as! EntryViewController
+        self.presentViewController(entryViewController, animated:true, completion:nil)
         
     }
     
