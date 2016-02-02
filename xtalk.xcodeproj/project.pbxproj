@@ -27,6 +27,8 @@
 		D87329631C582BDA003B8058 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87329621C582BDA003B8058 /* RegisterViewController.swift */; };
 		D87329651C601756003B8058 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87329641C601755003B8058 /* User.swift */; };
 		D87329671C6018BB003B8058 /* UserAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87329661C6018BB003B8058 /* UserAPIController.swift */; };
+		D87329691C613CF9003B8058 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87329681C613CF9003B8058 /* DateExtension.swift */; };
+		D873296B1C613DA4003B8058 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D873296A1C613DA4003B8058 /* DoubleExtension.swift */; };
 		D87D91C41BE800C400CABE91 /* ProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */; };
 		D87EF8CE1BE90B660067DEC4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */; };
 		D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */; };
@@ -84,6 +86,8 @@
 		D87329621C582BDA003B8058 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D87329641C601755003B8058 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D87329661C6018BB003B8058 /* UserAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIController.swift; sourceTree = "<group>"; };
+		D87329681C613CF9003B8058 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		D873296A1C613DA4003B8058 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhotoViewController.swift; sourceTree = "<group>"; };
 		D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureProfilePhotoViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 				D8685CEB1BE7D5BF0041817E /* UIImageExtension.swift */,
 				D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */,
 				D8DF09E71BFA49E900619D2E /* UIImageViewExtension.swift */,
+				D87329681C613CF9003B8058 /* DateExtension.swift */,
+				D873296A1C613DA4003B8058 /* DoubleExtension.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D873296B1C613DA4003B8058 /* DoubleExtension.swift in Sources */,
 				D87329611C513A31003B8058 /* PlacesViewController.swift in Sources */,
 				59A90C911C5E787A004F7F73 /* EntryViewController.swift in Sources */,
 				D873295F1C5137F3003B8058 /* PeersViewController.swift in Sources */,
@@ -399,6 +406,7 @@
 				D87D91C41BE800C400CABE91 /* ProfilePhotoViewController.swift in Sources */,
 				D8685CF21BE7D6910041817E /* RoundedButton.swift in Sources */,
 				D8A16D361BE8159900EDEB0B /* CircleButton.swift in Sources */,
+				D87329691C613CF9003B8058 /* DateExtension.swift in Sources */,
 				D8685CBD1BE7BF880041817E /* AppDelegate.swift in Sources */,
 				D8A16D3C1BE8174300EDEB0B /* ProfileAPIController.swift in Sources */,
 				D8685CEF1BE7D6200041817E /* CustomTabBarController.swift in Sources */,

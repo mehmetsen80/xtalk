@@ -16,7 +16,7 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     
     var facebookid: String!
-    var name: String!
+    var fullname: String!
     var firstName: String!
     var lastName: String!
     var email: String!
@@ -88,7 +88,7 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate {
     {
         //"fields": "id, name, first_name, last_name, email"
         
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"name,first_name, last_name, gender, email"])
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"name, gender, email"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
             if ((error) != nil)
@@ -99,12 +99,10 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate {
             else
             {
                 self.facebookid = result.valueForKey("id") as? String
-                self.name = result.valueForKey("name") as? String
-                self.firstName  = result.valueForKey("first_name") as? String
-                self.lastName = result.valueForKey("last_name") as? String
+                self.fullname = result.valueForKey("name") as? String
                 self.email = result.valueForKey("email") as? String
                 self.gender = result.valueForKey("gender") as? String
-                print("Facebook ID: \(self.facebookid)  username: \(self.name) firstName: \(self.firstName) lastName: \(self.lastName)  email: \(self.email) ")
+                print("Facebook ID: \(self.facebookid)  username: \(self.fullname) firstName: \(self.firstName) lastName: \(self.lastName)  email: \(self.email) ")
             }
         })
     }

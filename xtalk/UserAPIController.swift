@@ -9,7 +9,9 @@
 import Foundation
 
 protocol UserAPIControllerProtocol {
-    func didReceiveUserAPIResults(results: NSDictionary)
+    func didReceiveUserLoginAPIResults(results: NSDictionary)
+    func didReceiveUserSignupAPIResults(results: NSDictionary)
+    func didReceiveUserSearchAPIResults(results: NSDictionary)
 }
 
 class UserAPIController{
@@ -20,38 +22,100 @@ class UserAPIController{
         self.delegate = delegate
     }
     
-    func searchUser(pkUserID: Double){
+    func login(email: String, password: String){
         
-//        let url = NSURL(string:"http://xtalkapp.com/ajax/Profile.php")
-//        let request = NSMutableURLRequest(URL: url!)
-//        //var session = NSURLSession.sharedSession()
-//        request.HTTPMethod = "POST";
-//        let postString = "processType=GETPROFILEPHOTO&userID=\(pkUserID)"
-//        print("post profile postString: \(postString)", terminator: "")
-//        //var err: NSError?
-//        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-//        
-//        
-//        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-//            data, response, error  in
-//            
-//            if(error != nil) {
-//                // If there is an error in the web request, print it to the console
-//                print(error!.localizedDescription, terminator: "")
-//            }
-//            
-//            do{
-//                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-//                //println("Dictionary: \(json)")
-//                self.delegate.didReceiveUserAPIResults(json)
-//                
-//            } catch {
-//                //if nil
-//                print("Fetch failed: \((error as NSError).localizedDescription)")
-//            }
-//        }
-//        
-//        task.resume()
+        //generate url, call json and display the result
+        let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
+        let request = NSMutableURLRequest(URL: myUrl!)
+        request.HTTPMethod = "POST";
+        let postString = "processType=LOGINUSER&email=\(email)&password=\(password)"
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, error  in
+            
+            if(error != nil){
+                print("error=\(error)")
+                return
+            }
+            
+            do {
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                
+                self.delegate.didReceiveUserLoginAPIResults(json)
+                
+            } catch let error {
+                print("Something went wrong! \(error)")
+            }
+        }
+        
+        task.resume()
+    }
+    
+    func signup(fullname: String, email: String, password: String){
+        
+        let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
+        let request = NSMutableURLRequest(URL: myUrl!)
+        request.HTTPMethod = "POST";
+        let postString = "email=\(email)&password=\(password)&fullname=\(fullname)&processType=SIGNUPUSER"
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, error in
+            
+            if(error != nil){
+                print("error=\(error)", terminator: "")
+                return
+            }
+            
+            do{
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                
+                self.delegate.didReceiveUserSignupAPIResults(json)
+                
+            }catch let error {
+                print("Something went wrong! \(error)")
+            }
+            
+        }
+        
+        
+        task.resume()
+
+    }
+    
+    func search(pkUserID: Double){
+        
+        let url = NSURL(string:"http://xtalkapp.com/ajax/")
+        let request = NSMutableURLRequest(URL: url!)
+        //var session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST";
+        let postString = "processType=GETUSER&userID=\(pkUserID)"
+        print("post profile postString: \(postString)", terminator: "")
+        //var err: NSError?
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, error  in
+            
+            if(error != nil) {
+                // If there is an error in the web request, print it to the console
+                print(error!.localizedDescription, terminator: "")
+            }
+            
+            do{
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                //println("Dictionary: \(json)")
+                self.delegate.didReceiveUserSearchAPIResults(json)
+                
+            } catch {
+                //if nil
+                print("Fetch failed: \((error as NSError).localizedDescription)")
+            }
+        }
+        
+        task.resume()
         
     }
 }

@@ -9,8 +9,13 @@
 import UIKit
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UserAPIControllerProtocol  {
 
+    
+    var userApi:UserAPIController?
+    private let concurrentUserQueue = dispatch_queue_create("com.oy.vent.userPhotoQueue", DISPATCH_QUEUE_CONCURRENT)
+    
+    
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtCity: UILabel!
@@ -23,6 +28,7 @@ class LoginViewController: UIViewController {
         //update city every 2 seconds, retrieved from AppDelegate
         NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "updateCity", userInfo: nil, repeats: true)
      
+        userApi = UserAPIController(delegate: self)
     }
     
     //update city
@@ -36,80 +42,62 @@ class LoginViewController: UIViewController {
         //if empty
         if(email.isEmpty || password.isEmpty) { return }
         
-        //generate url, call json and display the result
-        let myUrl = NSURL(string:"http://52.89.115.179/ajax/")
-        let request = NSMutableURLRequest(URL: myUrl!)
-        request.HTTPMethod = "POST";
-        let postString = "processType=LOGINUSER&email=\(email)&password=\(password)"
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        self.userApi?.login(email, password: password)
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-            data, response, error  in
+    }
+    
+    func displayAlertMessage(alertMessage:String){
+        //shortcut alert message
+        let myAlert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        myAlert.addAction(okAction)
+        self.presentViewController(myAlert, animated:true, completion:nil)
+    }
+    
+    func didReceiveUserLoginAPIResults(results:NSDictionary){
+        
+        
+        dispatch_barrier_async(concurrentUserQueue) {
             
-            if(error != nil){
-                print("error=\(error)")
-                return
-            }
+            let user: User = User.UserWithJSON(results);
             
-            do {
-                let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as? NSDictionary
+            let resultValue: Bool = results["success"] as! Bool!
+            let message:String? = results["message"] as! String?
+            
+            dispatch_async(dispatch_get_main_queue(), {
                 
-                
-                let resultValue: Bool = parseJSON?["success"] as! Bool!
-                //print("resultValue=\(parseJSON)")
-                let message:String? = parseJSON?["message"] as! String?
-                
-                
-                dispatch_async(dispatch_get_main_queue(),{
+                if(!resultValue){
                     
-                    //if invalid useer
-                    if(!resultValue){
-                        //display alert message with confirmation
-                        let myAlert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-                        myAlert.addAction(okAction)
-                        self.presentViewController(myAlert, animated: true, completion: nil)
-                        
-                    }else{
-                        //let's continue to retrieve remaining user data
-                        let userid:Double? = parseJSON?["userid"] as! Double?
-                        let email:String? = parseJSON?["email"] as! String?
-                        let fullname:String? = parseJSON?["fullname"] as! String?
-                        let signupdate:String? = parseJSON?["signupdate"] as! String?
-                        let isadmin:Bool = parseJSON?["isadmin"] as! Bool!
-                        
-                        //store data on device
-                        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "xtalk_isloggedin")
-                        NSUserDefaults.standardUserDefaults().setObject(userid, forKey:"xtalk_userid")
-                        NSUserDefaults.standardUserDefaults().setObject(fullname, forKey:"xtalk_fullname")
-                        NSUserDefaults.standardUserDefaults().setObject(email, forKey:"xtalk_email")
-                        NSUserDefaults.standardUserDefaults().setObject(signupdate, forKey:"xtalk_signupdate")
-                        NSUserDefaults.standardUserDefaults().setBool(isadmin, forKey: "xtalk_isadmin")
-                        NSUserDefaults.standardUserDefaults().synchronize()
-                        
-                        //if successfull login, then jump to MainViewController
-                        let mainTabBar: UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("mainTabBar") as! UITabBarController
-                        self.presentViewController(mainTabBar, animated:true, completion:nil)
-                        
-                    }
-                })
-                
-            } catch let error {
-                print("Something went wrong! \(error)")
-            }
+                    self.displayAlertMessage(message!)
+                    
+                }else{
+                    print(user.toString())
+                    
+                    //store data
+                    NSUserDefaults.standardUserDefaults().setBool(true, forKey: "xtalk_isloggedin")
+                    NSUserDefaults.standardUserDefaults().setObject(user.userid, forKey:"xtalk_userid")
+                    NSUserDefaults.standardUserDefaults().setObject(user.fullname, forKey:"xtalk_fullname")
+                    NSUserDefaults.standardUserDefaults().setObject(user.email, forKey:"xtalk_email")
+                    NSUserDefaults.standardUserDefaults().setObject(user.signupdate, forKey:"xtalk_signupdate")
+                    NSUserDefaults.standardUserDefaults().setBool(user.isadmin!, forKey: "xtalk_isadmin")
+                    NSUserDefaults.standardUserDefaults().synchronize()
+                    
+                    //if successfull login, then jump to MainViewController
+                    let mainTabBar: UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("mainTabBar") as! UITabBarController
+                    self.presentViewController(mainTabBar, animated:true, completion:nil)
+                }
+            }) //dispatch main thread
         }
-        
-        task.resume()
 
+        
+        
     }
     
+    //no need to implement this here
+    func didReceiveUserSignupAPIResults(results:NSDictionary){}
     
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    //no need to implement this here
+    func didReceiveUserSearchAPIResults(results:NSDictionary){}
     
 
     /*

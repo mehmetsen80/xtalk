@@ -11,8 +11,8 @@ import UIKit
 class RegisterViewController: UIViewController, UserAPIControllerProtocol {
 
     
-    var userApi:ProfileAPIController?
-    private let concurrentProfileQueue = dispatch_queue_create("com.oy.vent.profilePhotoQueue", DISPATCH_QUEUE_CONCURRENT)
+    var userApi:UserAPIController?
+    private let concurrentUserQueue = dispatch_queue_create("com.oy.vent.userPhotoQueue", DISPATCH_QUEUE_CONCURRENT)
     
     @IBOutlet weak var txtFullName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -21,7 +21,7 @@ class RegisterViewController: UIViewController, UserAPIControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        userApi = UserAPIController(delegate: self)
     }
     
     
@@ -38,59 +38,46 @@ class RegisterViewController: UIViewController, UserAPIControllerProtocol {
             return
         }
         
-        //generate url, call json and display the result
-        let myUrl = NSURL(string:"http://52.89.115.179/ajax/")
-        let request = NSMutableURLRequest(URL: myUrl!)
-        request.HTTPMethod = "POST";
-        let postString = "email=\(email)&password=\(password)&fullname=\(fullname)&processType=SIGNUPUSER"
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-        //self.myActivityIndicator.startAnimating()
+        //sign up user
+        self.userApi?.signup(fullname, email: email, password: password)
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-            data, response, error in
-            
-            if(error != nil){
-                print("error=\(error)", terminator: "")
-                return
-            }
-            
-            do{
-                let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as? NSDictionary
-                
-                //print("resultValue=\(parseJSON)")
-                let resultValue: Bool = parseJSON?["success"] as! Bool!
-                let message:String? = parseJSON?["message"] as! String?
-                
+    }
 
-                dispatch_async(dispatch_get_main_queue(),{
-                    
-                    //self.myActivityIndicator.stopAnimating()
-                    
-                    if(!resultValue){
-                        //display alert message with confirmation
-//                        let myAlert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-//                        
-//                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-//                        myAlert.addAction(okAction)
-//                        self.presentViewController(myAlert, animated: true, completion: nil)
-                        
-                        self.displayAlertMessage(message!)
-                        
-                    }else{
-                        //let's continue to retrieve remaining user data
-                        let userid:Double? = parseJSON?["userid"] as! Double?
-                        let email:String? = parseJSON?["email"] as! String?
-                        let fullname:String? = parseJSON?["fullname"] as! String?
-                        let signupdate:String? = parseJSON?["signupdate"] as! String?
-                        let isadmin:Bool = parseJSON?["isadmin"] as! Bool!
+    
+    func displayAlertMessage(alertMessage:String){
+        //shortcut alert message
+        let myAlert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        myAlert.addAction(okAction)
+        self.presentViewController(myAlert, animated:true, completion:nil)
+    }
+    
+    //let's set the received profile variables into objects and fields
+    func didReceiveUserSignupAPIResults(results:NSDictionary){
+        
+        dispatch_barrier_async(concurrentUserQueue) {
+            
+            let user: User = User.UserWithJSON(results);
+            
+            let resultValue: Bool = results["success"] as! Bool!
+            let message:String? = results["message"] as! String?
+            
+             dispatch_async(dispatch_get_main_queue(), {
+            
+                if(!resultValue){
+                
+                    self.displayAlertMessage(message!)
+                
+                }else{
+                        print(user.toString())
                         
                         //store data
                         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "xtalk_isloggedin")
-                        NSUserDefaults.standardUserDefaults().setObject(userid, forKey:"xtalk_userid")
-                        NSUserDefaults.standardUserDefaults().setObject(fullname, forKey:"xtalk_fullname")
-                        NSUserDefaults.standardUserDefaults().setObject(email, forKey:"xtalk_email")
-                        NSUserDefaults.standardUserDefaults().setObject(signupdate, forKey:"xtalk_signupdate")
-                        NSUserDefaults.standardUserDefaults().setBool(isadmin, forKey: "xtalk_isadmin")
+                        NSUserDefaults.standardUserDefaults().setObject(user.userid, forKey:"xtalk_userid")
+                        NSUserDefaults.standardUserDefaults().setObject(user.fullname, forKey:"xtalk_fullname")
+                        NSUserDefaults.standardUserDefaults().setObject(user.email, forKey:"xtalk_email")
+                        NSUserDefaults.standardUserDefaults().setObject(user.signupdate, forKey:"xtalk_signupdate")
+                        NSUserDefaults.standardUserDefaults().setBool(user.isadmin!, forKey: "xtalk_isadmin")
                         NSUserDefaults.standardUserDefaults().synchronize()
                         
                         
@@ -106,55 +93,18 @@ class RegisterViewController: UIViewController, UserAPIControllerProtocol {
                         
                         myAlert.addAction(okAction)
                         self.presentViewController(myAlert, animated: true, completion: nil)
-                        
-                        
-                        
-                    }
                     
-                })
-                
-                
-                
-                
-            }catch let error {
-                print("Something went wrong! \(error)")
-            }
-            
-        }
-        
-        
-        task.resume()
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func displayAlertMessage(alertMessage:String){
-        //shortcut alert message
-        let myAlert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-        myAlert.addAction(okAction)
-        self.presentViewController(myAlert, animated:true, completion:nil)
-    }
-    
-    //let's set the received profile variables into objects and fields
-    func didReceiveUserAPIResults(results:NSDictionary){
-        
-        
-        dispatch_barrier_async(concurrentProfileQueue) {
-            let user: User = User.UserWithJSON(results);
-            dispatch_async(dispatch_get_main_queue(), {
-                
-                print("User Fullname: \(user.fullname)")
-            })
-            
+                }
+            }) //dispatch main thread
         }
 
     }
+    
+    //no need to implement this here in Register
+    func didReceiveUserLoginAPIResults(results:NSDictionary){}
+    
+    //no need to implement this here in Register
+    func didReceiveUserSearchAPIResults(results:NSDictionary){}
 
     /*
     // MARK: - Navigation
