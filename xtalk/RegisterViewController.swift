@@ -12,7 +12,7 @@ class RegisterViewController: UIViewController, UserAPIControllerProtocol {
 
     
     var userApi:UserAPIController?
-    private let concurrentUserQueue = dispatch_queue_create("com.oy.vent.userPhotoQueue", DISPATCH_QUEUE_CONCURRENT)
+    private let concurrentUserQueue = dispatch_queue_create("com.oy.vent.userQueue", DISPATCH_QUEUE_CONCURRENT)
     
     @IBOutlet weak var txtFullName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -24,7 +24,7 @@ class RegisterViewController: UIViewController, UserAPIControllerProtocol {
         userApi = UserAPIController(delegate: self)
     }
     
-    
+    //when signup button is clicked
     @IBAction func doSignup(sender: AnyObject) {
         
         let fullname = txtFullName.text!
@@ -43,7 +43,7 @@ class RegisterViewController: UIViewController, UserAPIControllerProtocol {
         
     }
 
-    
+    //show alert with custom message
     func displayAlertMessage(alertMessage:String){
         //shortcut alert message
         let myAlert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
@@ -103,8 +103,11 @@ class RegisterViewController: UIViewController, UserAPIControllerProtocol {
     //no need to implement this here in Register
     func didReceiveUserLoginAPIResults(results:NSDictionary){}
     
-    //no need to implement this here in Register
-    func didReceiveUserSearchAPIResults(results:NSDictionary){}
+    //no need to implement this here
+    func didReceiveUserFBLoginAPIResults(results: NSDictionary){}
+    
+    //no need to implement this here
+    func didReceiveUserSearchAPIResults(results: NSDictionary){}
 
     /*
     // MARK: - Navigation

@@ -11,6 +11,7 @@ import Foundation
 protocol UserAPIControllerProtocol {
     func didReceiveUserLoginAPIResults(results: NSDictionary)
     func didReceiveUserSignupAPIResults(results: NSDictionary)
+    func didReceiveUserFBLoginAPIResults(results: NSDictionary)
     func didReceiveUserSearchAPIResults(results: NSDictionary)
 }
 
@@ -22,6 +23,7 @@ class UserAPIController{
         self.delegate = delegate
     }
     
+    //starndard xtalk login
     func login(email: String, password: String){
         
         //generate url, call json and display the result
@@ -52,6 +54,7 @@ class UserAPIController{
         task.resume()
     }
     
+    //standard xtalk signup
     func signup(fullname: String, email: String, password: String){
         
         let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
@@ -82,6 +85,39 @@ class UserAPIController{
         
         task.resume()
 
+    }
+    
+    
+    // facebook login
+    func fblogin(facebookid: String, fullname: String, email: String, gender: String){
+        
+        let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
+        let request = NSMutableURLRequest(URL: myUrl!)
+        request.HTTPMethod = "POST";
+        let postString = "email=\(email)&facebookid=\(facebookid)&fullname=\(fullname)&processType=FBLOGIN"
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, error in
+            
+            if(error != nil){
+                print("error=\(error)", terminator: "")
+                return
+            }
+            
+            do{
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                
+                self.delegate.didReceiveUserSignupAPIResults(json)
+                
+            }catch let error {
+                print("Something went wrong! \(error)")
+            }
+            
+        }
+        
+        
+        task.resume()
     }
     
     func search(pkUserID: Double){

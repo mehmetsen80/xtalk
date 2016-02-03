@@ -94,10 +94,13 @@ class LoginViewController: UIViewController, UserAPIControllerProtocol  {
     }
     
     //no need to implement this here
-    func didReceiveUserSignupAPIResults(results:NSDictionary){}
+    func didReceiveUserSignupAPIResults(results: NSDictionary){}
     
     //no need to implement this here
-    func didReceiveUserSearchAPIResults(results:NSDictionary){}
+    func didReceiveUserFBLoginAPIResults(results: NSDictionary){}
+    
+    //no need to implement this here
+    func didReceiveUserSearchAPIResults(results: NSDictionary){}
     
 
     /*
