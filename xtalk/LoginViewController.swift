@@ -13,7 +13,7 @@ class LoginViewController: UIViewController, UserAPIControllerProtocol  {
 
     
     var userApi:UserAPIController?
-    private let concurrentUserQueue = dispatch_queue_create("com.oy.vent.userPhotoQueue", DISPATCH_QUEUE_CONCURRENT)
+    private let concurrentUserQueue = dispatch_queue_create("com.oy.vent.userQueue", DISPATCH_QUEUE_CONCURRENT)
     
     
     @IBOutlet weak var txtEmail: UITextField!

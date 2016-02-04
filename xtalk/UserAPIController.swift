@@ -94,7 +94,8 @@ class UserAPIController{
         let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
         let request = NSMutableURLRequest(URL: myUrl!)
         request.HTTPMethod = "POST";
-        let postString = "email=\(email)&facebookid=\(facebookid)&fullname=\(fullname)&processType=FBLOGIN"
+        let postString = "email=\(email)&facebookid=\(facebookid)&fullname=\(fullname)&gender=\(gender)&processType=FBLOGIN"
+        //print(postString)
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
@@ -108,7 +109,7 @@ class UserAPIController{
             do{
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as! NSDictionary
                 
-                self.delegate.didReceiveUserSignupAPIResults(json)
+                self.delegate.didReceiveUserFBLoginAPIResults(json)
                 
             }catch let error {
                 print("Something went wrong! \(error)")
@@ -120,6 +121,8 @@ class UserAPIController{
         task.resume()
     }
     
+    
+    //not used right now
     func search(pkUserID: Double){
         
         let url = NSURL(string:"http://xtalkapp.com/ajax/")

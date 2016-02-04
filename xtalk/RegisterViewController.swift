@@ -52,7 +52,7 @@ class RegisterViewController: UIViewController, UserAPIControllerProtocol {
         self.presentViewController(myAlert, animated:true, completion:nil)
     }
     
-    //let's set the received profile variables into objects and fields
+    //let's set the received user variables into objects and fields
     func didReceiveUserSignupAPIResults(results:NSDictionary){
         
         dispatch_barrier_async(concurrentUserQueue) {
