@@ -79,20 +79,12 @@ class RegisterViewController: UIViewController, UserAPIControllerProtocol {
                         NSUserDefaults.standardUserDefaults().setObject(user.signupdate, forKey:"xtalk_signupdate")
                         NSUserDefaults.standardUserDefaults().setBool(user.isadmin!, forKey: "xtalk_isadmin")
                         NSUserDefaults.standardUserDefaults().synchronize()
-                        
-                        
-                        //display alert message with confirmation
-                        let myAlert = UIAlertController(title: "Alert", message: "Welcome to Xtalk!", preferredStyle: UIAlertControllerStyle.Alert)
-                        let okAction = UIAlertAction(title: "Let's Start!", style: UIAlertActionStyle.Default){ action in
-                            
-                            //if successfull login, then jump to MainViewController
-                            let mainTabBar: UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("mainTabBar") as! UITabBarController
-                            self.presentViewController(mainTabBar, animated:true, completion:nil)
-                            
-                        }
-                        
-                        myAlert.addAction(okAction)
-                        self.presentViewController(myAlert, animated: true, completion: nil)
+                    
+                    
+                    //if successfull login, then jump to MainViewController
+                    let mainTabBar: UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("mainTabBar") as! UITabBarController
+                    self.presentViewController(mainTabBar, animated:true, completion:nil)
+                    
                     
                 }
             }) //dispatch main thread

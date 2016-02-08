@@ -33,7 +33,7 @@ class User {
         user.signupdate = allResults["signupdate"] as? String ?? ""
         user.isadmin = allResults["isadmin"] as? Bool ?? false
         
-        return user;
+        return user
     }
     
     func toString() -> String{

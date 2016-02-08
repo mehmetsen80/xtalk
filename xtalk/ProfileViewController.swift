@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, ProfileAPIControllerProtocol, UIPopoverPresentationControllerDelegate  {
+class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UIPopoverPresentationControllerDelegate  {
     
     var userApi:ProfileAPIController?
     private let concurrentProfileQueue = dispatch_queue_create("com.oy.vent.profilePhotoQueue", DISPATCH_QUEUE_CONCURRENT)
@@ -26,6 +26,7 @@ class ProfileViewController: UIViewController, ProfileAPIControllerProtocol, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         self.pkUserID =  NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
         print("pkUserID \(pkUserID)")
@@ -50,9 +51,11 @@ class ProfileViewController: UIViewController, ProfileAPIControllerProtocol, UIP
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+  
     
     @IBAction func signout(sender: AnyObject) {
         
+        FBSDKAccessToken.setCurrentAccessToken(nil)
         
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "xtalk_isloggedin")
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey:"xtalk_userid")
