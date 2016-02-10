@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UIPopoverPresentationControllerDelegate  {
     
-    var userApi:ProfileAPIController?
+    var profileApi:ProfileAPIController?
     private let concurrentProfileQueue = dispatch_queue_create("com.oy.vent.profilePhotoQueue", DISPATCH_QUEUE_CONCURRENT)
 
 
@@ -34,9 +34,9 @@ class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UI
         fullname = NSUserDefaults.standardUserDefaults().stringForKey("xtalk_fullname")!
         
         //get the profile photo
-        userApi = ProfileAPIController(delegate: self)
+        profileApi = ProfileAPIController(delegate: self)
         if(self.pkUserID != nil){
-            userApi?.searchPhoto(self.pkUserID)
+            profileApi?.searchProfile(self.pkUserID)
         }
         
         //set rounded corner 
@@ -58,11 +58,11 @@ class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UI
         FBSDKAccessToken.setCurrentAccessToken(nil)
         
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "xtalk_isloggedin")
-        NSUserDefaults.standardUserDefaults().setObject(nil, forKey:"xtalk_userid")
-        NSUserDefaults.standardUserDefaults().setObject(nil, forKey:"xtalk_fullname")
-        NSUserDefaults.standardUserDefaults().setObject(nil, forKey:"username")
-        NSUserDefaults.standardUserDefaults().setObject(nil, forKey:"xtalk_email")
-        NSUserDefaults.standardUserDefaults().setObject(nil, forKey:"xtalk_signupdate")
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_userid")
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_fullname")
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_email")
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_signupdate")
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_isadmin")
         NSUserDefaults.standardUserDefaults().synchronize()
         
         let entryViewController:EntryViewController = self.storyboard!.instantiateViewControllerWithIdentifier("entryView") as! EntryViewController
@@ -102,7 +102,7 @@ class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UI
     @IBAction func unwindFromSelectPhotoSource(segue: UIStoryboardSegue) {
         print("returned from select photo source screen")
         //update profile photo again
-        self.userApi?.searchPhoto(self.pkUserID)
+        self.profileApi?.searchProfile(self.pkUserID)
     }
     
     //let's set the received profile variables into objects and fields

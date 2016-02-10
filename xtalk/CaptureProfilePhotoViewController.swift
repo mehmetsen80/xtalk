@@ -476,14 +476,14 @@ class CaptureProfilePhotoViewController: UIViewController, UINavigationControlle
         let userID: Double! = NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
 
         
-        let url = NSURL(string:"http://52.89.115.179/ajax/Upload.php")
+        let url = NSURL(string:"http://xtalkapp.com/ajax/")
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
         
         
         let param = [
             "processType" : "UPLOADPROFILEPHOTO",
-            "userID" : "\(userID)"
+            "userid" : "\(userID)"
         ]
         
         let boundary = generateBoundaryString()
@@ -508,13 +508,13 @@ class CaptureProfilePhotoViewController: UIViewController, UINavigationControlle
                 return
             }
             
-            //            // You can print out response object
-            //            println("******* response = \(response)")
+                        // You can print out response object
+                        print("******* response = \(response)")
             
             
             // Print out reponse body
-            //            let responseString = NSString(data: data, encoding: NSUTF8StringEncoding)
-            //            println("****** response data = \(responseString!)")
+//                        let responseString = NSString(data: data, encoding: NSUTF8StringEncoding)
+//                        print("****** response data = \(responseString!)")
             
             
             

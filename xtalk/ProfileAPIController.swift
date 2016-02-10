@@ -21,21 +21,14 @@ class ProfileAPIController{
     }
     
     func searchProfile(pkUserID: Double) {
-        //to do: search profile details
-    }
-    
-    func searchPhoto(pkUserID: Double){
-        postProfilePhoto(pkUserID)
-    }
-    
-    func postProfilePhoto(pkUserID: Double){
-        let url = NSURL(string:"http://xtalkapp.com/ajax/Profile.php")
+        
+        let url = NSURL(string:"http://xtalkapp.com/ajax/")
         let request = NSMutableURLRequest(URL: url!)
         //var session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST";
-        let postString = "processType=GETPROFILEPHOTO&userID=\(pkUserID)"
+        let postString = "processType=GETPROFILE&userid=\(pkUserID)"
         print("post profile postString: \(postString)", terminator: "")
-        //var err: NSError?
+        
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
         
@@ -59,6 +52,6 @@ class ProfileAPIController{
         }
         
         task.resume()
-        
     }
+    
 }

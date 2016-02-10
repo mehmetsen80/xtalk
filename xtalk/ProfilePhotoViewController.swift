@@ -31,12 +31,12 @@ class ProfilePhotoViewController: UIViewController, ProfileAPIControllerProtocol
     
     func loadProfilePhoto(){
         //just for test purposes
-        self.pkUserID = 12 //to do: remove this test id in prod
+        //self.pkUserID = 12 //to do: remove this test id in prod
         //if user id is ok then get profile photo
         if(self.pkUserID != nil){
             print("pkUserID: \(self.pkUserID)")
             userApi = ProfileAPIController(delegate: self)
-            userApi?.searchPhoto(self.pkUserID!)
+            userApi?.searchProfile(self.pkUserID!)
         }
     }
 
