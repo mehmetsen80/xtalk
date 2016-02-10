@@ -45,7 +45,7 @@ class ProfilePhotoViewController: UIViewController, ProfileAPIControllerProtocol
         // Dispose of any resources that can be recreated.
     }
     
-    func didReceiveProfileAPIResults(results:NSDictionary){
+    func didReceiveGetProfileAPIResults(results:NSDictionary){
         
         dispatch_barrier_async(concurrentProfileQueue) {
             let profile: Profile = Profile.profileWithJSON(results);
@@ -85,7 +85,8 @@ class ProfilePhotoViewController: UIViewController, ProfileAPIControllerProtocol
         }
     }
 
-    
+    //just blueprint
+    func didReceivePostProfilePhotoAPIResults(results:NSDictionary){}
     
     //returned from the zoom screen, empty for now, use it for future
     @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {}

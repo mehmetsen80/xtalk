@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UI
         
         fullname = NSUserDefaults.standardUserDefaults().stringForKey("xtalk_fullname")!
         
-        //get the profile photo
+        //profile Api to get the profile info
         profileApi = ProfileAPIController(delegate: self)
         if(self.pkUserID != nil){
             profileApi?.searchProfile(self.pkUserID)
@@ -106,7 +106,7 @@ class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UI
     }
     
     //let's set the received profile variables into objects and fields
-    func didReceiveProfileAPIResults(results:NSDictionary){
+    func didReceiveGetProfileAPIResults(results:NSDictionary){
         
         
         dispatch_barrier_async(concurrentProfileQueue) {
@@ -154,6 +154,9 @@ class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UI
         
         
     }
+    
+    //just blueprint here
+    func didReceivePostProfilePhotoAPIResults(results: NSDictionary){}
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.None

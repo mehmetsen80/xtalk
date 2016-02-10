@@ -15,6 +15,7 @@ class User {
     var gender: String?
     var birthday: String?
     var description: String?
+    var facebookid: String?
     var interests: String?
     var signupdate: String?
     var isadmin: Bool?
@@ -30,6 +31,7 @@ class User {
         user.birthday = allResults["birthday"] as? String ?? ""
         user.description = allResults["description"] as? String ?? ""
         user.interests = allResults["interests"] as? String ?? ""
+        user.facebookid = allResults["facebookid"] as? String ?? ""
         user.signupdate = allResults["signupdate"] as? String ?? ""
         user.isadmin = allResults["isadmin"] as? Bool ?? false
         
@@ -38,6 +40,6 @@ class User {
     
     func toString() -> String{
         
-        return "userid: \(self.userid!) email: \(self.email!) fullname: \(self.fullname!) gender: \(self.gender!) birthday: \(self.birthday!) description: \(self.description!) interests: \(self.interests!) signupdate local: \(NSDate().dateFromString(self.signupdate!).toLocalTime().stringFromDate())  signupdate UTC: \(self.signupdate!) isadmin: \(self.isadmin!)"
+        return "userid: \(self.userid!) email: \(self.email!) fullname: \(self.fullname!) gender: \(self.gender!) birthday: \(self.birthday!) description: \(self.description!) interests: \(self.interests!) facebookid: \(self.facebookid) signupdate local: \(NSDate().dateFromString(self.signupdate!).toLocalTime().stringFromDate())  signupdate UTC: \(self.signupdate!) isadmin: \(self.isadmin!)"
     }
 }

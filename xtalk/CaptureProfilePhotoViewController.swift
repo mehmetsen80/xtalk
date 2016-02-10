@@ -18,8 +18,13 @@ enum PhotoSource:String {
     }
 }
 
-class CaptureProfilePhotoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class CaptureProfilePhotoViewController: UIViewController, ProfileAPIControllerProtocol, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    private let concurrentProfileQueue = dispatch_queue_create("com.oy.vent.profilePhotoQueue", DISPATCH_QUEUE_CONCURRENT)
+    var profileApi:ProfileAPIController?
+    
+    
+    
     var launchType: String!
     var launched : Bool! = false
     @IBOutlet weak var imageView: UIImageView!
@@ -62,7 +67,8 @@ class CaptureProfilePhotoViewController: UIViewController, UINavigationControlle
         initSession()
         setupDevices()
         
-        
+        //profile Api
+        profileApi = ProfileAPIController(delegate: self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -472,103 +478,79 @@ class CaptureProfilePhotoViewController: UIViewController, UINavigationControlle
     
     @IBAction func uploadPhoto(sender: AnyObject) {
         
+        
+        self.btnUpload.enabled = false
+        self.activityIndicator.startAnimating()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
         //get stored user id
-        let userID: Double! = NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
-
+        let userid: Double! = NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
         
-        let url = NSURL(string:"http://xtalkapp.com/ajax/")
-        let request = NSMutableURLRequest(URL: url!)
-        request.HTTPMethod = "POST"
-        
-        
-        let param = [
-            "processType" : "UPLOADPROFILEPHOTO",
-            "userid" : "\(userID)"
-        ]
-        
+        //generate the boundary string
         let boundary = generateBoundaryString()
-        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
+        //prepare the loaded or taken image
         let img : UIImage = self.fixOrientation(self.imageView.image!)
         let imageData = UIImageJPEGRepresentation(img, 1)
         if(imageData==nil) { return; }
         
-        self.btnUpload.enabled = false
-        self.activityIndicator.startAnimating()
-        
-        request.HTTPBody = createBodyWithParameters(param, filePathKey: "file", imageDataKey: imageData!, boundary: boundary)
-        
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-            data, response, error  in
-            
-            if(error != nil){
-                print("error=\(error)")
-                return
-            }
-            
-                        // You can print out response object
-                        print("******* response = \(response)")
-            
-            
-            // Print out reponse body
-//                        let responseString = NSString(data: data, encoding: NSUTF8StringEncoding)
-//                        print("****** response data = \(responseString!)")
-            
-            
-            
-            do{
-                let parseJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers  ) as? NSDictionary
-                
-                
-                let resultValue:Bool = parseJSON?["success"] as! Bool!
-                let error:String? = parseJSON?["error"] as! String?
-                
-                dispatch_async(dispatch_get_main_queue(),{
-                    
-                    if(!resultValue){
-                        //display alert message with confirmation
-                        let myAlert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertControllerStyle.Alert)
-                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-                        myAlert.addAction(okAction)
-                        self.presentViewController(myAlert, animated: true, completion: nil)
-                        self.activityIndicator.stopAnimating()
-                        self.btnUpload.enabled = true
-                    }else{
-                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        //display alert message with confirmation
-                        let myAlert = UIAlertController(title: "Confirmation", message: "Post added successfully!", preferredStyle: UIAlertControllerStyle.Alert)
-                        myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction) in
-                            
-                            //self.dismissViewControllerAnimated(true, completion: nil)
-                            self.activityIndicator.stopAnimating()
-                            self.btnCancel.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
-                            
-                            //                            let nvg: MyNavigationController = self.storyboard!.instantiateViewControllerWithIdentifier("myGeoNav") as MyNavigationController
-                            //                            var geoController:GeoViewController =  nvg.topViewController as GeoViewController
-                            //
-                            //                            geoController.hasCustomNavigation = true
-                            //                            geoController.albumID = self.albumID
-                            //                            geoController.albumName = self.albumName
-                            //                            let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-                            //                            appDelegate.window?.rootViewController = nvg
-                            //                            appDelegate.window?.makeKeyAndVisible()
-                            
-                            
-                        }))
-                        self.presentViewController(myAlert, animated: true, completion: nil)
-                        self.activityIndicator.stopAnimating()
-                        self.btnUpload.enabled = true
-                    }
-                })
-            }catch{
-            }
-        }
-        
-        task.resume()
+        //parameters to be posted
+        let param = [
+            "processType" : "UPLOADPROFILEPHOTO",
+            "userid" : "\(userid)"
+        ]
+
+        //prepare the http body
+        let body: NSData = createBodyWithParameters(param, filePathKey: "file", imageDataKey: imageData!, boundary: boundary)
+        //finally post photo
+        self.profileApi?.postProfilePhoto(boundary, body: body)
         
     }
+    
+    //let's set the received posted profile photo variables into objects and fields
+    func didReceivePostProfilePhotoAPIResults(results:NSDictionary){
+        
+        dispatch_barrier_async(concurrentProfileQueue) {
+            
+            let resultValue: Bool = results["success"] as! Bool!
+            let error:String? = results["error"] as! String?
+            
+            print(results)
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                if(!resultValue){
+                    //display alert message
+                    let myAlert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertControllerStyle.Alert)
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                    myAlert.addAction(okAction)
+                    self.presentViewController(myAlert, animated: true, completion: nil)
+                    
+                }else{
+                    
+                    //display alert message with confirmation
+                    let myAlert = UIAlertController(title: "Confirmation", message: "Post added successfully!", preferredStyle: UIAlertControllerStyle.Alert)
+                    myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction) in
+                        self.activityIndicator.stopAnimating()
+                        self.btnCancel.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
+                    
+                    }))
+                    
+                    self.presentViewController(myAlert, animated: true, completion: nil)
+                    
+                }
+                
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                self.activityIndicator.stopAnimating()
+                self.btnUpload.enabled = true
+                
+            }) //dispatch main thread
+        }
+        
+    }
+    
+    //just blueprint here
+    func didReceiveGetProfileAPIResults(results:NSDictionary){}
     
 
     /*
