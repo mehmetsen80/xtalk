@@ -17,6 +17,10 @@ protocol UserAPIControllerProtocol {
 
 class UserAPIController{
     
+    //to get latitude and longitude
+    let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    //custom user api controller protocol
     var delegate: UserAPIControllerProtocol
     
     init(delegate: UserAPIControllerProtocol) {
@@ -94,7 +98,7 @@ class UserAPIController{
         let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
         let request = NSMutableURLRequest(URL: myUrl!)
         request.HTTPMethod = "POST";
-        let postString = "email=\(email)&facebookid=\(facebookid)&fullname=\(fullname)&gender=\(gender)&processType=FBLOGIN"
+        let postString = "email=\(email)&facebookid=\(facebookid)&fullname=\(fullname)&gender=\(gender)&latitude=\(self.appDelegate.currentLocation.coordinate.latitude)&longitude=\(self.appDelegate.currentLocation.coordinate.longitude)&processType=FBLOGIN"
         //print(postString)
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         

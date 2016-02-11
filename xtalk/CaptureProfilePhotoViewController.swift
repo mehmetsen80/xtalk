@@ -23,7 +23,8 @@ class CaptureProfilePhotoViewController: UIViewController, ProfileAPIControllerP
     private let concurrentProfileQueue = dispatch_queue_create("com.oy.vent.profilePhotoQueue", DISPATCH_QUEUE_CONCURRENT)
     var profileApi:ProfileAPIController?
     
-    
+    //to get latitude and longitude
+    let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     var launchType: String!
     var launched : Bool! = false
@@ -266,7 +267,7 @@ class CaptureProfilePhotoViewController: UIViewController, ProfileAPIControllerP
             }
         }
         
-        let filename = "xtlak-profile-photo.jpg"
+        let filename = "xtalk-profile-photo.jpg"
         
         let mimetype = "image/jpg"
         
@@ -475,9 +476,8 @@ class CaptureProfilePhotoViewController: UIViewController, ProfileAPIControllerP
         
     }
     
-    
+    //upload profile photo
     @IBAction func uploadPhoto(sender: AnyObject) {
-        
         
         self.btnUpload.enabled = false
         self.activityIndicator.startAnimating()
@@ -491,13 +491,17 @@ class CaptureProfilePhotoViewController: UIViewController, ProfileAPIControllerP
         
         //prepare the loaded or taken image
         let img : UIImage = self.fixOrientation(self.imageView.image!)
-        let imageData = UIImageJPEGRepresentation(img, 1)
+        let imageData = UIImageJPEGRepresentation(img, 0.5)
+        //let imageData  = UIImagePNGRepresentation(img)
+        
         if(imageData==nil) { return; }
         
         //parameters to be posted
         let param = [
             "processType" : "UPLOADPROFILEPHOTO",
-            "userid" : "\(userid)"
+            "userid" : "\(userid)",
+            "latitude": "\(self.appDelegate.currentLocation.coordinate.latitude)",
+            "longitude": "\(self.appDelegate.currentLocation.coordinate.longitude)"
         ]
 
         //prepare the http body
@@ -510,7 +514,7 @@ class CaptureProfilePhotoViewController: UIViewController, ProfileAPIControllerP
     //let's set the received posted profile photo variables into objects and fields
     func didReceivePostProfilePhotoAPIResults(results:NSDictionary){
         
-        dispatch_barrier_async(concurrentProfileQueue) {
+        dispatch_barrier_async(self.concurrentProfileQueue) {
             
             let resultValue: Bool = results["success"] as! Bool!
             let error:String? = results["error"] as! String?
@@ -527,17 +531,9 @@ class CaptureProfilePhotoViewController: UIViewController, ProfileAPIControllerP
                     self.presentViewController(myAlert, animated: true, completion: nil)
                     
                 }else{
-                    
-                    //display alert message with confirmation
-                    let myAlert = UIAlertController(title: "Confirmation", message: "Post added successfully!", preferredStyle: UIAlertControllerStyle.Alert)
-                    myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction) in
-                        self.activityIndicator.stopAnimating()
-                        self.btnCancel.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
-                    
-                    }))
-                    
-                    self.presentViewController(myAlert, animated: true, completion: nil)
-                    
+                    //stop animating and jump to the anchored screen
+                    self.activityIndicator.stopAnimating()
+                    self.btnCancel.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
                 }
                 
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false

@@ -55,7 +55,7 @@ class RegisterViewController: UIViewController, UserAPIControllerProtocol {
     //let's set the received user variables into objects and fields
     func didReceiveUserSignupAPIResults(results:NSDictionary){
         
-        dispatch_barrier_async(concurrentUserQueue) {
+        dispatch_barrier_async(self.concurrentUserQueue) {
             
             let user: User = User.UserWithJSON(results);
             

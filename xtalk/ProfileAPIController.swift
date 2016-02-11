@@ -16,8 +16,6 @@ protocol ProfileAPIControllerProtocol {
 
 class ProfileAPIController{
     
-    
-    let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var delegate: ProfileAPIControllerProtocol
     
     init(delegate: ProfileAPIControllerProtocol) {
@@ -56,6 +54,7 @@ class ProfileAPIController{
         task.resume()
     }
     
+    //post profile photo
     func postProfilePhoto(boundary: String, body: NSData){
         
         let url = NSURL(string:"http://xtalkapp.com/ajax/")
@@ -73,7 +72,7 @@ class ProfileAPIController{
             }
             
             // You can print out response object
-            print("******* response = \(response)")
+            //print("******* response = \(response)")
             
             // Print out reponse body
             // let responseString = NSString(data: data, encoding: NSUTF8StringEncoding)
