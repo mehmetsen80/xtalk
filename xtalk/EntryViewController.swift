@@ -31,44 +31,40 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate, UserAPICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("viewDidLoad()")
-        
+    
         //update city every 2 seconds, retrieved from AppDelegate
         NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "updateCity", userInfo: nil, repeats: true)
 
-        
-        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        print("viewDidAppear()")
-        
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
-          //  print("Already logged in with facebook")
+            print("Already logged in, let's sign out first")
+            FBSDKAccessToken.setCurrentAccessToken(nil)
+            //no stored objects on device anymore
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "xtalk_isloggedin")
+            NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_userid")
+            NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_fullname")
+            NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_email")
+            NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_gender")
+            NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_signupdate")
+            NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_isadmin")
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
-        else
-        {
-            let FBLoginView : FBSDKLoginButton = FBSDKLoginButton()
-            view.addSubview(FBLoginView)
-            //FBLoginView.center = self.view.center
-            FBLoginView.frame = CGRectMake(0, 0, 200, 40)
-            
-            FBLoginView.translatesAutoresizingMaskIntoConstraints = true
-            //FBLoginView.autoresizingMask = [ .FlexibleTopMargin, .FlexibleBottomMargin,
-            //     .FlexibleLeftMargin, .FlexibleRightMargin ]
-            FBLoginView.center = CGPointMake(view.bounds.midX, view.bounds.midY)
-            
-            FBLoginView.readPermissions = ["public_profile", "email", "user_birthday"]
-            FBLoginView.delegate = self
         
-            
-            userApi = UserAPIController(delegate: self)
-        }
+        //create the facebook login button
+        let FBLoginView : FBSDKLoginButton = FBSDKLoginButton()
+        view.addSubview(FBLoginView)
+        //FBLoginView.center = self.view.center
+        FBLoginView.frame = CGRectMake(0, 0, 200, 40)
+        FBLoginView.translatesAutoresizingMaskIntoConstraints = true
+        //FBLoginView.autoresizingMask = [ .FlexibleTopMargin, .FlexibleBottomMargin,
+        //     .FlexibleLeftMargin, .FlexibleRightMargin ]
+        FBLoginView.center = CGPointMake(view.bounds.midX, view.bounds.midY)
+        FBLoginView.readPermissions = ["public_profile", "email", "user_birthday"]
+        FBLoginView.delegate = self
+        
+        //let's create the user api controller
+        userApi = UserAPIController(delegate: self)
     }
-    
-   
     
     //update city
     func updateCity(){
@@ -167,14 +163,15 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate, UserAPICo
                 }else{
                     
                     let user: User = User.UserWithJSON(results);
-                    print(user.toString())
+                    print("User:  \(user.toString())")
                     
                     //store data
                     NSUserDefaults.standardUserDefaults().setBool(true, forKey: "xtalk_isloggedin")
-                    NSUserDefaults.standardUserDefaults().setObject(user.userid, forKey:"xtalk_userid")
-                    NSUserDefaults.standardUserDefaults().setObject(user.fullname, forKey:"xtalk_fullname")
-                    NSUserDefaults.standardUserDefaults().setObject(user.email, forKey:"xtalk_email")
-                    NSUserDefaults.standardUserDefaults().setObject(user.signupdate, forKey:"xtalk_signupdate")
+                    NSUserDefaults.standardUserDefaults().setObject(user.userid, forKey: "xtalk_userid")
+                    NSUserDefaults.standardUserDefaults().setObject(user.fullname, forKey: "xtalk_fullname")
+                    NSUserDefaults.standardUserDefaults().setObject(user.email, forKey: "xtalk_email")
+                    NSUserDefaults.standardUserDefaults().setObject(user.gender, forKey: "xtalk_gender")
+                    NSUserDefaults.standardUserDefaults().setObject(user.signupdate, forKey: "xtalk_signupdate")
                     NSUserDefaults.standardUserDefaults().setBool(user.isadmin!, forKey: "xtalk_isadmin")
                     NSUserDefaults.standardUserDefaults().synchronize()
                     

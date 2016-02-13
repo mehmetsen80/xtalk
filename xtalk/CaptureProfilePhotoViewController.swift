@@ -523,6 +523,10 @@ class CaptureProfilePhotoViewController: UIViewController, ProfileAPIControllerP
             
             dispatch_async(dispatch_get_main_queue(), {
                 
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                self.activityIndicator.stopAnimating()
+                self.btnUpload.enabled = true
+                
                 if(!resultValue){
                     //display alert message
                     let myAlert = UIAlertController(title: "Alert", message: error, preferredStyle: UIAlertControllerStyle.Alert)
@@ -532,13 +536,10 @@ class CaptureProfilePhotoViewController: UIViewController, ProfileAPIControllerP
                     
                 }else{
                     //stop animating and jump to the anchored screen
-                    self.activityIndicator.stopAnimating()
                     self.btnCancel.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
                 }
                 
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                self.activityIndicator.stopAnimating()
-                self.btnUpload.enabled = true
+                
                 
             }) //dispatch main thread
         }

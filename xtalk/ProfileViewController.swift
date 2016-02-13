@@ -56,11 +56,12 @@ class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UI
     @IBAction func signout(sender: AnyObject) {
         
         FBSDKAccessToken.setCurrentAccessToken(nil)
-        
+        //no stored objects on device anymore
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "xtalk_isloggedin")
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_userid")
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_fullname")
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_email")
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_gender")
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_signupdate")
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_isadmin")
         NSUserDefaults.standardUserDefaults().synchronize()

@@ -75,10 +75,11 @@ class LoginViewController: UIViewController, UserAPIControllerProtocol  {
                     
                     //store data
                     NSUserDefaults.standardUserDefaults().setBool(true, forKey: "xtalk_isloggedin")
-                    NSUserDefaults.standardUserDefaults().setObject(user.userid, forKey:"xtalk_userid")
-                    NSUserDefaults.standardUserDefaults().setObject(user.fullname, forKey:"xtalk_fullname")
-                    NSUserDefaults.standardUserDefaults().setObject(user.email, forKey:"xtalk_email")
-                    NSUserDefaults.standardUserDefaults().setObject(user.signupdate, forKey:"xtalk_signupdate")
+                    NSUserDefaults.standardUserDefaults().setObject(user.userid, forKey: "xtalk_userid")
+                    NSUserDefaults.standardUserDefaults().setObject(user.fullname, forKey: "xtalk_fullname")
+                    NSUserDefaults.standardUserDefaults().setObject(user.email, forKey: "xtalk_email")
+                    NSUserDefaults.standardUserDefaults().setObject(user.gender, forKey: "xtalk_gender")
+                    NSUserDefaults.standardUserDefaults().setObject(user.signupdate, forKey: "xtalk_signupdate")
                     NSUserDefaults.standardUserDefaults().setBool(user.isadmin!, forKey: "xtalk_isadmin")
                     NSUserDefaults.standardUserDefaults().synchronize()
                     
