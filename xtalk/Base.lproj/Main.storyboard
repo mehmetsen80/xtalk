@@ -213,6 +213,48 @@
             </objects>
             <point key="canvasLocation" x="557" y="-50"/>
         </scene>
+        <!--Facebook Photos-->
+        <scene sceneID="1rQ-Mt-s2U">
+            <objects>
+                <viewController storyboardIdentifier="fbPhotosView" title="Facebook Photos" id="CPF-0g-5A8" customClass="FacePhotosViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ggm-tP-xmg"/>
+                        <viewControllerLayoutGuide type="bottom" id="kZS-bg-caW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z3y-nF-Te6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-image" translatesAutoresizingMaskIntoConstraints="NO" id="ZJZ-h1-nBO">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xKh-Yx-j2m">
+                                <rect key="frame" x="40" y="158" width="240" height="251"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="251" id="bu6-bP-r08"/>
+                                    <constraint firstAttribute="width" constant="240" id="raA-P1-yWi"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xKh-Yx-j2m" firstAttribute="centerX" secondItem="z3y-nF-Te6" secondAttribute="centerX" id="5j3-6s-4KE"/>
+                            <constraint firstItem="ZJZ-h1-nBO" firstAttribute="top" secondItem="z3y-nF-Te6" secondAttribute="topMargin" id="BTF-zk-QCJ"/>
+                            <constraint firstItem="xKh-Yx-j2m" firstAttribute="centerY" secondItem="z3y-nF-Te6" secondAttribute="centerY" id="X61-BA-OVO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZJZ-h1-nBO" secondAttribute="trailing" constant="-20" id="mvH-B6-WYe"/>
+                            <constraint firstItem="ZJZ-h1-nBO" firstAttribute="leading" secondItem="z3y-nF-Te6" secondAttribute="leadingMargin" constant="-20" id="nwb-a4-JjE"/>
+                            <constraint firstItem="kZS-bg-caW" firstAttribute="top" secondItem="ZJZ-h1-nBO" secondAttribute="bottom" id="xdm-ds-oWp"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imgTest" destination="xKh-Yx-j2m" id="rQb-mB-kRI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BxB-LH-oVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="970"/>
+        </scene>
         <!--Sign up Xtalk-->
         <scene sceneID="niF-0R-Sy4">
             <objects>
@@ -418,7 +460,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgX-Kl-E83">
                                 <rect key="frame" x="116" y="180" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBb-hq-zj0">
@@ -472,7 +514,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Places" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyA-SO-myV">
                                 <rect key="frame" x="121" y="199" width="78" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ts-TD-qlU">
@@ -920,6 +962,6 @@
         <image name="rotate-camera-icon-black" width="48" height="49"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sJc-BM-Drz"/>
+        <segue reference="CD7-xf-0F9"/>
     </inferredMetricsTieBreakers>
 </document>

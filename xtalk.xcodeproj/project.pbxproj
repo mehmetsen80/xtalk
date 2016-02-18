@@ -31,6 +31,12 @@
 		D873296B1C613DA4003B8058 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D873296A1C613DA4003B8058 /* DoubleExtension.swift */; };
 		D87D91C41BE800C400CABE91 /* ProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */; };
 		D87EF8CE1BE90B660067DEC4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */; };
+		D87F789A1C739F0A0000A6B9 /* FacePhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F78991C739F0A0000A6B9 /* FacePhotosViewController.swift */; };
+		D87F789C1C7514F40000A6B9 /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F789B1C7514F40000A6B9 /* FBHelper.swift */; };
+		D87F789E1C761F610000A6B9 /* FacebookAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F789D1C761F610000A6B9 /* FacebookAPIController.swift */; };
+		D87F78A01C7622A60000A6B9 /* FBPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F789F1C7622A60000A6B9 /* FBPhoto.swift */; };
+		D87F78A21C762A240000A6B9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F78A11C762A240000A6B9 /* StringExtension.swift */; };
+		D87F78A41C7637D30000A6B9 /* FBMyPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F78A31C7637D30000A6B9 /* FBMyPhotos.swift */; };
 		D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */; };
 		D8A16D321BE8113300EDEB0B /* ZoomPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D311BE8113300EDEB0B /* ZoomPhotoViewController.swift */; };
 		D8A16D341BE8131F00EDEB0B /* MutableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */; };
@@ -90,6 +96,12 @@
 		D873296A1C613DA4003B8058 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhotoViewController.swift; sourceTree = "<group>"; };
 		D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D87F78991C739F0A0000A6B9 /* FacePhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacePhotosViewController.swift; sourceTree = "<group>"; };
+		D87F789B1C7514F40000A6B9 /* FBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBHelper.swift; sourceTree = "<group>"; };
+		D87F789D1C761F610000A6B9 /* FacebookAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookAPIController.swift; sourceTree = "<group>"; };
+		D87F789F1C7622A60000A6B9 /* FBPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPhoto.swift; sourceTree = "<group>"; };
+		D87F78A11C762A240000A6B9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		D87F78A31C7637D30000A6B9 /* FBMyPhotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBMyPhotos.swift; sourceTree = "<group>"; };
 		D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureProfilePhotoViewController.swift; sourceTree = "<group>"; };
 		D8A16D311BE8113300EDEB0B /* ZoomPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomPhotoViewController.swift; sourceTree = "<group>"; };
 		D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableExtension.swift; sourceTree = "<group>"; };
@@ -171,6 +183,7 @@
 				D8685CBE1BE7BF880041817E /* MainViewController.swift */,
 				D8685CF31BE7DA320041817E /* LoginViewController.swift */,
 				D87329621C582BDA003B8058 /* RegisterViewController.swift */,
+				D87F78991C739F0A0000A6B9 /* FacePhotosViewController.swift */,
 				D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */,
 				D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */,
 				D873295E1C5137F3003B8058 /* PeersViewController.swift */,
@@ -213,6 +226,7 @@
 				D8DF09E71BFA49E900619D2E /* UIImageViewExtension.swift */,
 				D87329681C613CF9003B8058 /* DateExtension.swift */,
 				D873296A1C613DA4003B8058 /* DoubleExtension.swift */,
+				D87F78A11C762A240000A6B9 /* StringExtension.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -231,6 +245,9 @@
 			children = (
 				D8A16D381BE816BD00EDEB0B /* Profile.swift */,
 				D87329641C601755003B8058 /* User.swift */,
+				D87F789B1C7514F40000A6B9 /* FBHelper.swift */,
+				D87F789F1C7622A60000A6B9 /* FBPhoto.swift */,
+				D87F78A31C7637D30000A6B9 /* FBMyPhotos.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -240,6 +257,7 @@
 			children = (
 				D8A16D3B1BE8174300EDEB0B /* ProfileAPIController.swift */,
 				D87329661C6018BB003B8058 /* UserAPIController.swift */,
+				D87F789D1C761F610000A6B9 /* FacebookAPIController.swift */,
 			);
 			name = api;
 			sourceTree = "<group>";
@@ -397,14 +415,18 @@
 				D873295F1C5137F3003B8058 /* PeersViewController.swift in Sources */,
 				D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */,
 				D8A16D391BE816BD00EDEB0B /* Profile.swift in Sources */,
+				D87F78A01C7622A60000A6B9 /* FBPhoto.swift in Sources */,
 				D87329631C582BDA003B8058 /* RegisterViewController.swift in Sources */,
 				D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */,
 				D8685CBF1BE7BF880041817E /* MainViewController.swift in Sources */,
 				D8DF09EC1BFA517700619D2E /* PhotoSourceViewController.swift in Sources */,
+				D87F789A1C739F0A0000A6B9 /* FacePhotosViewController.swift in Sources */,
+				D87F78A21C762A240000A6B9 /* StringExtension.swift in Sources */,
 				D87329671C6018BB003B8058 /* UserAPIController.swift in Sources */,
 				D8A16D321BE8113300EDEB0B /* ZoomPhotoViewController.swift in Sources */,
 				D87D91C41BE800C400CABE91 /* ProfilePhotoViewController.swift in Sources */,
 				D8685CF21BE7D6910041817E /* RoundedButton.swift in Sources */,
+				D87F789C1C7514F40000A6B9 /* FBHelper.swift in Sources */,
 				D8A16D361BE8159900EDEB0B /* CircleButton.swift in Sources */,
 				D87329691C613CF9003B8058 /* DateExtension.swift in Sources */,
 				D8685CBD1BE7BF880041817E /* AppDelegate.swift in Sources */,
@@ -412,8 +434,10 @@
 				D8685CEF1BE7D6200041817E /* CustomTabBarController.swift in Sources */,
 				D87EF8CE1BE90B660067DEC4 /* ProfileViewController.swift in Sources */,
 				D8A16D341BE8131F00EDEB0B /* MutableExtension.swift in Sources */,
+				D87F789E1C761F610000A6B9 /* FacebookAPIController.swift in Sources */,
 				D8685CEC1BE7D5BF0041817E /* UIImageExtension.swift in Sources */,
 				D8DF09E81BFA49E900619D2E /* UIImageViewExtension.swift in Sources */,
+				D87F78A41C7637D30000A6B9 /* FBMyPhotos.swift in Sources */,
 				D87329651C601756003B8058 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -59,7 +59,7 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate, UserAPICo
         //FBLoginView.autoresizingMask = [ .FlexibleTopMargin, .FlexibleBottomMargin,
         //     .FlexibleLeftMargin, .FlexibleRightMargin ]
         FBLoginView.center = CGPointMake(view.bounds.midX, view.bounds.midY)
-        FBLoginView.readPermissions = ["public_profile", "email", "user_birthday"]
+        FBLoginView.readPermissions = ["public_profile", "email", "user_photos"]
         FBLoginView.delegate = self
         
         //let's create the user api controller
@@ -175,9 +175,16 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate, UserAPICo
                     NSUserDefaults.standardUserDefaults().setBool(user.isadmin!, forKey: "xtalk_isadmin")
                     NSUserDefaults.standardUserDefaults().synchronize()
                     
-                    //if successfull login, then jump to MainViewController
-                    let mainTabBar: UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("mainTabBar") as! UITabBarController
-                    self.presentViewController(mainTabBar, animated:true, completion:nil)
+                    
+//                    //if successfull login, then jump to MainViewController
+//                    let mainTabBar: UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("mainTabBar") as! UITabBarController
+//                    self.presentViewController(mainTabBar, animated:true, completion:nil)
+                    
+                    
+                    let fbFacePhotos: FacePhotosViewController = self.storyboard?.instantiateViewControllerWithIdentifier("fbPhotosView") as! FacePhotosViewController
+                    self.presentViewController(fbFacePhotos, animated: true, completion: nil)
+                    
+                    
                     
                     
                 }
