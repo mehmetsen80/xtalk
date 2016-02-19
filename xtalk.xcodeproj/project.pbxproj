@@ -46,6 +46,7 @@
 		D8DF09E81BFA49E900619D2E /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF09E71BFA49E900619D2E /* UIImageViewExtension.swift */; };
 		D8DF09EC1BFA517700619D2E /* PhotoSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DF09EB1BFA517700619D2E /* PhotoSourceViewController.swift */; };
 		D8FAB4AC1C769173000D0202 /* FBPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FAB4AB1C769173000D0202 /* FBPhotoCell.swift */; };
+		D8FAB4B01C776907000D0202 /* FBMyPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FAB4AF1C776907000D0202 /* FBMyPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,35 +84,36 @@
 		D8685CD81BE7BF890041817E /* xtalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xtalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8685CDC1BE7BF890041817E /* xtalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xtalkUITests.swift; sourceTree = "<group>"; };
 		D8685CDE1BE7BF890041817E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8685CEB1BE7D5BF0041817E /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
-		D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		D8685CF11BE7D6910041817E /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		D8685CEB1BE7D5BF0041817E /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = extension/UIImageExtension.swift; sourceTree = "<group>"; };
+		D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTabBarController.swift; path = custom/tabbar/CustomTabBarController.swift; sourceTree = "<group>"; };
+		D8685CF11BE7D6910041817E /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = custom/button/RoundedButton.swift; sourceTree = "<group>"; };
 		D8685CF31BE7DA320041817E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D873295C1C501EA2003B8058 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D873295E1C5137F3003B8058 /* PeersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeersViewController.swift; sourceTree = "<group>"; };
 		D87329601C513A31003B8058 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		D87329621C582BDA003B8058 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		D87329641C601755003B8058 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D87329661C6018BB003B8058 /* UserAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIController.swift; sourceTree = "<group>"; };
-		D87329681C613CF9003B8058 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		D873296A1C613DA4003B8058 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		D87329641C601755003B8058 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = model/User.swift; sourceTree = "<group>"; };
+		D87329661C6018BB003B8058 /* UserAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserAPIController.swift; path = api/UserAPIController.swift; sourceTree = "<group>"; };
+		D87329681C613CF9003B8058 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = extension/DateExtension.swift; sourceTree = "<group>"; };
+		D873296A1C613DA4003B8058 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleExtension.swift; path = extension/DoubleExtension.swift; sourceTree = "<group>"; };
 		D87D91C31BE800C400CABE91 /* ProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhotoViewController.swift; sourceTree = "<group>"; };
 		D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D87F78991C739F0A0000A6B9 /* FacePhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacePhotosViewController.swift; sourceTree = "<group>"; };
-		D87F789B1C7514F40000A6B9 /* FBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBHelper.swift; sourceTree = "<group>"; };
-		D87F789D1C761F610000A6B9 /* FacebookAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookAPIController.swift; sourceTree = "<group>"; };
-		D87F789F1C7622A60000A6B9 /* FBPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBPhoto.swift; sourceTree = "<group>"; };
-		D87F78A11C762A240000A6B9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		D87F78A31C7637D30000A6B9 /* FBMyPhotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBMyPhotos.swift; sourceTree = "<group>"; };
+		D87F789B1C7514F40000A6B9 /* FBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBHelper.swift; path = model/FBHelper.swift; sourceTree = "<group>"; };
+		D87F789D1C761F610000A6B9 /* FacebookAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookAPIController.swift; path = api/FacebookAPIController.swift; sourceTree = "<group>"; };
+		D87F789F1C7622A60000A6B9 /* FBPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBPhoto.swift; path = model/FBPhoto.swift; sourceTree = "<group>"; };
+		D87F78A11C762A240000A6B9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = extension/StringExtension.swift; sourceTree = "<group>"; };
+		D87F78A31C7637D30000A6B9 /* FBMyPhotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBMyPhotos.swift; path = model/FBMyPhotos.swift; sourceTree = "<group>"; };
 		D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureProfilePhotoViewController.swift; sourceTree = "<group>"; };
 		D8A16D311BE8113300EDEB0B /* ZoomPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomPhotoViewController.swift; sourceTree = "<group>"; };
-		D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableExtension.swift; sourceTree = "<group>"; };
-		D8A16D351BE8159900EDEB0B /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
-		D8A16D381BE816BD00EDEB0B /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		D8A16D3B1BE8174300EDEB0B /* ProfileAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAPIController.swift; sourceTree = "<group>"; };
-		D8DF09E71BFA49E900619D2E /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableExtension.swift; path = extension/MutableExtension.swift; sourceTree = "<group>"; };
+		D8A16D351BE8159900EDEB0B /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleButton.swift; path = custom/button/CircleButton.swift; sourceTree = "<group>"; };
+		D8A16D381BE816BD00EDEB0B /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = model/Profile.swift; sourceTree = "<group>"; };
+		D8A16D3B1BE8174300EDEB0B /* ProfileAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileAPIController.swift; path = api/ProfileAPIController.swift; sourceTree = "<group>"; };
+		D8DF09E71BFA49E900619D2E /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageViewExtension.swift; path = extension/UIImageViewExtension.swift; sourceTree = "<group>"; };
 		D8DF09EB1BFA517700619D2E /* PhotoSourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSourceViewController.swift; sourceTree = "<group>"; };
 		D8FAB4AB1C769173000D0202 /* FBPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBPhotoCell.swift; path = cell/FBPhotoCell.swift; sourceTree = "<group>"; };
+		D8FAB4AF1C776907000D0202 /* FBMyPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBMyPhoto.swift; path = model/FBMyPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 				D87F789B1C7514F40000A6B9 /* FBHelper.swift */,
 				D87F789F1C7622A60000A6B9 /* FBPhoto.swift */,
 				D87F78A31C7637D30000A6B9 /* FBMyPhotos.swift */,
+				D8FAB4AF1C776907000D0202 /* FBMyPhoto.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			files = (
 				D873296B1C613DA4003B8058 /* DoubleExtension.swift in Sources */,
 				D87329611C513A31003B8058 /* PlacesViewController.swift in Sources */,
+				D8FAB4B01C776907000D0202 /* FBMyPhoto.swift in Sources */,
 				59A90C911C5E787A004F7F73 /* EntryViewController.swift in Sources */,
 				D873295F1C5137F3003B8058 /* PeersViewController.swift in Sources */,
 				D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */,

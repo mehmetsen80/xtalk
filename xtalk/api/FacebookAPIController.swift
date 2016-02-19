@@ -46,7 +46,7 @@ class FacebookAPIController{
     //fetch my facebook photos
     func fetchMyPhotos(){
         
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"photos,picture"])
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"photos.limit(5),picture"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
         
             print("fetchMyPhotos: \n \(result)")

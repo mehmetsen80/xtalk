@@ -16,15 +16,21 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
     
     
     var facebookApi: FacebookAPIController?
-    var fbMyPhotos: FBMyPhotos!
+    //var fbMyPhotos: FBMyPhotos!
+    var myFBPhotos: [FBMyPhoto]!
+    
+    var imageCache = [String : UIImage]()
     
     private let concurrentFacebookQueue = dispatch_queue_create("com.oy.vent.facebookQueue", DISPATCH_QUEUE_CONCURRENT)
     
     let baseUrl = "https://graph.facebook.com/v2.5/"
-    let cellHeight: CGFloat = 240
+    //let cellHeight: CGFloat = 120
+    //let cellWidth: CGFloat = 120
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageCache = [String : UIImage]()
 
         mCollectionView.delegate = self
         mCollectionView.dataSource = self
@@ -33,11 +39,12 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
         mLayout.minimumInteritemSpacing = 0
         mLayout.minimumLineSpacing = 0
         
-        let cellWidth = self.view.frame.width/2
-        mLayout.itemSize = CGSizeMake(cellWidth, cellHeight)
+        //let cellWidth = self.view.frame.width/2
+        //mLayout.itemSize = CGSizeMake(cellWidth, cellHeight)
         
         
-        fbMyPhotos = FBMyPhotos()
+        //fbMyPhotos = FBMyPhotos()
+        myFBPhotos = [FBMyPhoto]()
         
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
@@ -55,6 +62,9 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
         dispatch_barrier_async(concurrentFacebookQueue) {
             let fbPhoto: FBPhoto = FBPhoto.FBPhotoWithAnyObject(results)
             print(fbPhoto.toString())
+            
+            //self.mCollectionView.reloadData()
+            
         }
     }
     
@@ -62,11 +72,15 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
     //get my facebook photos
     func didReceiveFacebookFetchMyPhotosAPIResults(results: AnyObject){
      
-        dispatch_barrier_async(concurrentFacebookQueue) {
+        dispatch_async(concurrentFacebookQueue) {
             
-            self.fbMyPhotos = FBMyPhotos.FBMyPhotosWithAnyObject(results)
+            //self.fbMyPhotos = FBMyPhotos.FBMyPhotosWithAnyObject(results)
+            self.myFBPhotos = FBMyPhoto.loadMyFBPhotos(results)
+            
+            //self.facebookApi?.fetchPhoto(self.myFBPhotos[0].id)
+            
             self.mCollectionView.reloadData()
-            print(self.fbMyPhotos.toString())
+            //print(self.fbMyPhotos.toString())
             //my photos
             
         }
@@ -74,31 +88,41 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("FBPhotoCell", forIndexPath: indexPath) as! FBPhotoCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("fbcell", forIndexPath: indexPath) as! FBPhotoCell
         
-        if let photo:FBMyPhotos.Photo = self.fbMyPhotos.photos[indexPath.row] {
+        if let photo:FBMyPhoto = self.myFBPhotos[indexPath.row] {
         
+      
+            if photo.imageData == nil {
+            
             //lets' download a photo
-            let imgURL: NSURL! = NSURL(string: photo.url!)
-            let session = NSURLSession.sharedSession()//session
+            let url : String = "https://s3-us-west-2.amazonaws.com/s3-oyvent-images-16/85/8e7d64b63d85ddb7-small.jpg"
+            
+            //let imgURL: NSURL! = NSURL(string: photo.urlthumb!)
+            let imgURL: NSURL! = NSURL(string: url)
             let request: NSURLRequest = NSURLRequest(URL: imgURL!)//request
+            
             //create data task
-            let dataTask = session.dataTaskWithRequest(request) { (data:NSData?, response:NSURLResponse?, error:NSError?) -> Void in //session calls the request
+            let dataTask =  NSURLSession.sharedSession().dataTaskWithRequest(request) { (data:NSData?, response:NSURLResponse?, error:NSError?) -> Void in //session calls the request
                 
                 if let noerror = data {
-                    dispatch_async(dispatch_get_main_queue()) {
+                    dispatch_async(self.concurrentFacebookQueue) {
                         let image = UIImage(data: noerror)
                         photo.imageData = data
-                       
                         cell.mImageView.image = image
                     }
                 }
                 else {
                     print("Error: \(error!.localizedDescription)", terminator: "")
                 }
+        
+                
             }//end of data task
             dataTask.resume()//call data task
             
+            }else{
+                cell.mImageView.image = UIImage(data:photo.imageData)
+            }
             
             
         }
@@ -117,7 +141,7 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.fbMyPhotos.photos.count
+        return self.myFBPhotos.count
     }
 
     /*
