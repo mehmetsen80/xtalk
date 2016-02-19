@@ -17,6 +17,7 @@ class FBMyPhotos{
     
     init(allResults: AnyObject){
         
+        
         self.facebookid = allResults["id"] as! String
         
         let resultdict = allResults.objectForKey("photos") as! NSDictionary
@@ -28,6 +29,11 @@ class FBMyPhotos{
             let photo: Photo = Photo(data: valueDict)
             self.photos.append(photo)
         }
+        
+        
+    }
+    
+    init(){
         
     }
     
