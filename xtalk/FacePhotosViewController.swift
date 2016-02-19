@@ -62,7 +62,7 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
     //get my facebook photos
     func didReceiveFacebookFetchMyPhotosAPIResults(results: AnyObject){
      
-        dispatch_async(concurrentFacebookQueue) {
+        dispatch_barrier_async(concurrentFacebookQueue) {
             
             self.fbMyPhotos = FBMyPhotos.FBMyPhotosWithAnyObject(results)
             self.mCollectionView.reloadData()
