@@ -10,7 +10,9 @@ import Foundation
 
 class FBPhotoCell: UICollectionViewCell{
     
-    @IBOutlet weak var mImageView: UIImageView!
+    @IBOutlet weak var imgPicture: UIImageView!
+    @IBOutlet weak var lblCreatedTime: UILabel!
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

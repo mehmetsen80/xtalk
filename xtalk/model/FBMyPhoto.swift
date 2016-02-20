@@ -12,6 +12,7 @@ import Foundation
 class FBMyPhoto{
     
     let graphBaseUrl = "https://graph.facebook.com/v2.5/"
+    var accessToken: FBSDKAccessToken?
     
     var id: String!
     var name: String?
@@ -22,10 +23,18 @@ class FBMyPhoto{
     
     init(data: NSDictionary){
         
-        self.id = data.objectForKey("id") as! String
-        self.name = data.objectForKey("name") as? String ?? ""
-        self.urlthumb = "\(self.graphBaseUrl)\(id!)/picture?type=thumbnail&access_token=\(FBSDKAccessToken.currentAccessToken().tokenString)"
-        self.urlnormal = "\(self.graphBaseUrl)\(id!)/picture?type=normal&access_token=\(FBSDKAccessToken.currentAccessToken().tokenString)"
+        accessToken = FBSDKAccessToken.currentAccessToken()
+        
+        id = data.objectForKey("id") as! String
+        name = data.objectForKey("name") as? String ?? ""
+        created_time = data.objectForKey("created_time") as? String ?? nil
+        
+        if self.created_time != nil {
+            let localtime =   NSDate().dateFromISO8601(self.created_time!).toLocalTime()
+            created_time = NSDate().offsetFrom(localtime)
+        }
+        self.urlthumb = "\(self.graphBaseUrl)\(id!)/picture?type=thumbnail&access_token=\(accessToken!.tokenString)"
+        self.urlnormal = "\(self.graphBaseUrl)\(id!)/picture?type=normal&access_token=\(accessToken!.tokenString)"
     }
     
     class func  loadMyFBPhotos(allResults: AnyObject)->[FBMyPhoto] {

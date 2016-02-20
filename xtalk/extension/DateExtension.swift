@@ -22,6 +22,13 @@ extension NSDate {
         return dateFormatter.stringFromDate(self)
     }
     
+    //i.e  facebook created_time = 2015-06-18T19:00:53-07:00
+    func dateFromISO8601(date:String) ->NSDate{
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ" //iso 8601
+        return dateFormatter.dateFromString(date)!
+    }
+    
     func yearsFrom(date:NSDate) -> Int{
         return NSCalendar.currentCalendar().components(NSCalendarUnit.Year, fromDate: date, toDate: self, options: []).year
     }
