@@ -36,6 +36,7 @@
 		D87F789E1C761F610000A6B9 /* FacebookAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F789D1C761F610000A6B9 /* FacebookAPIController.swift */; };
 		D87F78A01C7622A60000A6B9 /* FBPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F789F1C7622A60000A6B9 /* FBPhoto.swift */; };
 		D87F78A21C762A240000A6B9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F78A11C762A240000A6B9 /* StringExtension.swift */; };
+		D88C79CE1C7B890A00C14854 /* MegaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88C79CD1C7B890A00C14854 /* MegaTheme.swift */; };
 		D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */; };
 		D8A16D321BE8113300EDEB0B /* ZoomPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D311BE8113300EDEB0B /* ZoomPhotoViewController.swift */; };
 		D8A16D341BE8131F00EDEB0B /* MutableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */; };
@@ -102,6 +103,7 @@
 		D87F789D1C761F610000A6B9 /* FacebookAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookAPIController.swift; path = api/FacebookAPIController.swift; sourceTree = "<group>"; };
 		D87F789F1C7622A60000A6B9 /* FBPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBPhoto.swift; path = model/FBPhoto.swift; sourceTree = "<group>"; };
 		D87F78A11C762A240000A6B9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = extension/StringExtension.swift; sourceTree = "<group>"; };
+		D88C79CD1C7B890A00C14854 /* MegaTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MegaTheme.swift; path = theme/MegaTheme.swift; sourceTree = "<group>"; };
 		D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureProfilePhotoViewController.swift; sourceTree = "<group>"; };
 		D8A16D311BE8113300EDEB0B /* ZoomPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomPhotoViewController.swift; sourceTree = "<group>"; };
 		D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableExtension.swift; path = extension/MutableExtension.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		D8685CBB1BE7BF880041817E /* xtalk */ = {
 			isa = PBXGroup;
 			children = (
+				D88C79CC1C7B88E800C14854 /* theme */,
 				D8FAB4AA1C76913D000D0202 /* cell */,
 				59A90C8A1C5DE08D004F7F73 /* Frameworks */,
 				D8A16D3A1BE8172800EDEB0B /* api */,
@@ -241,6 +244,14 @@
 				D8DF09E31BFA35BF00619D2E /* button */,
 			);
 			name = custom;
+			sourceTree = "<group>";
+		};
+		D88C79CC1C7B88E800C14854 /* theme */ = {
+			isa = PBXGroup;
+			children = (
+				D88C79CD1C7B890A00C14854 /* MegaTheme.swift */,
+			);
+			name = theme;
 			sourceTree = "<group>";
 		};
 		D8A16D371BE816A900EDEB0B /* model */ = {
@@ -443,6 +454,7 @@
 				D8A16D361BE8159900EDEB0B /* CircleButton.swift in Sources */,
 				D87329691C613CF9003B8058 /* DateExtension.swift in Sources */,
 				D8685CBD1BE7BF880041817E /* AppDelegate.swift in Sources */,
+				D88C79CE1C7B890A00C14854 /* MegaTheme.swift in Sources */,
 				D8A16D3C1BE8174300EDEB0B /* ProfileAPIController.swift in Sources */,
 				D8685CEF1BE7D6200041817E /* CustomTabBarController.swift in Sources */,
 				D87EF8CE1BE90B660067DEC4 /* ProfileViewController.swift in Sources */,

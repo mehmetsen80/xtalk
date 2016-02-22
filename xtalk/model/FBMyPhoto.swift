@@ -20,6 +20,7 @@ class FBMyPhoto{
     var urlthumb: String?
     var urlnormal: String?
     var imageData: NSData!
+    var selected: Bool = false
     
     init(data: NSDictionary){
         

@@ -18,6 +18,7 @@ class FBPhoto {
     var picture: String?
     var place: AnyObject?
     
+    
     class func FBPhotoWithAnyObject(allResults: AnyObject) -> FBPhoto{
         
         let fbPhoto: FBPhoto = FBPhoto()

@@ -38,7 +38,6 @@ class FacebookAPIController{
             
             self.delegate.didReceiveFacebookFetchPhotoAPIResults(result)
             
-            
         })
         
     }
@@ -46,7 +45,7 @@ class FacebookAPIController{
     //fetch my facebook photos
     func fetchMyPhotos(){
         
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"photos.limit(10),picture"])
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"photos.limit(16),picture"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
         
             print("fetchMyPhotos: \n \(result)")
@@ -57,7 +56,6 @@ class FacebookAPIController{
             }
             
             self.delegate.didReceiveFacebookFetchMyPhotosAPIResults(result)
-            
             
         })
     }

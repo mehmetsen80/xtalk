@@ -14,12 +14,19 @@ class FBPhotoCell: UICollectionViewCell{
     @IBOutlet weak var lblCreatedTime: UILabel!
     
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
+//    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//    }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        lblCreatedTime.textColor = UIColor(white: 0.20, alpha: 1.0)
+        //lblCreatedTime.font = UIFont(name: MegaTheme.boldFontName, size: 1.0)
     }
    
 }

@@ -13,17 +13,23 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
     
     @IBOutlet weak var mCollectionView: UICollectionView!
     @IBOutlet weak var mLayout: UICollectionViewFlowLayout!
-    
+    @IBOutlet weak var btnContinue: RoundedButton!
     
     var facebookApi: FacebookAPIController?
     var myFBPhotos: [FBMyPhoto]!
     
-    
     private let concurrentFacebookQueue = dispatch_queue_create("com.oy.vent.facebookQueue", DISPATCH_QUEUE_CONCURRENT)
     
-    let baseUrl = "https://graph.facebook.com/v2.5/"
     let cellHeight: CGFloat = 150
-    //let cellWidth: CGFloat = 120
+  
+    
+    
+//    var selectedIndexes = [NSIndexPath]() {
+//        didSet {
+//            mCollectionView.reloadData()
+//            btnContinue.setTitle("Continue (\(selectedIndexes.count) selected)", forState: .Normal)
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +37,10 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
 
         mCollectionView.delegate = self
         mCollectionView.dataSource = self
-        mCollectionView.backgroundColor = UIColor.clearColor()
+        //mCollectionView.backgroundColor = UIColor.clearColor()
         
-        mLayout.minimumInteritemSpacing = 0
-        mLayout.minimumLineSpacing = 0
+        mLayout.minimumInteritemSpacing = 6
+        mLayout.minimumLineSpacing = 6
         
         let cellWidth = self.view.frame.width/2
         mLayout.itemSize = CGSizeMake(cellWidth, cellHeight)
@@ -107,8 +113,10 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
                 }else{
                     cell.imgPicture.image = UIImage(data:photo.imageData)
                 }
+                                                             //Unselected           //Selected
+            cell.backgroundColor = photo.selected == false ? UIColor.clearColor() : UIColor.whiteColor()
                 
-            }
+        }
         
         return cell
         
@@ -116,16 +124,57 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-    }
-    
-    
-    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        //when my photo exists
+        if let photo:FBMyPhoto = self.myFBPhotos[indexPath.row] {
+            photo.selected = photo.selected == true ? false : true
+            self.myFBPhotos[indexPath.row] = photo
+            self.mCollectionView.reloadData()
+            self.btnContinue.setTitle("Continue (\(self.selectedIndexes()) selected)", forState: .Normal)
+        }
+        
+        
+        
+//        if let indexSelecionado = selectedIndexes.indexOf(indexPath) {
+//            selectedIndexes.removeAtIndex(indexSelecionado)
+//        } else {
+//            selectedIndexes.append(indexPath)
+//        }
+        
+        
+        print("did select cell item \(indexPath)")
         
     }
+    
+//    func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("fbcell", forIndexPath: indexPath) as! FBPhotoCell
+//        cell.backgroundColor = UIColor.blackColor()
+//        
+//        print("should highlight cell item \(indexPath)")
+//        
+//        return true
+//    }
+//    
+    
+    func selectedIndexes() -> Int {
+        
+        var i:Int = 0
+        for photo in self.myFBPhotos{
+            
+            if(photo.selected){
+                i++
+            }
+        }
+        
+        return i
+    }
+    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.myFBPhotos.count
     }
+    
+    
 
     /*
     // MARK: - Navigation
