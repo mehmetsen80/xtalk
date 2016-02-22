@@ -8,9 +8,11 @@
 
 import UIKit
 
-class EntryViewController: UIViewController, FBSDKLoginButtonDelegate, UserAPIControllerProtocol  {
+class EntryViewController: UIViewController, FacebookAPIControllerProtocol, FBSDKLoginButtonDelegate  {
 
-    var userApi:UserAPIController?
+    var appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    var facebookApi : FacebookAPIController?
     private let concurrentUserQueue = dispatch_queue_create("com.oy.vent.userQueue", DISPATCH_QUEUE_CONCURRENT)
     
     @IBOutlet weak var txtCity: UILabel!
@@ -27,7 +29,7 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate, UserAPICo
     var picture: String!
     
     
-    var appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,8 +64,9 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate, UserAPICo
         FBLoginView.readPermissions = ["public_profile", "email", "user_photos"]
         FBLoginView.delegate = self
         
-        //let's create the user api controller
-        userApi = UserAPIController(delegate: self)
+        
+        //let's create the facebook api controller
+        facebookApi = FacebookAPIController(delegate: self)
     }
     
     //update city
@@ -127,7 +130,7 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate, UserAPICo
                 print("Facebook ID: \(self.facebookid)  name: \(self.fullname) gender: \(self.gender) email: \(self.email)  picture: \(self.picture)")
                 
                 //facebook login
-                self.userApi?.fblogin(self.facebookid, fullname: self.fullname, email: self.email, gender: self.gender)
+                self.facebookApi?.fblogin(self.facebookid, fullname: self.fullname, email: self.email, gender: self.gender)
             }
         })
     }
@@ -143,7 +146,7 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate, UserAPICo
     
     
      //let's set the received user variables into objects and fields
-    func didReceiveUserFBLoginAPIResults(results: NSDictionary){
+    func didReceiveFacebookLoginAPIResults(results: NSDictionary){
     
         dispatch_barrier_async(concurrentUserQueue) {
             
@@ -193,15 +196,23 @@ class EntryViewController: UIViewController, FBSDKLoginButtonDelegate, UserAPICo
         
     
     }
+    
+    
+    func didReceiveFacebookFetchPhotoAPIResults(results: AnyObject){}//fetch a single photo
+    func didReceiveFacebookFetchMyPhotosAPIResults(results: AnyObject){}//fetch my photos
+    func didReceiveFacebookImportPhotosAPIResults(results: NSDictionary){}//import facebook photos
 
-    //no need to implement this here in Register
-    func didReceiveUserLoginAPIResults(results:NSDictionary){}
+//    //no need to implement this here in Register
+//    func didReceiveUserLoginAPIResults(results:NSDictionary){}
+//    
+//    //no need to implement this here
+//    func didReceiveUserSignupAPIResults(results: NSDictionary){}
+//    
+//    //no need to implement this here
+//    func didReceiveUserSearchAPIResults(results: NSDictionary){}
     
-    //no need to implement this here
-    func didReceiveUserSignupAPIResults(results: NSDictionary){}
     
-    //no need to implement this here
-    func didReceiveUserSearchAPIResults(results: NSDictionary){}
+    
 
     /*
     // MARK: - Navigation

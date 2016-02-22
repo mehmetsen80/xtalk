@@ -285,6 +285,9 @@
                                 <state key="normal" title="Continue (0 selected)">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="importFacebookPhotos:" destination="CPF-0g-5A8" eventType="touchUpInside" id="Ie8-cp-QrZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import Facebook Photos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYm-IJ-IcB">
                                 <rect key="frame" x="20" y="33" width="280" height="24"/>

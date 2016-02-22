@@ -11,7 +11,6 @@ import Foundation
 protocol UserAPIControllerProtocol {
     func didReceiveUserLoginAPIResults(results: NSDictionary)
     func didReceiveUserSignupAPIResults(results: NSDictionary)
-    func didReceiveUserFBLoginAPIResults(results: NSDictionary)
     func didReceiveUserSearchAPIResults(results: NSDictionary)
 }
 
@@ -91,39 +90,6 @@ class UserAPIController{
 
     }
     
-    
-    // facebook login
-    func fblogin(facebookid: String, fullname: String, email: String, gender: String){
-        
-        let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
-        let request = NSMutableURLRequest(URL: myUrl!)
-        request.HTTPMethod = "POST";
-        let postString = "email=\(email)&facebookid=\(facebookid)&fullname=\(fullname)&gender=\(gender)&latitude=\(self.appDelegate.currentLocation.coordinate.latitude)&longitude=\(self.appDelegate.currentLocation.coordinate.longitude)&processType=FBLOGIN"
-        //print(postString)
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-            data, response, error in
-            
-            if(error != nil){
-                print("error=\(error)", terminator: "")
-                return
-            }
-            
-            do{
-                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as! NSDictionary
-                
-                self.delegate.didReceiveUserFBLoginAPIResults(json)
-                
-            }catch let error {
-                print("Something went wrong! \(error)")
-            }
-            
-        }
-        
-        
-        task.resume()
-    }
     
     
     //not used right now

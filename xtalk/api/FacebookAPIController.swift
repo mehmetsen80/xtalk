@@ -11,9 +11,14 @@ import Foundation
 protocol FacebookAPIControllerProtocol {
     func didReceiveFacebookFetchPhotoAPIResults(results: AnyObject)//fetch a single photo
     func didReceiveFacebookFetchMyPhotosAPIResults(results: AnyObject)//fetch my photos
+    func didReceiveFacebookLoginAPIResults(results: NSDictionary)//custom facebook login
+    func didReceiveFacebookImportPhotosAPIResults(results: NSDictionary)//import facebook photos
 }
 
 class FacebookAPIController{
+    
+    //to get latitude and longitude
+    let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     //custom user api controller protocol
     var delegate: FacebookAPIControllerProtocol
@@ -42,6 +47,39 @@ class FacebookAPIController{
         
     }
     
+    // facebook login
+    func fblogin(facebookid: String, fullname: String, email: String, gender: String){
+        
+        let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
+        let request = NSMutableURLRequest(URL: myUrl!)
+        request.HTTPMethod = "POST";
+        let postString = "email=\(email)&facebookid=\(facebookid)&fullname=\(fullname)&gender=\(gender)&latitude=\(self.appDelegate.currentLocation.coordinate.latitude)&longitude=\(self.appDelegate.currentLocation.coordinate.longitude)&processType=FBLOGIN"
+        //print(postString)
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, error in
+            
+            if(error != nil){
+                print("error=\(error)", terminator: "")
+                return
+            }
+            
+            do{
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                
+                self.delegate.didReceiveFacebookLoginAPIResults(json)
+                
+            }catch let error {
+                print("Something went wrong! \(error)")
+            }
+            
+        }
+        
+        
+        task.resume()
+    }
+    
     //fetch my facebook photos
     func fetchMyPhotos(){
         
@@ -59,6 +97,44 @@ class FacebookAPIController{
             
         })
     }
+    
+    //import my facebook photos
+    func importMyFacebookPhotos(photos: [FBMyPhoto]){
+        
+        let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
+        let request = NSMutableURLRequest(URL: myUrl!)
+        request.HTTPMethod = "POST";
+        //let postString = "photos=\(email)&facebookid=\(facebookid)&fullname=\(fullname)&gender=\(gender)&latitude=\(self.appDelegate.currentLocation.coordinate.latitude)&longitude=\(self.appDelegate.currentLocation.coordinate.longitude)&processType=IMPORTFBPHOTOS"
+        
+        let postString = "latitude=\(self.appDelegate.currentLocation.coordinate.latitude)&longitude=\(self.appDelegate.currentLocation.coordinate.longitude)&processType=IMPORTFBPHOTOS"
+        //print(postString)
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, error in
+            
+            if(error != nil){
+                print("error=\(error)", terminator: "")
+                return
+            }
+            
+            do{
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                
+                self.delegate.didReceiveFacebookImportPhotosAPIResults(json)
+                
+            }catch let error {
+                print("Something went wrong! \(error)")
+            }
+            
+        }
+        
+        
+        task.resume()
+        
+    }
+    
+    
     
     
 }
