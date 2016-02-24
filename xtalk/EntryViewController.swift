@@ -175,6 +175,9 @@ class EntryViewController: UIViewController, FacebookAPIControllerProtocol, FBSD
                     NSUserDefaults.standardUserDefaults().setObject(user.email, forKey: "xtalk_email")
                     NSUserDefaults.standardUserDefaults().setObject(user.gender, forKey: "xtalk_gender")
                     NSUserDefaults.standardUserDefaults().setObject(user.signupdate, forKey: "xtalk_signupdate")
+                    NSUserDefaults.standardUserDefaults().setObject(user.birthday, forKey: "xtalk_birthday")
+                    NSUserDefaults.standardUserDefaults().setObject(user.description, forKey: "xtalk_description")
+                    NSUserDefaults.standardUserDefaults().setObject(user.interests, forKey: "xtalk_interests")
                     NSUserDefaults.standardUserDefaults().setBool(user.isadmin!, forKey: "xtalk_isadmin")
                     NSUserDefaults.standardUserDefaults().synchronize()
                     

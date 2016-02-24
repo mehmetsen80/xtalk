@@ -53,7 +53,7 @@ class FacebookAPIController{
         let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
         let request = NSMutableURLRequest(URL: myUrl!)
         request.HTTPMethod = "POST";
-        let postString = "email=\(email)&facebookid=\(facebookid)&fullname=\(fullname)&gender=\(gender)&latitude=\(self.appDelegate.currentLocation.coordinate.latitude)&longitude=\(self.appDelegate.currentLocation.coordinate.longitude)&processType=FBLOGIN"
+        let postString = "email=\(email)&facebookid=\(facebookid)&fullname=\(fullname)&gender=\(gender)&latitude=\(self.appDelegate.currentLocation.coordinate.latitude)&longitude=\(self.appDelegate.currentLocation.coordinate.longitude)&processType=LOGINWITHFACEBOOK"
         //print(postString)
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -99,16 +99,20 @@ class FacebookAPIController{
     }
     
     //import my facebook photos
-    func importMyFacebookPhotos(photos: [FBMyPhoto]){
+    func importMyFacebookPhotos(photos: String){
         
         let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
         let request = NSMutableURLRequest(URL: myUrl!)
         request.HTTPMethod = "POST";
-        //let postString = "photos=\(email)&facebookid=\(facebookid)&fullname=\(fullname)&gender=\(gender)&latitude=\(self.appDelegate.currentLocation.coordinate.latitude)&longitude=\(self.appDelegate.currentLocation.coordinate.longitude)&processType=IMPORTFBPHOTOS"
+       
         
-        let postString = "latitude=\(self.appDelegate.currentLocation.coordinate.latitude)&longitude=\(self.appDelegate.currentLocation.coordinate.longitude)&processType=IMPORTFBPHOTOS"
-        //print(postString)
+        
+        let  pkUserID : Double! =  NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
+        
+        let postString = "userid=\(pkUserID)&photos=\(photos)&latitude=\(self.appDelegate.currentLocation.coordinate.latitude)&longitude=\(self.appDelegate.currentLocation.coordinate.longitude)&processType=IMPORTFACEBOOKPHOTOS"
+        print(postString)
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
             data, response, error in
@@ -120,6 +124,8 @@ class FacebookAPIController{
             
             do{
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                
+                print(json)
                 
                 self.delegate.didReceiveFacebookImportPhotosAPIResults(json)
                 

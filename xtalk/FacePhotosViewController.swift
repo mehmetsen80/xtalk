@@ -18,6 +18,8 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
     var facebookApi: FacebookAPIController?
     var myFBPhotos: [FBMyPhoto]!
     
+    var pkUserID : Double!
+    
     private let concurrentFacebookQueue = dispatch_queue_create("com.oy.vent.facebookQueue", DISPATCH_QUEUE_CONCURRENT)
     
     let cellHeight: CGFloat = 150
@@ -25,6 +27,7 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+     
 
         mCollectionView.delegate = self
         mCollectionView.dataSource = self
@@ -80,7 +83,7 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
       
             //lets' download a photo
             if photo.imageData == nil {
-                    let imgURL: NSURL! = NSURL(string: photo.urlnormal!)
+                    let imgURL: NSURL! = NSURL(string: photo.url!)
                     let request: NSURLRequest = NSURLRequest(URL: imgURL!)//request
             
                     //create data task
@@ -90,6 +93,7 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
                             dispatch_async(dispatch_get_main_queue(), {
                                 let image = UIImage(data: noerror)
                                 photo.imageData = data
+                                photo.urlbase64 = data?.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
                                 cell.imgPicture.image = image
                              })//dispatch main queue for the image
                         }
@@ -146,20 +150,24 @@ class FacePhotosViewController: UIViewController, UICollectionViewDelegate, UICo
     
     @IBAction func importFacebookPhotos(sender: AnyObject) {
         
-        var selected : [FBMyPhoto] = [FBMyPhoto]()
+        var selectedURLs : String = ""
         
-        for photo in self.myFBPhotos{
-            
-            if(photo.selected){
-                selected.append(photo)
-            }
-        }
+//        for photo in self.myFBPhotos{
+//            
+//            if(photo.selected){
+//                selectedURLs += photo.urlbase64! + "@@@@"
+//            }
+//        }
         
+        selectedURLs = self.myFBPhotos[0].urlbase64!
         
+        self.facebookApi?.importMyFacebookPhotos(selectedURLs)
     }
     
     func didReceiveFacebookImportPhotosAPIResults(results: NSDictionary){
         
+        print("didReceiveFacebookImportPhotosAPIResults: \n")
+        print(results)
     }
     
 

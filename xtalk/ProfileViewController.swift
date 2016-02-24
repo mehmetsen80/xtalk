@@ -28,14 +28,14 @@ class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UI
 
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        self.pkUserID =  NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
+        pkUserID =  NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
         print("pkUserID \(pkUserID)")
         
         fullname = NSUserDefaults.standardUserDefaults().stringForKey("xtalk_fullname")!
         
         //profile Api to get the profile info
         profileApi = ProfileAPIController(delegate: self)
-        if(self.pkUserID != nil){
+        if(pkUserID != nil){
             profileApi?.searchProfile(self.pkUserID)
         }
         
@@ -63,6 +63,9 @@ class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UI
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_email")
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_gender")
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_signupdate")
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_birthday")
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_description")
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_interests")
         NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "xtalk_isadmin")
         NSUserDefaults.standardUserDefaults().synchronize()
         

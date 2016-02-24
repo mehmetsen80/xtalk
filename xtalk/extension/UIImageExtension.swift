@@ -9,8 +9,17 @@
 import Foundation
 import UIKit
 
+public enum ImageFormat {
+    case PNG
+    case JPEG(CGFloat)
+}
+
 extension UIImage{
     
+    /* Example
+            var bg: UIImage = UIImage(named: "background-image")!
+            bg = UIImage().resizeImage(bg, targetSize: CGSize(width: bg.size.width, height: 50))
+            UITabBar.appearance().backgroundImage = bg */
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
         
@@ -38,4 +47,21 @@ extension UIImage{
         return newImage
     }
     
+    
+    func ImageToBase64(format: ImageFormat) -> String {
+        var imageData: NSData!
+        switch format {
+            case .PNG: imageData = UIImagePNGRepresentation(self)
+            case .JPEG(let compression): imageData = UIImageJPEGRepresentation(self, compression)
+        }
+        return imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+    }
+    
+    func Base64ToImage(base64String: String) -> UIImage {
+        let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions(rawValue: 0) )
+        
+        let decodedimage = UIImage(data: decodedData!)
+        
+        return decodedimage!
+    }
 }

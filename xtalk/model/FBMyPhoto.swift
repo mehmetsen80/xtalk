@@ -17,8 +17,8 @@ class FBMyPhoto{
     var id: String!
     var name: String?
     var created_time: String?
-    var urlthumb: String?
-    var urlnormal: String?
+    var url: String?
+    var urlbase64: String?
     var imageData: NSData!
     var selected: Bool = false
     
@@ -34,8 +34,8 @@ class FBMyPhoto{
             let localtime =   NSDate().dateFromISO8601(self.created_time!).toLocalTime()
             created_time = NSDate().offsetFrom(localtime)
         }
-        self.urlthumb = "\(self.graphBaseUrl)\(id!)/picture?type=thumbnail&access_token=\(accessToken!.tokenString)"
-        self.urlnormal = "\(self.graphBaseUrl)\(id!)/picture?type=normal&access_token=\(accessToken!.tokenString)"
+       
+        self.url = "\(self.graphBaseUrl)\(id!)/picture?type=normal&access_token=\(accessToken!.tokenString)"
     }
     
     class func  loadMyFBPhotos(allResults: AnyObject)->[FBMyPhoto] {
@@ -58,7 +58,7 @@ class FBMyPhoto{
     }
     
     func toString() -> String{
-        return "id: \(self.id) name: \(self.name!) created_time: \(self.created_time) urlthumb: \(self.urlthumb) urlnormal: \(self.urlnormal) "
+        return "id: \(self.id) name: \(self.name!) created_time: \(self.created_time)  url: \(self.url) urlbase64: \(self.urlbase64)"
     }
 
 }
