@@ -8,10 +8,13 @@
 
 import Foundation
 
-class FBPhotoCell: UICollectionViewCell{
+class FBPhotoCell: UITableViewCell{
     
-    @IBOutlet weak var imgPicture: UIImageView!
+    @IBOutlet weak var imgPhoto: UIImageView!
     @IBOutlet weak var lblCreatedTime: UILabel!
+    @IBOutlet weak var btnImport: RoundedButton!
+    
+ 
     
     
 //    required init?(coder aDecoder: NSCoder) {
@@ -25,7 +28,7 @@ class FBPhotoCell: UICollectionViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        lblCreatedTime.textColor = UIColor(white: 0.20, alpha: 1.0)
+        //lblCreatedTime.textColor = UIColor(white: 0.20, alpha: 1.0)
         //lblCreatedTime.font = UIFont(name: MegaTheme.boldFontName, size: 1.0)
     }
    
