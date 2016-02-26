@@ -19,6 +19,8 @@ class FBMyPhoto{
     var created_time: String?
     var url: String?
     var urlbase64: String?
+    var originalImage: UIImage?
+    var newImage: UIImage?
     var imageData: NSData!
     var selected: Bool = false
     

@@ -51,15 +51,16 @@ extension NSDate {
         return NSCalendar.currentCalendar().components(NSCalendarUnit.Second, fromDate: date, toDate: self, options: []).second
     }
     func offsetFrom(date:NSDate) -> String {
-        if yearsFrom(date)   > 0 { return "\(yearsFrom(date))y"   }
-        if monthsFrom(date)  > 0 { return "\(monthsFrom(date))M"  }
-        if weeksFrom(date)   > 0 { return "\(weeksFrom(date))w"   }
-        if daysFrom(date)    > 0 { return "\(daysFrom(date))d"    }
-        if hoursFrom(date)   > 0 { return "\(hoursFrom(date))h"   }
-        if minutesFrom(date) > 0 { return "\(minutesFrom(date))m" }
-        if secondsFrom(date) > 0 { return "\(secondsFrom(date))s" }
+        if yearsFrom(date)   > 0 { return "\(yearsFrom(date)) years ago"   }//y
+        if monthsFrom(date)  > 0 { return "\(monthsFrom(date)) months ago"  }//M
+        if weeksFrom(date)   > 0 { return "\(weeksFrom(date)) weeks ago"   }//w
+        if daysFrom(date)    > 0 { return "\(daysFrom(date)) days ago"    }//d
+        if hoursFrom(date)   > 0 { return "\(hoursFrom(date)) hours ago"   }//h
+        if minutesFrom(date) > 0 { return "\(minutesFrom(date)) minutes ago" }//m
+        if secondsFrom(date) > 0 { return "\(secondsFrom(date)) seconds ago" }//s
         return ""
     }
+   
     
     // Convert UTC (or GMT) to local time
     func toLocalTime() -> NSDate {

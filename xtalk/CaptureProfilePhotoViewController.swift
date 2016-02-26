@@ -20,7 +20,7 @@ enum PhotoSource:String {
 
 class CaptureProfilePhotoViewController: UIViewController, ProfileAPIControllerProtocol, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    private let concurrentProfileQueue = dispatch_queue_create("com.oy.vent.profilePhotoQueue", DISPATCH_QUEUE_CONCURRENT)
+    private let concurrentProfileQueue = dispatch_queue_create("xtalk.dev.CapturePhotoQueue", DISPATCH_QUEUE_CONCURRENT)
     var profileApi:ProfileAPIController?
     
     //to get latitude and longitude

@@ -11,7 +11,7 @@ import UIKit
 class ProfileViewController: UIViewController,  ProfileAPIControllerProtocol, UIPopoverPresentationControllerDelegate  {
     
     var profileApi:ProfileAPIController?
-    private let concurrentProfileQueue = dispatch_queue_create("com.oy.vent.profilePhotoQueue", DISPATCH_QUEUE_CONCURRENT)
+    private let concurrentProfileQueue = dispatch_queue_create("xtalk.dev.profilePhotoQueue", DISPATCH_QUEUE_CONCURRENT)
 
 
     @IBOutlet weak var imgProfilePhoto: UIImageView!

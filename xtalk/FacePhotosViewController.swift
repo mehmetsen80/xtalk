@@ -12,26 +12,27 @@ class FacePhotosViewController: UIViewController, UITableViewDelegate, UITableVi
 
     
     @IBOutlet weak var mTableView: UITableView!
-    @IBOutlet weak var btnContinue: RoundedButton!
     
     var facebookApi: FacebookAPIController?
     var myFBPhotos: [FBMyPhoto] = [FBMyPhoto]()//create the fb photos array
-    
     var pkUserID : Double!
-    
     private let concurrentFacebookQueue = dispatch_queue_create("xtalk.dev.facebookQueue", DISPATCH_QUEUE_CONCURRENT)
+    let activitiyViewController = ActivityViewController(message: "Importing...")
+    let passedViewController = PassedViewController(message: "imported Successfully!")
     
-    let cellHeight: CGFloat = 150
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //uitableview
         mTableView.delegate = self
         mTableView.dataSource = self
         mTableView.backgroundColor = UIColor.clearColor()
-        mTableView.estimatedRowHeight = 400.0
         mTableView.rowHeight = UITableViewAutomaticDimension
+        mTableView.reloadData()
         
+        
+        //only if logged in with facebook
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             //We are good to go to call facebook API!
@@ -55,15 +56,15 @@ class FacePhotosViewController: UIViewController, UITableViewDelegate, UITableVi
     
     //get my facebook photos
     func didReceiveFacebookFetchMyPhotosAPIResults(results: AnyObject){
-     
+        
         self.myFBPhotos = FBMyPhoto.loadMyFBPhotos(results)
         self.mTableView.reloadData()
-     
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("fbCell", forIndexPath: indexPath) as! FBPhotoCell
+        cell.activityIndicator.startAnimating()
         
         //when my photo exists
         if let photo:FBMyPhoto = self.myFBPhotos[indexPath.row] {
@@ -80,20 +81,28 @@ class FacePhotosViewController: UIViewController, UITableViewDelegate, UITableVi
                     
                     if let noerror = data {
                         dispatch_async(dispatch_get_main_queue(), {
-                            var image = UIImage(data: noerror)
+                            let originalImage = UIImage(data: noerror)
                             photo.imageData = data
                             photo.urlbase64 = data?.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
-                            cell.imgPhoto.image = image
-                            //cell.imgPhoto.image? = UIImage().resizeImage(image!, targetSize: CGSize(width: self.mTableView.contentSize.width, height: (image?.size.height)!))
+                            photo.originalImage = originalImage
+                            let targetSize: CGSize = CGSize(width: self.mTableView.contentSize.width, height: (originalImage?.size.height)!)
+                            let newImage = UIImage().resizeImage(originalImage!, targetSize: targetSize)
+                            photo.newImage = newImage
+                            cell.imgPhoto.image? = newImage
+                            cell.activityIndicator.stopAnimating()
                             
-                            let targetSize: CGSize = CGSize(width: self.mTableView.contentSize.width, height: self.mTableView.contentSize.height/2)
-                            print("targetsize -> width: \(targetSize.width) height: \(targetSize.height)")
+                            cell.btnImport.tag = indexPath.row
+                            cell.btnImport.addTarget(self, action: "importThisPhoto:", forControlEvents: UIControlEvents.TouchUpInside)
                             
-                            image = UIImage().resizeImage(image!, targetSize: targetSize)
-                            print("new image size -> width: \(image!.size.width)  height: \(image!.size.height)")
+                            //let's set the modified photo back to the photo array
+                            self.myFBPhotos[indexPath.row] = photo
                             
+                            
+                            //print("image original size -> width: \(originalImage?.size.width)  height: \(originalImage?.size.height)")
+                                                        //print("targetsize -> width: \(targetSize.width) height: \(targetSize.height)")
+                            //print("new image size -> width: \(newImage!.size.width)  height: \(newImage!.size.height)")
                             //cell.imgPhoto.image? = UIImage().resizeImage(image!, targetSize: CGSize(width: self.mTableView.contentSize.width, height: self.mTableView.contentSize.height/2))
-                            cell.imgPhoto.image? = image!
+                            
                         })//dispatch main queue for the image
                     }
                     else {
@@ -120,47 +129,64 @@ class FacePhotosViewController: UIViewController, UITableViewDelegate, UITableVi
         return myFBPhotos.count
     }
     
-    
-//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        
-//        //when my photo exists
-//        if let photo:FBMyPhoto = self.myFBPhotos[indexPath.row] {
-//            photo.selected = photo.selected == true ? false : true
-//            self.myFBPhotos[indexPath.row] = photo
-//            self.mCollectionView.reloadData()
-//            self.btnContinue.setTitle("Continue (\(self.selectedIndexes()) selected)", forState: .Normal)
-//        }
-//    }
-    
-//    
-//    func selectedIndexes() -> Int {
-//        
-//        var i:Int = 0
-//        for photo in self.myFBPhotos{
-//            
-//            if(photo.selected){
-//                i++
-//            }
-//        }
-//        
-//        return i
-//    }
-    
-    
-//    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return myFBPhotos.count
-//    }
-    
-    @IBAction func importFacebookPhotos(sender: AnyObject) {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        let selectedPhoto : String = self.myFBPhotos[1].urlbase64!
-        self.facebookApi?.importMyFacebookPhoto(selectedPhoto)
+        let photo:FBMyPhoto = self.myFBPhotos[indexPath.row]
+        let height: CGFloat = photo.newImage == nil ? 350 :  (photo.newImage?.size.height)! + 30
+        return height
     }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    //import facebook photo
+    func importThisPhoto(sender: UIButton){
+        
+        //another way to get the indexPath
+        //        let buttonPosition: CGPoint = sender.convertPoint(CGPointZero, toView: self.mTableView)
+        //        let indexPath: NSIndexPath = self.mTableView.indexPathForRowAtPoint(buttonPosition)!
+        
+        
+        let row = sender.tag //button row
+        let photo:FBMyPhoto = self.myFBPhotos[row]
+        self.facebookApi?.importMyFacebookPhoto(photo.urlbase64!)
+        //show loading progress bar
+        presentViewController(self.activitiyViewController, animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBAction func Next(sender: AnyObject) {
+    }
+
     
     func didReceiveFacebookImportPhotoAPIResults(results: NSDictionary){
         
         print("didReceiveFacebookImportPhotosAPIResults: \n")
         print(results)
+        
+        let resultValue: Bool = results["success"] as! Bool!
+        
+        dispatch_barrier_async(concurrentFacebookQueue) {
+            dispatch_async(dispatch_get_main_queue(), {
+            
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+                if(resultValue){
+                    self.presentViewController(self.passedViewController, animated: true, completion: nil)
+                    NSTimer.scheduledTimerWithTimeInterval(2, target:self, selector: Selector("photoSuccessfullyImported"), userInfo: nil, repeats: false)
+                }
+            }) //dispatch main thread
+        }
+        
+   
+    }
+    
+    //facebook photo successfully imported!
+    func photoSuccessfullyImported(){
+        print("photo imported, let's show yeyyy message!")
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
 

@@ -83,7 +83,7 @@ class FacebookAPIController{
     //fetch my facebook photos
     func fetchMyPhotos(){
         
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"photos.limit(16),picture"])
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"photos.limit(30),picture"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
         
             print("fetchMyPhotos: \n \(result)")
@@ -104,8 +104,6 @@ class FacebookAPIController{
         let myUrl = NSURL(string:"http://xtalkapp.com/ajax/")
         let request = NSMutableURLRequest(URL: myUrl!)
         request.HTTPMethod = "POST";
-       
-        
         
         let  pkUserID : Double! =  NSNumberFormatter().numberFromString(NSUserDefaults.standardUserDefaults().stringForKey("xtalk_userid")!)?.doubleValue
         

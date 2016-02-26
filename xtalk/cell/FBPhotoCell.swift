@@ -12,23 +12,14 @@ class FBPhotoCell: UITableViewCell{
     
     @IBOutlet weak var imgPhoto: UIImageView!
     @IBOutlet weak var lblCreatedTime: UILabel!
-    @IBOutlet weak var btnImport: RoundedButton!
+    @IBOutlet weak var btnImport: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
- 
-    
-    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//    }
-//    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//    }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //lblCreatedTime.textColor = UIColor(white: 0.20, alpha: 1.0)
+        //lblCreatedTime.textColor = UIColor(white: 1.0, alpha: 1.0)
         //lblCreatedTime.font = UIFont(name: MegaTheme.boldFontName, size: 1.0)
     }
    
