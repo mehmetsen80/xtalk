@@ -20,7 +20,7 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate{
 
     var mainScrollView: UIScrollView!
     
-    var btnBack: UIButton!
+    var btnClose: UIButton!
     
     var pageScrollViews:[UIScrollView?] = [UIScrollView]() //page scroll views
     var currentPageView: UIView! //current page
@@ -54,15 +54,17 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate{
         mainScrollView.delegate = self //scroll view delegate connects directly itself
         
         
-        btnBack = UIButton()
-        btnBack.backgroundColor = UIColor.blackColor()
-        btnBack.setTitle("Back", forState: .Normal)
-        btnBack.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        btnBack.frame = CGRectMake(10, 10, 50, 40)
-        btnBack.addTarget(self, action: "back", forControlEvents: .TouchUpInside)
+        btnClose = UIButton()
+        btnClose.backgroundColor = UIColor.blackColor()
+        btnClose.setTitle("Close", forState: .Normal)
+        btnClose.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        btnClose.frame = CGRectMake(10, 10, 50, 40)
+        
         
         self.view.addSubview(mainScrollView)
-        self.view.addSubview(btnBack)
+        self.view.addSubview(btnClose)
+        
+        btnClose.addTarget(self, action: "closePage", forControlEvents: .TouchUpInside)
         
         configScrollView()
         addPageControlOnScrollView()
@@ -75,10 +77,11 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate{
     
    
     
-    func back(sender: AnyObject){
+    func closePage(sender: AnyObject){
 //        let fbFacePhotos: FacePhotosViewController = self.storyboard?.instantiateViewControllerWithIdentifier("fbPhotosView") as! FacePhotosViewController
 //        self.presentViewController(fbFacePhotos, animated: true, completion: nil)
-        self.performSegueWithIdentifier("unwindToFacePhotos", sender: self)
+        //self.performSegueWithIdentifier("unwindToFacePhotos", sender: self)
+        dismissViewControllerAnimated(true, completion: nil)
     }
    
     

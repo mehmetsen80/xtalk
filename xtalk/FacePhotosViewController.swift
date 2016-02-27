@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FacePhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FacebookAPIControllerProtocol{
+class FacePhotosViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITableViewDataSource, FacebookAPIControllerProtocol{
 
     
     @IBOutlet weak var mTableView: UITableView!
@@ -138,6 +138,14 @@ class FacePhotosViewController: UIViewController, UITableViewDelegate, UITableVi
                 cell.imgImported.image = UIImage(named: "ok-icon-black")
             }
             
+            cell.imgPhoto.userInteractionEnabled = true
+            cell.imgPhoto.tag = indexPath.row
+            
+            let tapped:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "TappedOnImage:")
+            tapped.numberOfTapsRequired = 1
+            cell.imgPhoto.addGestureRecognizer(tapped)
+            
+            
             //lets' download a photo
             if photo.imageData == nil {
                 
@@ -185,6 +193,28 @@ class FacePhotosViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    func TappedOnImage(sender:UITapGestureRecognizer){
+        
+        let scrollViewController: ScrollViewController = self.storyboard?.instantiateViewControllerWithIdentifier("scrollView") as! ScrollViewController
+        scrollViewController.modalPresentationStyle = .Popover
+        scrollViewController.popoverPresentationController!.delegate = self
+        scrollViewController.popoverPresentationController!.sourceRect = (sender.view?.bounds)!
+        scrollViewController.popoverPresentationController!.permittedArrowDirections = .Any
+        scrollViewController.popoverPresentationController!.sourceView = self.view
+        
+        var photos: [UIImage]! = [UIImage]()
+        for photo in self.myFBPhotos{
+            if let newImage = photo.newImage{
+                photos.append(newImage)
+            }
+        }
+        
+        scrollViewController.photos = photos
+        
+        self.presentViewController(scrollViewController, animated:true, completion:nil)
+        
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.myFBPhotos.count
     }
@@ -223,6 +253,8 @@ class FacePhotosViewController: UIViewController, UITableViewDelegate, UITableVi
         //show loading progress bar
         presentViewController(self.activitiyViewController, animated: true, completion: nil)
     }
+    
+    
     
     func didReceiveFacebookImportPhotoAPIResults(results: NSDictionary, row: Int){
         
@@ -269,35 +301,46 @@ class FacePhotosViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "showScrollView"{
-            let scrollViewController: ScrollViewController = segue.destinationViewController as! ScrollViewController
-//            scrollViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//        if segue.identifier == "showScrollView"{
+//            let scrollViewController: ScrollViewController = segue.destinationViewController as! ScrollViewController
+//            scrollViewController.modalPresentationStyle = .Popover
 //            scrollViewController.popoverPresentationController!.delegate = self
-//            scrollViewController.popoverPresentationController!.sourceRect = sender!.bounds
-            
-            var photos: [UIImage]! = [UIImage]()
-            for photo in self.myFBPhotos{
-                if let newImage = photo.newImage{
-                    photos.append(newImage)
-                }
-            }
-            
-            scrollViewController.photos = photos
-            
-           
-            
-        }
-    }
+//            //scrollViewController.popoverPresentationController!.sourceRect = self.view.bounds
+//            scrollViewController.popoverPresentationController!.permittedArrowDirections = .Any
+//            //scrollViewController.preferredContentSize = CGSizeMake(240.0, 90.0)
+//            //scrollViewController.popoverPresentationController!.sourceView = self.view
+//            
+////            let selectPhotoType: PhotoSourceViewController = self.storyboard!.instantiateViewControllerWithIdentifier("selectPhotoTypeView") as! PhotoSourceViewController
+////            selectPhotoType.zoomURL = self.zoomURL
+////            selectPhotoType.modalPresentationStyle = .Popover
+////            selectPhotoType.preferredContentSize = CGSizeMake(240.0, 90.0)
+////            selectPhotoType.popoverPresentationController!.delegate = self
+////            selectPhotoType.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.Any
+////            selectPhotoType.popoverPresentationController!.sourceView = imageView
+////            selectPhotoType.popoverPresentationController!.sourceRect = imageView.bounds
+////            self.presentViewController(selectPhotoType, animated:true, completion:nil)
+//            
+//            
+//            var photos: [UIImage]! = [UIImage]()
+//            for photo in self.myFBPhotos{
+//                if let newImage = photo.newImage{
+//                    photos.append(newImage)
+//                }
+//            }
+//            
+//            scrollViewController.photos = photos
+//        }
+//    }
     
     @IBAction func unwindFromScrollViewToFacePhotos(segue: UIStoryboardSegue) {
         print("came from ScrollView")
     }
     
-//    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-//        return UIModalPresentationStyle.None
-//    }
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
 
 
 }
