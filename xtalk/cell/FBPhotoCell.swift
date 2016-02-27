@@ -13,7 +13,7 @@ class FBPhotoCell: UITableViewCell{
     @IBOutlet weak var imgPhoto: UIImageView!
     @IBOutlet weak var lblCreatedTime: UILabel!
     @IBOutlet weak var btnImport: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var imgImported: UIImageView!
     
 
     override func awakeFromNib() {

@@ -239,10 +239,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="321"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="86j-xY-WN1">
-                                                    <rect key="frame" x="154" y="151" width="20" height="20"/>
-                                                </activityIndicatorView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-profile-photo-yet" translatesAutoresizingMaskIntoConstraints="NO" id="gsE-fG-dOP">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-profile-photo-yet" translatesAutoresizingMaskIntoConstraints="NO" id="gsE-fG-dOP">
                                                     <rect key="frame" x="0.0" y="38" width="328" height="282"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29h-qJ-dIg">
@@ -266,29 +263,31 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face-icon-black" translatesAutoresizingMaskIntoConstraints="NO" id="tO4-RU-fr7">
-                                                    <rect key="frame" x="8" y="243" width="36" height="36"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tr4-Ft-Scr">
+                                                    <rect key="frame" x="280" y="288" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="NYI-h8-3W2"/>
+                                                        <constraint firstAttribute="height" constant="30" id="gfo-oT-nVO"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="29h-qJ-dIg" firstAttribute="leading" secondItem="uTZ-Uy-6J9" secondAttribute="leadingMargin" constant="-8" id="175-wc-Nji"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="29h-qJ-dIg" secondAttribute="trailing" constant="-8" id="2WN-8n-RlF"/>
-                                                <constraint firstItem="tO4-RU-fr7" firstAttribute="top" secondItem="gsE-fG-dOP" secondAttribute="bottom" constant="-77" id="3Go-jb-YcA"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="29h-qJ-dIg" secondAttribute="bottom" constant="-8" id="Fxn-oP-hdc"/>
                                                 <constraint firstItem="gsE-fG-dOP" firstAttribute="leading" secondItem="uTZ-Uy-6J9" secondAttribute="leadingMargin" constant="-8" id="GYF-pS-Syv"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="gsE-fG-dOP" secondAttribute="bottom" constant="-7" id="ORC-M4-wIg"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gsE-fG-dOP" secondAttribute="trailing" constant="-8" id="PRE-Qc-4mt"/>
                                                 <constraint firstItem="gsE-fG-dOP" firstAttribute="top" secondItem="uTZ-Uy-6J9" secondAttribute="topMargin" constant="30" id="SgG-lI-OVj"/>
-                                                <constraint firstItem="86j-xY-WN1" firstAttribute="centerY" secondItem="uTZ-Uy-6J9" secondAttribute="centerY" id="TA6-00-JJp"/>
-                                                <constraint firstItem="gsE-fG-dOP" firstAttribute="leading" secondItem="tO4-RU-fr7" secondAttribute="trailing" constant="-44" id="Vif-zB-tUL"/>
                                                 <constraint firstItem="gsE-fG-dOP" firstAttribute="top" secondItem="IF8-20-PAx" secondAttribute="bottom" constant="-43" id="gd1-5n-K65"/>
                                                 <constraint firstItem="IF8-20-PAx" firstAttribute="leading" secondItem="gsE-fG-dOP" secondAttribute="trailing" constant="-110" id="lLU-Bp-aJL"/>
-                                                <constraint firstItem="86j-xY-WN1" firstAttribute="centerX" secondItem="uTZ-Uy-6J9" secondAttribute="centerX" id="whF-eg-qCD"/>
+                                                <constraint firstItem="tr4-Ft-Scr" firstAttribute="leading" secondItem="29h-qJ-dIg" secondAttribute="trailing" constant="-48" id="m81-6t-ZMY"/>
+                                                <constraint firstItem="tr4-Ft-Scr" firstAttribute="top" secondItem="29h-qJ-dIg" secondAttribute="bottom" constant="-33" id="qEi-WR-Sad"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="activityIndicator" destination="86j-xY-WN1" id="zgc-NR-Gx5"/>
                                             <outlet property="btnImport" destination="29h-qJ-dIg" id="g6W-CM-vBd"/>
+                                            <outlet property="imgImported" destination="tr4-Ft-Scr" id="cIj-74-Vyf"/>
                                             <outlet property="imgPhoto" destination="gsE-fG-dOP" id="WXG-vk-uVE"/>
                                             <outlet property="lblCreatedTime" destination="IF8-20-PAx" id="chL-Uv-L3N"/>
                                         </connections>
@@ -319,6 +318,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeK-8E-et1">
+                                <rect key="frame" x="20" y="530" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="tuT-ZD-afY" kind="presentation" identifier="showScrollView" id="66S-nj-nxz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -344,6 +350,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BxB-LH-oVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="118" y="967"/>
+        </scene>
+        <!--Scroll View Controller-->
+        <scene sceneID="Uq5-WA-rbS">
+            <objects>
+                <viewController id="tuT-ZD-afY" customClass="ScrollViewController" customModule="xtalk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Srk-oj-yet"/>
+                        <viewControllerLayoutGuide type="bottom" id="pk5-Dw-n3y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AB5-EL-r3p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="bna-HL-Pqj" kind="unwind" identifier="unwindToFacePhotos" unwindAction="unwindFromScrollViewToFacePhotos:" id="fmz-2V-0bb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSw-gx-LhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bna-HL-Pqj" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="29" y="1656"/>
         </scene>
         <!--Sign up Xtalk-->
         <scene sceneID="niF-0R-Sy4">
@@ -1043,7 +1072,6 @@
         <image name="camera-icon-black" width="48" height="48"/>
         <image name="capture-icon-black" width="48" height="48"/>
         <image name="eye-icon-black" width="48" height="48"/>
-        <image name="face-icon-black" width="36" height="36"/>
         <image name="gallery-icon-black" width="48" height="48"/>
         <image name="home-icon-black-small" width="24" height="24"/>
         <image name="location-icon-black-small" width="24" height="24"/>

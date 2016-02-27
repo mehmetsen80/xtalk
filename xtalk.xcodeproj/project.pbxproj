@@ -38,6 +38,7 @@
 		D88C79CE1C7B890A00C14854 /* MegaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88C79CD1C7B890A00C14854 /* MegaTheme.swift */; };
 		D88C79D31C7FBC9A00C14854 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88C79D21C7FBC9A00C14854 /* ActivityViewController.swift */; };
 		D88C79D51C7FC31C00C14854 /* PassedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88C79D41C7FC31C00C14854 /* PassedViewController.swift */; };
+		D88C79D71C80BDD600C14854 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88C79D61C80BDD600C14854 /* ScrollViewController.swift */; };
 		D8A16D301BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */; };
 		D8A16D321BE8113300EDEB0B /* ZoomPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D311BE8113300EDEB0B /* ZoomPhotoViewController.swift */; };
 		D8A16D341BE8131F00EDEB0B /* MutableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */; };
@@ -106,6 +107,7 @@
 		D88C79CD1C7B890A00C14854 /* MegaTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MegaTheme.swift; path = theme/MegaTheme.swift; sourceTree = "<group>"; };
 		D88C79D21C7FBC9A00C14854 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		D88C79D41C7FC31C00C14854 /* PassedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassedViewController.swift; sourceTree = "<group>"; };
+		D88C79D61C80BDD600C14854 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureProfilePhotoViewController.swift; sourceTree = "<group>"; };
 		D8A16D311BE8113300EDEB0B /* ZoomPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomPhotoViewController.swift; sourceTree = "<group>"; };
 		D8A16D331BE8131F00EDEB0B /* MutableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableExtension.swift; path = extension/MutableExtension.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */,
 				D873295E1C5137F3003B8058 /* PeersViewController.swift */,
 				D87329601C513A31003B8058 /* PlacesViewController.swift */,
+				D88C79D61C80BDD600C14854 /* ScrollViewController.swift */,
 				D8DF09EB1BFA517700619D2E /* PhotoSourceViewController.swift */,
 				D8A16D2F1BE8111B00EDEB0B /* CaptureProfilePhotoViewController.swift */,
 				D8A16D311BE8113300EDEB0B /* ZoomPhotoViewController.swift */,
@@ -451,6 +454,7 @@
 				D8FAB4AC1C769173000D0202 /* FBPhotoCell.swift in Sources */,
 				D8A16D391BE816BD00EDEB0B /* Profile.swift in Sources */,
 				D87F78A01C7622A60000A6B9 /* FBPhoto.swift in Sources */,
+				D88C79D71C80BDD600C14854 /* ScrollViewController.swift in Sources */,
 				D87329631C582BDA003B8058 /* RegisterViewController.swift in Sources */,
 				D88C79D31C7FBC9A00C14854 /* ActivityViewController.swift in Sources */,
 				D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */,

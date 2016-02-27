@@ -203,7 +203,7 @@ class EntryViewController: UIViewController, FacebookAPIControllerProtocol, FBSD
     
     func didReceiveFacebookFetchPhotoAPIResults(results: AnyObject){}//fetch a single photo
     func didReceiveFacebookFetchMyPhotosAPIResults(results: AnyObject){}//fetch my photos
-    func didReceiveFacebookImportPhotoAPIResults(results: NSDictionary){}//import facebook photos
+    func didReceiveFacebookImportPhotoAPIResults(results: NSDictionary, row: Int){}//import facebook photos
 
 //    //no need to implement this here in Register
 //    func didReceiveUserLoginAPIResults(results:NSDictionary){}

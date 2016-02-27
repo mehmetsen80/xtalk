@@ -22,7 +22,7 @@ class FBMyPhoto{
     var originalImage: UIImage?
     var newImage: UIImage?
     var imageData: NSData!
-    var selected: Bool = false
+    var isImported: Bool = false
     
     init(data: NSDictionary){
         
