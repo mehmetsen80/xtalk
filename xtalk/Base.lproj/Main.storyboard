@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vuE-dZ-zkB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vuE-dZ-zkB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -228,32 +228,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-image" translatesAutoresizingMaskIntoConstraints="NO" id="ZJZ-h1-nBO">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QR-u4-CS4">
-                                <rect key="frame" x="268" y="18" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="pZc-OF-KnT"/>
-                                    <constraint firstAttribute="width" constant="46" id="yL2-au-IgN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Next:" destination="CPF-0g-5A8" eventType="touchUpInside" id="9WF-yv-iCK"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import Facebook Photos?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYm-IJ-IcB">
-                                <rect key="frame" x="49" y="54" width="222" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="ktd-hi-bgj"/>
-                                    <constraint firstAttribute="width" constant="222" id="nFp-6G-XWN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="321" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sOQ-4I-kCy">
-                                <rect key="frame" x="-4" y="80" width="328" height="488"/>
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="fbCell" id="RwW-ci-9kO" customClass="FBPhotoCell" customModule="xtalk" customModuleProvider="target">
@@ -322,27 +298,32 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="sOQ-4I-kCy" secondAttribute="trailing" constant="-20" id="0vs-Mc-K8t"/>
-                            <constraint firstItem="ZJZ-h1-nBO" firstAttribute="top" secondItem="0QR-u4-CS4" secondAttribute="bottom" constant="-48" id="BSO-zV-7nG"/>
                             <constraint firstItem="ZJZ-h1-nBO" firstAttribute="top" secondItem="z3y-nF-Te6" secondAttribute="topMargin" id="BTF-zk-QCJ"/>
-                            <constraint firstItem="sOQ-4I-kCy" firstAttribute="top" secondItem="z3y-nF-Te6" secondAttribute="topMargin" constant="80" id="HeK-gw-jab"/>
-                            <constraint firstItem="TYm-IJ-IcB" firstAttribute="centerX" secondItem="z3y-nF-Te6" secondAttribute="centerX" id="Pa0-SZ-8kD"/>
+                            <constraint firstItem="sOQ-4I-kCy" firstAttribute="top" secondItem="z3y-nF-Te6" secondAttribute="topMargin" id="HeK-gw-jab"/>
                             <constraint firstItem="sOQ-4I-kCy" firstAttribute="leading" secondItem="z3y-nF-Te6" secondAttribute="leadingMargin" constant="-20" id="Tu7-Nh-Oli"/>
                             <constraint firstItem="kZS-bg-caW" firstAttribute="top" secondItem="sOQ-4I-kCy" secondAttribute="bottom" id="fBn-fN-qTV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZJZ-h1-nBO" secondAttribute="trailing" constant="-20" id="mvH-B6-WYe"/>
                             <constraint firstItem="ZJZ-h1-nBO" firstAttribute="leading" secondItem="z3y-nF-Te6" secondAttribute="leadingMargin" constant="-20" id="nwb-a4-JjE"/>
-                            <constraint firstItem="sOQ-4I-kCy" firstAttribute="top" secondItem="TYm-IJ-IcB" secondAttribute="bottom" constant="1" id="seD-Z1-uOc"/>
-                            <constraint firstItem="0QR-u4-CS4" firstAttribute="leading" secondItem="ZJZ-h1-nBO" secondAttribute="trailing" constant="-56" id="tVP-Zh-dld"/>
                             <constraint firstItem="kZS-bg-caW" firstAttribute="top" secondItem="ZJZ-h1-nBO" secondAttribute="bottom" id="xdm-ds-oWp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Import Facebook Photos" id="8EO-vL-cSu">
+                        <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="fR3-W5-wLS">
+                            <color key="tintColor" red="0.57494870580000002" green="0.20884433999999999" blue="0.18901218689999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="nextScreen:" destination="CPF-0g-5A8" id="wxN-s5-7Bj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="mTableView" destination="sOQ-4I-kCy" id="JZL-cw-6Jp"/>
+                        <segue destination="tuT-ZD-afY" kind="show" identifier="showScrollView" id="FMF-Lg-AJE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BxB-LH-oVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="967"/>
+            <point key="canvasLocation" x="118" y="959"/>
         </scene>
         <!--Scroll View Controller-->
         <scene sceneID="Uq5-WA-rbS">
@@ -365,7 +346,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSw-gx-LhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bna-HL-Pqj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="29" y="1656"/>
+            <point key="canvasLocation" x="118" y="1656"/>
         </scene>
         <!--Sign up Xtalk-->
         <scene sceneID="niF-0R-Sy4">
@@ -478,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PY8-ve-TCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="557" y="631"/>
+            <point key="canvasLocation" x="563" y="791"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="r09-Yu-S6f">
@@ -498,7 +479,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvU-3E-WtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="383" y="1774"/>
+            <point key="canvasLocation" x="457" y="1773"/>
         </scene>
         <!--Home-->
         <scene sceneID="9et-IF-FE5">
@@ -552,7 +533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neV-2D-XDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1184" y="1002"/>
+            <point key="canvasLocation" x="1996" y="1002"/>
         </scene>
         <!--Peers-->
         <scene sceneID="vSK-gd-VD7">
@@ -606,7 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aM5-Zo-ohf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1184" y="1656"/>
+            <point key="canvasLocation" x="1488" y="1656"/>
         </scene>
         <!--Places-->
         <scene sceneID="hDp-rd-Nwm">
@@ -660,7 +641,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Add-Wf-Cte" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1184" y="2305"/>
+            <point key="canvasLocation" x="1488" y="2304"/>
         </scene>
         <!--My Profile-->
         <scene sceneID="zSQ-1u-9SV">
@@ -1058,6 +1039,25 @@
                 <exit id="8Nd-Bi-2ac" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1871" y="2841"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DwB-HG-NLs">
+            <objects>
+                <navigationController storyboardIdentifier="navImportFacebookPhotos" automaticallyAdjustsScrollViewInsets="NO" id="HaL-o7-gIE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g8d-VA-QDs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CPF-0g-5A8" kind="relationship" relationship="rootViewController" id="TrQ-Pz-9Zz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdr-3L-Ize" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-376" y="959"/>
         </scene>
     </scenes>
     <resources>

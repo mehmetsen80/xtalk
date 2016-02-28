@@ -28,6 +28,7 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate{
     let viewForZoomTag = 1 //zoom factor
     var mainScrollViewContentSize: CGSize! //main scroll view content size
 
+    var startPage : Int = 0
     
     override func viewDidLoad() {
        
@@ -62,31 +63,30 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate{
         
         
         self.view.addSubview(mainScrollView)
-        self.view.addSubview(btnClose)
+        //self.view.addSubview(btnClose)
         
-        btnClose.addTarget(self, action: "closePage", forControlEvents: .TouchUpInside)
+        //btnClose.addTarget(self, action: "closePage", forControlEvents: .TouchUpInside)
         
         configScrollView()
         addPageControlOnScrollView()
+        
+        
 
     }
 
     override func viewWillAppear(animated: Bool) {
         loadVisiblePages()
+        
+        //added by Mehmet Sen, start from where photo is clicked
+        pageControl.currentPage = startPage
+        let x = CGFloat(pageControl.currentPage) * mainScrollView.frame.size.width
+        mainScrollView.setContentOffset(CGPointMake(x, 0), animated: true)
+        loadVisiblePages()
+        currentPageView = pageScrollViews[pageControl.currentPage]
+        
     }
-    
-   
-    
-    func closePage(sender: AnyObject){
-//        let fbFacePhotos: FacePhotosViewController = self.storyboard?.instantiateViewControllerWithIdentifier("fbPhotosView") as! FacePhotosViewController
-//        self.presentViewController(fbFacePhotos, animated: true, completion: nil)
-        //self.performSegueWithIdentifier("unwindToFacePhotos", sender: self)
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-   
     
 
-    
     
     //config main scroll view
     func configScrollView() {
@@ -102,6 +102,7 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate{
         //let's configure the page control
         self.pageControl.numberOfPages = photos.count
         self.pageControl.currentPage = 0
+        
         self.pageControl.tintColor = UIColor.redColor()
         self.pageControl.pageIndicatorTintColor = UIColor.grayColor()
         self.pageControl.currentPageIndicatorTintColor = UIColor.greenColor()
@@ -180,10 +181,7 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate{
         let currentPage = pageControl.currentPage
         let previousPage =  currentPage > 0 ? currentPage - 1 : 0
         let nextPage = currentPage + 1 > pageControl.numberOfPages ? currentPage : currentPage + 1
-        
-        //        print("\(previousPage)-\(currentPage)-\(nextPage)")
-        
-        
+  
         for page in 0..<previousPage {
             purgePage(page)
         }
@@ -202,12 +200,7 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate{
     
     func loadPage(page: Int) {
         
-                print("\(__FUNCTION__) \(page)")
-        
         if page < 0 || page >= pageControl.numberOfPages {
-            
-                        print("\(__FUNCTION__) \(page) abort.")
-            
             return
         }
         
@@ -358,6 +351,7 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate{
             
             pageControl.currentPage = Int(currentPage)
             
+            
             loadVisiblePages()
             
             
@@ -382,6 +376,7 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate{
             
             
             let currentPage = targetOffset / (mainScrollViewWidthPerPage * zoomRatio)
+            
             
             print(" currentPage=\(currentPage)")
             

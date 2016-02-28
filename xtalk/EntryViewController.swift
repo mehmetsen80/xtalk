@@ -187,9 +187,12 @@ class EntryViewController: UIViewController, FacebookAPIControllerProtocol, FBSD
 //                    self.presentViewController(mainTabBar, animated:true, completion:nil)
                     
                     
-                    let fbFacePhotos: FacePhotosViewController = self.storyboard?.instantiateViewControllerWithIdentifier("fbPhotosView") as! FacePhotosViewController
-                    self.presentViewController(fbFacePhotos, animated: true, completion: nil)
+//                    let fbFacePhotos: FacePhotosViewController = self.storyboard?.instantiateViewControllerWithIdentifier("fbPhotosView") as! FacePhotosViewController
+//                    self.presentViewController(fbFacePhotos, animated: true, completion: nil)
                     
+                    
+                    let navFacePhotos: UINavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("navImportFacebookPhotos") as! UINavigationController
+                    self.presentViewController(navFacePhotos, animated: false, completion: nil)
                     
                     
                     

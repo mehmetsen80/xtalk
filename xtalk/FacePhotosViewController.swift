@@ -8,8 +8,7 @@
 
 import UIKit
 
-class FacePhotosViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITableViewDataSource, FacebookAPIControllerProtocol{
-
+class FacePhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FacebookAPIControllerProtocol{
     
     @IBOutlet weak var mTableView: UITableView!
     
@@ -19,7 +18,6 @@ class FacePhotosViewController: UIViewController, UIPopoverPresentationControlle
     private let concurrentFacebookQueue = dispatch_queue_create("xtalk.dev.facebookQueue", DISPATCH_QUEUE_CONCURRENT)
     var activitiyViewController : ActivityViewController!
     var passedViewController : PassedViewController!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +42,6 @@ class FacePhotosViewController: UIViewController, UIPopoverPresentationControlle
         }
     }
 
-//    override func viewDidAppear(animated: Bool) {
-//        mTableView.reloadData()
-//    }
     
     //get facebook API results for a single photo not used yet
     func didReceiveFacebookFetchPhotoAPIResults(results: AnyObject){
@@ -64,7 +59,6 @@ class FacePhotosViewController: UIViewController, UIPopoverPresentationControlle
     func didReceiveFacebookFetchMyPhotosAPIResults(results: AnyObject){
         
         self.myFBPhotos = FBMyPhoto.loadMyFBPhotos(results)
-        //self.mTableView.reloadData()
         
         for (index,photo) in  self.myFBPhotos.enumerate(){
             
@@ -81,20 +75,18 @@ class FacePhotosViewController: UIViewController, UIPopoverPresentationControlle
                         dispatch_async(dispatch_get_main_queue(), {
                             let originalImage = UIImage(data: noerror)
                             photo.imageData = data
+                            //convert image into 64 base string
                             photo.urlbase64 = data?.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+                            //always keep the original image
                             photo.originalImage = originalImage
+                            //new width and height, keep the table width and the original image height
                             let targetSize: CGSize = CGSize(width: self.mTableView.contentSize.width, height: (originalImage?.size.height)!)
+                            //resize the original image according to the new target size and get new image
                             let newImage = UIImage().resizeImage(originalImage!, targetSize: targetSize)
+                            //keep the new image on our photo model
                             photo.newImage = newImage
-                            
-                            //let's set the modified photo back to the photo array
+                            //let's set the modified photo model back to the photo array
                             self.myFBPhotos[index] = photo
-                            
-                            
-                            //print("image original size -> width: \(originalImage?.size.width)  height: \(originalImage?.size.height)")
-                            //print("targetsize -> width: \(targetSize.width) height: \(targetSize.height)")
-                            //print("new image size -> width: \(newImage!.size.width)  height: \(newImage!.size.height)")
-                            //cell.imgPhoto.image? = UIImage().resizeImage(image!, targetSize: CGSize(width: self.mTableView.contentSize.width, height: self.mTableView.contentSize.height/2))
                             
                         })//dispatch main queue for the image
                     }
@@ -105,13 +97,13 @@ class FacePhotosViewController: UIViewController, UIPopoverPresentationControlle
                 }//end of data task
                 dataTask.resume()//call data task
                 
-                //self.myFBPhotos[i] = photo
                 
             }
 
            
         }
         
+        //show 3 seconds alert of table loading... this gives us time to load the tableview
         self.activitiyViewController = ActivityViewController(message: "Loading...")
         presentViewController(self.activitiyViewController, animated: true, completion: nil)
         NSTimer.scheduledTimerWithTimeInterval(3, target:self, selector: Selector("tableLoadingDone"), userInfo: nil, repeats: false)
@@ -134,13 +126,11 @@ class FacePhotosViewController: UIViewController, UIPopoverPresentationControlle
             cell.btnImport.tag = indexPath.row
             cell.btnImport.addTarget(self, action: "importThisPhoto:", forControlEvents: UIControlEvents.TouchUpInside)
             cell.backgroundColor = UIColor.clearColor()
-            if(photo.isImported){
-                cell.imgImported.image = UIImage(named: "ok-icon-black")
-            }
-            
+            cell.imgImported.image = photo.isImported  ? UIImage(named: "ok-icon-black") : nil
             cell.imgPhoto.userInteractionEnabled = true
             cell.imgPhoto.tag = indexPath.row
             
+            //when the image is clicked
             let tapped:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "TappedOnImage:")
             tapped.numberOfTapsRequired = 1
             cell.imgPhoto.addGestureRecognizer(tapped)
@@ -159,13 +149,18 @@ class FacePhotosViewController: UIViewController, UIPopoverPresentationControlle
                         dispatch_async(dispatch_get_main_queue(), {
                             let originalImage = UIImage(data: noerror)
                             photo.imageData = data
+                            //convert image into 64 base string
                             photo.urlbase64 = data?.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+                            //always keep the original image
                             photo.originalImage = originalImage
+                            //new width and height, keep the table width and the original image height
                             let targetSize: CGSize = CGSize(width: self.mTableView.contentSize.width, height: (originalImage?.size.height)!)
+                            //resize the original image according to the new target size and get new image
                             let newImage = UIImage().resizeImage(originalImage!, targetSize: targetSize)
+                            //keep the new image on our photo model
                             photo.newImage = newImage
+                            //show the new resized image in the cell
                             cell.imgPhoto.image? = newImage
-                            
                             
                             self.myFBPhotos[indexPath.row] = photo//let's set the modified photo back to the photo array
                             
@@ -178,40 +173,18 @@ class FacePhotosViewController: UIViewController, UIPopoverPresentationControlle
                 }//end of data task
                 dataTask.resume()//call data task
                 
-                self.myFBPhotos[indexPath.row] = photo
-                
             }else{
                 //cell.imgPhoto.image = UIImage(data:photo.imageData)
                 cell.imgPhoto.image = photo.newImage
             }
-            //Unselected           //Selected
-            //cell.backgroundColor = photo.selected == false ? UIColor.clearColor() : UIColor.whiteColor()
-            
-            
         }
         
         return cell
     }
     
     func TappedOnImage(sender:UITapGestureRecognizer){
-        
-        let scrollViewController: ScrollViewController = self.storyboard?.instantiateViewControllerWithIdentifier("scrollView") as! ScrollViewController
-        scrollViewController.modalPresentationStyle = .Popover
-        scrollViewController.popoverPresentationController!.delegate = self
-        scrollViewController.popoverPresentationController!.sourceRect = (sender.view?.bounds)!
-        scrollViewController.popoverPresentationController!.permittedArrowDirections = .Any
-        scrollViewController.popoverPresentationController!.sourceView = self.view
-        
-        var photos: [UIImage]! = [UIImage]()
-        for photo in self.myFBPhotos{
-            if let newImage = photo.newImage{
-                photos.append(newImage)
-            }
-        }
-        
-        scrollViewController.photos = photos
-        
-        self.presentViewController(scrollViewController, animated:true, completion:nil)
+        //manual segue to go to the scroll viewer
+        self.performSegueWithIdentifier("showScrollView", sender: sender)
         
     }
     
@@ -226,12 +199,6 @@ class FacePhotosViewController: UIViewController, UIPopoverPresentationControlle
         return height
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("fbCell", forIndexPath: indexPath) as! FBPhotoCell
-        cell.setSelected(true, animated: false)
-        
-        print("cell selected")
-    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -281,66 +248,42 @@ class FacePhotosViewController: UIViewController, UIPopoverPresentationControlle
             }) //dispatch main thread
         }
         
-        
     }
     
     //facebook photo successfully imported!
     func photoSuccessfullyImported(){
-        print("photo imported, let's show yeyyy message!")
         dismissViewControllerAnimated(true, completion: nil)
         self.mTableView.reloadData()
     }
     
-    
-    
-    @IBAction func Next(sender: AnyObject) {
+    @IBAction func nextScreen(sender: AnyObject) {
+        print("Next Screen!") //To do:
     }
 
-    
-  
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        if segue.identifier == "showScrollView"{
-//            let scrollViewController: ScrollViewController = segue.destinationViewController as! ScrollViewController
-//            scrollViewController.modalPresentationStyle = .Popover
-//            scrollViewController.popoverPresentationController!.delegate = self
-//            //scrollViewController.popoverPresentationController!.sourceRect = self.view.bounds
-//            scrollViewController.popoverPresentationController!.permittedArrowDirections = .Any
-//            //scrollViewController.preferredContentSize = CGSizeMake(240.0, 90.0)
-//            //scrollViewController.popoverPresentationController!.sourceView = self.view
-//            
-////            let selectPhotoType: PhotoSourceViewController = self.storyboard!.instantiateViewControllerWithIdentifier("selectPhotoTypeView") as! PhotoSourceViewController
-////            selectPhotoType.zoomURL = self.zoomURL
-////            selectPhotoType.modalPresentationStyle = .Popover
-////            selectPhotoType.preferredContentSize = CGSizeMake(240.0, 90.0)
-////            selectPhotoType.popoverPresentationController!.delegate = self
-////            selectPhotoType.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.Any
-////            selectPhotoType.popoverPresentationController!.sourceView = imageView
-////            selectPhotoType.popoverPresentationController!.sourceRect = imageView.bounds
-////            self.presentViewController(selectPhotoType, animated:true, completion:nil)
-//            
-//            
-//            var photos: [UIImage]! = [UIImage]()
-//            for photo in self.myFBPhotos{
-//                if let newImage = photo.newImage{
-//                    photos.append(newImage)
-//                }
-//            }
-//            
-//            scrollViewController.photos = photos
-//        }
-//    }
-    
-    @IBAction func unwindFromScrollViewToFacePhotos(segue: UIStoryboardSegue) {
-        print("came from ScrollView")
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showScrollView"{
+            let scrollViewController: ScrollViewController = segue.destinationViewController as! ScrollViewController
+            
+            //assign the selected row number to the start page of the scrollviewer
+            if let mysender : UITapGestureRecognizer = sender as? UITapGestureRecognizer{
+                let row: Int = (mysender.view?.tag)!
+                scrollViewController.startPage = row
+            }
+  
+            var photos: [UIImage]! = [UIImage]()
+            for photo in self.myFBPhotos{
+                if let newImage = photo.newImage{
+                    photos.append(newImage)
+                }
+            }
+            
+            scrollViewController.photos = photos
+        }
     }
     
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        return UIModalPresentationStyle.None
-    }
-
 
 }
