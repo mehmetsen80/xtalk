@@ -18,7 +18,7 @@ class Profile{
     var urlThumb: String?
     
     
-    class func profileWithJSON(allResults: NSDictionary) -> Profile{
+    class func profileWithJSON(allResults: NSDictionary) -> Profile {
         
         let profile : Profile = Profile()
         //let's assign the returned results to our profile object

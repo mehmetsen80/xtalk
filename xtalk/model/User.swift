@@ -20,7 +20,7 @@ class User {
     var signupdate: String?
     var isadmin: Bool?
     
-    class func UserWithJSON(allResults: NSDictionary) -> User{
+    class func UserWithJSON(allResults: NSDictionary) -> User {
         
         let user : User = User()
         //let's assign the returned results to our user object

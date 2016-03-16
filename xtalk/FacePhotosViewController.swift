@@ -255,10 +255,7 @@ class FacePhotosViewController: UIViewController, UITableViewDelegate, UITableVi
         dismissViewControllerAnimated(true, completion: nil)
         self.mTableView.reloadData()
     }
-    
-    @IBAction func nextScreen(sender: AnyObject) {
-        print("Next Screen!") //To do:
-    }
+  
 
     // MARK: - Navigation
 
