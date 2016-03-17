@@ -12,4 +12,6 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
+#import "ADAuthenticationContext.h"
+
 #endif /* Bridging_Header_h */

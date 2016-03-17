@@ -29,6 +29,8 @@ class EntryViewController: UIViewController, FacebookAPIControllerProtocol, FBSD
     var picture: String!
     
     
+    var loggedIn: Bool = false
+    @IBOutlet weak var btnLoginOffice365: Office365LoginButton!
     
     
     override func viewDidLoad() {
@@ -219,6 +221,31 @@ class EntryViewController: UIViewController, FacebookAPIControllerProtocol, FBSD
     
     
     
+    @IBAction func loginWith365(sender: AnyObject) {
+        
+        let authMgr: Office365APIController = Office365APIController()
+        if (loggedIn){
+            // Logout and change the button to read "Log in"
+            authMgr.logout()
+            self.btnLoginOffice365.setTitle("Log in with Office365", forState: UIControlState.Normal)
+            self.loggedIn = false
+        }
+        else {
+            // Attempt to get a token
+            authMgr.getToken() {
+                (authenticated: Bool, token: String) -> Void in
+                if (authenticated) {
+                    // Change the button to read "Log out"
+                    NSLog("Authentication successful, token: %@", token)
+                    self.btnLoginOffice365.setTitle("Log out Office365", forState: UIControlState.Normal)
+                    self.loggedIn = true
+                }
+                else {
+                    NSLog("Authentication failed: %@", token)
+                }
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

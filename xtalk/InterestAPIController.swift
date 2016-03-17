@@ -27,7 +27,7 @@ class InterestAPIController{
         let request = NSMutableURLRequest(URL: myUrl!)
         request.HTTPMethod = "POST";
         //let postString = "email=\(email)&password=\(password)&fullname=\(fullname)&processType=SIGNUPUSER"
-        let postString = "processType=FETCHINTERESTLIST"
+        let postString = "processType=FETCHACTIVEINTERESTLIST"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
@@ -40,7 +40,7 @@ class InterestAPIController{
             
             do{
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers ) as! NSDictionary
-                
+                print(json)
                 self.delegate.didReceiveInterestListAPIResults(json)
                 
             }catch let error {

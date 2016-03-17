@@ -12,7 +12,7 @@ class Interest {
     
     var interestid: Double?
     var name: String?
-    var checked: Bool?
+    var checked: Bool = false
     
     init(interestid: Double, name: String, checked: Bool){
         
@@ -38,5 +38,9 @@ class Interest {
         }
         
         return interests;
+    }
+    
+    internal func toggleCheck(){
+        self.checked =  !self.checked
     }
 }

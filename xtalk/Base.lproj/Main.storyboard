@@ -68,10 +68,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufs-5c-Oqv" customClass="Office365LoginButton" customModule="xtalk" customModuleProvider="target">
+                                <rect key="frame" x="24" y="495" width="273" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lNV-F1-SaS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login with Office 365">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginWith365:" destination="vuE-dZ-zkB" eventType="touchUpInside" id="zen-B7-MMx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qtv-T4-2SR" firstAttribute="top" secondItem="Bgb-5Q-r1a" secondAttribute="bottom" constant="100" id="11Y-C5-r8G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ufs-5c-Oqv" secondAttribute="trailing" constant="7" id="30f-WB-fTT"/>
+                            <constraint firstItem="ufs-5c-Oqv" firstAttribute="leading" secondItem="rvI-pP-R1T" secondAttribute="leadingMargin" constant="8" id="3Rz-iv-5rf"/>
                             <constraint firstItem="47K-7J-xGD" firstAttribute="leading" secondItem="qtv-T4-2SR" secondAttribute="leading" id="EGf-c5-tzJ"/>
                             <constraint firstItem="47K-7J-xGD" firstAttribute="top" secondItem="qtv-T4-2SR" secondAttribute="bottom" constant="14" id="JCQ-Dq-jLD"/>
                             <constraint firstItem="47K-7J-xGD" firstAttribute="trailing" secondItem="qtv-T4-2SR" secondAttribute="trailing" id="NAA-qP-Rke"/>
@@ -84,12 +99,14 @@
                             <constraint firstItem="CZn-0h-73P" firstAttribute="centerX" secondItem="qtv-T4-2SR" secondAttribute="centerX" id="hNE-3W-cYe"/>
                             <constraint firstItem="Peb-bn-awg" firstAttribute="leading" secondItem="qtv-T4-2SR" secondAttribute="leading" id="rbQ-Vi-rbB"/>
                             <constraint firstItem="qtv-T4-2SR" firstAttribute="top" secondItem="Peb-bn-awg" secondAttribute="bottom" constant="13" id="wXv-kv-4uN"/>
+                            <constraint firstItem="DRr-hB-81X" firstAttribute="top" secondItem="ufs-5c-Oqv" secondAttribute="bottom" constant="33" id="xbo-pN-Y8h"/>
                             <constraint firstItem="gMn-cd-vao" firstAttribute="leading" secondItem="rvI-pP-R1T" secondAttribute="leadingMargin" constant="-20" id="z4i-Fg-h65"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btnLogin" destination="qtv-T4-2SR" id="D31-qM-6xw"/>
+                        <outlet property="btnLoginOffice365" destination="ufs-5c-Oqv" id="NbC-C9-ezf"/>
                         <outlet property="btnSignup" destination="47K-7J-xGD" id="jDc-yJ-E6z"/>
                         <outlet property="txtCity" destination="CZn-0h-73P" id="yKK-eW-HyY"/>
                     </connections>
