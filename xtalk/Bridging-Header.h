@@ -13,5 +13,11 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 #import "ADAuthenticationContext.h"
+#import "ADAuthenticationSettings.h"
+#import "ADAuthenticationError.h"
+#import "ADALDependencyResolver.h"
+
+
+
 
 #endif /* Bridging_Header_h */

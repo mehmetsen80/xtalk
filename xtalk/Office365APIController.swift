@@ -11,35 +11,32 @@ import Foundation
 class Office365APIController{
     
     let office365: Office365 = Office365.getInstance()
-   
+    var dependencyResolver: ADALDependencyResolver
     
-//    init(){
-//        
-//        office365 = Office365.getInstance()
-//    }
+    init(){
+        
+        dependencyResolver = ADALDependencyResolver()
+    }
     
-    func getToken(completionHandler:((Bool, String) -> Void)){
+    func login(completionHandler:((Bool, String) -> Void)){
         
         let err: AutoreleasingUnsafeMutablePointer<ADAuthenticationError?> = nil
         let authContext: ADAuthenticationContext = ADAuthenticationContext(authority: office365.authority, error: err)
-        
-//        authContext.acquireTokenWithResource(<#T##resource: String!##String!#>, clientId: <#T##String!#>, redirectUri: <#T##NSURL!#>, promptBehavior: <#T##ADPromptBehavior#>, userId: <#T##String!#>, extraQueryParameters: <#T##String!#>, completionBlock: <#T##ADAuthenticationCallback!##ADAuthenticationCallback!##(ADAuthenticationResult!) -> Void#>)
-        
-        authContext.acquireTokenWithResource(office365.discoveryResource, clientId: office365.clientID, redirectUri: office365.redirectUri, userId: nil, extraQueryParameters: "client_secret=\(office365.secretID)", completionBlock: {(result: ADAuthenticationResult!)  in
+
+        authContext.acquireTokenWithResource(office365.discoveryResource, clientId: office365.clientID, redirectUri: office365.redirectUri, completionBlock: {(result: ADAuthenticationResult!)  in
             
             //validate token exists in response
-            if result.status != AD_SUCCEEDED{
+            if result.status.rawValue != AD_SUCCEEDED.rawValue {
                 completionHandler(false, result.error.description)
                 
             }else{
+    
+                print("user email: \(result.tokenCacheStoreItem.userInformation.userId)")
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+                userDefaults.setObject(result.tokenCacheStoreItem.userInformation.userId, forKey: "xtalk_email")
+                userDefaults.synchronize()
                 
-                //use the discovery service to see all resource end-points
-//                let request = NSMutableURLRequest(URL: NSURL(string: "https://api.office.com/discovery/me/services")!)
-//                request.HTTPMethod = "GET"
-//                request.setValue("application/json; odata=verbose", forHTTPHeaderField: "accept")
-//                request.setValue("Bearer \(result.accessToken)", forHTTPHeaderField: "Authorization")
-                
-                
+                self.dependencyResolver = ADALDependencyResolver(context: authContext, resourceId: "https://outlook.office365.com/", clientId: self.office365.clientID,redirectUri: self.office365.redirectUri)
                 
                 completionHandler(true, result.accessToken)
                 
@@ -52,21 +49,21 @@ class Office365APIController{
     
     // Logout function to clear the app's cache and remove the user's information.
     func logout() {
-//        var error: ADAuthenticationError?
-//        var cache: ADTokenCacheStoring = ADAuthenticationSettings.sharedInstance().defaultTokenCacheStore
-//        // Clear the token cache
-//        var allItemsArray = cache.allItemsWithError(&error)
-//        if (!allItemsArray.isEmpty) {
-//            cache.removeAllWithError(&error)
-//        }
-//        // Remove all the cookies from this application's sandbox. The authorization code is stored in the
-//        // cookies and ADAL will try to get to access tokens based on auth code in the cookie.
-//        var cookieStore = NSHTTPCookieStorage.sharedHTTPCookieStorage()
-//        if let cookies = cookieStore.cookies {
-//            for cookie in cookies {
-//                cookieStore.deleteCookie(cookie )
-//            }
-//        }
+        var error: ADAuthenticationError?
+        let cache: ADTokenCacheStoring = ADAuthenticationSettings.sharedInstance().defaultTokenCacheStore
+        // Clear the token cache
+        let allItemsArray = cache.allItemsWithError(&error)
+        if (!allItemsArray.isEmpty) {
+            cache.removeAllWithError(&error)
+        }
+        // Remove all the cookies from this application's sandbox. The authorization code is stored in the
+        // cookies and ADAL will try to get to access tokens based on auth code in the cookie.
+        let cookieStore = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        if let cookies = cookieStore.cookies {
+            for cookie in cookies {
+                cookieStore.deleteCookie(cookie )
+            }
+        }
     }
     
 }

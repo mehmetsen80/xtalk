@@ -26,7 +26,6 @@
 		D8685CEF1BE7D6200041817E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */; };
 		D8685CF21BE7D6910041817E /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF11BE7D6910041817E /* RoundedButton.swift */; };
 		D8685CF41BE7DA320041817E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8685CF31BE7DA320041817E /* LoginViewController.swift */; };
-		D86DA5B21C9B46B00079A4AC /* libADALiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D86DA5B11C9B46B00079A4AC /* libADALiOS.a */; };
 		D873295D1C501EA2003B8058 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D873295C1C501EA2003B8058 /* CoreLocation.framework */; };
 		D873295F1C5137F3003B8058 /* PeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D873295E1C5137F3003B8058 /* PeersViewController.swift */; };
 		D87329611C513A31003B8058 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87329601C513A31003B8058 /* PlacesViewController.swift */; };
@@ -35,6 +34,13 @@
 		D87329671C6018BB003B8058 /* UserAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87329661C6018BB003B8058 /* UserAPIController.swift */; };
 		D87329691C613CF9003B8058 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87329681C613CF9003B8058 /* DateExtension.swift */; };
 		D873296B1C613DA4003B8058 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D873296A1C613DA4003B8058 /* DoubleExtension.swift */; };
+		D87CFF741C9CA7090021BBDD /* libADALiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D87CFF6D1C9CA7090021BBDD /* libADALiOS.a */; };
+		D87CFF751C9CA7090021BBDD /* libLiveSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D87CFF6E1C9CA7090021BBDD /* libLiveSDK.a */; };
+		D87CFF761C9CA7090021BBDD /* libMSGraph-SDK-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D87CFF6F1C9CA7090021BBDD /* libMSGraph-SDK-iOS.a */; };
+		D87CFF771C9CA7090021BBDD /* libMSOffice365-Discovery-SDK-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D87CFF701C9CA7090021BBDD /* libMSOffice365-Discovery-SDK-iOS.a */; };
+		D87CFF781C9CA7090021BBDD /* libMSOneNote-SDK-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D87CFF711C9CA7090021BBDD /* libMSOneNote-SDK-iOS.a */; };
+		D87CFF791C9CA7090021BBDD /* libMSOutlook-SDK-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D87CFF721C9CA7090021BBDD /* libMSOutlook-SDK-iOS.a */; };
+		D87CFF7A1C9CA7090021BBDD /* liborc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D87CFF731C9CA7090021BBDD /* liborc.a */; };
 		D87EF8CE1BE90B660067DEC4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */; };
 		D87F789A1C739F0A0000A6B9 /* FacePhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F78991C739F0A0000A6B9 /* FacePhotosViewController.swift */; };
 		D87F789C1C7514F40000A6B9 /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87F789B1C7514F40000A6B9 /* FBHelper.swift */; };
@@ -87,6 +93,7 @@
 		D83AA4281C9B545800F83999 /* ADAL_iPhone_Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ADAL_iPhone_Storyboard.storyboard; sourceTree = "<group>"; };
 		D83AA42B1C9B5A5700F83999 /* Office365APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Office365APIController.swift; sourceTree = "<group>"; };
 		D83AA42D1C9B5ABC00F83999 /* Office365.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Office365.swift; sourceTree = "<group>"; };
+		D83AA42F1C9C4B2300F83999 /* xtalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = xtalk.entitlements; sourceTree = "<group>"; };
 		D8685CB91BE7BF880041817E /* xtalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xtalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8685CBC1BE7BF880041817E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8685CBE1BE7BF880041817E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -104,21 +111,6 @@
 		D8685CEE1BE7D6200041817E /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTabBarController.swift; path = custom/tabbar/CustomTabBarController.swift; sourceTree = "<group>"; };
 		D8685CF11BE7D6910041817E /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = custom/button/RoundedButton.swift; sourceTree = "<group>"; };
 		D8685CF31BE7DA320041817E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		D86DA5B11C9B46B00079A4AC /* libADALiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libADALiOS.a; sourceTree = "<group>"; };
-		D86DA5C41C9B47400079A4AC /* ADAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAL.h; sourceTree = "<group>"; };
-		D86DA5C51C9B47400079A4AC /* ADAuthenticationBroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationBroker.h; sourceTree = "<group>"; };
-		D86DA5C61C9B47400079A4AC /* ADAuthenticationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationContext.h; sourceTree = "<group>"; };
-		D86DA5C71C9B47400079A4AC /* ADAuthenticationError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationError.h; sourceTree = "<group>"; };
-		D86DA5C81C9B47400079A4AC /* ADAuthenticationParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationParameters.h; sourceTree = "<group>"; };
-		D86DA5C91C9B47400079A4AC /* ADAuthenticationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationResult.h; sourceTree = "<group>"; };
-		D86DA5CA1C9B47400079A4AC /* ADAuthenticationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationSettings.h; sourceTree = "<group>"; };
-		D86DA5CB1C9B47400079A4AC /* ADErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADErrorCodes.h; sourceTree = "<group>"; };
-		D86DA5CC1C9B47400079A4AC /* ADInstanceDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADInstanceDiscovery.h; sourceTree = "<group>"; };
-		D86DA5CD1C9B47400079A4AC /* ADLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADLogger.h; sourceTree = "<group>"; };
-		D86DA5CE1C9B47400079A4AC /* ADTokenCacheStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTokenCacheStoreItem.h; sourceTree = "<group>"; };
-		D86DA5CF1C9B47400079A4AC /* ADTokenCacheStoreKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTokenCacheStoreKey.h; sourceTree = "<group>"; };
-		D86DA5D01C9B47400079A4AC /* ADTokenCacheStoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADTokenCacheStoring.h; sourceTree = "<group>"; };
-		D86DA5D11C9B47400079A4AC /* ADUserInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADUserInformation.h; sourceTree = "<group>"; };
 		D873295C1C501EA2003B8058 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D873295E1C5137F3003B8058 /* PeersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeersViewController.swift; sourceTree = "<group>"; };
 		D87329601C513A31003B8058 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +119,554 @@
 		D87329661C6018BB003B8058 /* UserAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserAPIController.swift; path = api/UserAPIController.swift; sourceTree = "<group>"; };
 		D87329681C613CF9003B8058 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = extension/DateExtension.swift; sourceTree = "<group>"; };
 		D873296A1C613DA4003B8058 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleExtension.swift; path = extension/DoubleExtension.swift; sourceTree = "<group>"; };
+		D87CFD501C9CA68F0021BBDD /* ADAL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAL.h; sourceTree = "<group>"; };
+		D87CFD511C9CA68F0021BBDD /* ADALDependencyResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADALDependencyResolver.h; sourceTree = "<group>"; };
+		D87CFD521C9CA68F0021BBDD /* ADALiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADALiOS.h; sourceTree = "<group>"; };
+		D87CFD531C9CA68F0021BBDD /* ADAuthenticationBroker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationBroker.h; sourceTree = "<group>"; };
+		D87CFD541C9CA68F0021BBDD /* ADAuthenticationContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationContext.h; sourceTree = "<group>"; };
+		D87CFD551C9CA68F0021BBDD /* ADAuthenticationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationDelegate.h; sourceTree = "<group>"; };
+		D87CFD561C9CA68F0021BBDD /* ADAuthenticationError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationError.h; sourceTree = "<group>"; };
+		D87CFD571C9CA68F0021BBDD /* ADAuthenticationOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationOperation.h; sourceTree = "<group>"; };
+		D87CFD581C9CA68F0021BBDD /* ADAuthenticationParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationParameters.h; sourceTree = "<group>"; };
+		D87CFD591C9CA68F0021BBDD /* ADAuthenticationParameters+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADAuthenticationParameters+Internal.h"; sourceTree = "<group>"; };
+		D87CFD5A1C9CA68F0021BBDD /* ADAuthenticationResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationResult.h; sourceTree = "<group>"; };
+		D87CFD5B1C9CA68F0021BBDD /* ADAuthenticationResult+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ADAuthenticationResult+Internal.h"; sourceTree = "<group>"; };
+		D87CFD5C1C9CA68F0021BBDD /* ADAuthenticationSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationSettings.h; sourceTree = "<group>"; };
+		D87CFD5D1C9CA68F0021BBDD /* ADAuthenticationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationViewController.h; sourceTree = "<group>"; };
+		D87CFD5E1C9CA68F0021BBDD /* ADAuthenticationWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADAuthenticationWebViewController.h; sourceTree = "<group>"; };
+		D87CFD5F1C9CA68F0021BBDD /* ADClientMetrics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADClientMetrics.h; sourceTree = "<group>"; };
+		D87CFD601C9CA68F0021BBDD /* ADErrorCodes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADErrorCodes.h; sourceTree = "<group>"; };
+		D87CFD611C9CA68F0021BBDD /* ADHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADHelpers.h; sourceTree = "<group>"; };
+		D87CFD621C9CA68F0021BBDD /* ADInstanceDiscovery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADInstanceDiscovery.h; sourceTree = "<group>"; };
+		D87CFD631C9CA68F0021BBDD /* ADKeyChainHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADKeyChainHelper.h; sourceTree = "<group>"; };
+		D87CFD641C9CA68F0021BBDD /* ADKeychainTokenCacheStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADKeychainTokenCacheStore.h; sourceTree = "<group>"; };
+		D87CFD651C9CA68F0021BBDD /* ADLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADLogger.h; sourceTree = "<group>"; };
+		D87CFD661C9CA68F0021BBDD /* ADNTLMHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADNTLMHandler.h; sourceTree = "<group>"; };
+		D87CFD671C9CA68F0021BBDD /* ADOAuth2Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADOAuth2Constants.h; sourceTree = "<group>"; };
+		D87CFD681C9CA68F0021BBDD /* ADPersistentTokenCacheStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPersistentTokenCacheStore.h; sourceTree = "<group>"; };
+		D87CFD691C9CA68F0021BBDD /* ADPkeyAuthHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADPkeyAuthHelper.h; sourceTree = "<group>"; };
+		D87CFD6A1C9CA68F0021BBDD /* ADRegistrationInformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADRegistrationInformation.h; sourceTree = "<group>"; };
+		D87CFD6B1C9CA68F0021BBDD /* ADTokenCacheStoreItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADTokenCacheStoreItem.h; sourceTree = "<group>"; };
+		D87CFD6C1C9CA68F0021BBDD /* ADTokenCacheStoreKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADTokenCacheStoreKey.h; sourceTree = "<group>"; };
+		D87CFD6D1C9CA68F0021BBDD /* ADTokenCacheStoring.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADTokenCacheStoring.h; sourceTree = "<group>"; };
+		D87CFD6E1C9CA68F0021BBDD /* ADTokenCacheValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADTokenCacheValue.h; sourceTree = "<group>"; };
+		D87CFD6F1C9CA68F0021BBDD /* ADURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADURLProtocol.h; sourceTree = "<group>"; };
+		D87CFD701C9CA68F0021BBDD /* ADUserInformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADUserInformation.h; sourceTree = "<group>"; };
+		D87CFD711C9CA68F0021BBDD /* ADWebRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADWebRequest.h; sourceTree = "<group>"; };
+		D87CFD721C9CA68F0021BBDD /* ADWebResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADWebResponse.h; sourceTree = "<group>"; };
+		D87CFD731C9CA68F0021BBDD /* ADWorkPlaceJoin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADWorkPlaceJoin.h; sourceTree = "<group>"; };
+		D87CFD741C9CA68F0021BBDD /* ADWorkPlaceJoinConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADWorkPlaceJoinConstants.h; sourceTree = "<group>"; };
+		D87CFD751C9CA68F0021BBDD /* ADWorkPlaceJoinUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADWorkPlaceJoinUtil.h; sourceTree = "<group>"; };
+		D87CFD761C9CA68F0021BBDD /* api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = api.h; sourceTree = "<group>"; };
+		D87CFD771C9CA68F0021BBDD /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
+		D87CFD781C9CA68F0021BBDD /* impl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = impl.h; sourceTree = "<group>"; };
+		D87CFD791C9CA68F0021BBDD /* LiveAuthDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveAuthDelegate.h; sourceTree = "<group>"; };
+		D87CFD7A1C9CA68F0021BBDD /* LiveConnectClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveConnectClient.h; sourceTree = "<group>"; };
+		D87CFD7B1C9CA68F0021BBDD /* LiveConnectSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveConnectSession.h; sourceTree = "<group>"; };
+		D87CFD7C1C9CA68F0021BBDD /* LiveConnectSessionStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveConnectSessionStatus.h; sourceTree = "<group>"; };
+		D87CFD7D1C9CA68F0021BBDD /* LiveDependencyResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveDependencyResolver.h; sourceTree = "<group>"; };
+		D87CFD7E1C9CA68F0021BBDD /* LiveDownloadOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveDownloadOperation.h; sourceTree = "<group>"; };
+		D87CFD7F1C9CA68F0021BBDD /* LiveDownloadOperationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveDownloadOperationDelegate.h; sourceTree = "<group>"; };
+		D87CFD801C9CA68F0021BBDD /* LiveOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveOperation.h; sourceTree = "<group>"; };
+		D87CFD811C9CA68F0021BBDD /* LiveOperationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveOperationDelegate.h; sourceTree = "<group>"; };
+		D87CFD821C9CA6900021BBDD /* LiveOperationProgress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveOperationProgress.h; sourceTree = "<group>"; };
+		D87CFD831C9CA6900021BBDD /* LiveUploadOperationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveUploadOperationDelegate.h; sourceTree = "<group>"; };
+		D87CFD841C9CA6900021BBDD /* LiveUploadOverwriteOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveUploadOverwriteOption.h; sourceTree = "<group>"; };
+		D87CFD851C9CA6900021BBDD /* MSDiscovery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDiscovery.h; sourceTree = "<group>"; };
+		D87CFD861C9CA6900021BBDD /* MSDiscoveryClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDiscoveryClient.h; sourceTree = "<group>"; };
+		D87CFD871C9CA6900021BBDD /* MSDiscoveryFetchers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDiscoveryFetchers.h; sourceTree = "<group>"; };
+		D87CFD881C9CA6900021BBDD /* MSDiscoveryModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDiscoveryModels.h; sourceTree = "<group>"; };
+		D87CFD891C9CA6900021BBDD /* MSDiscoveryServiceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDiscoveryServiceInfo.h; sourceTree = "<group>"; };
+		D87CFD8A1C9CA6900021BBDD /* MSDiscoveryServiceInfoCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDiscoveryServiceInfoCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFD8B1C9CA6900021BBDD /* MSDiscoveryServiceInfoCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDiscoveryServiceInfoCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFD8C1C9CA6900021BBDD /* MSDiscoveryServiceInfoFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDiscoveryServiceInfoFetcher.h; sourceTree = "<group>"; };
+		D87CFD8D1C9CA6900021BBDD /* MSDiscoveryServiceInfoOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDiscoveryServiceInfoOperations.h; sourceTree = "<group>"; };
+		D87CFD8E1C9CA6900021BBDD /* MSGraphService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphService.h; sourceTree = "<group>"; };
+		D87CFD8F1C9CA6900021BBDD /* MSGraphServiceAlternativeSecurityId.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceAlternativeSecurityId.h; sourceTree = "<group>"; };
+		D87CFD901C9CA6900021BBDD /* MSGraphServiceAssignedLicense.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceAssignedLicense.h; sourceTree = "<group>"; };
+		D87CFD911C9CA6900021BBDD /* MSGraphServiceAssignedPlan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceAssignedPlan.h; sourceTree = "<group>"; };
+		D87CFD921C9CA6900021BBDD /* MSGraphServiceAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceAttachment.h; sourceTree = "<group>"; };
+		D87CFD931C9CA6900021BBDD /* MSGraphServiceAttachmentCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceAttachmentCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFD941C9CA6900021BBDD /* MSGraphServiceAttachmentCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceAttachmentCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFD951C9CA6900021BBDD /* MSGraphServiceAttachmentFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceAttachmentFetcher.h; sourceTree = "<group>"; };
+		D87CFD961C9CA6900021BBDD /* MSGraphServiceAttachmentOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceAttachmentOperations.h; sourceTree = "<group>"; };
+		D87CFD971C9CA6900021BBDD /* MSGraphServiceAttendee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceAttendee.h; sourceTree = "<group>"; };
+		D87CFD981C9CA6900021BBDD /* MSGraphServiceAttendeeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceAttendeeType.h; sourceTree = "<group>"; };
+		D87CFD991C9CA6900021BBDD /* MSGraphServiceAudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceAudio.h; sourceTree = "<group>"; };
+		D87CFD9A1C9CA6900021BBDD /* MSGraphServiceBodyType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceBodyType.h; sourceTree = "<group>"; };
+		D87CFD9B1C9CA6900021BBDD /* MSGraphServiceCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceCalendar.h; sourceTree = "<group>"; };
+		D87CFD9C1C9CA6900021BBDD /* MSGraphServiceCalendarCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceCalendarCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFD9D1C9CA6900021BBDD /* MSGraphServiceCalendarCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceCalendarCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFD9E1C9CA6900021BBDD /* MSGraphServiceCalendarColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceCalendarColor.h; sourceTree = "<group>"; };
+		D87CFD9F1C9CA6900021BBDD /* MSGraphServiceCalendarFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceCalendarFetcher.h; sourceTree = "<group>"; };
+		D87CFDA01C9CA6900021BBDD /* MSGraphServiceCalendarGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceCalendarGroup.h; sourceTree = "<group>"; };
+		D87CFDA11C9CA6900021BBDD /* MSGraphServiceCalendarGroupCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceCalendarGroupCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDA21C9CA6900021BBDD /* MSGraphServiceCalendarGroupCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceCalendarGroupCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDA31C9CA6900021BBDD /* MSGraphServiceCalendarGroupFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceCalendarGroupFetcher.h; sourceTree = "<group>"; };
+		D87CFDA41C9CA6900021BBDD /* MSGraphServiceCalendarGroupOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceCalendarGroupOperations.h; sourceTree = "<group>"; };
+		D87CFDA51C9CA6900021BBDD /* MSGraphServiceCalendarOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceCalendarOperations.h; sourceTree = "<group>"; };
+		D87CFDA61C9CA6900021BBDD /* MSGraphServiceClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceClient.h; sourceTree = "<group>"; };
+		D87CFDA71C9CA6900021BBDD /* MSGraphServiceContact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceContact.h; sourceTree = "<group>"; };
+		D87CFDA81C9CA6900021BBDD /* MSGraphServiceContactCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceContactCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDA91C9CA6900021BBDD /* MSGraphServiceContactCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceContactCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDAA1C9CA6900021BBDD /* MSGraphServiceContactFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceContactFetcher.h; sourceTree = "<group>"; };
+		D87CFDAB1C9CA6900021BBDD /* MSGraphServiceContactFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceContactFolder.h; sourceTree = "<group>"; };
+		D87CFDAC1C9CA6900021BBDD /* MSGraphServiceContactFolderCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceContactFolderCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDAD1C9CA6900021BBDD /* MSGraphServiceContactFolderCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceContactFolderCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDAE1C9CA6900021BBDD /* MSGraphServiceContactFolderFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceContactFolderFetcher.h; sourceTree = "<group>"; };
+		D87CFDAF1C9CA6900021BBDD /* MSGraphServiceContactFolderOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceContactFolderOperations.h; sourceTree = "<group>"; };
+		D87CFDB01C9CA6900021BBDD /* MSGraphServiceContactOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceContactOperations.h; sourceTree = "<group>"; };
+		D87CFDB11C9CA6900021BBDD /* MSGraphServiceConversation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceConversation.h; sourceTree = "<group>"; };
+		D87CFDB21C9CA6900021BBDD /* MSGraphServiceConversationCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceConversationCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDB31C9CA6900021BBDD /* MSGraphServiceConversationCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceConversationCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDB41C9CA6900021BBDD /* MSGraphServiceConversationFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceConversationFetcher.h; sourceTree = "<group>"; };
+		D87CFDB51C9CA6900021BBDD /* MSGraphServiceConversationOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceConversationOperations.h; sourceTree = "<group>"; };
+		D87CFDB61C9CA6900021BBDD /* MSGraphServiceConversationThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceConversationThread.h; sourceTree = "<group>"; };
+		D87CFDB71C9CA6900021BBDD /* MSGraphServiceConversationThreadCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceConversationThreadCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDB81C9CA6900021BBDD /* MSGraphServiceConversationThreadCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceConversationThreadCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDB91C9CA6900021BBDD /* MSGraphServiceConversationThreadFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceConversationThreadFetcher.h; sourceTree = "<group>"; };
+		D87CFDBA1C9CA6900021BBDD /* MSGraphServiceConversationThreadOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceConversationThreadOperations.h; sourceTree = "<group>"; };
+		D87CFDBB1C9CA6900021BBDD /* MSGraphServiceDateTimeTimeZone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDateTimeTimeZone.h; sourceTree = "<group>"; };
+		D87CFDBC1C9CA6900021BBDD /* MSGraphServiceDayOfWeek.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDayOfWeek.h; sourceTree = "<group>"; };
+		D87CFDBD1C9CA6900021BBDD /* MSGraphServiceDeleted.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDeleted.h; sourceTree = "<group>"; };
+		D87CFDBE1C9CA6900021BBDD /* MSGraphServiceDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDevice.h; sourceTree = "<group>"; };
+		D87CFDBF1C9CA6900021BBDD /* MSGraphServiceDeviceCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDeviceCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDC01C9CA6900021BBDD /* MSGraphServiceDeviceCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDeviceCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDC11C9CA6900021BBDD /* MSGraphServiceDeviceFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDeviceFetcher.h; sourceTree = "<group>"; };
+		D87CFDC21C9CA6900021BBDD /* MSGraphServiceDeviceOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDeviceOperations.h; sourceTree = "<group>"; };
+		D87CFDC31C9CA6900021BBDD /* MSGraphServiceDirectoryObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryObject.h; sourceTree = "<group>"; };
+		D87CFDC41C9CA6900021BBDD /* MSGraphServiceDirectoryObjectCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryObjectCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDC51C9CA6900021BBDD /* MSGraphServiceDirectoryObjectCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryObjectCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDC61C9CA6900021BBDD /* MSGraphServiceDirectoryObjectFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryObjectFetcher.h; sourceTree = "<group>"; };
+		D87CFDC71C9CA6900021BBDD /* MSGraphServiceDirectoryObjectOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryObjectOperations.h; sourceTree = "<group>"; };
+		D87CFDC81C9CA6900021BBDD /* MSGraphServiceDirectoryRole.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryRole.h; sourceTree = "<group>"; };
+		D87CFDC91C9CA6900021BBDD /* MSGraphServiceDirectoryRoleCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryRoleCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDCA1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryRoleCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDCB1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryRoleFetcher.h; sourceTree = "<group>"; };
+		D87CFDCC1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryRoleOperations.h; sourceTree = "<group>"; };
+		D87CFDCD1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryRoleTemplate.h; sourceTree = "<group>"; };
+		D87CFDCE1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleTemplateCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryRoleTemplateCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDCF1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleTemplateCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryRoleTemplateCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDD01C9CA6900021BBDD /* MSGraphServiceDirectoryRoleTemplateFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryRoleTemplateFetcher.h; sourceTree = "<group>"; };
+		D87CFDD11C9CA6900021BBDD /* MSGraphServiceDirectoryRoleTemplateOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDirectoryRoleTemplateOperations.h; sourceTree = "<group>"; };
+		D87CFDD21C9CA6900021BBDD /* MSGraphServiceDrive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDrive.h; sourceTree = "<group>"; };
+		D87CFDD31C9CA6900021BBDD /* MSGraphServiceDriveCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDriveCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDD41C9CA6900021BBDD /* MSGraphServiceDriveCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDriveCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDD51C9CA6900021BBDD /* MSGraphServiceDriveFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDriveFetcher.h; sourceTree = "<group>"; };
+		D87CFDD61C9CA6900021BBDD /* MSGraphServiceDriveItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDriveItem.h; sourceTree = "<group>"; };
+		D87CFDD71C9CA6900021BBDD /* MSGraphServiceDriveItemCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDriveItemCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDD81C9CA6900021BBDD /* MSGraphServiceDriveItemCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDriveItemCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDD91C9CA6900021BBDD /* MSGraphServiceDriveItemFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDriveItemFetcher.h; sourceTree = "<group>"; };
+		D87CFDDA1C9CA6900021BBDD /* MSGraphServiceDriveItemOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDriveItemOperations.h; sourceTree = "<group>"; };
+		D87CFDDB1C9CA6900021BBDD /* MSGraphServiceDriveOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceDriveOperations.h; sourceTree = "<group>"; };
+		D87CFDDC1C9CA6900021BBDD /* MSGraphServiceEmailAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEmailAddress.h; sourceTree = "<group>"; };
+		D87CFDDD1C9CA6900021BBDD /* MSGraphServiceEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEntity.h; sourceTree = "<group>"; };
+		D87CFDDE1C9CA6900021BBDD /* MSGraphServiceEntityCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEntityCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDDF1C9CA6900021BBDD /* MSGraphServiceEntityCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEntityCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDE01C9CA6900021BBDD /* MSGraphServiceEntityFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEntityFetcher.h; sourceTree = "<group>"; };
+		D87CFDE11C9CA6900021BBDD /* MSGraphServiceEntityOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEntityOperations.h; sourceTree = "<group>"; };
+		D87CFDE21C9CA6900021BBDD /* MSGraphServiceEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEvent.h; sourceTree = "<group>"; };
+		D87CFDE31C9CA6900021BBDD /* MSGraphServiceEventCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEventCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDE41C9CA6900021BBDD /* MSGraphServiceEventCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEventCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDE51C9CA6900021BBDD /* MSGraphServiceEventFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEventFetcher.h; sourceTree = "<group>"; };
+		D87CFDE61C9CA6900021BBDD /* MSGraphServiceEventMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEventMessage.h; sourceTree = "<group>"; };
+		D87CFDE71C9CA6900021BBDD /* MSGraphServiceEventMessageCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEventMessageCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDE81C9CA6900021BBDD /* MSGraphServiceEventMessageCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEventMessageCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDE91C9CA6900021BBDD /* MSGraphServiceEventMessageFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEventMessageFetcher.h; sourceTree = "<group>"; };
+		D87CFDEA1C9CA6900021BBDD /* MSGraphServiceEventMessageOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEventMessageOperations.h; sourceTree = "<group>"; };
+		D87CFDEB1C9CA6900021BBDD /* MSGraphServiceEventOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEventOperations.h; sourceTree = "<group>"; };
+		D87CFDEC1C9CA6900021BBDD /* MSGraphServiceEventType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceEventType.h; sourceTree = "<group>"; };
+		D87CFDED1C9CA6900021BBDD /* MSGraphServiceFetchers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceFetchers.h; sourceTree = "<group>"; };
+		D87CFDEE1C9CA6900021BBDD /* MSGraphServiceFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceFile.h; sourceTree = "<group>"; };
+		D87CFDEF1C9CA6900021BBDD /* MSGraphServiceFileAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceFileAttachment.h; sourceTree = "<group>"; };
+		D87CFDF01C9CA6900021BBDD /* MSGraphServiceFileAttachmentCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceFileAttachmentCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDF11C9CA6900021BBDD /* MSGraphServiceFileAttachmentCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceFileAttachmentCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDF21C9CA6900021BBDD /* MSGraphServiceFileAttachmentFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceFileAttachmentFetcher.h; sourceTree = "<group>"; };
+		D87CFDF31C9CA6900021BBDD /* MSGraphServiceFileAttachmentOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceFileAttachmentOperations.h; sourceTree = "<group>"; };
+		D87CFDF41C9CA6900021BBDD /* MSGraphServiceFileSystemInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceFileSystemInfo.h; sourceTree = "<group>"; };
+		D87CFDF51C9CA6900021BBDD /* MSGraphServiceFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceFolder.h; sourceTree = "<group>"; };
+		D87CFDF61C9CA6900021BBDD /* MSGraphServiceFreeBusyStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceFreeBusyStatus.h; sourceTree = "<group>"; };
+		D87CFDF71C9CA6900021BBDD /* MSGraphServiceGeoCoordinates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceGeoCoordinates.h; sourceTree = "<group>"; };
+		D87CFDF81C9CA6900021BBDD /* MSGraphServiceGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceGroup.h; sourceTree = "<group>"; };
+		D87CFDF91C9CA6900021BBDD /* MSGraphServiceGroupCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceGroupCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFDFA1C9CA6900021BBDD /* MSGraphServiceGroupCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceGroupCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFDFB1C9CA6900021BBDD /* MSGraphServiceGroupFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceGroupFetcher.h; sourceTree = "<group>"; };
+		D87CFDFC1C9CA6900021BBDD /* MSGraphServiceGroupOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceGroupOperations.h; sourceTree = "<group>"; };
+		D87CFDFD1C9CA6900021BBDD /* MSGraphServiceHashes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceHashes.h; sourceTree = "<group>"; };
+		D87CFDFE1C9CA6900021BBDD /* MSGraphServiceIdentity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceIdentity.h; sourceTree = "<group>"; };
+		D87CFDFF1C9CA6900021BBDD /* MSGraphServiceIdentitySet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceIdentitySet.h; sourceTree = "<group>"; };
+		D87CFE001C9CA6900021BBDD /* MSGraphServiceImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceImage.h; sourceTree = "<group>"; };
+		D87CFE011C9CA6900021BBDD /* MSGraphServiceImportance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceImportance.h; sourceTree = "<group>"; };
+		D87CFE021C9CA6900021BBDD /* MSGraphServiceItemAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceItemAttachment.h; sourceTree = "<group>"; };
+		D87CFE031C9CA6900021BBDD /* MSGraphServiceItemAttachmentCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceItemAttachmentCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE041C9CA6900021BBDD /* MSGraphServiceItemAttachmentCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceItemAttachmentCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE051C9CA6900021BBDD /* MSGraphServiceItemAttachmentFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceItemAttachmentFetcher.h; sourceTree = "<group>"; };
+		D87CFE061C9CA6900021BBDD /* MSGraphServiceItemAttachmentOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceItemAttachmentOperations.h; sourceTree = "<group>"; };
+		D87CFE071C9CA6900021BBDD /* MSGraphServiceItemBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceItemBody.h; sourceTree = "<group>"; };
+		D87CFE081C9CA6900021BBDD /* MSGraphServiceItemReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceItemReference.h; sourceTree = "<group>"; };
+		D87CFE091C9CA6900021BBDD /* MSGraphServiceLicenseUnitsDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceLicenseUnitsDetail.h; sourceTree = "<group>"; };
+		D87CFE0A1C9CA6900021BBDD /* MSGraphServiceLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceLocation.h; sourceTree = "<group>"; };
+		D87CFE0B1C9CA6900021BBDD /* MSGraphServiceMailFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceMailFolder.h; sourceTree = "<group>"; };
+		D87CFE0C1C9CA6900021BBDD /* MSGraphServiceMailFolderCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceMailFolderCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE0D1C9CA6900021BBDD /* MSGraphServiceMailFolderCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceMailFolderCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE0E1C9CA6900021BBDD /* MSGraphServiceMailFolderFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceMailFolderFetcher.h; sourceTree = "<group>"; };
+		D87CFE0F1C9CA6900021BBDD /* MSGraphServiceMailFolderOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceMailFolderOperations.h; sourceTree = "<group>"; };
+		D87CFE101C9CA6900021BBDD /* MSGraphServiceMeetingMessageType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceMeetingMessageType.h; sourceTree = "<group>"; };
+		D87CFE111C9CA6900021BBDD /* MSGraphServiceMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceMessage.h; sourceTree = "<group>"; };
+		D87CFE121C9CA6900021BBDD /* MSGraphServiceMessageCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceMessageCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE131C9CA6900021BBDD /* MSGraphServiceMessageCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceMessageCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE141C9CA6900021BBDD /* MSGraphServiceMessageFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceMessageFetcher.h; sourceTree = "<group>"; };
+		D87CFE151C9CA6900021BBDD /* MSGraphServiceMessageOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceMessageOperations.h; sourceTree = "<group>"; };
+		D87CFE161C9CA6900021BBDD /* MSGraphServiceModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceModels.h; sourceTree = "<group>"; };
+		D87CFE171C9CA6900021BBDD /* MSGraphServiceOrganization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceOrganization.h; sourceTree = "<group>"; };
+		D87CFE181C9CA6900021BBDD /* MSGraphServiceOrganizationCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceOrganizationCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE191C9CA6900021BBDD /* MSGraphServiceOrganizationCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceOrganizationCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE1A1C9CA6900021BBDD /* MSGraphServiceOrganizationFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceOrganizationFetcher.h; sourceTree = "<group>"; };
+		D87CFE1B1C9CA6900021BBDD /* MSGraphServiceOrganizationOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceOrganizationOperations.h; sourceTree = "<group>"; };
+		D87CFE1C1C9CA6900021BBDD /* MSGraphServiceOutlookItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceOutlookItem.h; sourceTree = "<group>"; };
+		D87CFE1D1C9CA6900021BBDD /* MSGraphServiceOutlookItemCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceOutlookItemCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE1E1C9CA6900021BBDD /* MSGraphServiceOutlookItemCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceOutlookItemCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE1F1C9CA6900021BBDD /* MSGraphServiceOutlookItemFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceOutlookItemFetcher.h; sourceTree = "<group>"; };
+		D87CFE201C9CA6900021BBDD /* MSGraphServiceOutlookItemOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceOutlookItemOperations.h; sourceTree = "<group>"; };
+		D87CFE211C9CA6900021BBDD /* MSGraphServicePasswordProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePasswordProfile.h; sourceTree = "<group>"; };
+		D87CFE221C9CA6900021BBDD /* MSGraphServicePatternedRecurrence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePatternedRecurrence.h; sourceTree = "<group>"; };
+		D87CFE231C9CA6900021BBDD /* MSGraphServicePermission.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePermission.h; sourceTree = "<group>"; };
+		D87CFE241C9CA6900021BBDD /* MSGraphServicePermissionCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePermissionCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE251C9CA6900021BBDD /* MSGraphServicePermissionCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePermissionCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE261C9CA6900021BBDD /* MSGraphServicePermissionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePermissionFetcher.h; sourceTree = "<group>"; };
+		D87CFE271C9CA6900021BBDD /* MSGraphServicePermissionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePermissionOperations.h; sourceTree = "<group>"; };
+		D87CFE281C9CA6900021BBDD /* MSGraphServicePhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePhoto.h; sourceTree = "<group>"; };
+		D87CFE291C9CA6900021BBDD /* MSGraphServicePhysicalAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePhysicalAddress.h; sourceTree = "<group>"; };
+		D87CFE2A1C9CA6900021BBDD /* MSGraphServicePost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePost.h; sourceTree = "<group>"; };
+		D87CFE2B1C9CA6900021BBDD /* MSGraphServicePostCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePostCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE2C1C9CA6900021BBDD /* MSGraphServicePostCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePostCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE2D1C9CA6900021BBDD /* MSGraphServicePostFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePostFetcher.h; sourceTree = "<group>"; };
+		D87CFE2E1C9CA6900021BBDD /* MSGraphServicePostOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServicePostOperations.h; sourceTree = "<group>"; };
+		D87CFE2F1C9CA6900021BBDD /* MSGraphServiceProfilePhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceProfilePhoto.h; sourceTree = "<group>"; };
+		D87CFE301C9CA6900021BBDD /* MSGraphServiceProfilePhotoCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceProfilePhotoCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE311C9CA6900021BBDD /* MSGraphServiceProfilePhotoCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceProfilePhotoCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE321C9CA6900021BBDD /* MSGraphServiceProfilePhotoFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceProfilePhotoFetcher.h; sourceTree = "<group>"; };
+		D87CFE331C9CA6900021BBDD /* MSGraphServiceProfilePhotoOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceProfilePhotoOperations.h; sourceTree = "<group>"; };
+		D87CFE341C9CA6900021BBDD /* MSGraphServiceProvisionedPlan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceProvisionedPlan.h; sourceTree = "<group>"; };
+		D87CFE351C9CA6900021BBDD /* MSGraphServiceQuota.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceQuota.h; sourceTree = "<group>"; };
+		D87CFE361C9CA6900021BBDD /* MSGraphServiceRecipient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceRecipient.h; sourceTree = "<group>"; };
+		D87CFE371C9CA6900021BBDD /* MSGraphServiceRecurrencePattern.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceRecurrencePattern.h; sourceTree = "<group>"; };
+		D87CFE381C9CA6900021BBDD /* MSGraphServiceRecurrencePatternType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceRecurrencePatternType.h; sourceTree = "<group>"; };
+		D87CFE391C9CA6900021BBDD /* MSGraphServiceRecurrenceRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceRecurrenceRange.h; sourceTree = "<group>"; };
+		D87CFE3A1C9CA6900021BBDD /* MSGraphServiceRecurrenceRangeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceRecurrenceRangeType.h; sourceTree = "<group>"; };
+		D87CFE3B1C9CA6900021BBDD /* MSGraphServiceReferenceAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceReferenceAttachment.h; sourceTree = "<group>"; };
+		D87CFE3C1C9CA6900021BBDD /* MSGraphServiceReferenceAttachmentCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceReferenceAttachmentCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE3D1C9CA6900021BBDD /* MSGraphServiceReferenceAttachmentCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceReferenceAttachmentCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE3E1C9CA6900021BBDD /* MSGraphServiceReferenceAttachmentFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceReferenceAttachmentFetcher.h; sourceTree = "<group>"; };
+		D87CFE3F1C9CA6900021BBDD /* MSGraphServiceReferenceAttachmentOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceReferenceAttachmentOperations.h; sourceTree = "<group>"; };
+		D87CFE401C9CA6900021BBDD /* MSGraphServiceReminder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceReminder.h; sourceTree = "<group>"; };
+		D87CFE411C9CA6900021BBDD /* MSGraphServiceResponseStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceResponseStatus.h; sourceTree = "<group>"; };
+		D87CFE421C9CA6900021BBDD /* MSGraphServiceResponseType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceResponseType.h; sourceTree = "<group>"; };
+		D87CFE431C9CA6900021BBDD /* MSGraphServiceSearchResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceSearchResult.h; sourceTree = "<group>"; };
+		D87CFE441C9CA6900021BBDD /* MSGraphServiceSensitivity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceSensitivity.h; sourceTree = "<group>"; };
+		D87CFE451C9CA6900021BBDD /* MSGraphServiceServicePlanInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceServicePlanInfo.h; sourceTree = "<group>"; };
+		D87CFE461C9CA6900021BBDD /* MSGraphServiceShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceShared.h; sourceTree = "<group>"; };
+		D87CFE471C9CA6900021BBDD /* MSGraphServiceSharingInvitation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceSharingInvitation.h; sourceTree = "<group>"; };
+		D87CFE481C9CA6900021BBDD /* MSGraphServiceSharingLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceSharingLink.h; sourceTree = "<group>"; };
+		D87CFE491C9CA6900021BBDD /* MSGraphServiceSpecialFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceSpecialFolder.h; sourceTree = "<group>"; };
+		D87CFE4A1C9CA6900021BBDD /* MSGraphServiceSubscribedSku.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceSubscribedSku.h; sourceTree = "<group>"; };
+		D87CFE4B1C9CA6900021BBDD /* MSGraphServiceSubscribedSkuCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceSubscribedSkuCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE4C1C9CA6900021BBDD /* MSGraphServiceSubscribedSkuCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceSubscribedSkuCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE4D1C9CA6900021BBDD /* MSGraphServiceSubscribedSkuFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceSubscribedSkuFetcher.h; sourceTree = "<group>"; };
+		D87CFE4E1C9CA6900021BBDD /* MSGraphServiceSubscribedSkuOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceSubscribedSkuOperations.h; sourceTree = "<group>"; };
+		D87CFE4F1C9CA6900021BBDD /* MSGraphServiceThumbnail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceThumbnail.h; sourceTree = "<group>"; };
+		D87CFE501C9CA6900021BBDD /* MSGraphServiceThumbnailSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceThumbnailSet.h; sourceTree = "<group>"; };
+		D87CFE511C9CA6900021BBDD /* MSGraphServiceThumbnailSetCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceThumbnailSetCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE521C9CA6900021BBDD /* MSGraphServiceThumbnailSetCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceThumbnailSetCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE531C9CA6900021BBDD /* MSGraphServiceThumbnailSetFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceThumbnailSetFetcher.h; sourceTree = "<group>"; };
+		D87CFE541C9CA6900021BBDD /* MSGraphServiceThumbnailSetOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceThumbnailSetOperations.h; sourceTree = "<group>"; };
+		D87CFE551C9CA6900021BBDD /* MSGraphServiceUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceUser.h; sourceTree = "<group>"; };
+		D87CFE561C9CA6900021BBDD /* MSGraphServiceUserCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceUserCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE571C9CA6900021BBDD /* MSGraphServiceUserCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceUserCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE581C9CA6900021BBDD /* MSGraphServiceUserFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceUserFetcher.h; sourceTree = "<group>"; };
+		D87CFE591C9CA6900021BBDD /* MSGraphServiceUserOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceUserOperations.h; sourceTree = "<group>"; };
+		D87CFE5A1C9CA6900021BBDD /* MSGraphServiceVerifiedDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceVerifiedDomain.h; sourceTree = "<group>"; };
+		D87CFE5B1C9CA6900021BBDD /* MSGraphServiceVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceVideo.h; sourceTree = "<group>"; };
+		D87CFE5C1C9CA6900021BBDD /* MSGraphServiceWeekIndex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSGraphServiceWeekIndex.h; sourceTree = "<group>"; };
+		D87CFE5D1C9CA6900021BBDD /* MSOCalendarSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOCalendarSerializer.h; sourceTree = "<group>"; };
+		D87CFE5E1C9CA6900021BBDD /* MSOneNoteApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApi.h; sourceTree = "<group>"; };
+		D87CFE5F1C9CA6900021BBDD /* MSOneNoteApiClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiClient.h; sourceTree = "<group>"; };
+		D87CFE601C9CA6900021BBDD /* MSOneNoteApiCopyStatusModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiCopyStatusModel.h; sourceTree = "<group>"; };
+		D87CFE611C9CA6900021BBDD /* MSOneNoteApiDiagnostic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiDiagnostic.h; sourceTree = "<group>"; };
+		D87CFE621C9CA6900021BBDD /* MSOneNoteApiExternalLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiExternalLink.h; sourceTree = "<group>"; };
+		D87CFE631C9CA6900021BBDD /* MSOneNoteApiFetchers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiFetchers.h; sourceTree = "<group>"; };
+		D87CFE641C9CA6900021BBDD /* MSOneNoteApiGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiGroup.h; sourceTree = "<group>"; };
+		D87CFE651C9CA6900021BBDD /* MSOneNoteApiGroupCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiGroupCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE661C9CA6900021BBDD /* MSOneNoteApiGroupCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiGroupCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE671C9CA6900021BBDD /* MSOneNoteApiGroupFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiGroupFetcher.h; sourceTree = "<group>"; };
+		D87CFE681C9CA6900021BBDD /* MSOneNoteApiGroupOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiGroupOperations.h; sourceTree = "<group>"; };
+		D87CFE691C9CA6900021BBDD /* MSOneNoteApiIdentity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiIdentity.h; sourceTree = "<group>"; };
+		D87CFE6A1C9CA6900021BBDD /* MSOneNoteApiIdentitySet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiIdentitySet.h; sourceTree = "<group>"; };
+		D87CFE6B1C9CA6900021BBDD /* MSOneNoteApiImportStatusModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiImportStatusModel.h; sourceTree = "<group>"; };
+		D87CFE6C1C9CA6900021BBDD /* MSOneNoteApiModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiModels.h; sourceTree = "<group>"; };
+		D87CFE6D1C9CA6900021BBDD /* MSOneNoteApiMyOrganization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiMyOrganization.h; sourceTree = "<group>"; };
+		D87CFE6E1C9CA6900021BBDD /* MSOneNoteApiMyOrganizationCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiMyOrganizationCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE6F1C9CA6900021BBDD /* MSOneNoteApiMyOrganizationCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiMyOrganizationCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE701C9CA6900021BBDD /* MSOneNoteApiMyOrganizationFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiMyOrganizationFetcher.h; sourceTree = "<group>"; };
+		D87CFE711C9CA6900021BBDD /* MSOneNoteApiMyOrganizationOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiMyOrganizationOperations.h; sourceTree = "<group>"; };
+		D87CFE721C9CA6900021BBDD /* MSOneNoteApiNotebook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiNotebook.h; sourceTree = "<group>"; };
+		D87CFE731C9CA6900021BBDD /* MSOneNoteApiNotebookCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiNotebookCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE741C9CA6900021BBDD /* MSOneNoteApiNotebookCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiNotebookCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE751C9CA6900021BBDD /* MSOneNoteApiNotebookFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiNotebookFetcher.h; sourceTree = "<group>"; };
+		D87CFE761C9CA6900021BBDD /* MSOneNoteApiNotebookLinks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiNotebookLinks.h; sourceTree = "<group>"; };
+		D87CFE771C9CA6900021BBDD /* MSOneNoteApiNotebookOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiNotebookOperations.h; sourceTree = "<group>"; };
+		D87CFE781C9CA6900021BBDD /* MSOneNoteApiNotes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiNotes.h; sourceTree = "<group>"; };
+		D87CFE791C9CA6900021BBDD /* MSOneNoteApiNotesCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiNotesCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE7A1C9CA6900021BBDD /* MSOneNoteApiNotesCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiNotesCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE7B1C9CA6900021BBDD /* MSOneNoteApiNotesFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiNotesFetcher.h; sourceTree = "<group>"; };
+		D87CFE7C1C9CA6900021BBDD /* MSOneNoteApiNotesOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiNotesOperations.h; sourceTree = "<group>"; };
+		D87CFE7D1C9CA6910021BBDD /* MSOneNoteApiOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiOperation.h; sourceTree = "<group>"; };
+		D87CFE7E1C9CA6910021BBDD /* MSOneNoteApiOperationCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiOperationCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE7F1C9CA6910021BBDD /* MSOneNoteApiOperationCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiOperationCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE801C9CA6910021BBDD /* MSOneNoteApiOperationError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiOperationError.h; sourceTree = "<group>"; };
+		D87CFE811C9CA6910021BBDD /* MSOneNoteApiOperationFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiOperationFetcher.h; sourceTree = "<group>"; };
+		D87CFE821C9CA6910021BBDD /* MSOneNoteApiOperationOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiOperationOperations.h; sourceTree = "<group>"; };
+		D87CFE831C9CA6910021BBDD /* MSOneNoteApiPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiPage.h; sourceTree = "<group>"; };
+		D87CFE841C9CA6910021BBDD /* MSOneNoteApiPageCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiPageCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE851C9CA6910021BBDD /* MSOneNoteApiPageCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiPageCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE861C9CA6910021BBDD /* MSOneNoteApiPageFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiPageFetcher.h; sourceTree = "<group>"; };
+		D87CFE871C9CA6910021BBDD /* MSOneNoteApiPageLinks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiPageLinks.h; sourceTree = "<group>"; };
+		D87CFE881C9CA6910021BBDD /* MSOneNoteApiPageOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiPageOperations.h; sourceTree = "<group>"; };
+		D87CFE891C9CA6910021BBDD /* MSOneNoteApiPatchActionType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiPatchActionType.h; sourceTree = "<group>"; };
+		D87CFE8A1C9CA6910021BBDD /* MSOneNoteApiPatchContentCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiPatchContentCommand.h; sourceTree = "<group>"; };
+		D87CFE8B1C9CA6910021BBDD /* MSOneNoteApiPatchInsertPosition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiPatchInsertPosition.h; sourceTree = "<group>"; };
+		D87CFE8C1C9CA6910021BBDD /* MSOneNoteApiResource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiResource.h; sourceTree = "<group>"; };
+		D87CFE8D1C9CA6910021BBDD /* MSOneNoteApiResourceCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiResourceCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE8E1C9CA6910021BBDD /* MSOneNoteApiResourceCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiResourceCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE8F1C9CA6910021BBDD /* MSOneNoteApiResourceFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiResourceFetcher.h; sourceTree = "<group>"; };
+		D87CFE901C9CA6910021BBDD /* MSOneNoteApiResourceOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiResourceOperations.h; sourceTree = "<group>"; };
+		D87CFE911C9CA6910021BBDD /* MSOneNoteApiSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSection.h; sourceTree = "<group>"; };
+		D87CFE921C9CA6910021BBDD /* MSOneNoteApiSectionCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSectionCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE931C9CA6910021BBDD /* MSOneNoteApiSectionCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSectionCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE941C9CA6910021BBDD /* MSOneNoteApiSectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE951C9CA6910021BBDD /* MSOneNoteApiSectionGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSectionGroup.h; sourceTree = "<group>"; };
+		D87CFE961C9CA6910021BBDD /* MSOneNoteApiSectionGroupCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSectionGroupCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE971C9CA6910021BBDD /* MSOneNoteApiSectionGroupCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSectionGroupCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE981C9CA6910021BBDD /* MSOneNoteApiSectionGroupFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSectionGroupFetcher.h; sourceTree = "<group>"; };
+		D87CFE991C9CA6910021BBDD /* MSOneNoteApiSectionGroupOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSectionGroupOperations.h; sourceTree = "<group>"; };
+		D87CFE9A1C9CA6910021BBDD /* MSOneNoteApiSectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSectionOperations.h; sourceTree = "<group>"; };
+		D87CFE9B1C9CA6910021BBDD /* MSOneNoteApiSite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSite.h; sourceTree = "<group>"; };
+		D87CFE9C1C9CA6910021BBDD /* MSOneNoteApiSiteCollection_CollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSiteCollection_CollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFE9D1C9CA6910021BBDD /* MSOneNoteApiSiteCollection_CollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSiteCollection_CollectionOperations.h; sourceTree = "<group>"; };
+		D87CFE9E1C9CA6910021BBDD /* MSOneNoteApiSiteCollection_Fetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSiteCollection_Fetcher.h; sourceTree = "<group>"; };
+		D87CFE9F1C9CA6910021BBDD /* MSOneNoteApiSiteCollection_Operations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSiteCollection_Operations.h; sourceTree = "<group>"; };
+		D87CFEA01C9CA6910021BBDD /* MSOneNoteApiSiteCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSiteCollection.h; sourceTree = "<group>"; };
+		D87CFEA11C9CA6910021BBDD /* MSOneNoteApiSiteCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSiteCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFEA21C9CA6910021BBDD /* MSOneNoteApiSiteCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSiteCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFEA31C9CA6910021BBDD /* MSOneNoteApiSiteFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSiteFetcher.h; sourceTree = "<group>"; };
+		D87CFEA41C9CA6910021BBDD /* MSOneNoteApiSiteMetadata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSiteMetadata.h; sourceTree = "<group>"; };
+		D87CFEA51C9CA6910021BBDD /* MSOneNoteApiSiteOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiSiteOperations.h; sourceTree = "<group>"; };
+		D87CFEA61C9CA6910021BBDD /* MSOneNoteApiUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiUser.h; sourceTree = "<group>"; };
+		D87CFEA71C9CA6910021BBDD /* MSOneNoteApiUserCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiUserCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFEA81C9CA6910021BBDD /* MSOneNoteApiUserCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiUserCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFEA91C9CA6910021BBDD /* MSOneNoteApiUserFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiUserFetcher.h; sourceTree = "<group>"; };
+		D87CFEAA1C9CA6910021BBDD /* MSOneNoteApiUserOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiUserOperations.h; sourceTree = "<group>"; };
+		D87CFEAB1C9CA6910021BBDD /* MSOneNoteApiUserRole.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOneNoteApiUserRole.h; sourceTree = "<group>"; };
+		D87CFEAC1C9CA6910021BBDD /* MSOrcBaseContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcBaseContainer.h; sourceTree = "<group>"; };
+		D87CFEAD1C9CA6910021BBDD /* MSOrcBaseEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcBaseEntity.h; sourceTree = "<group>"; };
+		D87CFEAE1C9CA6910021BBDD /* MSOrcBasicCredentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcBasicCredentials.h; sourceTree = "<group>"; };
+		D87CFEAF1C9CA6910021BBDD /* MSOrcChangesTrackingArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcChangesTrackingArray.h; sourceTree = "<group>"; };
+		D87CFEB01C9CA6910021BBDD /* MSOrcCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFEB11C9CA6910021BBDD /* MSOrcCredentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcCredentials.h; sourceTree = "<group>"; };
+		D87CFEB21C9CA6910021BBDD /* MSOrcDefaultDependencyResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcDefaultDependencyResolver.h; sourceTree = "<group>"; };
+		D87CFEB31C9CA6910021BBDD /* MSOrcDependencyResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcDependencyResolver.h; sourceTree = "<group>"; };
+		D87CFEB41C9CA6910021BBDD /* MSOrcEntityFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcEntityFetcher.h; sourceTree = "<group>"; };
+		D87CFEB51C9CA6910021BBDD /* MSOrcError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcError.h; sourceTree = "<group>"; };
+		D87CFEB61C9CA6910021BBDD /* MSOrcExecutable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcExecutable.h; sourceTree = "<group>"; };
+		D87CFEB71C9CA6910021BBDD /* MSOrcHttpConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcHttpConnection.h; sourceTree = "<group>"; };
+		D87CFEB81C9CA6910021BBDD /* MSOrcHttpTransport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcHttpTransport.h; sourceTree = "<group>"; };
+		D87CFEB91C9CA6910021BBDD /* MSOrcHttpVerb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcHttpVerb.h; sourceTree = "<group>"; };
+		D87CFEBA1C9CA6910021BBDD /* MSOrcInteroperableWithDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcInteroperableWithDictionary.h; sourceTree = "<group>"; };
+		D87CFEBB1C9CA6910021BBDD /* MSOrcJSONSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcJSONSerializer.h; sourceTree = "<group>"; };
+		D87CFEBC1C9CA6910021BBDD /* MSOrcLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcLogger.h; sourceTree = "<group>"; };
+		D87CFEBD1C9CA6910021BBDD /* MSOrcLoggerImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcLoggerImpl.h; sourceTree = "<group>"; };
+		D87CFEBE1C9CA6910021BBDD /* MSOrcLogLevel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcLogLevel.h; sourceTree = "<group>"; };
+		D87CFEBF1C9CA6910021BBDD /* MSOrcMediaEntityFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcMediaEntityFetcher.h; sourceTree = "<group>"; };
+		D87CFEC01C9CA6910021BBDD /* MSOrcMultipartCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcMultipartCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFEC11C9CA6910021BBDD /* MSOrcMultiPartElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcMultiPartElement.h; sourceTree = "<group>"; };
+		D87CFEC21C9CA6910021BBDD /* MSOrcOAuthCredentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcOAuthCredentials.h; sourceTree = "<group>"; };
+		D87CFEC31C9CA6910021BBDD /* MSOrcObjectizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcObjectizer.h; sourceTree = "<group>"; };
+		D87CFEC41C9CA6910021BBDD /* MSOrcOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcOperations.h; sourceTree = "<group>"; };
+		D87CFEC51C9CA6910021BBDD /* MSOrcReadable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcReadable.h; sourceTree = "<group>"; };
+		D87CFEC61C9CA6910021BBDD /* MSOrcRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcRequest.h; sourceTree = "<group>"; };
+		D87CFEC71C9CA6910021BBDD /* MSOrcRequestImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcRequestImpl.h; sourceTree = "<group>"; };
+		D87CFEC81C9CA6910021BBDD /* MSOrcResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcResponse.h; sourceTree = "<group>"; };
+		D87CFEC91C9CA6910021BBDD /* MSOrcResponseImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcResponseImpl.h; sourceTree = "<group>"; };
+		D87CFECA1C9CA6910021BBDD /* MSOrcSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcSerializer.h; sourceTree = "<group>"; };
+		D87CFECB1C9CA6910021BBDD /* MSOrcStreamFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcStreamFetcher.h; sourceTree = "<group>"; };
+		D87CFECC1C9CA6910021BBDD /* MSOrcURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcURL.h; sourceTree = "<group>"; };
+		D87CFECD1C9CA6910021BBDD /* MSOrcURLImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrcURLImpl.h; sourceTree = "<group>"; };
+		D87CFECE1C9CA6910021BBDD /* MSOutlook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlook.h; sourceTree = "<group>"; };
+		D87CFECF1C9CA6910021BBDD /* MSOutlookAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookAttachment.h; sourceTree = "<group>"; };
+		D87CFED01C9CA6910021BBDD /* MSOutlookAttachmentCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookAttachmentCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFED11C9CA6910021BBDD /* MSOutlookAttachmentCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookAttachmentCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFED21C9CA6910021BBDD /* MSOutlookAttachmentFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookAttachmentFetcher.h; sourceTree = "<group>"; };
+		D87CFED31C9CA6910021BBDD /* MSOutlookAttachmentOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookAttachmentOperations.h; sourceTree = "<group>"; };
+		D87CFED41C9CA6910021BBDD /* MSOutlookAttendee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookAttendee.h; sourceTree = "<group>"; };
+		D87CFED51C9CA6910021BBDD /* MSOutlookAttendeeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookAttendeeType.h; sourceTree = "<group>"; };
+		D87CFED61C9CA6910021BBDD /* MSOutlookBodyType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookBodyType.h; sourceTree = "<group>"; };
+		D87CFED71C9CA6910021BBDD /* MSOutlookCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookCalendar.h; sourceTree = "<group>"; };
+		D87CFED81C9CA6910021BBDD /* MSOutlookCalendarCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookCalendarCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFED91C9CA6910021BBDD /* MSOutlookCalendarCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookCalendarCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFEDA1C9CA6910021BBDD /* MSOutlookCalendarColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookCalendarColor.h; sourceTree = "<group>"; };
+		D87CFEDB1C9CA6910021BBDD /* MSOutlookCalendarFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookCalendarFetcher.h; sourceTree = "<group>"; };
+		D87CFEDC1C9CA6910021BBDD /* MSOutlookCalendarGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookCalendarGroup.h; sourceTree = "<group>"; };
+		D87CFEDD1C9CA6910021BBDD /* MSOutlookCalendarGroupCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookCalendarGroupCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFEDE1C9CA6910021BBDD /* MSOutlookCalendarGroupCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookCalendarGroupCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFEDF1C9CA6910021BBDD /* MSOutlookCalendarGroupFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookCalendarGroupFetcher.h; sourceTree = "<group>"; };
+		D87CFEE01C9CA6910021BBDD /* MSOutlookCalendarGroupOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookCalendarGroupOperations.h; sourceTree = "<group>"; };
+		D87CFEE11C9CA6910021BBDD /* MSOutlookCalendarOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookCalendarOperations.h; sourceTree = "<group>"; };
+		D87CFEE21C9CA6910021BBDD /* MSOutlookChangeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookChangeType.h; sourceTree = "<group>"; };
+		D87CFEE31C9CA6910021BBDD /* MSOutlookClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookClient.h; sourceTree = "<group>"; };
+		D87CFEE41C9CA6910021BBDD /* MSOutlookContact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookContact.h; sourceTree = "<group>"; };
+		D87CFEE51C9CA6910021BBDD /* MSOutlookContactCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookContactCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFEE61C9CA6910021BBDD /* MSOutlookContactCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookContactCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFEE71C9CA6910021BBDD /* MSOutlookContactFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookContactFetcher.h; sourceTree = "<group>"; };
+		D87CFEE81C9CA6910021BBDD /* MSOutlookContactFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookContactFolder.h; sourceTree = "<group>"; };
+		D87CFEE91C9CA6910021BBDD /* MSOutlookContactFolderCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookContactFolderCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFEEA1C9CA6910021BBDD /* MSOutlookContactFolderCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookContactFolderCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFEEB1C9CA6910021BBDD /* MSOutlookContactFolderFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookContactFolderFetcher.h; sourceTree = "<group>"; };
+		D87CFEEC1C9CA6910021BBDD /* MSOutlookContactFolderOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookContactFolderOperations.h; sourceTree = "<group>"; };
+		D87CFEED1C9CA6910021BBDD /* MSOutlookContactOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookContactOperations.h; sourceTree = "<group>"; };
+		D87CFEEE1C9CA6910021BBDD /* MSOutlookConversation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookConversation.h; sourceTree = "<group>"; };
+		D87CFEEF1C9CA6910021BBDD /* MSOutlookConversationCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookConversationCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFEF01C9CA6910021BBDD /* MSOutlookConversationCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookConversationCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFEF11C9CA6910021BBDD /* MSOutlookConversationFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookConversationFetcher.h; sourceTree = "<group>"; };
+		D87CFEF21C9CA6910021BBDD /* MSOutlookConversationOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookConversationOperations.h; sourceTree = "<group>"; };
+		D87CFEF31C9CA6910021BBDD /* MSOutlookConversationThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookConversationThread.h; sourceTree = "<group>"; };
+		D87CFEF41C9CA6910021BBDD /* MSOutlookConversationThreadCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookConversationThreadCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFEF51C9CA6910021BBDD /* MSOutlookConversationThreadCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookConversationThreadCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFEF61C9CA6910021BBDD /* MSOutlookConversationThreadFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookConversationThreadFetcher.h; sourceTree = "<group>"; };
+		D87CFEF71C9CA6910021BBDD /* MSOutlookConversationThreadOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookConversationThreadOperations.h; sourceTree = "<group>"; };
+		D87CFEF81C9CA6910021BBDD /* MSOutlookDateTimeTimeZone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookDateTimeTimeZone.h; sourceTree = "<group>"; };
+		D87CFEF91C9CA6910021BBDD /* MSOutlookDayOfWeek.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookDayOfWeek.h; sourceTree = "<group>"; };
+		D87CFEFA1C9CA6910021BBDD /* MSOutlookDirectoryObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookDirectoryObject.h; sourceTree = "<group>"; };
+		D87CFEFB1C9CA6910021BBDD /* MSOutlookDirectoryObjectCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookDirectoryObjectCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFEFC1C9CA6910021BBDD /* MSOutlookDirectoryObjectCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookDirectoryObjectCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFEFD1C9CA6910021BBDD /* MSOutlookDirectoryObjectFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookDirectoryObjectFetcher.h; sourceTree = "<group>"; };
+		D87CFEFE1C9CA6910021BBDD /* MSOutlookDirectoryObjectOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookDirectoryObjectOperations.h; sourceTree = "<group>"; };
+		D87CFEFF1C9CA6910021BBDD /* MSOutlookEmailAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEmailAddress.h; sourceTree = "<group>"; };
+		D87CFF001C9CA6910021BBDD /* MSOutlookEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEntity.h; sourceTree = "<group>"; };
+		D87CFF011C9CA6910021BBDD /* MSOutlookEntityCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEntityCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF021C9CA6910021BBDD /* MSOutlookEntityCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEntityCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF031C9CA6910021BBDD /* MSOutlookEntityFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEntityFetcher.h; sourceTree = "<group>"; };
+		D87CFF041C9CA6910021BBDD /* MSOutlookEntityOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEntityOperations.h; sourceTree = "<group>"; };
+		D87CFF051C9CA6910021BBDD /* MSOutlookEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEvent.h; sourceTree = "<group>"; };
+		D87CFF061C9CA6910021BBDD /* MSOutlookEventCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEventCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF071C9CA6910021BBDD /* MSOutlookEventCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEventCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF081C9CA6910021BBDD /* MSOutlookEventFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEventFetcher.h; sourceTree = "<group>"; };
+		D87CFF091C9CA6910021BBDD /* MSOutlookEventMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEventMessage.h; sourceTree = "<group>"; };
+		D87CFF0A1C9CA6910021BBDD /* MSOutlookEventMessageCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEventMessageCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF0B1C9CA6920021BBDD /* MSOutlookEventMessageCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEventMessageCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF0C1C9CA6920021BBDD /* MSOutlookEventMessageFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEventMessageFetcher.h; sourceTree = "<group>"; };
+		D87CFF0D1C9CA6920021BBDD /* MSOutlookEventMessageOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEventMessageOperations.h; sourceTree = "<group>"; };
+		D87CFF0E1C9CA6920021BBDD /* MSOutlookEventOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEventOperations.h; sourceTree = "<group>"; };
+		D87CFF0F1C9CA6920021BBDD /* MSOutlookEventType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookEventType.h; sourceTree = "<group>"; };
+		D87CFF101C9CA6920021BBDD /* MSOutlookFetchers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookFetchers.h; sourceTree = "<group>"; };
+		D87CFF111C9CA6920021BBDD /* MSOutlookFileAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookFileAttachment.h; sourceTree = "<group>"; };
+		D87CFF121C9CA6920021BBDD /* MSOutlookFileAttachmentCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookFileAttachmentCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF131C9CA6920021BBDD /* MSOutlookFileAttachmentCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookFileAttachmentCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF141C9CA6920021BBDD /* MSOutlookFileAttachmentFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookFileAttachmentFetcher.h; sourceTree = "<group>"; };
+		D87CFF151C9CA6920021BBDD /* MSOutlookFileAttachmentOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookFileAttachmentOperations.h; sourceTree = "<group>"; };
+		D87CFF161C9CA6920021BBDD /* MSOutlookFreeBusyStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookFreeBusyStatus.h; sourceTree = "<group>"; };
+		D87CFF171C9CA6920021BBDD /* MSOutlookGeoCoordinates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookGeoCoordinates.h; sourceTree = "<group>"; };
+		D87CFF181C9CA6920021BBDD /* MSOutlookGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookGroup.h; sourceTree = "<group>"; };
+		D87CFF191C9CA6920021BBDD /* MSOutlookGroupAccessType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookGroupAccessType.h; sourceTree = "<group>"; };
+		D87CFF1A1C9CA6920021BBDD /* MSOutlookGroupCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookGroupCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF1B1C9CA6920021BBDD /* MSOutlookGroupCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookGroupCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF1C1C9CA6920021BBDD /* MSOutlookGroupFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookGroupFetcher.h; sourceTree = "<group>"; };
+		D87CFF1D1C9CA6920021BBDD /* MSOutlookGroupOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookGroupOperations.h; sourceTree = "<group>"; };
+		D87CFF1E1C9CA6920021BBDD /* MSOutlookImportance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookImportance.h; sourceTree = "<group>"; };
+		D87CFF1F1C9CA6920021BBDD /* MSOutlookItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookItem.h; sourceTree = "<group>"; };
+		D87CFF201C9CA6920021BBDD /* MSOutlookItemAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookItemAttachment.h; sourceTree = "<group>"; };
+		D87CFF211C9CA6920021BBDD /* MSOutlookItemAttachmentCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookItemAttachmentCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF221C9CA6920021BBDD /* MSOutlookItemAttachmentCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookItemAttachmentCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF231C9CA6920021BBDD /* MSOutlookItemAttachmentFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookItemAttachmentFetcher.h; sourceTree = "<group>"; };
+		D87CFF241C9CA6920021BBDD /* MSOutlookItemAttachmentOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookItemAttachmentOperations.h; sourceTree = "<group>"; };
+		D87CFF251C9CA6920021BBDD /* MSOutlookItemBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookItemBody.h; sourceTree = "<group>"; };
+		D87CFF261C9CA6920021BBDD /* MSOutlookItemCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookItemCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF271C9CA6920021BBDD /* MSOutlookItemCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookItemCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF281C9CA6920021BBDD /* MSOutlookItemFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookItemFetcher.h; sourceTree = "<group>"; };
+		D87CFF291C9CA6920021BBDD /* MSOutlookItemOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookItemOperations.h; sourceTree = "<group>"; };
+		D87CFF2A1C9CA6920021BBDD /* MSOutlookLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookLocation.h; sourceTree = "<group>"; };
+		D87CFF2B1C9CA6920021BBDD /* MSOutlookMailFolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookMailFolder.h; sourceTree = "<group>"; };
+		D87CFF2C1C9CA6920021BBDD /* MSOutlookMailFolderCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookMailFolderCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF2D1C9CA6920021BBDD /* MSOutlookMailFolderCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookMailFolderCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF2E1C9CA6920021BBDD /* MSOutlookMailFolderFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookMailFolderFetcher.h; sourceTree = "<group>"; };
+		D87CFF2F1C9CA6920021BBDD /* MSOutlookMailFolderOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookMailFolderOperations.h; sourceTree = "<group>"; };
+		D87CFF301C9CA6920021BBDD /* MSOutlookMeetingMessageType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookMeetingMessageType.h; sourceTree = "<group>"; };
+		D87CFF311C9CA6920021BBDD /* MSOutlookMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookMessage.h; sourceTree = "<group>"; };
+		D87CFF321C9CA6920021BBDD /* MSOutlookMessageCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookMessageCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF331C9CA6920021BBDD /* MSOutlookMessageCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookMessageCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF341C9CA6920021BBDD /* MSOutlookMessageFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookMessageFetcher.h; sourceTree = "<group>"; };
+		D87CFF351C9CA6920021BBDD /* MSOutlookMessageOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookMessageOperations.h; sourceTree = "<group>"; };
+		D87CFF361C9CA6920021BBDD /* MSOutlookModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookModels.h; sourceTree = "<group>"; };
+		D87CFF371C9CA6920021BBDD /* MSOutlookNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookNotification.h; sourceTree = "<group>"; };
+		D87CFF381C9CA6920021BBDD /* MSOutlookNotificationCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookNotificationCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF391C9CA6920021BBDD /* MSOutlookNotificationCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookNotificationCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF3A1C9CA6920021BBDD /* MSOutlookNotificationFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookNotificationFetcher.h; sourceTree = "<group>"; };
+		D87CFF3B1C9CA6920021BBDD /* MSOutlookNotificationOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookNotificationOperations.h; sourceTree = "<group>"; };
+		D87CFF3C1C9CA6920021BBDD /* MSOutlookPatternedRecurrence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPatternedRecurrence.h; sourceTree = "<group>"; };
+		D87CFF3D1C9CA6920021BBDD /* MSOutlookPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPhoto.h; sourceTree = "<group>"; };
+		D87CFF3E1C9CA6920021BBDD /* MSOutlookPhotoCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPhotoCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF3F1C9CA6920021BBDD /* MSOutlookPhotoCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPhotoCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF401C9CA6920021BBDD /* MSOutlookPhotoFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPhotoFetcher.h; sourceTree = "<group>"; };
+		D87CFF411C9CA6920021BBDD /* MSOutlookPhotoOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPhotoOperations.h; sourceTree = "<group>"; };
+		D87CFF421C9CA6920021BBDD /* MSOutlookPhysicalAddress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPhysicalAddress.h; sourceTree = "<group>"; };
+		D87CFF431C9CA6920021BBDD /* MSOutlookPost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPost.h; sourceTree = "<group>"; };
+		D87CFF441C9CA6920021BBDD /* MSOutlookPostCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPostCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF451C9CA6920021BBDD /* MSOutlookPostCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPostCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF461C9CA6920021BBDD /* MSOutlookPostFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPostFetcher.h; sourceTree = "<group>"; };
+		D87CFF471C9CA6920021BBDD /* MSOutlookPostOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPostOperations.h; sourceTree = "<group>"; };
+		D87CFF481C9CA6920021BBDD /* MSOutlookPushSubscription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPushSubscription.h; sourceTree = "<group>"; };
+		D87CFF491C9CA6920021BBDD /* MSOutlookPushSubscriptionCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPushSubscriptionCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF4A1C9CA6920021BBDD /* MSOutlookPushSubscriptionCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPushSubscriptionCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF4B1C9CA6920021BBDD /* MSOutlookPushSubscriptionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPushSubscriptionFetcher.h; sourceTree = "<group>"; };
+		D87CFF4C1C9CA6920021BBDD /* MSOutlookPushSubscriptionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookPushSubscriptionOperations.h; sourceTree = "<group>"; };
+		D87CFF4D1C9CA6920021BBDD /* MSOutlookRecipient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookRecipient.h; sourceTree = "<group>"; };
+		D87CFF4E1C9CA6920021BBDD /* MSOutlookRecurrencePattern.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookRecurrencePattern.h; sourceTree = "<group>"; };
+		D87CFF4F1C9CA6920021BBDD /* MSOutlookRecurrencePatternType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookRecurrencePatternType.h; sourceTree = "<group>"; };
+		D87CFF501C9CA6920021BBDD /* MSOutlookRecurrenceRange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookRecurrenceRange.h; sourceTree = "<group>"; };
+		D87CFF511C9CA6920021BBDD /* MSOutlookRecurrenceRangeType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookRecurrenceRangeType.h; sourceTree = "<group>"; };
+		D87CFF521C9CA6920021BBDD /* MSOutlookReferenceAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookReferenceAttachment.h; sourceTree = "<group>"; };
+		D87CFF531C9CA6920021BBDD /* MSOutlookReferenceAttachmentCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookReferenceAttachmentCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF541C9CA6920021BBDD /* MSOutlookReferenceAttachmentCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookReferenceAttachmentCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF551C9CA6920021BBDD /* MSOutlookReferenceAttachmentFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookReferenceAttachmentFetcher.h; sourceTree = "<group>"; };
+		D87CFF561C9CA6920021BBDD /* MSOutlookReferenceAttachmentOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookReferenceAttachmentOperations.h; sourceTree = "<group>"; };
+		D87CFF571C9CA6920021BBDD /* MSOutlookReminder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookReminder.h; sourceTree = "<group>"; };
+		D87CFF581C9CA6920021BBDD /* MSOutlookResponseStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookResponseStatus.h; sourceTree = "<group>"; };
+		D87CFF591C9CA6920021BBDD /* MSOutlookResponseType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookResponseType.h; sourceTree = "<group>"; };
+		D87CFF5A1C9CA6920021BBDD /* MSOutlookSensitivity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookSensitivity.h; sourceTree = "<group>"; };
+		D87CFF5B1C9CA6920021BBDD /* MSOutlookSubscription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookSubscription.h; sourceTree = "<group>"; };
+		D87CFF5C1C9CA6920021BBDD /* MSOutlookSubscriptionCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookSubscriptionCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF5D1C9CA6920021BBDD /* MSOutlookSubscriptionCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookSubscriptionCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF5E1C9CA6920021BBDD /* MSOutlookSubscriptionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookSubscriptionFetcher.h; sourceTree = "<group>"; };
+		D87CFF5F1C9CA6920021BBDD /* MSOutlookSubscriptionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookSubscriptionOperations.h; sourceTree = "<group>"; };
+		D87CFF601C9CA6920021BBDD /* MSOutlookUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookUser.h; sourceTree = "<group>"; };
+		D87CFF611C9CA6920021BBDD /* MSOutlookUserCollectionFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookUserCollectionFetcher.h; sourceTree = "<group>"; };
+		D87CFF621C9CA6920021BBDD /* MSOutlookUserCollectionOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookUserCollectionOperations.h; sourceTree = "<group>"; };
+		D87CFF631C9CA6920021BBDD /* MSOutlookUserFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookUserFetcher.h; sourceTree = "<group>"; };
+		D87CFF641C9CA6920021BBDD /* MSOutlookUserOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookUserOperations.h; sourceTree = "<group>"; };
+		D87CFF651C9CA6920021BBDD /* MSOutlookWeekIndex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOutlookWeekIndex.h; sourceTree = "<group>"; };
+		D87CFF661C9CA6920021BBDD /* NSArray+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
+		D87CFF671C9CA6920021BBDD /* NSDictionary+ADExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ADExtensions.h"; sourceTree = "<group>"; };
+		D87CFF681C9CA6920021BBDD /* NSString+ADHelperMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ADHelperMethods.h"; sourceTree = "<group>"; };
+		D87CFF691C9CA6920021BBDD /* NSString+NSStringExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+NSStringExtensions.h"; sourceTree = "<group>"; };
+		D87CFF6A1C9CA6920021BBDD /* NSURL+ADExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+ADExtensions.h"; sourceTree = "<group>"; };
+		D87CFF6B1C9CA6920021BBDD /* UIAlertView+Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Additions.h"; sourceTree = "<group>"; };
+		D87CFF6C1C9CA6920021BBDD /* UIApplication+ADExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ADExtensions.h"; sourceTree = "<group>"; };
+		D87CFF6D1C9CA7090021BBDD /* libADALiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libADALiOS.a; sourceTree = "<group>"; };
+		D87CFF6E1C9CA7090021BBDD /* libLiveSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLiveSDK.a; sourceTree = "<group>"; };
+		D87CFF6F1C9CA7090021BBDD /* libMSGraph-SDK-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMSGraph-SDK-iOS.a"; sourceTree = "<group>"; };
+		D87CFF701C9CA7090021BBDD /* libMSOffice365-Discovery-SDK-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMSOffice365-Discovery-SDK-iOS.a"; sourceTree = "<group>"; };
+		D87CFF711C9CA7090021BBDD /* libMSOneNote-SDK-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMSOneNote-SDK-iOS.a"; sourceTree = "<group>"; };
+		D87CFF721C9CA7090021BBDD /* libMSOutlook-SDK-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMSOutlook-SDK-iOS.a"; sourceTree = "<group>"; };
+		D87CFF731C9CA7090021BBDD /* liborc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liborc.a; sourceTree = "<group>"; };
 		D87EF8CD1BE90B660067DEC4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D87F78991C739F0A0000A6B9 /* FacePhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacePhotosViewController.swift; sourceTree = "<group>"; };
 		D87F789B1C7514F40000A6B9 /* FBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBHelper.swift; path = model/FBHelper.swift; sourceTree = "<group>"; };
@@ -158,9 +698,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D873295D1C501EA2003B8058 /* CoreLocation.framework in Frameworks */,
+				D87CFF761C9CA7090021BBDD /* libMSGraph-SDK-iOS.a in Frameworks */,
+				D87CFF7A1C9CA7090021BBDD /* liborc.a in Frameworks */,
+				D87CFF751C9CA7090021BBDD /* libLiveSDK.a in Frameworks */,
+				D87CFF781C9CA7090021BBDD /* libMSOneNote-SDK-iOS.a in Frameworks */,
 				59A90C8C1C5DE0CF004F7F73 /* FBSDKCoreKit.framework in Frameworks */,
-				D86DA5B21C9B46B00079A4AC /* libADALiOS.a in Frameworks */,
+				D87CFF791C9CA7090021BBDD /* libMSOutlook-SDK-iOS.a in Frameworks */,
 				59A90C8F1C5DE80C004F7F73 /* FBSDKLoginKit.framework in Frameworks */,
+				D87CFF771C9CA7090021BBDD /* libMSOffice365-Discovery-SDK-iOS.a in Frameworks */,
+				D87CFF741C9CA7090021BBDD /* libADALiOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +730,13 @@
 		59A90C8A1C5DE08D004F7F73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D86DA5B11C9B46B00079A4AC /* libADALiOS.a */,
+				D87CFF6D1C9CA7090021BBDD /* libADALiOS.a */,
+				D87CFF6E1C9CA7090021BBDD /* libLiveSDK.a */,
+				D87CFF6F1C9CA7090021BBDD /* libMSGraph-SDK-iOS.a */,
+				D87CFF701C9CA7090021BBDD /* libMSOffice365-Discovery-SDK-iOS.a */,
+				D87CFF711C9CA7090021BBDD /* libMSOneNote-SDK-iOS.a */,
+				D87CFF721C9CA7090021BBDD /* libMSOutlook-SDK-iOS.a */,
+				D87CFF731C9CA7090021BBDD /* liborc.a */,
 				D873295C1C501EA2003B8058 /* CoreLocation.framework */,
 				59A90C8E1C5DE80C004F7F73 /* FBSDKLoginKit.framework */,
 				59A90C8B1C5DE0CF004F7F73 /* FBSDKCoreKit.framework */,
@@ -209,7 +761,7 @@
 		D8685CB01BE7BF880041817E = {
 			isa = PBXGroup;
 			children = (
-				D86DA5C31C9B47400079A4AC /* ADALiOS */,
+				D87CFD4F1C9CA61A0021BBDD /* Office365Lib */,
 				D8685CBB1BE7BF880041817E /* xtalk */,
 				D8685CD01BE7BF890041817E /* xtalkTests */,
 				D8685CDB1BE7BF890041817E /* xtalkUITests */,
@@ -231,6 +783,7 @@
 		D8685CBB1BE7BF880041817E /* xtalk */ = {
 			isa = PBXGroup;
 			children = (
+				D83AA42F1C9C4B2300F83999 /* xtalk.entitlements */,
 				D832F8561C9B2CAA00B607F2 /* o365 */,
 				D88C79CF1C7FBC0A00C14854 /* view */,
 				D88C79CC1C7B88E800C14854 /* theme */,
@@ -305,25 +858,552 @@
 			name = custom;
 			sourceTree = "<group>";
 		};
-		D86DA5C31C9B47400079A4AC /* ADALiOS */ = {
+		D87CFD4F1C9CA61A0021BBDD /* Office365Lib */ = {
 			isa = PBXGroup;
 			children = (
-				D86DA5C41C9B47400079A4AC /* ADAL.h */,
-				D86DA5C51C9B47400079A4AC /* ADAuthenticationBroker.h */,
-				D86DA5C61C9B47400079A4AC /* ADAuthenticationContext.h */,
-				D86DA5C71C9B47400079A4AC /* ADAuthenticationError.h */,
-				D86DA5C81C9B47400079A4AC /* ADAuthenticationParameters.h */,
-				D86DA5C91C9B47400079A4AC /* ADAuthenticationResult.h */,
-				D86DA5CA1C9B47400079A4AC /* ADAuthenticationSettings.h */,
-				D86DA5CB1C9B47400079A4AC /* ADErrorCodes.h */,
-				D86DA5CC1C9B47400079A4AC /* ADInstanceDiscovery.h */,
-				D86DA5CD1C9B47400079A4AC /* ADLogger.h */,
-				D86DA5CE1C9B47400079A4AC /* ADTokenCacheStoreItem.h */,
-				D86DA5CF1C9B47400079A4AC /* ADTokenCacheStoreKey.h */,
-				D86DA5D01C9B47400079A4AC /* ADTokenCacheStoring.h */,
-				D86DA5D11C9B47400079A4AC /* ADUserInformation.h */,
+				D87CFD501C9CA68F0021BBDD /* ADAL.h */,
+				D87CFD511C9CA68F0021BBDD /* ADALDependencyResolver.h */,
+				D87CFD521C9CA68F0021BBDD /* ADALiOS.h */,
+				D87CFD531C9CA68F0021BBDD /* ADAuthenticationBroker.h */,
+				D87CFD541C9CA68F0021BBDD /* ADAuthenticationContext.h */,
+				D87CFD551C9CA68F0021BBDD /* ADAuthenticationDelegate.h */,
+				D87CFD561C9CA68F0021BBDD /* ADAuthenticationError.h */,
+				D87CFD571C9CA68F0021BBDD /* ADAuthenticationOperation.h */,
+				D87CFD581C9CA68F0021BBDD /* ADAuthenticationParameters.h */,
+				D87CFD591C9CA68F0021BBDD /* ADAuthenticationParameters+Internal.h */,
+				D87CFD5A1C9CA68F0021BBDD /* ADAuthenticationResult.h */,
+				D87CFD5B1C9CA68F0021BBDD /* ADAuthenticationResult+Internal.h */,
+				D87CFD5C1C9CA68F0021BBDD /* ADAuthenticationSettings.h */,
+				D87CFD5D1C9CA68F0021BBDD /* ADAuthenticationViewController.h */,
+				D87CFD5E1C9CA68F0021BBDD /* ADAuthenticationWebViewController.h */,
+				D87CFD5F1C9CA68F0021BBDD /* ADClientMetrics.h */,
+				D87CFD601C9CA68F0021BBDD /* ADErrorCodes.h */,
+				D87CFD611C9CA68F0021BBDD /* ADHelpers.h */,
+				D87CFD621C9CA68F0021BBDD /* ADInstanceDiscovery.h */,
+				D87CFD631C9CA68F0021BBDD /* ADKeyChainHelper.h */,
+				D87CFD641C9CA68F0021BBDD /* ADKeychainTokenCacheStore.h */,
+				D87CFD651C9CA68F0021BBDD /* ADLogger.h */,
+				D87CFD661C9CA68F0021BBDD /* ADNTLMHandler.h */,
+				D87CFD671C9CA68F0021BBDD /* ADOAuth2Constants.h */,
+				D87CFD681C9CA68F0021BBDD /* ADPersistentTokenCacheStore.h */,
+				D87CFD691C9CA68F0021BBDD /* ADPkeyAuthHelper.h */,
+				D87CFD6A1C9CA68F0021BBDD /* ADRegistrationInformation.h */,
+				D87CFD6B1C9CA68F0021BBDD /* ADTokenCacheStoreItem.h */,
+				D87CFD6C1C9CA68F0021BBDD /* ADTokenCacheStoreKey.h */,
+				D87CFD6D1C9CA68F0021BBDD /* ADTokenCacheStoring.h */,
+				D87CFD6E1C9CA68F0021BBDD /* ADTokenCacheValue.h */,
+				D87CFD6F1C9CA68F0021BBDD /* ADURLProtocol.h */,
+				D87CFD701C9CA68F0021BBDD /* ADUserInformation.h */,
+				D87CFD711C9CA68F0021BBDD /* ADWebRequest.h */,
+				D87CFD721C9CA68F0021BBDD /* ADWebResponse.h */,
+				D87CFD731C9CA68F0021BBDD /* ADWorkPlaceJoin.h */,
+				D87CFD741C9CA68F0021BBDD /* ADWorkPlaceJoinConstants.h */,
+				D87CFD751C9CA68F0021BBDD /* ADWorkPlaceJoinUtil.h */,
+				D87CFD761C9CA68F0021BBDD /* api.h */,
+				D87CFD771C9CA68F0021BBDD /* core.h */,
+				D87CFD781C9CA68F0021BBDD /* impl.h */,
+				D87CFD791C9CA68F0021BBDD /* LiveAuthDelegate.h */,
+				D87CFD7A1C9CA68F0021BBDD /* LiveConnectClient.h */,
+				D87CFD7B1C9CA68F0021BBDD /* LiveConnectSession.h */,
+				D87CFD7C1C9CA68F0021BBDD /* LiveConnectSessionStatus.h */,
+				D87CFD7D1C9CA68F0021BBDD /* LiveDependencyResolver.h */,
+				D87CFD7E1C9CA68F0021BBDD /* LiveDownloadOperation.h */,
+				D87CFD7F1C9CA68F0021BBDD /* LiveDownloadOperationDelegate.h */,
+				D87CFD801C9CA68F0021BBDD /* LiveOperation.h */,
+				D87CFD811C9CA68F0021BBDD /* LiveOperationDelegate.h */,
+				D87CFD821C9CA6900021BBDD /* LiveOperationProgress.h */,
+				D87CFD831C9CA6900021BBDD /* LiveUploadOperationDelegate.h */,
+				D87CFD841C9CA6900021BBDD /* LiveUploadOverwriteOption.h */,
+				D87CFD851C9CA6900021BBDD /* MSDiscovery.h */,
+				D87CFD861C9CA6900021BBDD /* MSDiscoveryClient.h */,
+				D87CFD871C9CA6900021BBDD /* MSDiscoveryFetchers.h */,
+				D87CFD881C9CA6900021BBDD /* MSDiscoveryModels.h */,
+				D87CFD891C9CA6900021BBDD /* MSDiscoveryServiceInfo.h */,
+				D87CFD8A1C9CA6900021BBDD /* MSDiscoveryServiceInfoCollectionFetcher.h */,
+				D87CFD8B1C9CA6900021BBDD /* MSDiscoveryServiceInfoCollectionOperations.h */,
+				D87CFD8C1C9CA6900021BBDD /* MSDiscoveryServiceInfoFetcher.h */,
+				D87CFD8D1C9CA6900021BBDD /* MSDiscoveryServiceInfoOperations.h */,
+				D87CFD8E1C9CA6900021BBDD /* MSGraphService.h */,
+				D87CFD8F1C9CA6900021BBDD /* MSGraphServiceAlternativeSecurityId.h */,
+				D87CFD901C9CA6900021BBDD /* MSGraphServiceAssignedLicense.h */,
+				D87CFD911C9CA6900021BBDD /* MSGraphServiceAssignedPlan.h */,
+				D87CFD921C9CA6900021BBDD /* MSGraphServiceAttachment.h */,
+				D87CFD931C9CA6900021BBDD /* MSGraphServiceAttachmentCollectionFetcher.h */,
+				D87CFD941C9CA6900021BBDD /* MSGraphServiceAttachmentCollectionOperations.h */,
+				D87CFD951C9CA6900021BBDD /* MSGraphServiceAttachmentFetcher.h */,
+				D87CFD961C9CA6900021BBDD /* MSGraphServiceAttachmentOperations.h */,
+				D87CFD971C9CA6900021BBDD /* MSGraphServiceAttendee.h */,
+				D87CFD981C9CA6900021BBDD /* MSGraphServiceAttendeeType.h */,
+				D87CFD991C9CA6900021BBDD /* MSGraphServiceAudio.h */,
+				D87CFD9A1C9CA6900021BBDD /* MSGraphServiceBodyType.h */,
+				D87CFD9B1C9CA6900021BBDD /* MSGraphServiceCalendar.h */,
+				D87CFD9C1C9CA6900021BBDD /* MSGraphServiceCalendarCollectionFetcher.h */,
+				D87CFD9D1C9CA6900021BBDD /* MSGraphServiceCalendarCollectionOperations.h */,
+				D87CFD9E1C9CA6900021BBDD /* MSGraphServiceCalendarColor.h */,
+				D87CFD9F1C9CA6900021BBDD /* MSGraphServiceCalendarFetcher.h */,
+				D87CFDA01C9CA6900021BBDD /* MSGraphServiceCalendarGroup.h */,
+				D87CFDA11C9CA6900021BBDD /* MSGraphServiceCalendarGroupCollectionFetcher.h */,
+				D87CFDA21C9CA6900021BBDD /* MSGraphServiceCalendarGroupCollectionOperations.h */,
+				D87CFDA31C9CA6900021BBDD /* MSGraphServiceCalendarGroupFetcher.h */,
+				D87CFDA41C9CA6900021BBDD /* MSGraphServiceCalendarGroupOperations.h */,
+				D87CFDA51C9CA6900021BBDD /* MSGraphServiceCalendarOperations.h */,
+				D87CFDA61C9CA6900021BBDD /* MSGraphServiceClient.h */,
+				D87CFDA71C9CA6900021BBDD /* MSGraphServiceContact.h */,
+				D87CFDA81C9CA6900021BBDD /* MSGraphServiceContactCollectionFetcher.h */,
+				D87CFDA91C9CA6900021BBDD /* MSGraphServiceContactCollectionOperations.h */,
+				D87CFDAA1C9CA6900021BBDD /* MSGraphServiceContactFetcher.h */,
+				D87CFDAB1C9CA6900021BBDD /* MSGraphServiceContactFolder.h */,
+				D87CFDAC1C9CA6900021BBDD /* MSGraphServiceContactFolderCollectionFetcher.h */,
+				D87CFDAD1C9CA6900021BBDD /* MSGraphServiceContactFolderCollectionOperations.h */,
+				D87CFDAE1C9CA6900021BBDD /* MSGraphServiceContactFolderFetcher.h */,
+				D87CFDAF1C9CA6900021BBDD /* MSGraphServiceContactFolderOperations.h */,
+				D87CFDB01C9CA6900021BBDD /* MSGraphServiceContactOperations.h */,
+				D87CFDB11C9CA6900021BBDD /* MSGraphServiceConversation.h */,
+				D87CFDB21C9CA6900021BBDD /* MSGraphServiceConversationCollectionFetcher.h */,
+				D87CFDB31C9CA6900021BBDD /* MSGraphServiceConversationCollectionOperations.h */,
+				D87CFDB41C9CA6900021BBDD /* MSGraphServiceConversationFetcher.h */,
+				D87CFDB51C9CA6900021BBDD /* MSGraphServiceConversationOperations.h */,
+				D87CFDB61C9CA6900021BBDD /* MSGraphServiceConversationThread.h */,
+				D87CFDB71C9CA6900021BBDD /* MSGraphServiceConversationThreadCollectionFetcher.h */,
+				D87CFDB81C9CA6900021BBDD /* MSGraphServiceConversationThreadCollectionOperations.h */,
+				D87CFDB91C9CA6900021BBDD /* MSGraphServiceConversationThreadFetcher.h */,
+				D87CFDBA1C9CA6900021BBDD /* MSGraphServiceConversationThreadOperations.h */,
+				D87CFDBB1C9CA6900021BBDD /* MSGraphServiceDateTimeTimeZone.h */,
+				D87CFDBC1C9CA6900021BBDD /* MSGraphServiceDayOfWeek.h */,
+				D87CFDBD1C9CA6900021BBDD /* MSGraphServiceDeleted.h */,
+				D87CFDBE1C9CA6900021BBDD /* MSGraphServiceDevice.h */,
+				D87CFDBF1C9CA6900021BBDD /* MSGraphServiceDeviceCollectionFetcher.h */,
+				D87CFDC01C9CA6900021BBDD /* MSGraphServiceDeviceCollectionOperations.h */,
+				D87CFDC11C9CA6900021BBDD /* MSGraphServiceDeviceFetcher.h */,
+				D87CFDC21C9CA6900021BBDD /* MSGraphServiceDeviceOperations.h */,
+				D87CFDC31C9CA6900021BBDD /* MSGraphServiceDirectoryObject.h */,
+				D87CFDC41C9CA6900021BBDD /* MSGraphServiceDirectoryObjectCollectionFetcher.h */,
+				D87CFDC51C9CA6900021BBDD /* MSGraphServiceDirectoryObjectCollectionOperations.h */,
+				D87CFDC61C9CA6900021BBDD /* MSGraphServiceDirectoryObjectFetcher.h */,
+				D87CFDC71C9CA6900021BBDD /* MSGraphServiceDirectoryObjectOperations.h */,
+				D87CFDC81C9CA6900021BBDD /* MSGraphServiceDirectoryRole.h */,
+				D87CFDC91C9CA6900021BBDD /* MSGraphServiceDirectoryRoleCollectionFetcher.h */,
+				D87CFDCA1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleCollectionOperations.h */,
+				D87CFDCB1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleFetcher.h */,
+				D87CFDCC1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleOperations.h */,
+				D87CFDCD1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleTemplate.h */,
+				D87CFDCE1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleTemplateCollectionFetcher.h */,
+				D87CFDCF1C9CA6900021BBDD /* MSGraphServiceDirectoryRoleTemplateCollectionOperations.h */,
+				D87CFDD01C9CA6900021BBDD /* MSGraphServiceDirectoryRoleTemplateFetcher.h */,
+				D87CFDD11C9CA6900021BBDD /* MSGraphServiceDirectoryRoleTemplateOperations.h */,
+				D87CFDD21C9CA6900021BBDD /* MSGraphServiceDrive.h */,
+				D87CFDD31C9CA6900021BBDD /* MSGraphServiceDriveCollectionFetcher.h */,
+				D87CFDD41C9CA6900021BBDD /* MSGraphServiceDriveCollectionOperations.h */,
+				D87CFDD51C9CA6900021BBDD /* MSGraphServiceDriveFetcher.h */,
+				D87CFDD61C9CA6900021BBDD /* MSGraphServiceDriveItem.h */,
+				D87CFDD71C9CA6900021BBDD /* MSGraphServiceDriveItemCollectionFetcher.h */,
+				D87CFDD81C9CA6900021BBDD /* MSGraphServiceDriveItemCollectionOperations.h */,
+				D87CFDD91C9CA6900021BBDD /* MSGraphServiceDriveItemFetcher.h */,
+				D87CFDDA1C9CA6900021BBDD /* MSGraphServiceDriveItemOperations.h */,
+				D87CFDDB1C9CA6900021BBDD /* MSGraphServiceDriveOperations.h */,
+				D87CFDDC1C9CA6900021BBDD /* MSGraphServiceEmailAddress.h */,
+				D87CFDDD1C9CA6900021BBDD /* MSGraphServiceEntity.h */,
+				D87CFDDE1C9CA6900021BBDD /* MSGraphServiceEntityCollectionFetcher.h */,
+				D87CFDDF1C9CA6900021BBDD /* MSGraphServiceEntityCollectionOperations.h */,
+				D87CFDE01C9CA6900021BBDD /* MSGraphServiceEntityFetcher.h */,
+				D87CFDE11C9CA6900021BBDD /* MSGraphServiceEntityOperations.h */,
+				D87CFDE21C9CA6900021BBDD /* MSGraphServiceEvent.h */,
+				D87CFDE31C9CA6900021BBDD /* MSGraphServiceEventCollectionFetcher.h */,
+				D87CFDE41C9CA6900021BBDD /* MSGraphServiceEventCollectionOperations.h */,
+				D87CFDE51C9CA6900021BBDD /* MSGraphServiceEventFetcher.h */,
+				D87CFDE61C9CA6900021BBDD /* MSGraphServiceEventMessage.h */,
+				D87CFDE71C9CA6900021BBDD /* MSGraphServiceEventMessageCollectionFetcher.h */,
+				D87CFDE81C9CA6900021BBDD /* MSGraphServiceEventMessageCollectionOperations.h */,
+				D87CFDE91C9CA6900021BBDD /* MSGraphServiceEventMessageFetcher.h */,
+				D87CFDEA1C9CA6900021BBDD /* MSGraphServiceEventMessageOperations.h */,
+				D87CFDEB1C9CA6900021BBDD /* MSGraphServiceEventOperations.h */,
+				D87CFDEC1C9CA6900021BBDD /* MSGraphServiceEventType.h */,
+				D87CFDED1C9CA6900021BBDD /* MSGraphServiceFetchers.h */,
+				D87CFDEE1C9CA6900021BBDD /* MSGraphServiceFile.h */,
+				D87CFDEF1C9CA6900021BBDD /* MSGraphServiceFileAttachment.h */,
+				D87CFDF01C9CA6900021BBDD /* MSGraphServiceFileAttachmentCollectionFetcher.h */,
+				D87CFDF11C9CA6900021BBDD /* MSGraphServiceFileAttachmentCollectionOperations.h */,
+				D87CFDF21C9CA6900021BBDD /* MSGraphServiceFileAttachmentFetcher.h */,
+				D87CFDF31C9CA6900021BBDD /* MSGraphServiceFileAttachmentOperations.h */,
+				D87CFDF41C9CA6900021BBDD /* MSGraphServiceFileSystemInfo.h */,
+				D87CFDF51C9CA6900021BBDD /* MSGraphServiceFolder.h */,
+				D87CFDF61C9CA6900021BBDD /* MSGraphServiceFreeBusyStatus.h */,
+				D87CFDF71C9CA6900021BBDD /* MSGraphServiceGeoCoordinates.h */,
+				D87CFDF81C9CA6900021BBDD /* MSGraphServiceGroup.h */,
+				D87CFDF91C9CA6900021BBDD /* MSGraphServiceGroupCollectionFetcher.h */,
+				D87CFDFA1C9CA6900021BBDD /* MSGraphServiceGroupCollectionOperations.h */,
+				D87CFDFB1C9CA6900021BBDD /* MSGraphServiceGroupFetcher.h */,
+				D87CFDFC1C9CA6900021BBDD /* MSGraphServiceGroupOperations.h */,
+				D87CFDFD1C9CA6900021BBDD /* MSGraphServiceHashes.h */,
+				D87CFDFE1C9CA6900021BBDD /* MSGraphServiceIdentity.h */,
+				D87CFDFF1C9CA6900021BBDD /* MSGraphServiceIdentitySet.h */,
+				D87CFE001C9CA6900021BBDD /* MSGraphServiceImage.h */,
+				D87CFE011C9CA6900021BBDD /* MSGraphServiceImportance.h */,
+				D87CFE021C9CA6900021BBDD /* MSGraphServiceItemAttachment.h */,
+				D87CFE031C9CA6900021BBDD /* MSGraphServiceItemAttachmentCollectionFetcher.h */,
+				D87CFE041C9CA6900021BBDD /* MSGraphServiceItemAttachmentCollectionOperations.h */,
+				D87CFE051C9CA6900021BBDD /* MSGraphServiceItemAttachmentFetcher.h */,
+				D87CFE061C9CA6900021BBDD /* MSGraphServiceItemAttachmentOperations.h */,
+				D87CFE071C9CA6900021BBDD /* MSGraphServiceItemBody.h */,
+				D87CFE081C9CA6900021BBDD /* MSGraphServiceItemReference.h */,
+				D87CFE091C9CA6900021BBDD /* MSGraphServiceLicenseUnitsDetail.h */,
+				D87CFE0A1C9CA6900021BBDD /* MSGraphServiceLocation.h */,
+				D87CFE0B1C9CA6900021BBDD /* MSGraphServiceMailFolder.h */,
+				D87CFE0C1C9CA6900021BBDD /* MSGraphServiceMailFolderCollectionFetcher.h */,
+				D87CFE0D1C9CA6900021BBDD /* MSGraphServiceMailFolderCollectionOperations.h */,
+				D87CFE0E1C9CA6900021BBDD /* MSGraphServiceMailFolderFetcher.h */,
+				D87CFE0F1C9CA6900021BBDD /* MSGraphServiceMailFolderOperations.h */,
+				D87CFE101C9CA6900021BBDD /* MSGraphServiceMeetingMessageType.h */,
+				D87CFE111C9CA6900021BBDD /* MSGraphServiceMessage.h */,
+				D87CFE121C9CA6900021BBDD /* MSGraphServiceMessageCollectionFetcher.h */,
+				D87CFE131C9CA6900021BBDD /* MSGraphServiceMessageCollectionOperations.h */,
+				D87CFE141C9CA6900021BBDD /* MSGraphServiceMessageFetcher.h */,
+				D87CFE151C9CA6900021BBDD /* MSGraphServiceMessageOperations.h */,
+				D87CFE161C9CA6900021BBDD /* MSGraphServiceModels.h */,
+				D87CFE171C9CA6900021BBDD /* MSGraphServiceOrganization.h */,
+				D87CFE181C9CA6900021BBDD /* MSGraphServiceOrganizationCollectionFetcher.h */,
+				D87CFE191C9CA6900021BBDD /* MSGraphServiceOrganizationCollectionOperations.h */,
+				D87CFE1A1C9CA6900021BBDD /* MSGraphServiceOrganizationFetcher.h */,
+				D87CFE1B1C9CA6900021BBDD /* MSGraphServiceOrganizationOperations.h */,
+				D87CFE1C1C9CA6900021BBDD /* MSGraphServiceOutlookItem.h */,
+				D87CFE1D1C9CA6900021BBDD /* MSGraphServiceOutlookItemCollectionFetcher.h */,
+				D87CFE1E1C9CA6900021BBDD /* MSGraphServiceOutlookItemCollectionOperations.h */,
+				D87CFE1F1C9CA6900021BBDD /* MSGraphServiceOutlookItemFetcher.h */,
+				D87CFE201C9CA6900021BBDD /* MSGraphServiceOutlookItemOperations.h */,
+				D87CFE211C9CA6900021BBDD /* MSGraphServicePasswordProfile.h */,
+				D87CFE221C9CA6900021BBDD /* MSGraphServicePatternedRecurrence.h */,
+				D87CFE231C9CA6900021BBDD /* MSGraphServicePermission.h */,
+				D87CFE241C9CA6900021BBDD /* MSGraphServicePermissionCollectionFetcher.h */,
+				D87CFE251C9CA6900021BBDD /* MSGraphServicePermissionCollectionOperations.h */,
+				D87CFE261C9CA6900021BBDD /* MSGraphServicePermissionFetcher.h */,
+				D87CFE271C9CA6900021BBDD /* MSGraphServicePermissionOperations.h */,
+				D87CFE281C9CA6900021BBDD /* MSGraphServicePhoto.h */,
+				D87CFE291C9CA6900021BBDD /* MSGraphServicePhysicalAddress.h */,
+				D87CFE2A1C9CA6900021BBDD /* MSGraphServicePost.h */,
+				D87CFE2B1C9CA6900021BBDD /* MSGraphServicePostCollectionFetcher.h */,
+				D87CFE2C1C9CA6900021BBDD /* MSGraphServicePostCollectionOperations.h */,
+				D87CFE2D1C9CA6900021BBDD /* MSGraphServicePostFetcher.h */,
+				D87CFE2E1C9CA6900021BBDD /* MSGraphServicePostOperations.h */,
+				D87CFE2F1C9CA6900021BBDD /* MSGraphServiceProfilePhoto.h */,
+				D87CFE301C9CA6900021BBDD /* MSGraphServiceProfilePhotoCollectionFetcher.h */,
+				D87CFE311C9CA6900021BBDD /* MSGraphServiceProfilePhotoCollectionOperations.h */,
+				D87CFE321C9CA6900021BBDD /* MSGraphServiceProfilePhotoFetcher.h */,
+				D87CFE331C9CA6900021BBDD /* MSGraphServiceProfilePhotoOperations.h */,
+				D87CFE341C9CA6900021BBDD /* MSGraphServiceProvisionedPlan.h */,
+				D87CFE351C9CA6900021BBDD /* MSGraphServiceQuota.h */,
+				D87CFE361C9CA6900021BBDD /* MSGraphServiceRecipient.h */,
+				D87CFE371C9CA6900021BBDD /* MSGraphServiceRecurrencePattern.h */,
+				D87CFE381C9CA6900021BBDD /* MSGraphServiceRecurrencePatternType.h */,
+				D87CFE391C9CA6900021BBDD /* MSGraphServiceRecurrenceRange.h */,
+				D87CFE3A1C9CA6900021BBDD /* MSGraphServiceRecurrenceRangeType.h */,
+				D87CFE3B1C9CA6900021BBDD /* MSGraphServiceReferenceAttachment.h */,
+				D87CFE3C1C9CA6900021BBDD /* MSGraphServiceReferenceAttachmentCollectionFetcher.h */,
+				D87CFE3D1C9CA6900021BBDD /* MSGraphServiceReferenceAttachmentCollectionOperations.h */,
+				D87CFE3E1C9CA6900021BBDD /* MSGraphServiceReferenceAttachmentFetcher.h */,
+				D87CFE3F1C9CA6900021BBDD /* MSGraphServiceReferenceAttachmentOperations.h */,
+				D87CFE401C9CA6900021BBDD /* MSGraphServiceReminder.h */,
+				D87CFE411C9CA6900021BBDD /* MSGraphServiceResponseStatus.h */,
+				D87CFE421C9CA6900021BBDD /* MSGraphServiceResponseType.h */,
+				D87CFE431C9CA6900021BBDD /* MSGraphServiceSearchResult.h */,
+				D87CFE441C9CA6900021BBDD /* MSGraphServiceSensitivity.h */,
+				D87CFE451C9CA6900021BBDD /* MSGraphServiceServicePlanInfo.h */,
+				D87CFE461C9CA6900021BBDD /* MSGraphServiceShared.h */,
+				D87CFE471C9CA6900021BBDD /* MSGraphServiceSharingInvitation.h */,
+				D87CFE481C9CA6900021BBDD /* MSGraphServiceSharingLink.h */,
+				D87CFE491C9CA6900021BBDD /* MSGraphServiceSpecialFolder.h */,
+				D87CFE4A1C9CA6900021BBDD /* MSGraphServiceSubscribedSku.h */,
+				D87CFE4B1C9CA6900021BBDD /* MSGraphServiceSubscribedSkuCollectionFetcher.h */,
+				D87CFE4C1C9CA6900021BBDD /* MSGraphServiceSubscribedSkuCollectionOperations.h */,
+				D87CFE4D1C9CA6900021BBDD /* MSGraphServiceSubscribedSkuFetcher.h */,
+				D87CFE4E1C9CA6900021BBDD /* MSGraphServiceSubscribedSkuOperations.h */,
+				D87CFE4F1C9CA6900021BBDD /* MSGraphServiceThumbnail.h */,
+				D87CFE501C9CA6900021BBDD /* MSGraphServiceThumbnailSet.h */,
+				D87CFE511C9CA6900021BBDD /* MSGraphServiceThumbnailSetCollectionFetcher.h */,
+				D87CFE521C9CA6900021BBDD /* MSGraphServiceThumbnailSetCollectionOperations.h */,
+				D87CFE531C9CA6900021BBDD /* MSGraphServiceThumbnailSetFetcher.h */,
+				D87CFE541C9CA6900021BBDD /* MSGraphServiceThumbnailSetOperations.h */,
+				D87CFE551C9CA6900021BBDD /* MSGraphServiceUser.h */,
+				D87CFE561C9CA6900021BBDD /* MSGraphServiceUserCollectionFetcher.h */,
+				D87CFE571C9CA6900021BBDD /* MSGraphServiceUserCollectionOperations.h */,
+				D87CFE581C9CA6900021BBDD /* MSGraphServiceUserFetcher.h */,
+				D87CFE591C9CA6900021BBDD /* MSGraphServiceUserOperations.h */,
+				D87CFE5A1C9CA6900021BBDD /* MSGraphServiceVerifiedDomain.h */,
+				D87CFE5B1C9CA6900021BBDD /* MSGraphServiceVideo.h */,
+				D87CFE5C1C9CA6900021BBDD /* MSGraphServiceWeekIndex.h */,
+				D87CFE5D1C9CA6900021BBDD /* MSOCalendarSerializer.h */,
+				D87CFE5E1C9CA6900021BBDD /* MSOneNoteApi.h */,
+				D87CFE5F1C9CA6900021BBDD /* MSOneNoteApiClient.h */,
+				D87CFE601C9CA6900021BBDD /* MSOneNoteApiCopyStatusModel.h */,
+				D87CFE611C9CA6900021BBDD /* MSOneNoteApiDiagnostic.h */,
+				D87CFE621C9CA6900021BBDD /* MSOneNoteApiExternalLink.h */,
+				D87CFE631C9CA6900021BBDD /* MSOneNoteApiFetchers.h */,
+				D87CFE641C9CA6900021BBDD /* MSOneNoteApiGroup.h */,
+				D87CFE651C9CA6900021BBDD /* MSOneNoteApiGroupCollectionFetcher.h */,
+				D87CFE661C9CA6900021BBDD /* MSOneNoteApiGroupCollectionOperations.h */,
+				D87CFE671C9CA6900021BBDD /* MSOneNoteApiGroupFetcher.h */,
+				D87CFE681C9CA6900021BBDD /* MSOneNoteApiGroupOperations.h */,
+				D87CFE691C9CA6900021BBDD /* MSOneNoteApiIdentity.h */,
+				D87CFE6A1C9CA6900021BBDD /* MSOneNoteApiIdentitySet.h */,
+				D87CFE6B1C9CA6900021BBDD /* MSOneNoteApiImportStatusModel.h */,
+				D87CFE6C1C9CA6900021BBDD /* MSOneNoteApiModels.h */,
+				D87CFE6D1C9CA6900021BBDD /* MSOneNoteApiMyOrganization.h */,
+				D87CFE6E1C9CA6900021BBDD /* MSOneNoteApiMyOrganizationCollectionFetcher.h */,
+				D87CFE6F1C9CA6900021BBDD /* MSOneNoteApiMyOrganizationCollectionOperations.h */,
+				D87CFE701C9CA6900021BBDD /* MSOneNoteApiMyOrganizationFetcher.h */,
+				D87CFE711C9CA6900021BBDD /* MSOneNoteApiMyOrganizationOperations.h */,
+				D87CFE721C9CA6900021BBDD /* MSOneNoteApiNotebook.h */,
+				D87CFE731C9CA6900021BBDD /* MSOneNoteApiNotebookCollectionFetcher.h */,
+				D87CFE741C9CA6900021BBDD /* MSOneNoteApiNotebookCollectionOperations.h */,
+				D87CFE751C9CA6900021BBDD /* MSOneNoteApiNotebookFetcher.h */,
+				D87CFE761C9CA6900021BBDD /* MSOneNoteApiNotebookLinks.h */,
+				D87CFE771C9CA6900021BBDD /* MSOneNoteApiNotebookOperations.h */,
+				D87CFE781C9CA6900021BBDD /* MSOneNoteApiNotes.h */,
+				D87CFE791C9CA6900021BBDD /* MSOneNoteApiNotesCollectionFetcher.h */,
+				D87CFE7A1C9CA6900021BBDD /* MSOneNoteApiNotesCollectionOperations.h */,
+				D87CFE7B1C9CA6900021BBDD /* MSOneNoteApiNotesFetcher.h */,
+				D87CFE7C1C9CA6900021BBDD /* MSOneNoteApiNotesOperations.h */,
+				D87CFE7D1C9CA6910021BBDD /* MSOneNoteApiOperation.h */,
+				D87CFE7E1C9CA6910021BBDD /* MSOneNoteApiOperationCollectionFetcher.h */,
+				D87CFE7F1C9CA6910021BBDD /* MSOneNoteApiOperationCollectionOperations.h */,
+				D87CFE801C9CA6910021BBDD /* MSOneNoteApiOperationError.h */,
+				D87CFE811C9CA6910021BBDD /* MSOneNoteApiOperationFetcher.h */,
+				D87CFE821C9CA6910021BBDD /* MSOneNoteApiOperationOperations.h */,
+				D87CFE831C9CA6910021BBDD /* MSOneNoteApiPage.h */,
+				D87CFE841C9CA6910021BBDD /* MSOneNoteApiPageCollectionFetcher.h */,
+				D87CFE851C9CA6910021BBDD /* MSOneNoteApiPageCollectionOperations.h */,
+				D87CFE861C9CA6910021BBDD /* MSOneNoteApiPageFetcher.h */,
+				D87CFE871C9CA6910021BBDD /* MSOneNoteApiPageLinks.h */,
+				D87CFE881C9CA6910021BBDD /* MSOneNoteApiPageOperations.h */,
+				D87CFE891C9CA6910021BBDD /* MSOneNoteApiPatchActionType.h */,
+				D87CFE8A1C9CA6910021BBDD /* MSOneNoteApiPatchContentCommand.h */,
+				D87CFE8B1C9CA6910021BBDD /* MSOneNoteApiPatchInsertPosition.h */,
+				D87CFE8C1C9CA6910021BBDD /* MSOneNoteApiResource.h */,
+				D87CFE8D1C9CA6910021BBDD /* MSOneNoteApiResourceCollectionFetcher.h */,
+				D87CFE8E1C9CA6910021BBDD /* MSOneNoteApiResourceCollectionOperations.h */,
+				D87CFE8F1C9CA6910021BBDD /* MSOneNoteApiResourceFetcher.h */,
+				D87CFE901C9CA6910021BBDD /* MSOneNoteApiResourceOperations.h */,
+				D87CFE911C9CA6910021BBDD /* MSOneNoteApiSection.h */,
+				D87CFE921C9CA6910021BBDD /* MSOneNoteApiSectionCollectionFetcher.h */,
+				D87CFE931C9CA6910021BBDD /* MSOneNoteApiSectionCollectionOperations.h */,
+				D87CFE941C9CA6910021BBDD /* MSOneNoteApiSectionFetcher.h */,
+				D87CFE951C9CA6910021BBDD /* MSOneNoteApiSectionGroup.h */,
+				D87CFE961C9CA6910021BBDD /* MSOneNoteApiSectionGroupCollectionFetcher.h */,
+				D87CFE971C9CA6910021BBDD /* MSOneNoteApiSectionGroupCollectionOperations.h */,
+				D87CFE981C9CA6910021BBDD /* MSOneNoteApiSectionGroupFetcher.h */,
+				D87CFE991C9CA6910021BBDD /* MSOneNoteApiSectionGroupOperations.h */,
+				D87CFE9A1C9CA6910021BBDD /* MSOneNoteApiSectionOperations.h */,
+				D87CFE9B1C9CA6910021BBDD /* MSOneNoteApiSite.h */,
+				D87CFE9C1C9CA6910021BBDD /* MSOneNoteApiSiteCollection_CollectionFetcher.h */,
+				D87CFE9D1C9CA6910021BBDD /* MSOneNoteApiSiteCollection_CollectionOperations.h */,
+				D87CFE9E1C9CA6910021BBDD /* MSOneNoteApiSiteCollection_Fetcher.h */,
+				D87CFE9F1C9CA6910021BBDD /* MSOneNoteApiSiteCollection_Operations.h */,
+				D87CFEA01C9CA6910021BBDD /* MSOneNoteApiSiteCollection.h */,
+				D87CFEA11C9CA6910021BBDD /* MSOneNoteApiSiteCollectionFetcher.h */,
+				D87CFEA21C9CA6910021BBDD /* MSOneNoteApiSiteCollectionOperations.h */,
+				D87CFEA31C9CA6910021BBDD /* MSOneNoteApiSiteFetcher.h */,
+				D87CFEA41C9CA6910021BBDD /* MSOneNoteApiSiteMetadata.h */,
+				D87CFEA51C9CA6910021BBDD /* MSOneNoteApiSiteOperations.h */,
+				D87CFEA61C9CA6910021BBDD /* MSOneNoteApiUser.h */,
+				D87CFEA71C9CA6910021BBDD /* MSOneNoteApiUserCollectionFetcher.h */,
+				D87CFEA81C9CA6910021BBDD /* MSOneNoteApiUserCollectionOperations.h */,
+				D87CFEA91C9CA6910021BBDD /* MSOneNoteApiUserFetcher.h */,
+				D87CFEAA1C9CA6910021BBDD /* MSOneNoteApiUserOperations.h */,
+				D87CFEAB1C9CA6910021BBDD /* MSOneNoteApiUserRole.h */,
+				D87CFEAC1C9CA6910021BBDD /* MSOrcBaseContainer.h */,
+				D87CFEAD1C9CA6910021BBDD /* MSOrcBaseEntity.h */,
+				D87CFEAE1C9CA6910021BBDD /* MSOrcBasicCredentials.h */,
+				D87CFEAF1C9CA6910021BBDD /* MSOrcChangesTrackingArray.h */,
+				D87CFEB01C9CA6910021BBDD /* MSOrcCollectionFetcher.h */,
+				D87CFEB11C9CA6910021BBDD /* MSOrcCredentials.h */,
+				D87CFEB21C9CA6910021BBDD /* MSOrcDefaultDependencyResolver.h */,
+				D87CFEB31C9CA6910021BBDD /* MSOrcDependencyResolver.h */,
+				D87CFEB41C9CA6910021BBDD /* MSOrcEntityFetcher.h */,
+				D87CFEB51C9CA6910021BBDD /* MSOrcError.h */,
+				D87CFEB61C9CA6910021BBDD /* MSOrcExecutable.h */,
+				D87CFEB71C9CA6910021BBDD /* MSOrcHttpConnection.h */,
+				D87CFEB81C9CA6910021BBDD /* MSOrcHttpTransport.h */,
+				D87CFEB91C9CA6910021BBDD /* MSOrcHttpVerb.h */,
+				D87CFEBA1C9CA6910021BBDD /* MSOrcInteroperableWithDictionary.h */,
+				D87CFEBB1C9CA6910021BBDD /* MSOrcJSONSerializer.h */,
+				D87CFEBC1C9CA6910021BBDD /* MSOrcLogger.h */,
+				D87CFEBD1C9CA6910021BBDD /* MSOrcLoggerImpl.h */,
+				D87CFEBE1C9CA6910021BBDD /* MSOrcLogLevel.h */,
+				D87CFEBF1C9CA6910021BBDD /* MSOrcMediaEntityFetcher.h */,
+				D87CFEC01C9CA6910021BBDD /* MSOrcMultipartCollectionFetcher.h */,
+				D87CFEC11C9CA6910021BBDD /* MSOrcMultiPartElement.h */,
+				D87CFEC21C9CA6910021BBDD /* MSOrcOAuthCredentials.h */,
+				D87CFEC31C9CA6910021BBDD /* MSOrcObjectizer.h */,
+				D87CFEC41C9CA6910021BBDD /* MSOrcOperations.h */,
+				D87CFEC51C9CA6910021BBDD /* MSOrcReadable.h */,
+				D87CFEC61C9CA6910021BBDD /* MSOrcRequest.h */,
+				D87CFEC71C9CA6910021BBDD /* MSOrcRequestImpl.h */,
+				D87CFEC81C9CA6910021BBDD /* MSOrcResponse.h */,
+				D87CFEC91C9CA6910021BBDD /* MSOrcResponseImpl.h */,
+				D87CFECA1C9CA6910021BBDD /* MSOrcSerializer.h */,
+				D87CFECB1C9CA6910021BBDD /* MSOrcStreamFetcher.h */,
+				D87CFECC1C9CA6910021BBDD /* MSOrcURL.h */,
+				D87CFECD1C9CA6910021BBDD /* MSOrcURLImpl.h */,
+				D87CFECE1C9CA6910021BBDD /* MSOutlook.h */,
+				D87CFECF1C9CA6910021BBDD /* MSOutlookAttachment.h */,
+				D87CFED01C9CA6910021BBDD /* MSOutlookAttachmentCollectionFetcher.h */,
+				D87CFED11C9CA6910021BBDD /* MSOutlookAttachmentCollectionOperations.h */,
+				D87CFED21C9CA6910021BBDD /* MSOutlookAttachmentFetcher.h */,
+				D87CFED31C9CA6910021BBDD /* MSOutlookAttachmentOperations.h */,
+				D87CFED41C9CA6910021BBDD /* MSOutlookAttendee.h */,
+				D87CFED51C9CA6910021BBDD /* MSOutlookAttendeeType.h */,
+				D87CFED61C9CA6910021BBDD /* MSOutlookBodyType.h */,
+				D87CFED71C9CA6910021BBDD /* MSOutlookCalendar.h */,
+				D87CFED81C9CA6910021BBDD /* MSOutlookCalendarCollectionFetcher.h */,
+				D87CFED91C9CA6910021BBDD /* MSOutlookCalendarCollectionOperations.h */,
+				D87CFEDA1C9CA6910021BBDD /* MSOutlookCalendarColor.h */,
+				D87CFEDB1C9CA6910021BBDD /* MSOutlookCalendarFetcher.h */,
+				D87CFEDC1C9CA6910021BBDD /* MSOutlookCalendarGroup.h */,
+				D87CFEDD1C9CA6910021BBDD /* MSOutlookCalendarGroupCollectionFetcher.h */,
+				D87CFEDE1C9CA6910021BBDD /* MSOutlookCalendarGroupCollectionOperations.h */,
+				D87CFEDF1C9CA6910021BBDD /* MSOutlookCalendarGroupFetcher.h */,
+				D87CFEE01C9CA6910021BBDD /* MSOutlookCalendarGroupOperations.h */,
+				D87CFEE11C9CA6910021BBDD /* MSOutlookCalendarOperations.h */,
+				D87CFEE21C9CA6910021BBDD /* MSOutlookChangeType.h */,
+				D87CFEE31C9CA6910021BBDD /* MSOutlookClient.h */,
+				D87CFEE41C9CA6910021BBDD /* MSOutlookContact.h */,
+				D87CFEE51C9CA6910021BBDD /* MSOutlookContactCollectionFetcher.h */,
+				D87CFEE61C9CA6910021BBDD /* MSOutlookContactCollectionOperations.h */,
+				D87CFEE71C9CA6910021BBDD /* MSOutlookContactFetcher.h */,
+				D87CFEE81C9CA6910021BBDD /* MSOutlookContactFolder.h */,
+				D87CFEE91C9CA6910021BBDD /* MSOutlookContactFolderCollectionFetcher.h */,
+				D87CFEEA1C9CA6910021BBDD /* MSOutlookContactFolderCollectionOperations.h */,
+				D87CFEEB1C9CA6910021BBDD /* MSOutlookContactFolderFetcher.h */,
+				D87CFEEC1C9CA6910021BBDD /* MSOutlookContactFolderOperations.h */,
+				D87CFEED1C9CA6910021BBDD /* MSOutlookContactOperations.h */,
+				D87CFEEE1C9CA6910021BBDD /* MSOutlookConversation.h */,
+				D87CFEEF1C9CA6910021BBDD /* MSOutlookConversationCollectionFetcher.h */,
+				D87CFEF01C9CA6910021BBDD /* MSOutlookConversationCollectionOperations.h */,
+				D87CFEF11C9CA6910021BBDD /* MSOutlookConversationFetcher.h */,
+				D87CFEF21C9CA6910021BBDD /* MSOutlookConversationOperations.h */,
+				D87CFEF31C9CA6910021BBDD /* MSOutlookConversationThread.h */,
+				D87CFEF41C9CA6910021BBDD /* MSOutlookConversationThreadCollectionFetcher.h */,
+				D87CFEF51C9CA6910021BBDD /* MSOutlookConversationThreadCollectionOperations.h */,
+				D87CFEF61C9CA6910021BBDD /* MSOutlookConversationThreadFetcher.h */,
+				D87CFEF71C9CA6910021BBDD /* MSOutlookConversationThreadOperations.h */,
+				D87CFEF81C9CA6910021BBDD /* MSOutlookDateTimeTimeZone.h */,
+				D87CFEF91C9CA6910021BBDD /* MSOutlookDayOfWeek.h */,
+				D87CFEFA1C9CA6910021BBDD /* MSOutlookDirectoryObject.h */,
+				D87CFEFB1C9CA6910021BBDD /* MSOutlookDirectoryObjectCollectionFetcher.h */,
+				D87CFEFC1C9CA6910021BBDD /* MSOutlookDirectoryObjectCollectionOperations.h */,
+				D87CFEFD1C9CA6910021BBDD /* MSOutlookDirectoryObjectFetcher.h */,
+				D87CFEFE1C9CA6910021BBDD /* MSOutlookDirectoryObjectOperations.h */,
+				D87CFEFF1C9CA6910021BBDD /* MSOutlookEmailAddress.h */,
+				D87CFF001C9CA6910021BBDD /* MSOutlookEntity.h */,
+				D87CFF011C9CA6910021BBDD /* MSOutlookEntityCollectionFetcher.h */,
+				D87CFF021C9CA6910021BBDD /* MSOutlookEntityCollectionOperations.h */,
+				D87CFF031C9CA6910021BBDD /* MSOutlookEntityFetcher.h */,
+				D87CFF041C9CA6910021BBDD /* MSOutlookEntityOperations.h */,
+				D87CFF051C9CA6910021BBDD /* MSOutlookEvent.h */,
+				D87CFF061C9CA6910021BBDD /* MSOutlookEventCollectionFetcher.h */,
+				D87CFF071C9CA6910021BBDD /* MSOutlookEventCollectionOperations.h */,
+				D87CFF081C9CA6910021BBDD /* MSOutlookEventFetcher.h */,
+				D87CFF091C9CA6910021BBDD /* MSOutlookEventMessage.h */,
+				D87CFF0A1C9CA6910021BBDD /* MSOutlookEventMessageCollectionFetcher.h */,
+				D87CFF0B1C9CA6920021BBDD /* MSOutlookEventMessageCollectionOperations.h */,
+				D87CFF0C1C9CA6920021BBDD /* MSOutlookEventMessageFetcher.h */,
+				D87CFF0D1C9CA6920021BBDD /* MSOutlookEventMessageOperations.h */,
+				D87CFF0E1C9CA6920021BBDD /* MSOutlookEventOperations.h */,
+				D87CFF0F1C9CA6920021BBDD /* MSOutlookEventType.h */,
+				D87CFF101C9CA6920021BBDD /* MSOutlookFetchers.h */,
+				D87CFF111C9CA6920021BBDD /* MSOutlookFileAttachment.h */,
+				D87CFF121C9CA6920021BBDD /* MSOutlookFileAttachmentCollectionFetcher.h */,
+				D87CFF131C9CA6920021BBDD /* MSOutlookFileAttachmentCollectionOperations.h */,
+				D87CFF141C9CA6920021BBDD /* MSOutlookFileAttachmentFetcher.h */,
+				D87CFF151C9CA6920021BBDD /* MSOutlookFileAttachmentOperations.h */,
+				D87CFF161C9CA6920021BBDD /* MSOutlookFreeBusyStatus.h */,
+				D87CFF171C9CA6920021BBDD /* MSOutlookGeoCoordinates.h */,
+				D87CFF181C9CA6920021BBDD /* MSOutlookGroup.h */,
+				D87CFF191C9CA6920021BBDD /* MSOutlookGroupAccessType.h */,
+				D87CFF1A1C9CA6920021BBDD /* MSOutlookGroupCollectionFetcher.h */,
+				D87CFF1B1C9CA6920021BBDD /* MSOutlookGroupCollectionOperations.h */,
+				D87CFF1C1C9CA6920021BBDD /* MSOutlookGroupFetcher.h */,
+				D87CFF1D1C9CA6920021BBDD /* MSOutlookGroupOperations.h */,
+				D87CFF1E1C9CA6920021BBDD /* MSOutlookImportance.h */,
+				D87CFF1F1C9CA6920021BBDD /* MSOutlookItem.h */,
+				D87CFF201C9CA6920021BBDD /* MSOutlookItemAttachment.h */,
+				D87CFF211C9CA6920021BBDD /* MSOutlookItemAttachmentCollectionFetcher.h */,
+				D87CFF221C9CA6920021BBDD /* MSOutlookItemAttachmentCollectionOperations.h */,
+				D87CFF231C9CA6920021BBDD /* MSOutlookItemAttachmentFetcher.h */,
+				D87CFF241C9CA6920021BBDD /* MSOutlookItemAttachmentOperations.h */,
+				D87CFF251C9CA6920021BBDD /* MSOutlookItemBody.h */,
+				D87CFF261C9CA6920021BBDD /* MSOutlookItemCollectionFetcher.h */,
+				D87CFF271C9CA6920021BBDD /* MSOutlookItemCollectionOperations.h */,
+				D87CFF281C9CA6920021BBDD /* MSOutlookItemFetcher.h */,
+				D87CFF291C9CA6920021BBDD /* MSOutlookItemOperations.h */,
+				D87CFF2A1C9CA6920021BBDD /* MSOutlookLocation.h */,
+				D87CFF2B1C9CA6920021BBDD /* MSOutlookMailFolder.h */,
+				D87CFF2C1C9CA6920021BBDD /* MSOutlookMailFolderCollectionFetcher.h */,
+				D87CFF2D1C9CA6920021BBDD /* MSOutlookMailFolderCollectionOperations.h */,
+				D87CFF2E1C9CA6920021BBDD /* MSOutlookMailFolderFetcher.h */,
+				D87CFF2F1C9CA6920021BBDD /* MSOutlookMailFolderOperations.h */,
+				D87CFF301C9CA6920021BBDD /* MSOutlookMeetingMessageType.h */,
+				D87CFF311C9CA6920021BBDD /* MSOutlookMessage.h */,
+				D87CFF321C9CA6920021BBDD /* MSOutlookMessageCollectionFetcher.h */,
+				D87CFF331C9CA6920021BBDD /* MSOutlookMessageCollectionOperations.h */,
+				D87CFF341C9CA6920021BBDD /* MSOutlookMessageFetcher.h */,
+				D87CFF351C9CA6920021BBDD /* MSOutlookMessageOperations.h */,
+				D87CFF361C9CA6920021BBDD /* MSOutlookModels.h */,
+				D87CFF371C9CA6920021BBDD /* MSOutlookNotification.h */,
+				D87CFF381C9CA6920021BBDD /* MSOutlookNotificationCollectionFetcher.h */,
+				D87CFF391C9CA6920021BBDD /* MSOutlookNotificationCollectionOperations.h */,
+				D87CFF3A1C9CA6920021BBDD /* MSOutlookNotificationFetcher.h */,
+				D87CFF3B1C9CA6920021BBDD /* MSOutlookNotificationOperations.h */,
+				D87CFF3C1C9CA6920021BBDD /* MSOutlookPatternedRecurrence.h */,
+				D87CFF3D1C9CA6920021BBDD /* MSOutlookPhoto.h */,
+				D87CFF3E1C9CA6920021BBDD /* MSOutlookPhotoCollectionFetcher.h */,
+				D87CFF3F1C9CA6920021BBDD /* MSOutlookPhotoCollectionOperations.h */,
+				D87CFF401C9CA6920021BBDD /* MSOutlookPhotoFetcher.h */,
+				D87CFF411C9CA6920021BBDD /* MSOutlookPhotoOperations.h */,
+				D87CFF421C9CA6920021BBDD /* MSOutlookPhysicalAddress.h */,
+				D87CFF431C9CA6920021BBDD /* MSOutlookPost.h */,
+				D87CFF441C9CA6920021BBDD /* MSOutlookPostCollectionFetcher.h */,
+				D87CFF451C9CA6920021BBDD /* MSOutlookPostCollectionOperations.h */,
+				D87CFF461C9CA6920021BBDD /* MSOutlookPostFetcher.h */,
+				D87CFF471C9CA6920021BBDD /* MSOutlookPostOperations.h */,
+				D87CFF481C9CA6920021BBDD /* MSOutlookPushSubscription.h */,
+				D87CFF491C9CA6920021BBDD /* MSOutlookPushSubscriptionCollectionFetcher.h */,
+				D87CFF4A1C9CA6920021BBDD /* MSOutlookPushSubscriptionCollectionOperations.h */,
+				D87CFF4B1C9CA6920021BBDD /* MSOutlookPushSubscriptionFetcher.h */,
+				D87CFF4C1C9CA6920021BBDD /* MSOutlookPushSubscriptionOperations.h */,
+				D87CFF4D1C9CA6920021BBDD /* MSOutlookRecipient.h */,
+				D87CFF4E1C9CA6920021BBDD /* MSOutlookRecurrencePattern.h */,
+				D87CFF4F1C9CA6920021BBDD /* MSOutlookRecurrencePatternType.h */,
+				D87CFF501C9CA6920021BBDD /* MSOutlookRecurrenceRange.h */,
+				D87CFF511C9CA6920021BBDD /* MSOutlookRecurrenceRangeType.h */,
+				D87CFF521C9CA6920021BBDD /* MSOutlookReferenceAttachment.h */,
+				D87CFF531C9CA6920021BBDD /* MSOutlookReferenceAttachmentCollectionFetcher.h */,
+				D87CFF541C9CA6920021BBDD /* MSOutlookReferenceAttachmentCollectionOperations.h */,
+				D87CFF551C9CA6920021BBDD /* MSOutlookReferenceAttachmentFetcher.h */,
+				D87CFF561C9CA6920021BBDD /* MSOutlookReferenceAttachmentOperations.h */,
+				D87CFF571C9CA6920021BBDD /* MSOutlookReminder.h */,
+				D87CFF581C9CA6920021BBDD /* MSOutlookResponseStatus.h */,
+				D87CFF591C9CA6920021BBDD /* MSOutlookResponseType.h */,
+				D87CFF5A1C9CA6920021BBDD /* MSOutlookSensitivity.h */,
+				D87CFF5B1C9CA6920021BBDD /* MSOutlookSubscription.h */,
+				D87CFF5C1C9CA6920021BBDD /* MSOutlookSubscriptionCollectionFetcher.h */,
+				D87CFF5D1C9CA6920021BBDD /* MSOutlookSubscriptionCollectionOperations.h */,
+				D87CFF5E1C9CA6920021BBDD /* MSOutlookSubscriptionFetcher.h */,
+				D87CFF5F1C9CA6920021BBDD /* MSOutlookSubscriptionOperations.h */,
+				D87CFF601C9CA6920021BBDD /* MSOutlookUser.h */,
+				D87CFF611C9CA6920021BBDD /* MSOutlookUserCollectionFetcher.h */,
+				D87CFF621C9CA6920021BBDD /* MSOutlookUserCollectionOperations.h */,
+				D87CFF631C9CA6920021BBDD /* MSOutlookUserFetcher.h */,
+				D87CFF641C9CA6920021BBDD /* MSOutlookUserOperations.h */,
+				D87CFF651C9CA6920021BBDD /* MSOutlookWeekIndex.h */,
+				D87CFF661C9CA6920021BBDD /* NSArray+Extension.h */,
+				D87CFF671C9CA6920021BBDD /* NSDictionary+ADExtensions.h */,
+				D87CFF681C9CA6920021BBDD /* NSString+ADHelperMethods.h */,
+				D87CFF691C9CA6920021BBDD /* NSString+NSStringExtensions.h */,
+				D87CFF6A1C9CA6920021BBDD /* NSURL+ADExtensions.h */,
+				D87CFF6B1C9CA6920021BBDD /* UIAlertView+Additions.h */,
+				D87CFF6C1C9CA6920021BBDD /* UIApplication+ADExtensions.h */,
 			);
-			path = ADALiOS;
+			name = Office365Lib;
 			sourceTree = "<group>";
 		};
 		D88C79CC1C7B88E800C14854 /* theme */ = {
@@ -463,6 +1543,11 @@
 					D8685CB81BE7BF880041817E = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = RLAHF6FL89;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					D8685CCC1BE7BF890041817E = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -709,6 +1794,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = xtalk/xtalk.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -734,6 +1820,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = xtalk/xtalk.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

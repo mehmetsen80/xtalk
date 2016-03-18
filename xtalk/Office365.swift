@@ -18,12 +18,11 @@ class Office365 {
     //var resources:Dictionary<String, Resource> = Dictionary<String, Resource>()
     let discoveryServiceEndpoint: String
     let discoveryResource: String
-    let secretID: String
     
-    init(clientID: String, secretID: String, redirectUri: String){
+    
+    init(clientID: String, redirectUri: String){
         
         self.clientID = clientID
-        self.secretID = secretID
         self.redirectUri = NSURL(string: redirectUri)!
         self.tenant = "nau3203.onmicrosoft.com"
         self.authority = "https://login.windows.net/\(self.tenant)"
@@ -33,7 +32,7 @@ class Office365 {
     
     class func getInstance() -> Office365{
         
-        let office365 = Office365(clientID: "2bb002b0-e94a-43b3-993e-44b62c153869", secretID: "hQpVYnZ3HKjrjNw2q9esjLfU79DXsLXb1EoegnE5/ZM=", redirectUri: "http://xtalkapp.com/office365client/oauth2.php")
+        let office365 = Office365(clientID: "8f59d4e7-e940-40c0-8498-06c751e40551", redirectUri: "http://xtalkapp.com/office365clientios/oauth2.php")
         
         return office365
         

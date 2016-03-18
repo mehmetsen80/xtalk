@@ -232,13 +232,16 @@ class EntryViewController: UIViewController, FacebookAPIControllerProtocol, FBSD
         }
         else {
             // Attempt to get a token
-            authMgr.getToken() {
+            authMgr.login() {
                 (authenticated: Bool, token: String) -> Void in
                 if (authenticated) {
-                    // Change the button to read "Log out"
-                    NSLog("Authentication successful, token: %@", token)
-                    self.btnLoginOffice365.setTitle("Log out Office365", forState: UIControlState.Normal)
-                    self.loggedIn = true
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        // Change the button to read "Log out"
+                        NSLog("Authentication successful, token: %@", token)
+                        self.btnLoginOffice365.setTitle("Log out Office365", forState: UIControlState.Normal)
+                        self.loggedIn = true
+                    })
                 }
                 else {
                     NSLog("Authentication failed: %@", token)
